@@ -6,12 +6,21 @@ import { Footer } from "@/components/Footer";
 import { site, allCities } from "@/lib/site";
 
 const archivo = localFont({
-  src: [
-    { path: "../fonts/archivo.woff2", style: "normal", weight: "100 900" },
-    { path: "../fonts/archivo-italic.woff2", style: "italic", weight: "100 900" },
-  ],
+  src: "../fonts/archivo.woff2",
+  weight: "100 900",
+  style: "normal",
   variable: "--font-archivo",
   display: "swap",
+});
+
+// Italic is only used for small accents, so it isn't preloaded.
+const archivoItalic = localFont({
+  src: "../fonts/archivo-italic.woff2",
+  weight: "100 900",
+  style: "italic",
+  variable: "--font-archivo-italic",
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -81,7 +90,7 @@ const businessSchema = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={archivo.variable}>
+    <html lang="en" className={`${archivo.variable} ${archivoItalic.variable}`}>
       <body className="min-h-screen flex flex-col">
         <a
           href="#main"

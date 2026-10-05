@@ -69,7 +69,7 @@ export default function Home() {
               Sized to your home, tested before we leave, and priced with three clear options. Day or night, we pick up.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href={site.bookingUrl} className="rounded-full bg-alarm px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#b80028] hover:brightness-110">
+              <a href={site.bookingUrl} className="rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#b80028] hover:brightness-110">
                 Book service
               </a>
               <a href="#estimate" className="rounded-full bg-white px-7 py-4 text-lg font-bold text-ink shadow-[0_4px_0_var(--color-ink)] hover:bg-sky-soft">
@@ -97,7 +97,7 @@ export default function Home() {
         {/* Red band, like the van wrap */}
         <div className="relative z-20 bg-alarm text-white">
           <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-4 py-5 sm:px-6 md:flex-row md:items-center">
-            <p className="text-lg font-semibold">
+            <p className="text-xl font-bold">
               <span className="wrap-type text-xl">Smile Guarantee:</span>{" "}
               you smile, or we fix it free.
             </p>
@@ -206,7 +206,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
-            <a href="#estimate" className="rounded-full bg-alarm px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#7a0018] hover:brightness-110">
+            <a href="#estimate" className="rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#7a0018] hover:brightness-110">
               Get my three options
             </a>
             <p className="text-white/75">Financing through {site.financingPartner}, with $0-down options for qualified buyers.</p>
@@ -333,7 +333,7 @@ export default function Home() {
             <a href={site.phoneHref} className="display mt-8 flex items-center gap-3 text-3xl text-sky hover:underline">
               <PhoneIcon className="h-7 w-7" /> {site.phone}
             </a>
-            <p className="mt-2 text-white/70">Open 24/7, including weekends and holidays</p>
+            <p className="mt-2 text-white/85">Open 24/7, including weekends and holidays</p>
           </div>
           <LeadForm />
         </div>

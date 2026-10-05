@@ -173,7 +173,7 @@ export function LeadForm() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="rounded-full bg-alarm px-6 py-3 font-bold text-white shadow-[0_3px_0_#b80028] hover:brightness-110 disabled:opacity-60"
+              className="rounded-full bg-alarm-strong px-6 py-3 font-bold text-white shadow-[0_3px_0_#b80028] hover:brightness-110 disabled:opacity-60"
             >
               {status === "sending" ? "Sending…" : "Request my appointment"}
             </button>

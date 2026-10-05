@@ -64,7 +64,7 @@ export function Header() {
           </a>
           <a
             href={site.bookingUrl}
-            className="rounded-full bg-alarm px-4 py-2.5 text-sm font-bold text-white shadow-[0_3px_0_#b80028] hover:brightness-110 sm:px-5 sm:text-base"
+            className="rounded-full bg-alarm-strong px-4 py-2.5 text-sm font-bold text-white shadow-[0_3px_0_#b80028] hover:brightness-110 sm:px-5 sm:text-base"
           >
             Book service
           </a>

@@ -6,6 +6,7 @@
   --color-sky-soft: #e6f9ff;   /* pale section wash */
   --color-sky-deep: #7fe6ff;
   --color-alarm: #ff0038;      /* van-wrap red band */
+  --color-alarm-strong: #e6002f; /* button red: passes AA with white text */
   --color-heat: #ff4953;       /* "HEATING" text red */
   --color-cool: #3c99ff;       /* "COOLING" text blue */
   --color-teal: #0a617d;       /* deep teal */
@@ -41,6 +42,7 @@ body {
 }
 /* The van-wrap "HEATING & COOLING" treatment: heavy italic with offset shadow */
 .wrap-type {
+  font-family: var(--font-archivo-italic), var(--font-sans);
   font-style: italic;
   font-weight: 900;
   font-stretch: 115%;
