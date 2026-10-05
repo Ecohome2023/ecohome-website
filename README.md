@@ -7,9 +7,8 @@ Next.js site for ecohometoday.com, hosted on Vercel.
 - `src/app/page.tsx` - homepage sections.
 - `public/images`, `public/video` - photos and the ductwork clip.
 
-## Connections (set in Vercel > Project > Settings > Environment Variables)
-- `NEXT_PUBLIC_BOOKING_URL` - Housecall Pro booking link used by every "Book service" button.
-- `NEXT_PUBLIC_HUBSPOT_PORTAL_ID` and `NEXT_PUBLIC_HUBSPOT_FORM_ID` - the HubSpot form that receives the estimate form. The HubSpot form needs these fields: firstname, lastname, phone, email, address, message.
+## Booking
+Every "Book" button goes to the Housecall Pro booking link in `src/lib/site.ts`.
 
 ## Run locally
 npm install

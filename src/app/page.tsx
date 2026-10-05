@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { site, counties, faqs } from "@/lib/site";
-import { LeadForm } from "@/components/LeadForm";
 import { LoopVideo } from "@/components/LoopVideo";
 import { CheckIcon, PhoneIcon, Stars } from "@/components/icons";
 
@@ -38,6 +37,17 @@ const specials = [
   { price: "$129", title: "System diagnostic", body: "Something's not right? We'll find the cause and give you a clear price to fix it." },
 ];
 
+const planBenefits = [
+  { title: "100% waived dispatch fees", detail: "Never pay for us to drive to your home.", value: "$89 value" },
+  { title: "Two maintenance visits a year", detail: "One for cooling, one for heating.", value: "$258 value" },
+  { title: "10% off all repairs", detail: "Savings start the day you join." },
+  { title: "Priority scheduling", detail: "Skip the line during heat waves and cold snaps." },
+  { title: "$250 a year toward new equipment", detail: "Builds every year you’re a member, up to $1,000." },
+  { title: "$500 shared referral bonus", detail: "$250 for you and $250 for the friend you refer." },
+  { title: "Essential component cleaning", detail: "AC or heat pump, plus furnace." },
+  { title: "20-point safety check", detail: "Peace of mind for your family." },
+];
+
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -72,7 +82,7 @@ export default function Home() {
               <a href={site.bookingUrl} className="rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#b80028] hover:brightness-110">
                 Book service
               </a>
-              <a href="#estimate" className="rounded-full bg-white px-7 py-4 text-lg font-bold text-ink shadow-[0_4px_0_var(--color-ink)] hover:bg-sky-soft">
+              <a href={site.bookingUrl} className="rounded-full bg-white px-7 py-4 text-lg font-bold text-ink shadow-[0_4px_0_var(--color-ink)] hover:bg-sky-soft">
                 Get a free estimate
               </a>
             </div>
@@ -206,8 +216,8 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
-            <a href="#estimate" className="rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#7a0018] hover:brightness-110">
-              Get my three options
+            <a href={site.bookingUrl} className="rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#7a0018] hover:brightness-110">
+              Book a free estimate
             </a>
             <p className="text-white/75">Financing through {site.financingPartner}, with $0-down options for qualified buyers.</p>
           </div>
@@ -248,20 +258,59 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div id="eco-care" className="mt-8 grid gap-8 overflow-hidden rounded-2xl bg-teal text-white md:grid-cols-[1.2fr_1fr]">
-            <div className="p-8 sm:p-10">
-              <h3 className="display text-3xl sm:text-4xl">The Eco Care Plan</h3>
-              <p className="mt-3 text-lg text-white/85">Year-round coverage that keeps your system running and your bills down.</p>
-              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                {["Spring cooling tune-up", "Fall heating tune-up", "Priority scheduling", "Member discounts on repairs", "Filter change at every visit", "No-surprise pricing"].map((t) => (
-                  <li key={t} className="flex gap-2.5"><CheckIcon className="mt-1 h-4 w-4 shrink-0 text-sky" />{t}</li>
+      {/* ESSENTIAL CARE PLAN */}
+      <section id="care-plan" className="bg-teal text-white">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+          <div className="grid gap-12 lg:grid-cols-[1.25fr_1fr]">
+            <div>
+              <h2 className="display text-4xl sm:text-5xl">The Essential Care Plan</h2>
+              <p className="mt-4 max-w-xl text-lg text-white/85">
+                Two tune-ups, priority scheduling and savings that grow every year you’re a member.
+              </p>
+              <ul className="mt-10 divide-y divide-white/15 border-y border-white/15">
+                {planBenefits.map((b) => (
+                  <li key={b.title} className="flex items-start justify-between gap-6 py-4">
+                    <span className="flex gap-3">
+                      <CheckIcon className="mt-1 h-5 w-5 shrink-0 text-sky" />
+                      <span>
+                        <span className="block text-lg font-bold">{b.title}</span>
+                        {b.detail && <span className="block text-white/80">{b.detail}</span>}
+                      </span>
+                    </span>
+                    {b.value && <span className="shrink-0 rounded-full bg-white/10 px-3 py-1 text-sm font-bold text-sky">{b.value}</span>}
+                  </li>
                 ))}
               </ul>
-              <a href="#estimate" className="mt-8 inline-block rounded-full bg-white px-6 py-3 font-bold text-ink hover:bg-sky-soft">Ask about the plan</a>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <a href={site.bookingUrl} className="rounded-full bg-white px-7 py-4 text-lg font-bold text-ink shadow-[0_4px_0_#052f3d] hover:bg-sky-soft">
+                  Join the plan
+                </a>
+                <a href={site.phoneHref} className="flex items-center gap-2 rounded-full px-5 py-4 text-lg font-bold text-white ring-2 ring-white/40 hover:bg-white/10">
+                  <PhoneIcon className="h-5 w-5" /> {site.phone}
+                </a>
+              </div>
             </div>
-            <div className="relative h-64 md:h-auto md:min-h-80">
-              <Image src="/images/tech-portrait.jpg" alt="Smiling Eco Home technician beside a heat pump" fill sizes="(min-width: 768px) 40vw, 100vw" className="object-cover object-[60%_30%]" />
+
+            <div className="space-y-5">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                <Image src="/images/tech-portrait.jpg" alt="Smiling Eco Home technician beside a heat pump" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover object-[60%_30%]" />
+              </div>
+              <div className="rounded-2xl bg-white p-6 text-ink">
+                <h3 className="text-xl font-extrabold">How your Replacement Bank works</h3>
+                <p className="mt-2 text-ink/80">
+                  From the day you join, we credit your account $250 for every year you stay a member. Use up to $1,000 of it as a direct discount on a new complete system (furnace + AC, or heat pump).
+                </p>
+                <p className="mt-2 text-sm text-mist">Credits are non-transferable and have no cash value.</p>
+              </div>
+              <div className="rounded-2xl bg-white p-6 text-ink">
+                <h3 className="text-xl font-extrabold">How the referral bonus works</h3>
+                <p className="mt-2 text-ink/80">
+                  Refer a friend who buys a new AC, furnace or heat pump from Eco Home. We send you a $250 Visa gift card, and your friend gets $250 off their new system.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -323,19 +372,24 @@ export default function Home() {
       </section>
 
       {/* FINAL CTA */}
-      <section id="estimate" className="relative overflow-hidden bg-teal text-white">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <section id="estimate" className="relative overflow-hidden bg-sky">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <h2 className="display text-4xl sm:text-5xl">Get a system that fits your home</h2>
-            <p className="mt-4 max-w-md text-lg text-white/85">
-              Tell us what’s going on and we’ll call to set up a time. Free estimates on every new system.
+            <h2 className="display text-4xl text-ink sm:text-5xl">Get a system that fits your home</h2>
+            <p className="mt-4 max-w-lg text-lg text-ink/85">
+              Book a free estimate online, or call and talk to a real person. We’re open 24/7.
             </p>
-            <a href={site.phoneHref} className="display mt-8 flex items-center gap-3 text-3xl text-sky hover:underline">
-              <PhoneIcon className="h-7 w-7" /> {site.phone}
-            </a>
-            <p className="mt-2 text-white/85">Open 24/7, including weekends and holidays</p>
           </div>
-          <LeadForm />
+          <div className="grid gap-4">
+            <a href={site.bookingUrl} className="group rounded-2xl bg-white p-6 shadow-[0_5px_0_var(--color-ink)] hover:bg-sky-soft">
+              <span className="block text-sm font-bold text-teal">Pick a time that works for you</span>
+              <span className="display mt-1 block text-3xl text-ink">Book a free estimate</span>
+            </a>
+            <a href={site.phoneHref} className="rounded-2xl bg-alarm-strong p-6 text-white shadow-[0_5px_0_#8a001c] hover:brightness-110">
+              <span className="block text-sm font-bold text-white/90">Call us, day or night</span>
+              <span className="display mt-1 flex items-center gap-3 text-3xl"><PhoneIcon className="h-7 w-7" /> {site.phone}</span>
+            </a>
+          </div>
         </div>
       </section>
     </>

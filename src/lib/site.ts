@@ -18,14 +18,9 @@ export const site = {
   license: "13607597-5501",
   rating: { value: "4.8", count: 112 },
   financingPartner: "GreenSky",
-  // Housecall Pro online booking link. Replace with the real link from
-  // Housecall Pro > Online Booking > Booking link.
-  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || "#book",
-  // HubSpot form (Marketing > Forms). Portal ID + form GUID.
-  hubspot: {
-    portalId: process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID || "",
-    formId: process.env.NEXT_PUBLIC_HUBSPOT_FORM_ID || "",
-  },
+  // Housecall Pro online booking link (every "Book" button uses it).
+  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ||
+    "https://book.housecallpro.com/book/Eco-Home-Heating-and-Air-Experts/7aae129117144ef784412dbd1384725f?v2=true",
   googleMapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Eco+Home+Heating+%26+Cooling+758+Automall+Dr+American+Fork+UT",
   social: [] as string[],
@@ -60,7 +55,7 @@ export const nav = [
   { label: "Pricing", href: "/#options" },
   { label: "Service Areas", href: "/#service-area" },
   { label: "Specials", href: "/#specials" },
-  { label: "Eco Care Plan", href: "/#eco-care" },
+  { label: "Care Plan", href: "/#care-plan" },
 ];
 
 export const faqs = [
@@ -85,7 +80,7 @@ export const faqs = [
     a: "Yes. We offer financing through GreenSky, including $0-down options for qualified buyers, so a new system doesn't have to wait.",
   },
   {
-    q: "What's included in the Eco Care Plan?",
-    a: "Two tune-ups a year (cooling in spring, heating in fall), priority scheduling, member discounts on repairs, and filter changes at each visit. Ask us about current pricing.",
+    q: "What's included in the Essential Care Plan?",
+    a: "Two maintenance visits a year, waived dispatch fees, 10% off all repairs, priority scheduling, a 20-point safety check, and $250 a year toward new equipment (up to $1,000). You also get a $250 Visa gift card for every friend you refer who buys a new system.",
   },
 ];
