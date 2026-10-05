@@ -26,6 +26,9 @@ export const site = {
   social: [] as string[],
 };
 
+// Set SITE_LIVE=true in Vercel only when ecohometoday.com points at this site.
+export const isLive = process.env.SITE_LIVE === "true";
+
 export const counties = [
   {
     name: "Utah County",

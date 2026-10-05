@@ -10,6 +10,9 @@ Next.js site for ecohometoday.com, hosted on Vercel.
 ## Booking
 Every "Book" button goes to the Housecall Pro booking link in `src/lib/site.ts`.
 
+## Going live
+The site tells search engines to stay away until `SITE_LIVE=true` is set in Vercel (Settings > Environment Variables). Set it on launch day, after ecohometoday.com points here, then redeploy.
+
 ## Run locally
 npm install
 npm run dev

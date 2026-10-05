@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { site, allCities } from "@/lib/site";
+import { site, allCities, isLive } from "@/lib/site";
 
 const archivo = localFont({
   src: "../fonts/archivo.woff2",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
       "Heat pumps, furnaces and AC for Utah County and Salt Lake County. Open 24/7.",
     images: [{ url: "/images/van-wrap.jpg", width: 2000, height: 1326, alt: "Eco Home Heating & Cooling service van" }],
   },
-  robots: { index: true, follow: true },
+  robots: isLive ? { index: true, follow: true } : { index: false, follow: false },
 };
 
 export const viewport: Viewport = {
