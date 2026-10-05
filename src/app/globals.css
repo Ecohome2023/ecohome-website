@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Eco Home brand tokens (from Eco_Home_Company_Colors.pdf) */
+@theme {
+  --color-sky: #0ad2ff;        /* van-wrap cyan */
+  --color-sky-soft: #e6f9ff;   /* pale section wash */
+  --color-sky-deep: #7fe6ff;
+  --color-alarm: #ff0038;      /* van-wrap red band */
+  --color-heat: #ff4953;       /* "HEATING" text red */
+  --color-cool: #3c99ff;       /* "COOLING" text blue */
+  --color-teal: #0a617d;       /* deep teal */
+  --color-ink: #14283a;        /* logo outline navy */
+  --color-mist: #5b6b78;
+  --color-line: #d6e4ea;
+
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-variation-settings: "wdth" 100;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* Display type: wide, heavy Archivo, echoing the logo lettering */
+.display {
+  font-weight: 850;
+  font-stretch: 112%;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+}
+/* The van-wrap "HEATING & COOLING" treatment: heavy italic with offset shadow */
+.wrap-type {
+  font-style: italic;
+  font-weight: 900;
+  font-stretch: 115%;
+  text-shadow: 2px 2px 0 var(--color-ink);
+  letter-spacing: 0.01em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-cool);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
