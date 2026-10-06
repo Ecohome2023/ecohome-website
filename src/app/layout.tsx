@@ -75,6 +75,9 @@ const businessSchema = {
       closes: "23:59",
     },
   ],
+  geo: { "@type": "GeoCoordinates", latitude: site.geo.lat, longitude: site.geo.lng },
+  hasMap: site.googleProfileUrl,
+  sameAs: [site.googleProfileUrl, site.googleProfileShortUrl],
   areaServed: allCities.map((c) => ({ "@type": "City", name: `${c}, UT` })),
   hasOfferCatalog: {
     "@type": "OfferCatalog",

@@ -363,9 +363,10 @@ export default function Home() {
             <div className="overflow-hidden rounded-2xl ring-1 ring-line">
               <iframe
                 title="Map of Eco Home Heating & Cooling in American Fork, Utah"
-                src="https://www.google.com/maps?q=758+Automall+Dr+%239,+American+Fork,+UT+84003&output=embed"
+                src={site.googleMapEmbed}
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
                 className="h-72 w-full border-0"
               />
             </div>
