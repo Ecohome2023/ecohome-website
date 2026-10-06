@@ -3,7 +3,7 @@ import Link from "next/link";
 import { site, counties, faqs } from "@/lib/site";
 import { LoopVideo } from "@/components/LoopVideo";
 import { VideoTestimonial } from "@/components/VideoTestimonial";
-import { CheckIcon, PhoneIcon, Stars } from "@/components/icons";
+import { CheckIcon, MailIcon, PhoneIcon, Stars } from "@/components/icons";
 
 const services = [
   { title: "Heat pumps", body: "Heating and cooling from one efficient outdoor unit, built for Utah winters.", img: "/images/heat-pumps-pair.jpg", alt: "Two new heat pumps installed beside a Utah home" },
@@ -84,10 +84,13 @@ export default function Home() {
               <a href={site.bookingUrl} className="rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#b80028] hover:brightness-110">
                 Book service
               </a>
-              <a href={site.bookingUrl} className="rounded-full bg-white px-7 py-4 text-lg font-bold text-ink shadow-[0_4px_0_var(--color-ink)] hover:bg-sky-soft">
-                Get a free estimate
+              <a href={site.instantPricingUrl} className="rounded-full bg-white px-7 py-4 text-lg font-bold text-ink shadow-[0_4px_0_var(--color-ink)] hover:bg-sky-soft">
+                Get instant pricing
               </a>
             </div>
+            <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-ink/80">
+              <MailIcon className="h-4 w-4" /> Answer a few quick questions and get your estimate emailed to you instantly.
+            </p>
             <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-semibold text-ink">
               <li className="flex items-center gap-2"><Stars /> {site.rating.value} from {site.rating.count} Google reviews</li>
               <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4" /> Licensed & insured</li>
@@ -206,8 +209,16 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <h2 className="display max-w-3xl text-4xl sm:text-5xl">Get instant pricing on every new system</h2>
           <p className="mt-4 max-w-2xl text-lg text-white/75">
-            Every replacement quote comes with a Good, Better and Best option, priced upfront. Pick what fits your home and budget. No pressure.
+            Answer a few quick questions about your home and get a Good, Better and Best estimate emailed to you instantly. No sales visit needed to see a price.
           </p>
+          <ol className="mt-8 grid max-w-4xl gap-4 sm:grid-cols-3">
+            {["Answer a few questions about your home", "See Good, Better and Best options", "Get your estimate by email, instantly"].map((step, i) => (
+              <li key={step} className="flex items-center gap-3">
+                <span className="display grid h-9 w-9 shrink-0 place-items-center rounded-full bg-sky text-lg text-ink">{i + 1}</span>
+                <span className="font-semibold">{step}</span>
+              </li>
+            ))}
+          </ol>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {tiers.map((t) => (
               <div key={t.tier} className={`rounded-2xl p-7 ${t.featured ? "bg-sky text-ink" : "bg-white/[0.06] ring-1 ring-white/15"}`}>
@@ -223,8 +234,8 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
-            <a href={site.bookingUrl} className="rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#7a0018] hover:brightness-110">
-              Book a free estimate
+            <a href={site.instantPricingUrl} className="flex items-center gap-2.5 rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#7a0018] hover:brightness-110">
+              <MailIcon className="h-5 w-5" /> Get my instant estimate
             </a>
             <p className="text-white/75">Financing through {site.financingPartner}, with $0-down options for qualified buyers.</p>
           </div>
@@ -387,10 +398,14 @@ export default function Home() {
           <div>
             <h2 className="display text-4xl text-ink sm:text-5xl">Get a system that fits your home</h2>
             <p className="mt-4 max-w-lg text-lg text-ink/85">
-              Book a free estimate online, or call and talk to a real person. We’re open 24/7.
+              Get an instant estimate by email, book a visit online, or call and talk to a real person. We’re open 24/7.
             </p>
           </div>
           <div className="grid gap-4">
+            <a href={site.instantPricingUrl} className="rounded-2xl bg-ink p-6 text-white shadow-[0_5px_0_#0a1622] hover:bg-teal">
+              <span className="flex items-center gap-2 text-sm font-bold text-sky"><MailIcon className="h-4 w-4" /> Estimate emailed to you instantly</span>
+              <span className="display mt-1 block text-3xl">Get instant pricing</span>
+            </a>
             <a href={site.bookingUrl} className="group rounded-2xl bg-white p-6 shadow-[0_5px_0_var(--color-ink)] hover:bg-sky-soft">
               <span className="block text-sm font-bold text-teal">Pick a time that works for you</span>
               <span className="display mt-1 block text-3xl text-ink">Book a free estimate</span>

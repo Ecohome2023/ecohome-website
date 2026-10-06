@@ -21,6 +21,10 @@ export const site = {
   // Housecall Pro online booking link (every "Book" button uses it).
   bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ||
     "https://book.housecallpro.com/book/Eco-Home-Heating-and-Air-Experts/7aae129117144ef784412dbd1384725f?v2=true",
+  // Instant estimate tool (estimate emailed to the homeowner). Until the tool
+  // is built, these buttons fall back to the Housecall Pro booking page.
+  instantPricingUrl: process.env.NEXT_PUBLIC_INSTANT_PRICING_URL ||
+    "https://book.housecallpro.com/book/Eco-Home-Heating-and-Air-Experts/7aae129117144ef784412dbd1384725f?v2=true",
   googleMapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Eco+Home+Heating+%26+Cooling+758+Automall+Dr+American+Fork+UT",
   social: [] as string[],
