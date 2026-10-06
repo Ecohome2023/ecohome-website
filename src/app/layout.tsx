@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | Eco Home Heating & Cooling",
   },
   description:
-    "Heat pump, furnace and AC installation and repair in Utah County and Salt Lake County. Systems sized to your home, three clear options, open 24/7. Call 801-396-0019.",
+    "Heat pump, furnace and AC installation and repair in Utah County and Salt Lake County. Systems sized to your home. Get instant pricing. Open 24/7. Call 801-396-0019.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",

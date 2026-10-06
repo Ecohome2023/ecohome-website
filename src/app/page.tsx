@@ -78,7 +78,7 @@ export default function Home() {
               Heat pump & HVAC experts for Utah County and Salt Lake County
             </h1>
             <p className="mt-5 max-w-xl text-lg font-medium leading-relaxed text-ink/85 sm:text-xl">
-              Sized to your home, tested before we leave, and priced with three clear options. Day or night, we pick up.
+              Sized to your home and tested before we leave. Get instant pricing, and reach us day or night.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href={site.bookingUrl} className="rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#b80028] hover:brightness-110">
@@ -204,7 +204,7 @@ export default function Home() {
       {/* OPTIONS */}
       <section id="options" className="bg-ink text-white">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-          <h2 className="display max-w-3xl text-4xl sm:text-5xl">Three clear options on every new system</h2>
+          <h2 className="display max-w-3xl text-4xl sm:text-5xl">Get instant pricing on every new system</h2>
           <p className="mt-4 max-w-2xl text-lg text-white/75">
             Every replacement quote comes with a Good, Better and Best option, priced upfront. Pick what fits your home and budget. No pressure.
           </p>
