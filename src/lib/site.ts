@@ -52,14 +52,51 @@ export const counties = [
 
 export const allCities = counties.flatMap((c) => c.cities);
 
-export const nav = [
-  { label: "Services", href: "/#services" },
-  { label: "Heat Pumps", href: "/#heat-pumps" },
-  { label: "Pricing", href: "/#options" },
-  { label: "Service Areas", href: "/#service-area" },
-  { label: "Specials", href: "/#specials" },
-  { label: "Care Plan", href: "/#care-plan" },
+export type NavLink = { label: string; href: string; built?: boolean };
+export type NavItem = NavLink & { children?: NavLink[] };
+
+// Service pages are being built one at a time. Until a page exists
+// (built: true), its menu link points to the homepage services section.
+const heatPumpInstall = { label: "Heat pump installation", href: "/heat-pumps" };
+const shared = [
+  { label: "Ductwork & duct testing", href: "/services/ductwork" },
+  { label: "Indoor air quality", href: "/services/indoor-air-quality" },
 ];
+
+export const nav: NavItem[] = [
+  {
+    label: "Heating",
+    href: "/heating",
+    children: [
+      { label: "Furnace repair", href: "/services/furnace-repair" },
+      { label: "Furnace replacement", href: "/services/furnace-replacement" },
+      { label: "Heat pump repair", href: "/services/heat-pump-repair" },
+      { label: "Dual-fuel systems", href: "/services/dual-fuel" },
+      { label: "Heating tune-ups", href: "/services/heating-tune-up" },
+      ...shared,
+    ],
+  },
+  {
+    label: "Cooling",
+    href: "/cooling",
+    children: [
+      { label: "AC repair", href: "/services/ac-repair" },
+      { label: "AC replacement", href: "/services/ac-replacement" },
+      heatPumpInstall,
+      { label: "Ductless mini-splits", href: "/services/mini-splits" },
+      { label: "Cooling tune-ups", href: "/services/cooling-tune-up" },
+      ...shared,
+    ],
+  },
+  { label: "Heat Pumps", href: "/heat-pumps" },
+  { label: "Care Plan", href: "/#care-plan", built: true },
+  { label: "Specials", href: "/#specials", built: true },
+  { label: "About", href: "/#reviews", built: true },
+];
+
+export function hrefFor(link: NavLink) {
+  return link.built ? link.href : link.href === "/heat-pumps" ? "/#heat-pumps" : "/#services";
+}
 
 export const faqs = [
   {

@@ -225,7 +225,7 @@ export default function Home() {
       </section>
 
       {/* REVIEWS */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+      <section id="reviews" className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
             <h2 className="display text-4xl sm:text-5xl">What homeowners say</h2>

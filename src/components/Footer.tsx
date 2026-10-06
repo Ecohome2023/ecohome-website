@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { site, nav, counties } from "@/lib/site";
+import { site, nav, counties, hrefFor } from "@/lib/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -27,7 +27,7 @@ export function Footer() {
           <h2 className="font-bold text-sky">Explore</h2>
           <ul className="mt-4 space-y-2 text-white/85">
             {nav.map((n) => (
-              <li key={n.href}><Link href={n.href} className="hover:text-white hover:underline">{n.label}</Link></li>
+              <li key={n.label}><Link href={hrefFor(n)} className="hover:text-white hover:underline">{n.label}</Link></li>
             ))}
             <li><a href={site.bookingUrl} className="hover:text-white hover:underline">Book service</a></li>
             <li><a href={site.googleMapsUrl} className="hover:text-white hover:underline">Directions</a></li>
