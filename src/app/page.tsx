@@ -229,7 +229,7 @@ export default function Home() {
       <section id="reviews" className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
         <div className="grid gap-12 md:grid-cols-[320px_1fr] md:items-center lg:gap-16">
           <div className="mx-auto w-full max-w-[320px]">
-            <VideoTestimonial id="OaLfF9Z0RqQ" title="Eco Home customer testimonial" />
+            <VideoTestimonial id="OaLfF9Z0RqQ" title="Ryan in Provo, Utah, on his experience with Eco Home" caption="Hear from Ryan in Provo, Utah" />
           </div>
           <div>
             <h2 className="display text-4xl sm:text-5xl">What homeowners say</h2>

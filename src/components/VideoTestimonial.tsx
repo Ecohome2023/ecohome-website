@@ -5,7 +5,7 @@ import { useState } from "react";
 
 // Shows the YouTube thumbnail first and only loads YouTube's player when
 // someone taps play, so the video adds nothing to page load time.
-export function VideoTestimonial({ id, title }: { id: string; title: string }) {
+export function VideoTestimonial({ id, title, caption }: { id: string; title: string; caption: string }) {
   const [playing, setPlaying] = useState(false);
 
   return (
@@ -36,7 +36,7 @@ export function VideoTestimonial({ id, title }: { id: string; title: string }) {
           <span className="absolute left-1/2 top-1/2 grid h-20 w-20 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-alarm-strong text-white shadow-lg transition-transform group-hover:scale-105" aria-hidden>
             <svg viewBox="0 0 24 24" className="ml-1 h-9 w-9" fill="currentColor"><path d="M8 5.5v13l11-6.5z" /></svg>
           </span>
-          <span className="absolute inset-x-0 bottom-0 p-5 text-left font-bold text-white">Watch a homeowner’s story</span>
+          <span className="absolute inset-x-0 bottom-0 p-5 text-left font-bold text-white">{caption}</span>
         </button>
       )}
     </div>
