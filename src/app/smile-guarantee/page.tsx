@@ -37,7 +37,7 @@ const steps = [
 ];
 
 const notCovered = [
-  "Damage to your home or belongings caused by the problem, such as drywall, flooring or furniture",
+  "Fixing the problem is on us. Repairs to surrounding areas of your home, like drywall or flooring, are not included.",
   "Equipment defects covered by the manufacturer’s warranty (we’ll help you file the claim)",
   "Problems unrelated to the work we performed",
   "Damage from misuse, accidents, or work done by someone else",
@@ -101,9 +101,6 @@ export default function SmileGuarantee() {
             <ul className="mt-4 list-disc space-y-3 pl-5 text-ink/85">
               {notCovered.map((c) => <li key={c}>{c}</li>)}
             </ul>
-            <p className="mt-5 text-sm text-mist">
-              Example: if a drain line we installed leaks, we fix the leak free. Repairs to drywall or flooring it damaged aren’t covered.
-            </p>
           </div>
           <div className="rounded-2xl bg-sky-soft p-7">
             <h2 className="text-xl font-extrabold">Guarantee terms</h2>
