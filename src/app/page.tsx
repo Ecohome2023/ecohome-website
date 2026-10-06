@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { site, counties, faqs } from "@/lib/site";
 import { LoopVideo } from "@/components/LoopVideo";
 import { VideoTestimonial } from "@/components/VideoTestimonial";
@@ -108,10 +109,15 @@ export default function Home() {
         {/* Red band, like the van wrap */}
         <div className="relative z-20 bg-alarm text-white">
           <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-4 py-5 sm:px-6 md:flex-row md:items-center">
-            <p className="text-xl font-bold">
-              <span className="wrap-type text-xl">Smile Guarantee:</span>{" "}
-              you smile, or we fix it free.
-            </p>
+            <div>
+              <p className="text-xl font-bold">
+                <span className="wrap-type text-xl">Smile Guarantee:</span>{" "}
+                you smile, or we fix it free.
+              </p>
+              <Link href="/smile-guarantee" className="mt-1 inline-block text-sm font-semibold underline underline-offset-4 hover:no-underline">
+                Click to learn more
+              </Link>
+            </div>
             <a href={site.phoneHref} className="display flex items-center gap-3 text-3xl hover:underline sm:text-4xl">
               <PhoneIcon className="h-7 w-7" /> {site.phone}
             </a>
