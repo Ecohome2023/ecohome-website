@@ -57,11 +57,8 @@ export type NavItem = NavLink & { children?: NavLink[] };
 
 // Service pages are being built one at a time. Until a page exists
 // (built: true), its menu link points to the homepage services section.
-const heatPumpInstall = { label: "Heat pump installation", href: "/heat-pumps" };
-const shared = [
-  { label: "Ductwork & duct testing", href: "/services/ductwork" },
-  { label: "Indoor air quality", href: "/services/indoor-air-quality" },
-];
+const heatPumpRepair = { label: "Heat pump repair", href: "/services/heat-pump-repair" };
+const miniSplits = { label: "Ductless mini-splits", href: "/services/mini-splits" };
 
 export const nav: NavItem[] = [
   {
@@ -70,10 +67,9 @@ export const nav: NavItem[] = [
     children: [
       { label: "Furnace repair", href: "/services/furnace-repair" },
       { label: "Furnace replacement", href: "/services/furnace-replacement" },
-      { label: "Heat pump repair", href: "/services/heat-pump-repair" },
-      { label: "Dual-fuel systems", href: "/services/dual-fuel" },
+      heatPumpRepair,
+      miniSplits,
       { label: "Heating tune-ups", href: "/services/heating-tune-up" },
-      ...shared,
     ],
   },
   {
@@ -82,10 +78,9 @@ export const nav: NavItem[] = [
     children: [
       { label: "AC repair", href: "/services/ac-repair" },
       { label: "AC replacement", href: "/services/ac-replacement" },
-      heatPumpInstall,
-      { label: "Ductless mini-splits", href: "/services/mini-splits" },
+      heatPumpRepair,
+      miniSplits,
       { label: "Cooling tune-ups", href: "/services/cooling-tune-up" },
-      ...shared,
     ],
   },
   { label: "Heat Pumps", href: "/heat-pumps" },
