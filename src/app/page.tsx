@@ -115,7 +115,7 @@ export default function Home() {
                 you smile, or we fix it free.
               </p>
               <Link href="/smile-guarantee" className="mt-1 inline-block text-sm font-semibold underline underline-offset-4 hover:no-underline">
-                Click to learn more
+                Conditions apply. Click to learn more
               </Link>
             </div>
             <a href={site.phoneHref} className="display flex items-center gap-3 text-3xl hover:underline sm:text-4xl">
