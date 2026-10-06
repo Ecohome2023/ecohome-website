@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { site, counties, faqs } from "@/lib/site";
 import { LoopVideo } from "@/components/LoopVideo";
+import { VideoTestimonial } from "@/components/VideoTestimonial";
 import { CheckIcon, PhoneIcon, Stars } from "@/components/icons";
 
 const services = [
@@ -226,21 +227,24 @@ export default function Home() {
 
       {/* REVIEWS */}
       <section id="reviews" className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-        <div className="flex flex-wrap items-end justify-between gap-6">
+        <div className="grid gap-12 md:grid-cols-[320px_1fr] md:items-center lg:gap-16">
+          <div className="mx-auto w-full max-w-[320px]">
+            <VideoTestimonial id="OaLfF9Z0RqQ" title="Eco Home customer testimonial" />
+          </div>
           <div>
             <h2 className="display text-4xl sm:text-5xl">What homeowners say</h2>
             <p className="mt-3 flex items-center gap-2 text-lg font-semibold"><Stars className="h-5 w-5" /> {site.rating.value} out of 5 from {site.rating.count} Google reviews</p>
+            <div className="mt-10 space-y-8">
+              {reviews.map((r) => (
+                <figure key={r.name} className="border-l-4 border-sky pl-5">
+                  <Stars />
+                  <blockquote className="mt-3 text-xl font-medium leading-snug">“{r.text}”</blockquote>
+                  <figcaption className="mt-2 font-bold text-mist">{r.name}</figcaption>
+                </figure>
+              ))}
+            </div>
+            <a href={site.googleMapsUrl} className="mt-10 inline-block font-bold text-teal underline underline-offset-4 hover:text-ink">Read all reviews on Google</a>
           </div>
-          <a href={site.googleMapsUrl} className="font-bold text-teal underline underline-offset-4 hover:text-ink">Read all reviews on Google</a>
-        </div>
-        <div className="mt-10 grid gap-8 md:grid-cols-3">
-          {reviews.map((r) => (
-            <figure key={r.name} className="border-l-4 border-sky pl-5">
-              <Stars />
-              <blockquote className="mt-3 text-xl font-medium leading-snug">“{r.text}”</blockquote>
-              <figcaption className="mt-3 font-bold text-mist">{r.name}</figcaption>
-            </figure>
-          ))}
         </div>
       </section>
 
