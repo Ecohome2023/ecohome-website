@@ -22,9 +22,8 @@ const steps = [
 ];
 
 const tiers = [
-  { tier: "Good", brand: "ACiQ", line: "Dependable comfort at the lowest upfront cost.", points: ["Solid efficiency for the price", "Great fit for rentals and budget-minded upgrades", "Factory warranty included"] },
-  { tier: "Better", brand: "Daikin", line: "Variable-speed comfort with quieter, steadier temperatures.", points: ["Inverter technology adjusts output to demand", "Lower monthly energy bills", "Our most popular choice"], featured: true },
-  { tier: "Best", brand: "Amana", line: "Premium performance and our longest coverage.", points: ["Top-tier efficiency and cold-weather heating", "Quietest of the three", "The strongest warranty we offer"] },
+  { tier: "Great value", brand: "ACiQ", line: "Dependable heating and cooling at a lower upfront cost.", points: ["Solid efficiency for the price", "A great fit for most homes and budgets", "Factory warranty included"] },
+  { tier: "Premium", brand: "Amana", line: "Top-tier performance and our longest coverage.", points: ["Highest efficiency and best cold-weather heating", "Quietest, steadiest comfort", "The strongest warranty we offer"], featured: true },
 ];
 
 const reviews = [
@@ -209,17 +208,17 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <h2 className="display max-w-3xl text-4xl sm:text-5xl">Get instant pricing on every new system</h2>
           <p className="mt-4 max-w-2xl text-lg text-white/75">
-            Answer a few quick questions about your home and get a Good, Better and Best estimate emailed to you instantly. No sales visit needed to see a price.
+            Answer a few quick questions about your home and get an estimate with both options emailed to you instantly. No sales visit needed to see a price.
           </p>
           <ol className="mt-8 grid max-w-4xl gap-4 sm:grid-cols-3">
-            {["Answer a few questions about your home", "See Good, Better and Best options", "Get your estimate by email, instantly"].map((step, i) => (
+            {["Answer a few questions about your home", "Compare ACiQ and Amana side by side", "Get your estimate by email, instantly"].map((step, i) => (
               <li key={step} className="flex items-center gap-3">
                 <span className="display grid h-9 w-9 shrink-0 place-items-center rounded-full bg-sky text-lg text-ink">{i + 1}</span>
                 <span className="font-semibold">{step}</span>
               </li>
             ))}
           </ol>
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
+          <div className="mt-12 grid max-w-4xl gap-5 md:grid-cols-2">
             {tiers.map((t) => (
               <div key={t.tier} className={`rounded-2xl p-7 ${t.featured ? "bg-sky text-ink" : "bg-white/[0.06] ring-1 ring-white/15"}`}>
                 <p className={`wrap-type text-2xl ${t.featured ? "text-white" : "text-sky"}`} style={t.featured ? undefined : { textShadow: "none" }}>{t.tier}</p>
