@@ -169,7 +169,7 @@ export default function HeatPumps() {
           <div>
             <h2 className="display text-4xl sm:text-5xl">$2,150 in rebates, guaranteed</h2>
             <p className="mt-4 text-lg leading-relaxed text-ink/85">
-              We guarantee at least $2,150 in rebates on every heat pump we install, and many homeowners qualify for up to $4,450. We help you file the rebate paperwork.
+              We guarantee at least $2,150 in rebates on every heat pump we install, and many homeowners qualify for up to $4,450. We file all the rebate paperwork for you.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <div className="rounded-2xl bg-alarm px-6 py-5 text-white">

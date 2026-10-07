@@ -24,7 +24,7 @@ const reviews = [
 
 const specials = [
   { price: "0%", title: "Interest for 12 months", body: "Get the system you need now and pay it off over 12 months with 0% interest.", fine: `Subject to credit approval. Financing provided by ${site.financingPartner}.`, cta: "Book a free estimate", href: site.bookingUrl },
-  { price: "$2,150", title: "Guaranteed heat pump rebates", body: "Get $2,150 in rebates guaranteed when you purchase a new heat pump from Eco Home.", fine: "Applies to qualifying heat pump purchases.", cta: "Get instant pricing", href: site.instantPricingUrl },
+  { price: "$2,150", title: "Guaranteed heat pump rebates", body: "Get $2,150 in rebates guaranteed when you purchase a new heat pump from Eco Home. We file all the paperwork for you.", fine: "Applies to qualifying heat pump purchases.", cta: "Get instant pricing", href: site.instantPricingUrl },
   { price: "$39", title: "Furnace tune-up", body: "Clean, inspect and tune your furnace before the cold sets in.", fine: "", cta: "Claim this offer", href: site.bookingUrl },
 ];
 
