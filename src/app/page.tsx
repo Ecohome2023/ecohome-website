@@ -7,7 +7,7 @@ import { CheckIcon, MailIcon, PhoneIcon, Stars } from "@/components/icons";
 
 const services = [
   { title: "Heat pumps", body: "Heating and cooling from one efficient outdoor unit, built for Utah winters.", img: "/images/heat-pumps-pair.jpg", alt: "Two new heat pumps installed beside a Utah home" },
-  { title: "Furnaces", body: "Repairs, replacements and high-efficiency gas furnaces, including dual-fuel setups.", img: "/images/furnace-tech-thumbs-up.jpg", alt: "Eco Home technician next to a newly installed furnace" },
+  { title: "Furnaces", body: "Repairs, replacements and high-efficiency gas furnaces, including dual-fuel setups.", img: "/images/furnace-tech-uniform.jpg", alt: "Eco Home technician in uniform next to a newly installed furnace", pos: "50% 45%" },
   { title: "Air conditioning", body: "Fast AC repair, and replacements for worn-out units before summer hits.", img: "/images/old-ac-unit.jpg", alt: "Aging central air conditioner due for replacement" },
   { title: "Ductless mini-splits", body: "Comfort for basements, additions and rooms your ducts don't reach.", img: "/images/aciq-mini-split-heat-pump.jpg", alt: "Mini-split condenser and heat pump installed on a patio" },
   { title: "Ductwork & duct testing", body: "We measure airflow and fix the ducts so your system can do its job.", img: "/images/ductwork-install.jpg", alt: "Eco Home technician installing new ductwork in a basement" },
@@ -137,7 +137,7 @@ export default function Home() {
           {services.map((s) => (
             <li key={s.title}>
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-sky-soft">
-                <Image src={s.img} alt={s.alt} fill sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw" className="object-cover" />
+                <Image src={s.img} alt={s.alt} fill sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw" className="object-cover" style={"pos" in s ? { objectPosition: s.pos } : undefined} />
               </div>
               <h3 className="mt-4 text-xl font-extrabold">{s.title}</h3>
               <p className="mt-1 text-mist">{s.body}</p>
