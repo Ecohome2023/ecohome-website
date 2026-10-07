@@ -144,9 +144,6 @@ export default function Home() {
             </li>
           ))}
         </ul>
-        <p className="mt-10 text-mist">
-          Also: indoor air quality, humidifiers, air purification and smart thermostats.
-        </p>
       </section>
 
       {/* HEAT PUMPS */}
