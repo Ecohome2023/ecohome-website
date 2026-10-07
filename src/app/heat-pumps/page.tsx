@@ -54,6 +54,16 @@ const faqs = [
   },
 ];
 
+const comparison = [
+  { label: "Cooling", dual: "Variable-speed heat pump cools efficiently", standard: "Standard AC, usually on/off" },
+  { label: "Heating", dual: "Heat pump plus gas furnace, picks the cheaper fuel automatically", standard: "Gas furnace only" },
+  { label: "Comfort", dual: "Steady, even temperatures", standard: "Temperature swings as it cycles on and off" },
+  { label: "Noise", dual: "Quiet, runs at low speed most of the time", standard: "Louder, runs at full blast" },
+  { label: "Efficiency", dual: "Higher efficiency ratings", standard: "Standard efficiency" },
+  { label: "Heating backup", dual: "Two heat sources, so one can cover if the other needs repair", standard: "One heat source" },
+  { label: "Rebates", dual: "$2,150 guaranteed, up to $4,450", standard: "Fewer rebates available" },
+];
+
 const schema = [
   {
     "@context": "https://schema.org",
@@ -198,6 +208,51 @@ export default function HeatPumps() {
             <p className="mt-4 text-sm text-mist">
               Utility rebate programs are run by Rocky Mountain Power and Enbridge Gas, and their amounts can change. The $2,150 guarantee applies to qualifying heat pump installs by Eco Home.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* DUAL FUEL VS STANDARD */}
+      <section className="bg-sky-soft">
+        <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6">
+          <h2 className="display text-4xl sm:text-5xl">Dual fuel vs. a standard AC and furnace</h2>
+          <p className="mt-4 max-w-2xl text-lg text-ink/85">
+            Both setups heat and cool your home. Here’s how a heat pump with a gas furnace compares to the traditional AC and gas furnace most Utah homes have today.
+          </p>
+          <div className="mt-10 overflow-hidden rounded-2xl bg-white ring-1 ring-line">
+            <table className="w-full table-fixed text-left text-sm sm:text-base">
+              <caption className="sr-only">Comparison of a dual-fuel heat pump system and a standard AC with gas furnace</caption>
+              <thead>
+                <tr>
+                  <th scope="col" className="w-[24%] p-3 sm:p-5"><span className="sr-only">Feature</span></th>
+                  <th scope="col" className="bg-ink p-3 align-bottom text-white sm:p-5">
+                    <span className="block text-xs font-bold text-sky sm:text-sm">What we install</span>
+                    <span className="display block text-lg sm:text-2xl">Heat pump + gas furnace</span>
+                  </th>
+                  <th scope="col" className="p-3 align-bottom sm:p-5">
+                    <span className="block text-xs font-bold text-mist sm:text-sm">Traditional</span>
+                    <span className="display block text-lg sm:text-2xl">AC + gas furnace</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparison.map((row) => (
+                  <tr key={row.label} className="border-t border-line">
+                    <th scope="row" className="p-3 align-top font-extrabold sm:p-5">{row.label}</th>
+                    <td className="bg-sky/10 p-3 align-top sm:p-5">
+                      <span className="flex gap-2"><CheckIcon className="mt-0.5 hidden h-5 w-5 shrink-0 text-teal sm:block" />{row.dual}</span>
+                    </td>
+                    <td className="p-3 align-top text-mist sm:p-5">{row.standard}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <a href={site.instantPricingUrl} className="flex items-center gap-2 rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#b80028] hover:brightness-110">
+              <MailIcon className="h-5 w-5" /> Price a dual-fuel system
+            </a>
+            <p className="text-ink/80">Starting at {startingPrice} after incentives.</p>
           </div>
         </div>
       </section>
