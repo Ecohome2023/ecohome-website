@@ -26,7 +26,7 @@ const archivoItalic = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Heat Pump & HVAC Services | Utah County & Salt Lake | Eco Home",
+    default: "Eco Home Heating & Cooling | Heat Pumps & HVAC in American Fork, UT",
     template: "%s | Eco Home Heating & Cooling",
   },
   description:
@@ -53,7 +53,7 @@ const businessSchema = {
   "@type": ["HVACBusiness", "LocalBusiness"],
   "@id": `${site.url}/#business`,
   name: site.name,
-  alternateName: site.shortName,
+  alternateName: [site.shortName, "Eco Home, Heating and Air Experts"],
   url: site.url,
   logo: `${site.url}/images/logo.png`,
   image: `${site.url}/images/van-wrap.jpg`,

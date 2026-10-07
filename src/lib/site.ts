@@ -25,7 +25,8 @@ export const site = {
   // is built, these buttons fall back to the Housecall Pro booking page.
   instantPricingUrl: process.env.NEXT_PUBLIC_INSTANT_PRICING_URL ||
     "https://book.housecallpro.com/book/Eco-Home-Heating-and-Air-Experts/7aae129117144ef784412dbd1384725f?v2=true",
-  // Google Business Profile ("Eco Home, Heating and Air Experts")
+  // Google Business Profile (renamed to "Eco Home Heating & Cooling", Oct 2026).
+  // Replace googleMapEmbed with a fresh embed code once Google approves the name.
   googleProfileUrl: "https://maps.google.com/?cid=16865815162724532104",
   googleProfileShortUrl: "https://maps.app.goo.gl/Kxi6cEzM2EJZas2N6",
   googleMapsUrl: "https://maps.google.com/?cid=16865815162724532104",
