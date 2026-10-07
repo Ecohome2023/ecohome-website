@@ -4,26 +4,16 @@ import { site, counties, faqs } from "@/lib/site";
 import { LoopVideo } from "@/components/LoopVideo";
 import { VideoTestimonial } from "@/components/VideoTestimonial";
 import { CheckIcon, MailIcon, PhoneIcon, Stars } from "@/components/icons";
+import { Mountains } from "@/components/Mountains";
+import { steps, tiers } from "@/lib/content";
 
 const services = [
-  { title: "Heat pumps", body: "Heating and cooling from one efficient outdoor unit, built for Utah winters.", img: "/images/heat-pumps-pair.jpg", alt: "Two new heat pumps installed beside a Utah home" },
+  { title: "Heat pumps", body: "Heating and cooling from one efficient outdoor unit, built for Utah winters.", img: "/images/heat-pumps-pair.jpg", alt: "Two new heat pumps installed beside a Utah home", href: "/heat-pumps" },
   { title: "Furnaces", body: "Repairs, replacements and high-efficiency gas furnaces, including dual-fuel setups.", img: "/images/furnace-tech-uniform.jpg", alt: "Eco Home technician in uniform next to a newly installed furnace", pos: "50% 45%" },
   { title: "Air conditioning", body: "Fast AC repair, and replacements for worn-out units before summer hits.", img: "/images/old-ac-unit.jpg", alt: "Aging central air conditioner due for replacement" },
   { title: "Ductless mini-splits", body: "Comfort for basements, additions and rooms your ducts don't reach.", img: "/images/aciq-mini-split-heat-pump.jpg", alt: "Mini-split condenser and heat pump installed on a patio" },
   { title: "Ductwork & duct testing", body: "We measure airflow and fix the ducts so your system can do its job.", img: "/images/ductwork-install.jpg", alt: "Eco Home technician installing new ductwork in a basement" },
   { title: "Tune-ups & maintenance", body: "Seasonal tune-ups that catch problems early and help protect your warranty.", img: "/images/tech-heat-pump-brick.jpg", alt: "Technician checking refrigerant pressures on a heat pump" },
-];
-
-const steps = [
-  { title: "Load calculation", body: "We run a room-by-room Manual J calculation so the equipment matches how your house actually gains and loses heat." },
-  { title: "Duct testing", body: "We measure static pressure and airflow before we quote. A great system on undersized ducts still runs poorly." },
-  { title: "Right-sized install", body: "Equipment sized to the numbers, not a guess or whatever the last system was." },
-  { title: "Performance check", body: "Before we leave, we test the system's pressures, temperatures and airflow, and show you the results." },
-];
-
-const tiers = [
-  { tier: "Great value", brand: "ACiQ", line: "Dependable heating and cooling at a lower upfront cost.", points: ["Solid efficiency for the price", "A great fit for most homes and budgets", "Factory warranty included"] },
-  { tier: "Premium", brand: "Amana", line: "Top-tier performance and our longest coverage.", points: ["Highest efficiency and best cold-weather heating", "Quietest, steadiest comfort", "The strongest warranty we offer"], featured: true },
 ];
 
 const reviews = [
@@ -54,16 +44,6 @@ const faqSchema = {
   "@type": "FAQPage",
   mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
 };
-
-function Mountains({ className }: { className?: string }) {
-  // Wasatch-style ridgeline, echoing the van wrap
-  return (
-    <svg viewBox="0 0 1440 220" preserveAspectRatio="none" className={className} aria-hidden>
-      <path fill="#7fe8ff" d="M0 150 L120 96 L210 132 L330 52 L430 118 L520 84 L640 140 L760 64 L860 110 L980 40 L1090 120 L1190 88 L1300 132 L1440 70 V220 H0Z" opacity=".55" />
-      <path fill="#2cd8ff" d="M0 180 L140 138 L260 168 L380 110 L500 160 L620 126 L760 172 L900 118 L1020 160 L1160 124 L1290 166 L1440 128 V220 H0Z" />
-    </svg>
-  );
-}
 
 export default function Home() {
   return (
@@ -139,7 +119,9 @@ export default function Home() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-sky-soft">
                 <Image src={s.img} alt={s.alt} fill sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw" className="object-cover" style={"pos" in s ? { objectPosition: s.pos } : undefined} />
               </div>
-              <h3 className="mt-4 text-xl font-extrabold">{s.title}</h3>
+              <h3 className="mt-4 text-xl font-extrabold">
+                {"href" in s && s.href ? <Link href={s.href} className="hover:text-teal hover:underline">{s.title}</Link> : s.title}
+              </h3>
               <p className="mt-1 text-mist">{s.body}</p>
             </li>
           ))}
@@ -166,6 +148,7 @@ export default function Home() {
                 <li key={t} className="flex gap-3"><CheckIcon className="mt-1 h-5 w-5 shrink-0 text-teal" />{t}</li>
               ))}
             </ul>
+            <Link href="/heat-pumps" className="mt-8 inline-block rounded-full bg-ink px-6 py-3 font-bold text-white hover:bg-teal">Learn more about heat pumps</Link>
           </div>
         </div>
       </section>

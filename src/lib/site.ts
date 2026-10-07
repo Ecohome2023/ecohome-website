@@ -93,14 +93,14 @@ export const nav: NavItem[] = [
       { label: "Cooling tune-ups", href: "/services/cooling-tune-up" },
     ],
   },
-  { label: "Heat Pumps", href: "/heat-pumps" },
+  { label: "Heat Pumps", href: "/heat-pumps", built: true },
   { label: "Care Plan", href: "/#care-plan", built: true },
   { label: "Specials", href: "/#specials", built: true },
   { label: "About", href: "/#reviews", built: true },
 ];
 
 export function hrefFor(link: NavLink) {
-  return link.built ? link.href : link.href === "/heat-pumps" ? "/#heat-pumps" : "/#services";
+  return link.built ? link.href : "/#services";
 }
 
 export const faqs = [
