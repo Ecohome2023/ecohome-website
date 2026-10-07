@@ -109,7 +109,7 @@ export const faqs = [
   },
   {
     q: "What does a service visit cost?",
-    a: "A full system diagnostic is $129. Our safety inspection is free, and furnace tune-ups are $39 right now. You'll get a clear price before any repair work starts.",
+    a: "A full system diagnostic is $129, and furnace tune-ups are $39 right now. You'll get a clear price before any repair work starts.",
   },
   {
     q: "Should I repair or replace my system?",
