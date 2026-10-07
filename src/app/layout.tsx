@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Eco Home Heating & Cooling | Heat Pump & HVAC Experts in Utah",
     description:
       "Heat pumps, furnaces and AC for Utah County and Salt Lake County. Open 24/7.",
-    images: [{ url: "/images/van-wrap.jpg", width: 2000, height: 1326, alt: "Eco Home Heating & Cooling service van" }],
+    images: [{ url: "/images/og-share.jpg", width: 1200, height: 630, alt: "Eco Home Heating & Cooling technician next to a heat pump" }],
   },
   robots: isLive ? { index: true, follow: true } : { index: false, follow: false },
 };
