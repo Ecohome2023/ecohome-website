@@ -56,7 +56,7 @@ const businessSchema = {
   alternateName: [site.shortName, "Eco Home, Heating and Air Experts"],
   url: site.url,
   logo: `${site.url}/images/logo.png`,
-  image: `${site.url}/images/van-wrap.jpg`,
+  image: `${site.url}/images/furnace-tech-uniform.jpg`,
   telephone: "+1-801-396-0019",
   priceRange: "$$",
   address: {
