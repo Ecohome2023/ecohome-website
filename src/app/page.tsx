@@ -356,10 +356,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="space-y-5">
-            <div className="relative aspect-[3/2] overflow-hidden rounded-2xl bg-sky-soft">
-              <Image src="/images/van-wrap.jpg" alt="Eco Home Heating & Cooling service van" fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-contain" />
-            </div>
+          <div>
             <div className="overflow-hidden rounded-2xl ring-1 ring-line">
               <iframe
                 title="Map of Eco Home Heating & Cooling in American Fork, Utah"
@@ -367,7 +364,7 @@ export default function Home() {
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
-                className="h-72 w-full border-0"
+                className="h-80 w-full border-0 lg:h-[30rem]"
               />
             </div>
           </div>
