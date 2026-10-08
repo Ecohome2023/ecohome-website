@@ -23,6 +23,52 @@ const benefits = (p: RebateProgram) => [
   },
 ];
 
+const whyPrograms = [
+  {
+    title: "Cuts upfront installation costs",
+    body: "Rebates directly lower the price of high-efficiency heat pumps and air conditioners, making top-tier equipment far more affordable.",
+  },
+  {
+    title: "Saves money on monthly utility bills",
+    body: "High-efficiency HVAC systems use significantly less energy, cutting heating and cooling costs all year.",
+  },
+  {
+    title: "Improves year-round comfort",
+    body: "Modern high-efficiency equipment gives you precise temperature control, quieter operation and better humidity control through Utah’s summer heat and winter cold.",
+  },
+  {
+    title: "Keeps local power rates stable",
+    body: "Cutting the heavy energy spikes on hot summer afternoons protects the power grid from outages and delays expensive utility upgrades, which helps keep rates lower for the whole community.",
+  },
+];
+
+const redFlags = [
+  {
+    title: "The equipment doesn’t qualify for rebates",
+    body: "Don’t settle for equipment that doesn’t qualify for Rocky Mountain Power or Enbridge Gas rebates. Take advantage of them while they’re here.",
+  },
+  {
+    title: "The contractor never mentions rebates",
+    body: "That’s a sign the contractor is more focused on selling lower-quality equipment than on getting you the best value.",
+  },
+  {
+    title: "The contractor won’t guarantee the rebates",
+    body: "It’s the contractor’s job to know what qualifies and what doesn’t, not the homeowner’s.",
+  },
+  {
+    title: "The contractor won’t file the rebates for you",
+    body: "Rebate paperwork can be complicated. Leave it to us. We file it on every install.",
+  },
+];
+
+function FlagIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
+      <path d="M5 2a1 1 0 0 1 1 1v1h12.4a.8.8 0 0 1 .66 1.25L16.6 9l2.46 3.75A.8.8 0 0 1 18.4 14H6v7a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1z" />
+    </svg>
+  );
+}
+
 export function RebatePage({ program }: { program: RebateProgram }) {
   const other = programs[program.key === "rmp" ? "enbridge" : "rmp"];
 
@@ -86,6 +132,27 @@ export function RebatePage({ program }: { program: RebateProgram }) {
         </div>
       </section>
 
+      {/* WHY THESE PROGRAMS EXIST */}
+      <section className="bg-sky-soft">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+          <div className="max-w-3xl">
+            <h2 className="display text-4xl sm:text-5xl">Why these rebate programs exist</h2>
+            <p className="mt-4 text-lg leading-relaxed text-ink/85">
+              Rocky Mountain Power and Enbridge Gas pay these rebates because high-efficiency equipment is good for homeowners and for the whole community.
+            </p>
+          </div>
+          <ul className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {whyPrograms.map((w, i) => (
+              <li key={w.title} className="rounded-2xl bg-white p-6">
+                <span className="display grid h-12 w-12 place-items-center rounded-full bg-ink text-xl text-sky">{i + 1}</span>
+                <h3 className="mt-4 text-xl font-extrabold">{w.title}</h3>
+                <p className="mt-2 text-mist">{w.body}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* WHO QUALIFIES */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
         <div className="max-w-3xl">
@@ -109,12 +176,12 @@ export function RebatePage({ program }: { program: RebateProgram }) {
       </section>
 
       {/* BENEFITS */}
-      <section className="bg-sky-soft">
+      <section className="border-t border-line">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <h2 className="display max-w-3xl text-4xl sm:text-5xl">Why these rebates are worth it</h2>
           <ul className="mt-12 grid gap-5 md:grid-cols-2">
             {benefits(program).map((b, i) => (
-              <li key={b.title} className={`rounded-2xl p-7 ${i === 0 ? "bg-ink text-white" : "bg-white"}`}>
+              <li key={b.title} className={`rounded-2xl p-7 ${i === 0 ? "bg-ink text-white" : "bg-white ring-1 ring-line"}`}>
                 <span className={`grid h-10 w-10 place-items-center rounded-full bg-sky text-ink`}><CheckIcon className="h-5 w-5" /></span>
                 <h3 className="mt-4 text-2xl font-extrabold">{b.title}</h3>
                 <p className={`mt-2 text-lg ${i === 0 ? "text-white/80" : "text-ink/75"}`}>{b.body}</p>
@@ -181,6 +248,30 @@ export function RebatePage({ program }: { program: RebateProgram }) {
               <p className="mt-2 text-lg text-ink/75">{p.body}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* RED FLAGS */}
+      <section className="bg-ink text-white">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+          <div className="max-w-3xl">
+            <p className="flex items-center gap-2 font-bold text-white/90"><FlagIcon className="h-5 w-5 text-alarm" /> Before you sign anything</p>
+            <h2 className="display mt-2 text-4xl sm:text-5xl">Red flags to watch for</h2>
+            <p className="mt-4 text-lg leading-relaxed text-white/80">
+              If you’re getting quotes from other contractors, watch for these.
+            </p>
+          </div>
+          <ul className="mt-12 grid gap-5 md:grid-cols-2">
+            {redFlags.map((f) => (
+              <li key={f.title} className="flex gap-4 rounded-2xl bg-white/[0.06] p-6 ring-1 ring-white/15">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-alarm-strong text-white"><FlagIcon className="h-5 w-5" /></span>
+                <span>
+                  <span className="block text-xl font-extrabold">{f.title}</span>
+                  <span className="mt-1 block text-white/75">{f.body}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
