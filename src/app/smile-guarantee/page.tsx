@@ -65,7 +65,7 @@ export default function SmileGuarantee() {
             </p>
           </div>
           <div className="mx-auto w-48 sm:w-60 md:w-full md:max-w-xs">
-            <Image src="/images/mascot.png" alt="" width={900} height={1192} preload sizes="320px" className="h-auto w-full" />
+            <Image src="/images/dan-eco-home-man.png" alt="" width={600} height={795} preload sizes="320px" className="h-auto w-full" />
           </div>
         </div>
       </section>

@@ -21,10 +21,13 @@ export function Footer() {
           </address>
           <p className="mt-3 text-white/85">{site.hoursLabel}</p>
           <p className="mt-1 text-sm text-white/60">Utah contractor license #{site.license}</p>
-          <Link href="/smile-guarantee" className="mt-6 block rounded-xl bg-alarm-strong px-4 py-3 hover:brightness-110">
-            <span className="wrap-type block text-lg" style={{ textShadow: "none" }}>Smile Guarantee</span>
-            <span className="block text-sm font-semibold">You smile, or we fix it free. Conditions apply, see terms.</span>
-          </Link>
+          <div className="mt-6 flex items-end gap-3">
+            <Image src="/images/dan-eco-home-man.png" alt="Dan, the Eco Home Man" width={600} height={795} sizes="120px" className="h-32 w-auto shrink-0" />
+            <Link href="/smile-guarantee" className="block flex-1 rounded-xl bg-alarm-strong px-4 py-3 hover:brightness-110">
+              <span className="wrap-type block text-lg" style={{ textShadow: "none" }}>Smile Guarantee</span>
+              <span className="block text-sm font-semibold">You smile, or we fix it free. Conditions apply, see terms.</span>
+            </Link>
+          </div>
         </div>
 
         <div>
