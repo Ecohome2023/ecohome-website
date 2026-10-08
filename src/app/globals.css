@@ -84,3 +84,16 @@ details > summary::-webkit-details-marker { display: none; }
     transform: scale(1.04);
   }
 }
+
+/* Blog post and legal page body text */
+.post { font-size: 1.125rem; line-height: 1.75; color: color-mix(in srgb, var(--color-ink) 88%, transparent); }
+.post > * + * { margin-top: 1.25rem; }
+.post h2 { font-weight: 850; font-stretch: 112%; letter-spacing: -0.02em; font-size: 1.875rem; line-height: 1.15; color: var(--color-ink); margin-top: 2.75rem; }
+.post h3 { font-weight: 800; font-size: 1.375rem; line-height: 1.3; color: var(--color-ink); margin-top: 2rem; }
+.post ul { list-style: disc; padding-left: 1.5rem; }
+.post ol { list-style: decimal; padding-left: 1.5rem; }
+.post li + li { margin-top: 0.5rem; }
+.post a { color: var(--color-teal); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.post a:hover { color: var(--color-ink); }
+.post strong { color: var(--color-ink); }
+.post img { border-radius: 1rem; }

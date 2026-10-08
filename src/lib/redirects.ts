@@ -33,7 +33,6 @@ export const oldSiteRedirects: R[] = [
   t("/service-area/:slug*", "/heat-pumps"),
 
   // Blog posts we plan to bring over: temporary until migrated
-  t("/blog", "/"),
   t("/utah-ductless-mini-split-guide", "/services/mini-splits"),
   t("/utah-hvac-tune-up-spring-checklist", "/services/cooling-tune-up"),
   t("/utah-heat-pump-vs-gas-furnace-2026", "/heat-pumps"),

@@ -18,6 +18,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.url}/rebates/rocky-mountain-power-wattsmart`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${site.url}/rebates/enbridge-thermwise`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${site.url}/rebates/dealer-rebates`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${site.url}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.6 },
+    { url: `${site.url}/privacy-policy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.2 },
+    { url: `${site.url}/terms-of-service`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.2 },
     { url: `${site.url}/smile-guarantee`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.4 },
   ];
 }

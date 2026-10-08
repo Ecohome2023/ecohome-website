@@ -45,6 +45,7 @@ export function Footer() {
                 <li key={n.label}><Link href={hrefFor(n)} className="hover:text-white hover:underline">{n.label}</Link></li>
               )
             ))}
+            <li><Link href="/blog" className="hover:text-white hover:underline">Blog</Link></li>
             <li><a href={site.bookingUrl} className="hover:text-white hover:underline">Book service</a></li>
             <li><a href={site.googleMapsUrl} className="hover:text-white hover:underline">Directions</a></li>
           </ul>
@@ -63,9 +64,14 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <p className="mx-auto max-w-7xl px-4 py-5 text-sm text-white/55 sm:px-6">
-          © {year} {site.name}. Financing provided by {site.financingPartner}, subject to credit approval.
-        </p>
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-5 text-sm text-white/60 sm:px-6 md:flex-row md:items-center md:justify-between">
+          <p>© {year} {site.name}. Financing provided by {site.financingPartner}, subject to credit approval.</p>
+          <ul className="flex gap-5">
+            <li><Link href="/blog" className="hover:text-white hover:underline">Blog</Link></li>
+            <li><Link href="/privacy-policy" className="hover:text-white hover:underline">Privacy Policy</Link></li>
+            <li><Link href="/terms-of-service" className="hover:text-white hover:underline">Terms of Service</Link></li>
+          </ul>
+        </div>
       </div>
     </footer>
   );
