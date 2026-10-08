@@ -26,12 +26,11 @@ export const site = {
   instantPricingUrl: process.env.NEXT_PUBLIC_INSTANT_PRICING_URL ||
     "https://book.housecallpro.com/book/Eco-Home-Heating-and-Air-Experts/7aae129117144ef784412dbd1384725f?v2=true",
   // Google Business Profile (renamed to "Eco Home Heating & Cooling", Oct 2026).
-  // Replace googleMapEmbed with a fresh embed code once Google approves the name.
   googleProfileUrl: "https://maps.google.com/?cid=16865815162724532104",
   googleProfileShortUrl: "https://maps.app.goo.gl/Kxi6cEzM2EJZas2N6",
   googleMapsUrl: "https://maps.google.com/?cid=16865815162724532104",
   googleMapEmbed:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.486928788933!2d-111.79406182354344!3d40.36094495903202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x65196631301ac2c5%3A0xea0f69881597bf88!2sEco%20Home%2C%20Heating%20and%20Air%20Experts!5e1!3m2!1sen!2sus!4v1791329268144!5m2!1sen!2sus",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.4869287954257!2d-111.79406718797898!3d40.36094495891294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x65196631301ac2c5%3A0xea0f69881597bf88!2sEco%20Home%20Heating%20%26%20Cooling!5e1!3m2!1sen!2sus!4v1791487946021!5m2!1sen!2sus",
   geo: { lat: 40.36094, lng: -111.79406 },
   social: [] as string[],
 };
