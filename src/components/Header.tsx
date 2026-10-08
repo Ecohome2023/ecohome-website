@@ -87,16 +87,16 @@ export function Header() {
       {/* Utility strip */}
       <div className="bg-teal text-white text-[13px]">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-1.5 sm:px-6">
-          <p className="flex items-center gap-1.5 font-semibold">
+          <p className="flex items-center gap-1.5 whitespace-nowrap font-semibold">
             <span className="inline-block h-2 w-2 rounded-full bg-sky" aria-hidden />
-            {site.hoursLabel}, including weekends and holidays
+            {site.hoursLabel}
           </p>
-          <p className="hidden items-center gap-5 sm:flex">
-            <span className="flex items-center gap-1">
+          <p className="flex items-center gap-5 whitespace-nowrap">
+            <a href={site.googleProfileUrl} className="flex items-center gap-1 hover:underline">
               <StarIcon className="h-3.5 w-3.5 text-[#ffc83d]" />
               {site.rating.value} from {site.rating.count} Google reviews
-            </span>
-            <span>Licensed &amp; insured, Utah #{site.license}</span>
+            </a>
+            <span className="hidden sm:inline">Licensed &amp; insured, Utah #{site.license}</span>
           </p>
         </div>
       </div>
