@@ -241,7 +241,7 @@ export default function Home() {
 
             <div className="space-y-5">
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-                <Image src="/images/tech-portrait.jpg" alt="Smiling Eco Home technician beside a heat pump" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover object-[60%_30%]" />
+                <Image src="/images/tech-wiring-capacitor.jpg" alt="Eco Home technician servicing the electrical components of an outdoor unit during a maintenance visit" fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover object-[45%_50%]" />
               </div>
               <div className="rounded-2xl bg-white p-6 text-ink">
                 <h3 className="text-xl font-extrabold">How your Replacement Bank works</h3>
