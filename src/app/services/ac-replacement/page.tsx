@@ -54,6 +54,10 @@ const faqs = [
     a: "Yes. Today’s inverter heat pumps keep heating efficiently well below freezing, and with a gas furnace as backup, you’re covered on the coldest nights. The system picks whichever is cheaper to run at the moment.",
   },
   {
+    q: "How long does it take to replace an AC with a heat pump?",
+    a: "Most heat pump installs are done in a single day.",
+  },
+  {
     q: "How long does an air conditioner last?",
     a: "Most central air conditioners last about 12 to 15 years. Regular maintenance helps yours reach the long end of that range.",
   },
@@ -118,7 +122,7 @@ export default function AcReplacement() {
             <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-semibold">
               <li className="flex items-center gap-2"><Stars /> {site.rating.value} from {site.rating.count} Google reviews</li>
               <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4 text-sky" /> $0 down, 0% for 12 months</li>
-              <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4 text-sky" /> Permit pulled on every job</li>
+              <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4 text-sky" /> Installed in one day</li>
             </ul>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10">
@@ -244,8 +248,8 @@ export default function AcReplacement() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
           <div>
-            <h2 className="display text-4xl sm:text-5xl">How your install goes</h2>
-            <p className="mt-4 text-lg text-mist">From the first visit to the final test, here’s what to expect.</p>
+            <h2 className="display text-4xl sm:text-5xl">Installed in one day</h2>
+            <p className="mt-4 text-lg text-mist">Most heat pump installs are done the same day we start. Here’s what to expect.</p>
             <ol className="mt-10 space-y-8">
               {installDay.map((s, i) => (
                 <li key={s.title} className="grid grid-cols-[3rem_1fr] gap-4">

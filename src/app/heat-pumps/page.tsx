@@ -49,6 +49,10 @@ const faqs = [
     q: "How much does a heat pump cost in Utah?",
     a: `Our complete dual-fuel systems start at ${startingPrice} after incentives. Your exact price depends on your home’s size, your ductwork and the equipment you choose. Get instant pricing online or book a free estimate.`,
   },
+  {
+    q: "How long does a heat pump install take?",
+    a: "Most heat pump installs are done in a single day. We pull the permit, haul away your old equipment, and test everything before we leave.",
+  },
   ...brandFaqs,
 ];
 

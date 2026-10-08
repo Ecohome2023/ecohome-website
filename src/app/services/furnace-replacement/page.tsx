@@ -78,7 +78,7 @@ const faqs = [
   },
   {
     q: "Which furnace brands do you install?",
-    a: "We install ACiQ and Amana gas furnaces. ACiQ is our most economical option. Amana furnaces come with a lifetime heat exchanger warranty.",
+    a: "We install ACiQ and Amana gas furnaces. ACiQ is our most economical option, and Amana is our premium choice. Both come with a 10-year parts and lifetime heat exchanger warranty.",
   },
   {
     q: "Do you offer financing?",
@@ -211,12 +211,12 @@ export default function FurnaceReplacement() {
               <div className="rounded-2xl p-6 ring-1 ring-line">
                 <Image src="/images/aciq-logo.png" alt="ACiQ" width={739} height={281} sizes="140px" className="h-11 w-auto" />
                 <p className="mt-4 font-bold">Great value</p>
-                <p className="mt-1 text-mist">Our most economical furnace, with dependable heat and a factory warranty.</p>
+                <p className="mt-1 text-mist">Our most economical furnace, with a 10-year parts and lifetime heat exchanger warranty.</p>
               </div>
               <div className="rounded-2xl p-6 ring-1 ring-line">
                 <Image src="/images/amana-logo.png" alt="Amana" width={900} height={190} sizes="200px" className="h-9 w-auto" />
                 <p className="mt-6 font-bold">Premium</p>
-                <p className="mt-1 text-mist">A lifetime heat exchanger warranty, the best coverage in its class.</p>
+                <p className="mt-1 text-mist">Our premium furnace, with a 10-year parts and lifetime heat exchanger warranty.</p>
               </div>
             </div>
             <p className="mt-4 text-sm text-mist">Manufacturer warranties require product registration. Ask us for the full terms.</p>
