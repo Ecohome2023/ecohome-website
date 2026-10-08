@@ -17,7 +17,7 @@ export const site = {
   hoursLabel: "Open 24/7",
   license: "13607597-5501",
   rating: { value: "4.8", count: 112 },
-  financingPartner: "GreenSky",
+  financingPartner: "Slice by FNBO Bank",
   // Housecall Pro online booking link (every "Book" button uses it).
   bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ||
     "https://book.housecallpro.com/book/Eco-Home-Heating-and-Air-Experts/7aae129117144ef784412dbd1384725f?v2=true",
@@ -122,7 +122,7 @@ export const faqs = [
   },
   {
     q: "Do you offer financing?",
-    a: "Yes. We offer financing through GreenSky, including $0-down options for qualified buyers, so a new system doesn't have to wait.",
+    a: "Yes. We offer financing through Slice by FNBO Bank, including $0-down options for qualified buyers, so a new system doesn't have to wait.",
   },
   {
     q: "What's included in the Essential Care Plan?",
