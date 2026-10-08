@@ -12,7 +12,7 @@ import { JobPromises } from "@/components/JobPromises";
 const services = [
   { title: "Heat pumps", body: "Heating and cooling from one efficient outdoor unit, built for Utah winters.", img: "/images/heat-pumps-pair.jpg", alt: "Two new heat pumps installed beside a Utah home", href: "/heat-pumps" },
   { title: "Furnaces", body: "Repairs, replacements and high-efficiency gas furnaces, including dual-fuel setups.", img: "/images/furnace-tech-uniform.jpg", alt: "Eco Home technician in uniform next to a newly installed furnace", pos: "50% 45%", href: "/services/furnace-replacement" },
-  { title: "Air conditioning", body: "Fast AC repair, and replacements for worn-out units before summer hits.", img: "/images/old-ac-unit.jpg", alt: "Aging central air conditioner due for replacement" },
+  { title: "Air conditioning", body: "Fast AC repair, and replacements for worn-out units before summer hits.", img: "/images/old-ac-unit.jpg", alt: "Aging central air conditioner due for replacement", href: "/services/ac-replacement" },
   { title: "Ductless mini-splits", body: "Comfort for basements, additions and rooms your ducts don't reach.", img: "/images/aciq-mini-split-heat-pump.jpg", alt: "Mini-split condenser and heat pump installed on a patio" },
   { title: "Ductwork & duct testing", body: "We measure airflow and fix the ducts so your system can do its job.", img: "/images/ductwork-install.jpg", alt: "Eco Home technician installing new ductwork in a basement" },
   { title: "Tune-ups & maintenance", body: "Seasonal tune-ups that catch problems early and help protect your warranty.", img: "/images/tech-heat-pump-brick.jpg", alt: "Technician checking refrigerant pressures on a heat pump" },

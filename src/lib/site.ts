@@ -88,7 +88,7 @@ export const nav: NavItem[] = [
     allLabel: "All cooling services",
     children: [
       { label: "AC repair", href: "/services/ac-repair" },
-      { label: "AC replacement", href: "/services/ac-replacement" },
+      { label: "AC replacement", href: "/services/ac-replacement", built: true },
       heatPumpRepair,
       miniSplits,
       { label: "Cooling tune-ups", href: "/services/cooling-tune-up" },

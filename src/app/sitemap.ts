@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: site.url, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
     { url: `${site.url}/heat-pumps`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${site.url}/services/furnace-replacement`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${site.url}/services/ac-replacement`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${site.url}/rebates/rocky-mountain-power-wattsmart`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${site.url}/rebates/enbridge-thermwise`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${site.url}/rebates/dealer-rebates`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
