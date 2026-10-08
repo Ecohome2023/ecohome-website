@@ -244,7 +244,7 @@ export default function FurnaceReplacement() {
               A heat pump replaces your air conditioner and pairs with your new furnace. It heats your home efficiently for most of the year, and your furnace takes over on the coldest nights. It’s the most efficient way to heat and cool a Utah home for the cost, and doing it now means one install instead of two.
             </p>
             <ul className="mt-6 space-y-2.5 text-lg font-semibold text-ink">
-              <li className="flex gap-2.5"><CheckIcon className="mt-1.5 h-4 w-4 shrink-0" /> $2,150 in <Link href="/rebates/rocky-mountain-power-wattsmart" className="underline underline-offset-4">Wattsmart</Link> and <Link href="/rebates/enbridge-thermwise" className="underline underline-offset-4">ThermWise</Link> rebates guaranteed, and we file the paperwork</li>
+              <li className="flex gap-2.5"><CheckIcon className="mt-1.5 h-4 w-4 shrink-0" /><span>$2,150 in <Link href="/rebates/rocky-mountain-power-wattsmart" className="underline underline-offset-4">Wattsmart</Link> and <Link href="/rebates/enbridge-thermwise" className="underline underline-offset-4">ThermWise</Link> rebates guaranteed, and we file the paperwork</span></li>
               <li className="flex gap-2.5"><CheckIcon className="mt-1.5 h-4 w-4 shrink-0" /> Complete systems from {dualFuelPrice} after incentives</li>
               <li className="flex gap-2.5"><CheckIcon className="mt-1.5 h-4 w-4 shrink-0" /> More efficient cooling than a standard AC</li>
             </ul>
