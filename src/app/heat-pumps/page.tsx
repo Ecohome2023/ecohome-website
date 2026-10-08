@@ -27,8 +27,8 @@ const whyDualFuel = [
 ];
 
 const rebates = [
-  { source: "Rocky Mountain Power Wattsmart", amount: "$1,450", note: "As a Wattsmart Pro Network contractor, we qualify for Rocky Mountain Power’s higher rebate amount." },
-  { source: "Enbridge Gas ThermWise", amount: "$700 to $1,000", note: "Depends on the equipment and the program’s requirements." },
+  { source: "Rocky Mountain Power Wattsmart", href: "/rebates/rocky-mountain-power-wattsmart", amount: "$1,450", note: "As a Wattsmart Pro Network contractor, we qualify for Rocky Mountain Power’s higher rebate amount." },
+  { source: "Enbridge Gas ThermWise", href: "/rebates/enbridge-thermwise", amount: "$700 to $1,000", note: "$700 with an 80% furnace, $1,000 with a 96%+ furnace." },
   { source: "Equipment dealer rebates", amount: "Up to $2,000", note: "Depends on the equipment you choose." },
 ];
 
@@ -199,7 +199,7 @@ export default function HeatPumps() {
               {rebates.map((r) => (
                 <li key={r.source} className="flex flex-wrap items-start justify-between gap-x-6 gap-y-1 py-5">
                   <span className="max-w-md">
-                    <span className="block text-lg font-bold">{r.source}</span>
+                    {"href" in r && r.href ? <Link href={r.href} className="block text-lg font-bold text-teal underline underline-offset-4 hover:text-ink">{r.source}</Link> : <span className="block text-lg font-bold">{r.source}</span>}
                     <span className="block text-mist">{r.note}</span>
                   </span>
                   <span className="display text-2xl text-teal">{r.amount}</span>

@@ -63,7 +63,7 @@ export const counties = [
 export const allCities = counties.flatMap((c) => c.cities);
 
 export type NavLink = { label: string; href: string; built?: boolean };
-export type NavItem = NavLink & { children?: NavLink[] };
+export type NavItem = NavLink & { children?: NavLink[]; allLabel?: string };
 
 // Service pages are being built one at a time. Until a page exists
 // (built: true), its menu link points to the homepage services section.
@@ -74,6 +74,7 @@ export const nav: NavItem[] = [
   {
     label: "Heating",
     href: "/heating",
+    allLabel: "All heating services",
     children: [
       { label: "Furnace repair", href: "/services/furnace-repair" },
       { label: "Furnace replacement", href: "/services/furnace-replacement", built: true },
@@ -85,6 +86,7 @@ export const nav: NavItem[] = [
   {
     label: "Cooling",
     href: "/cooling",
+    allLabel: "All cooling services",
     children: [
       { label: "AC repair", href: "/services/ac-repair" },
       { label: "AC replacement", href: "/services/ac-replacement" },
@@ -94,6 +96,15 @@ export const nav: NavItem[] = [
     ],
   },
   { label: "Heat Pumps", href: "/heat-pumps", built: true },
+  {
+    label: "Rebates",
+    href: "/rebates/rocky-mountain-power-wattsmart",
+    built: true,
+    children: [
+      { label: "Rocky Mountain Power Wattsmart", href: "/rebates/rocky-mountain-power-wattsmart", built: true },
+      { label: "Enbridge Gas ThermWise", href: "/rebates/enbridge-thermwise", built: true },
+    ],
+  },
   { label: "Care Plan", href: "/#care-plan", built: true },
   { label: "Specials", href: "/#specials", built: true },
   { label: "About", href: "/#reviews", built: true },

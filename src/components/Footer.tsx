@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { site, nav, counties, hrefFor } from "@/lib/site";
@@ -34,7 +35,14 @@ export function Footer() {
           <h2 className="font-bold text-sky">Explore</h2>
           <ul className="mt-4 space-y-2 text-white/85">
             {nav.map((n) => (
-              <li key={n.label}><Link href={hrefFor(n)} className="hover:text-white hover:underline">{n.label}</Link></li>
+              n.label === "Rebates" ? (
+                <Fragment key={n.label}>
+                  <li><Link href="/rebates/rocky-mountain-power-wattsmart" className="hover:text-white hover:underline">Wattsmart rebates</Link></li>
+                  <li><Link href="/rebates/enbridge-thermwise" className="hover:text-white hover:underline">ThermWise rebates</Link></li>
+                </Fragment>
+              ) : (
+                <li key={n.label}><Link href={hrefFor(n)} className="hover:text-white hover:underline">{n.label}</Link></li>
+              )
             ))}
             <li><a href={site.bookingUrl} className="hover:text-white hover:underline">Book service</a></li>
             <li><a href={site.googleMapsUrl} className="hover:text-white hover:underline">Directions</a></li>

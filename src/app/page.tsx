@@ -26,7 +26,7 @@ const reviews = [
 
 const specials = [
   { price: "0%", title: "Interest for 12 months", body: "Get the system you need now and pay it off over 12 months with 0% interest.", fine: `Subject to credit approval. Financing provided by ${site.financingPartner}.`, cta: "Book a free estimate", href: site.bookingUrl },
-  { price: "$2,150", title: "Guaranteed heat pump rebates", body: "Get $2,150 in rebates guaranteed when you purchase a new heat pump from Eco Home. We file all the paperwork for you.", fine: "Applies to qualifying heat pump purchases.", cta: "Get instant pricing", href: site.instantPricingUrl },
+  { price: "$2,150", title: "Guaranteed heat pump rebates", body: "Get $2,150 in rebates guaranteed when you purchase a new heat pump from Eco Home. We file all the paperwork for you.", fine: "Applies to qualifying heat pump purchases.", cta: "Get instant pricing", href: site.instantPricingUrl, more: { label: "How the rebates work", href: "/rebates/rocky-mountain-power-wattsmart" } },
   { price: "$39", title: "Furnace tune-up", body: "Clean, inspect and tune your furnace before the cold sets in.", fine: "", cta: "Claim this offer", href: site.bookingUrl },
 ];
 
@@ -189,7 +189,10 @@ export default function Home() {
                 <h3 className="mt-2 text-xl font-extrabold">{s.title}</h3>
                 <p className="mt-2 text-mist">{s.body}</p>
                 {s.fine && <p className="mt-2 text-sm text-mist/90">{s.fine}</p>}
-                <a href={s.href} className="mt-5 inline-block font-bold text-teal underline underline-offset-4 hover:text-ink">{s.cta}</a>
+                <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+                  <a href={s.href} className="font-bold text-teal underline underline-offset-4 hover:text-ink">{s.cta}</a>
+                  {"more" in s && s.more && <Link href={s.more.href} className="font-bold text-teal underline underline-offset-4 hover:text-ink">{s.more.label}</Link>}
+                </div>
               </div>
             ))}
           </div>

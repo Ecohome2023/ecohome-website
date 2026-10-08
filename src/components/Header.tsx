@@ -7,7 +7,7 @@ import { site, nav, hrefFor, type NavItem } from "@/lib/site";
 import { PhoneIcon, StarIcon } from "./icons";
 
 // Heating menus get the brand red accent, cooling menus the brand blue.
-const accent: Record<string, string> = { Heating: "bg-heat", Cooling: "bg-cool" };
+const accent: Record<string, string> = { Heating: "bg-heat", Cooling: "bg-cool", Rebates: "bg-alarm" };
 
 function Chevron({ open }: { open: boolean }) {
   return (
@@ -43,13 +43,15 @@ function DesktopMenu({ item, open, setOpen }: { item: NavItem; open: boolean; se
                 </li>
               ))}
             </ul>
-            <Link
-              href={hrefFor(item)}
-              onClick={() => setOpen(false)}
-              className="block border-t border-line px-5 py-3 text-sm font-bold text-teal hover:bg-sky-soft"
-            >
-              All {item.label.toLowerCase()} services
-            </Link>
+            {item.allLabel && (
+              <Link
+                href={hrefFor(item)}
+                onClick={() => setOpen(false)}
+                className="block border-t border-line px-5 py-3 text-sm font-bold text-teal hover:bg-sky-soft"
+              >
+                {item.allLabel}
+              </Link>
+            )}
           </div>
         </div>
       )}
@@ -112,8 +114,8 @@ export function Header() {
           />
         </Link>
 
-        <nav ref={navRef} aria-label="Main" className="ml-6 hidden flex-1 lg:block">
-          <ul className="flex items-center gap-6 text-[15px] font-semibold">
+        <nav ref={navRef} aria-label="Main" className="ml-2 hidden flex-1 lg:block xl:ml-6">
+          <ul className="flex items-center gap-4 whitespace-nowrap text-[15px] font-semibold xl:gap-6">
             {nav.map((item) =>
               item.children ? (
                 <DesktopMenu
@@ -139,12 +141,12 @@ export function Header() {
             className="flex items-center gap-2 rounded-full px-3 py-2 font-bold hover:bg-sky-soft"
           >
             <PhoneIcon className="h-5 w-5 text-alarm" />
-            <span className="hidden sm:inline">{site.phone}</span>
-            <span className="sr-only sm:hidden">Call {site.phone}</span>
+            <span className="hidden whitespace-nowrap sm:inline lg:hidden xl:inline">{site.phone}</span>
+            <span className="sr-only sm:hidden lg:inline xl:hidden">Call {site.phone}</span>
           </a>
           <a
             href={site.bookingUrl}
-            className="rounded-full bg-alarm-strong px-4 py-2.5 text-sm font-bold text-white shadow-[0_3px_0_#b80028] hover:brightness-110 sm:px-5 sm:text-base"
+            className="whitespace-nowrap rounded-full bg-alarm-strong px-4 py-2.5 text-sm font-bold text-white shadow-[0_3px_0_#b80028] hover:brightness-110 sm:px-5 sm:text-base"
           >
             Book service
           </a>
