@@ -76,7 +76,7 @@ export const nav: NavItem[] = [
     href: "/heating",
     children: [
       { label: "Furnace repair", href: "/services/furnace-repair" },
-      { label: "Furnace replacement", href: "/services/furnace-replacement" },
+      { label: "Furnace replacement", href: "/services/furnace-replacement", built: true },
       heatPumpRepair,
       miniSplits,
       { label: "Heating tune-ups", href: "/services/heating-tune-up" },
