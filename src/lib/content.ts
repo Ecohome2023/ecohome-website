@@ -13,6 +13,7 @@ export const tiers = [
   {
     tier: "Great value",
     brand: "ACiQ",
+    logo: { src: "/images/aciq-logo.png", w: 739, h: 281 },
     img: "/images/aciq-system-eco-home-van.jpg",
     alt: "ACiQ heat pump and gas furnace ready for installation, with the Eco Home van behind them",
     line: "The same comfort and rebates at a lower upfront cost.",
@@ -25,6 +26,7 @@ export const tiers = [
   {
     tier: "Premium",
     brand: "Amana",
+    logo: { src: "/images/amana-logo.png", w: 900, h: 190 },
     img: "/images/amana-system-side-eco-home-van.jpg",
     alt: "Side view of an Amana heat pump and gas furnace ready for installation, with the Eco Home van behind them",
     line: "The best warranty in its class, and our quietest system.",

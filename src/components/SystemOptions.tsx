@@ -26,7 +26,15 @@ export function SystemOptions({ reveal = false }: { reveal?: boolean }) {
               <Image src={t.img} alt={t.alt} fill sizes="(min-width: 768px) 430px, 100vw" className="object-cover" />
             </div>
             <p className={`wrap-type text-2xl ${t.featured ? "text-white" : "text-sky"}`} style={t.featured ? undefined : { textShadow: "none" }}>{t.tier}</p>
-            <h3 className="display mt-2 text-3xl">{t.brand}</h3>
+            <h3 className="mt-4">
+              {t.featured ? (
+                <span className="inline-block rounded-xl bg-white px-4 py-3">
+                  <Image src={t.logo.src} alt={t.brand} width={t.logo.w} height={t.logo.h} sizes="200px" className="h-9 w-auto" />
+                </span>
+              ) : (
+                <Image src={t.logo.src} alt={t.brand} width={t.logo.w} height={t.logo.h} sizes="160px" className="h-14 w-auto" />
+              )}
+            </h3>
             <p className={`mt-3 ${t.featured ? "text-ink/80" : "text-white/75"}`}>{t.line}</p>
             <ul className="mt-6 space-y-2.5">
               {t.points.map((p) => (
