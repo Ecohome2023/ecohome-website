@@ -41,6 +41,7 @@ export const isLive = process.env.SITE_LIVE === "true";
 export const counties = [
   {
     name: "Utah County",
+    primary: true,
     cities: [
       "American Fork", "Alpine", "Cedar Hills", "Eagle Mountain", "Elk Ridge",
       "Highland", "Lehi", "Lindon", "Mapleton", "Orem", "Payson",
@@ -50,12 +51,32 @@ export const counties = [
   },
   {
     name: "Salt Lake County",
+    primary: true,
     cities: [
       "Bluffdale", "Cottonwood Heights", "Draper", "Herriman", "Holladay",
       "Kearns", "Magna", "Midvale", "Millcreek", "Murray", "Riverton",
       "Salt Lake City", "Sandy", "South Jordan", "South Salt Lake",
       "Taylorsville", "West Jordan", "West Valley City",
     ],
+  },
+  {
+    name: "Davis County",
+    cities: [
+      "Bountiful", "Centerville", "Clearfield", "Clinton", "Farmington",
+      "Fruit Heights", "Kaysville", "Layton", "North Salt Lake", "South Weber",
+      "Sunset", "Syracuse", "West Bountiful", "West Point", "Woods Cross",
+    ],
+  },
+  {
+    name: "Weber County",
+    cities: [
+      "Ogden", "North Ogden", "South Ogden", "Roy", "Riverdale",
+      "Pleasant View", "Plain City", "Marriott-Slaterville",
+    ],
+  },
+  {
+    name: "Tooele County",
+    cities: ["Tooele", "Stansbury Park", "Stockton"],
   },
 ];
 

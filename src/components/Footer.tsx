@@ -7,7 +7,7 @@ export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-ink text-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.3fr_1fr] lg:grid-cols-[1.3fr_1fr_2.2fr]">
         <div>
           <Image src="/images/logo-white.png" alt="Eco Home Heating & Cooling" width={152} height={60} sizes="152px" className="h-14 w-auto" />
           {/* NAP: must match Google Business Profile exactly */}
@@ -50,14 +50,17 @@ export function Footer() {
           </ul>
         </div>
 
-        {counties.map((c) => (
-          <div key={c.name}>
-            <h2 className="font-bold text-sky">{c.name}</h2>
-            <ul className="mt-4 columns-2 gap-4 text-sm leading-7 text-white/75">
-              {c.cities.map((city) => <li key={city}>{city}</li>)}
-            </ul>
+        <div className="md:col-span-2 lg:col-span-1">
+          <h2 className="font-bold text-sky">Service area</h2>
+          <div className="mt-4 grid gap-x-8 gap-y-5 sm:grid-cols-2">
+            {counties.map((c) => (
+              <div key={c.name}>
+                <h3 className="text-sm font-bold text-white">{c.name}</h3>
+                <p className="mt-1 text-sm leading-6 text-white/70">{c.cities.join(" · ")}</p>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
       <div className="border-t border-white/10">
         <p className="mx-auto max-w-7xl px-4 py-5 text-sm text-white/55 sm:px-6">

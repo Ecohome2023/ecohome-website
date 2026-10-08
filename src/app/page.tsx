@@ -258,12 +258,12 @@ export default function Home() {
       <section id="service-area" className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-[1fr_1fr]">
           <div>
-            <h2 data-reveal className="display text-4xl sm:text-5xl">Serving Utah County & Salt Lake County</h2>
+            <h2 data-reveal className="display text-4xl sm:text-5xl">Serving Utah County, Salt Lake County and beyond</h2>
             <p className="mt-4 text-lg text-mist">
-              Based in American Fork, with technicians on the road across both valleys. Look for the bright blue vans.
+              Based in American Fork, with technicians on the road from Ogden and Davis County to Tooele and Payson. Look for the bright blue vans.
             </p>
             <div className="mt-8 grid gap-8 sm:grid-cols-2">
-              {counties.map((c) => (
+              {counties.filter((c) => c.primary).map((c) => (
                 <div key={c.name}>
                   <h3 className="text-lg font-extrabold">{c.name}</h3>
                   <ul className="mt-3 columns-2 gap-4 leading-8 text-ink/85">
@@ -272,6 +272,15 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            <h3 className="mt-10 text-lg font-extrabold">Also serving</h3>
+            <dl className="mt-3 space-y-3">
+              {counties.filter((c) => !c.primary).map((c) => (
+                <div key={c.name}>
+                  <dt className="font-bold">{c.name}</dt>
+                  <dd className="text-ink/85">{c.cities.join(", ")}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
           <div>
             <div data-reveal className="overflow-hidden rounded-2xl ring-1 ring-line">
