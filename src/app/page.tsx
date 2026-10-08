@@ -5,7 +5,8 @@ import { LoopVideo } from "@/components/LoopVideo";
 import { VideoTestimonial } from "@/components/VideoTestimonial";
 import { CheckIcon, MailIcon, PhoneIcon, Stars } from "@/components/icons";
 import { Hero, SmileBand } from "@/components/Hero";
-import { steps, tiers } from "@/lib/content";
+import { steps } from "@/lib/content";
+import { SystemOptions } from "@/components/SystemOptions";
 
 const services = [
   { title: "Heat pumps", body: "Heating and cooling from one efficient outdoor unit, built for Utah winters.", img: "/images/heat-pumps-pair.jpg", alt: "Two new heat pumps installed beside a Utah home", href: "/heat-pumps" },
@@ -142,23 +143,7 @@ export default function Home() {
               </li>
             ))}
           </ol>
-          <div className="mt-12 grid max-w-4xl gap-5 md:grid-cols-2">
-            {tiers.map((t, i) => (
-              <div key={t.tier} data-reveal style={{ "--d": `${i * 140}ms` } as React.CSSProperties} className={`rounded-2xl p-7 ${t.featured ? "bg-sky text-ink" : "bg-white/[0.06] ring-1 ring-white/15"}`}>
-                <div className="relative -mx-2 -mt-2 mb-6 aspect-[16/10] overflow-hidden rounded-xl">
-                  <Image src={t.img} alt={t.alt} fill sizes="(min-width: 768px) 430px, 100vw" className="object-cover" />
-                </div>
-                <p className={`wrap-type text-2xl ${t.featured ? "text-white" : "text-sky"}`} style={t.featured ? undefined : { textShadow: "none" }}>{t.tier}</p>
-                <h3 className="display mt-2 text-3xl">{t.brand}</h3>
-                <p className={`mt-3 ${t.featured ? "text-ink/80" : "text-white/75"}`}>{t.line}</p>
-                <ul className="mt-6 space-y-2.5">
-                  {t.points.map((p) => (
-                    <li key={p} className="flex gap-2.5"><CheckIcon className={`mt-1 h-4 w-4 shrink-0 ${t.featured ? "text-ink" : "text-sky"}`} />{p}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <SystemOptions reveal />
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
             <a href={site.instantPricingUrl} className="flex items-center gap-2.5 rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#7a0018] hover:brightness-110">
               <MailIcon className="h-5 w-5" /> Get my instant estimate
