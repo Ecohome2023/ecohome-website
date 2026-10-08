@@ -324,15 +324,7 @@ export default function Home() {
             <h2 data-reveal className="display text-4xl text-ink sm:text-5xl">Get a system that fits your home</h2>
             <p className="mt-4 max-w-lg text-lg text-ink/85">
               Get an instant estimate by email, book a visit online, or call and talk to a real person. We’re open 24/7.
-            </p>
-            <div data-reveal className="mt-8 flex items-end gap-4">
-              <Image src="/images/dan-eco-home-man.png" alt="Dan, the Eco Home Man, the Eco Home Heating & Cooling mascot" width={600} height={795} sizes="200px" className="h-56 w-auto shrink-0 sm:h-64" />
-              <p className="relative mb-24 max-w-xs rounded-2xl bg-white px-5 py-4 font-semibold text-ink shadow-[0_4px_0_var(--color-ink)]">
-                <span aria-hidden className="absolute -left-2 bottom-5 h-4 w-4 rotate-45 bg-white" />
-                Hi, I’m Dan, the Eco Home Man. Whatever your home needs, we’re here day or night.
-              </p>
-            </div>
-          </div>
+            </p>          </div>
           <div data-reveal className="grid gap-4">
             <a href={site.instantPricingUrl} className="rounded-2xl bg-ink p-6 text-white shadow-[0_5px_0_#0a1622] hover:bg-teal">
               <span className="flex items-center gap-2 text-sm font-bold text-sky"><MailIcon className="h-4 w-4" /> Estimate emailed to you instantly</span>
