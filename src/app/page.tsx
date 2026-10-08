@@ -25,7 +25,7 @@ const reviews = [
 ];
 
 const specials = [
-  { price: "0%", title: "Interest for 12 months", body: "Get the system you need now and pay it off over 12 months with 0% interest.", fine: `Subject to credit approval. Financing provided by ${site.financingPartner}.`, cta: "Book a free estimate", href: site.bookingUrl },
+  { price: "0%", title: "Interest for 12 months", body: "Get the system you need now with $0 down and 0% interest for 12 months.", fine: `Subject to credit approval. Financing provided by ${site.financingPartner}.`, cta: "Book a free estimate", href: site.bookingUrl },
   { price: "$2,150", title: "Guaranteed heat pump rebates", body: "Get $2,150 in rebates guaranteed when you purchase a new heat pump from Eco Home. We file all the paperwork for you.", fine: "Applies to qualifying heat pump purchases.", cta: "Get instant pricing", href: site.instantPricingUrl, more: { label: "How the rebates work", href: "/rebates/rocky-mountain-power-wattsmart" } },
   { price: "$39", title: "Furnace tune-up", body: "Clean, inspect and tune your furnace before the cold sets in.", fine: "", cta: "Claim this offer", href: site.bookingUrl },
 ];
@@ -150,7 +150,7 @@ export default function Home() {
             <a href={site.instantPricingUrl} className="flex items-center gap-2.5 rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#7a0018] hover:brightness-110">
               <MailIcon className="h-5 w-5" /> Get my instant estimate
             </a>
-            <p className="text-white/75">Financing through {site.financingPartner}, with $0-down options for qualified buyers.</p>
+            <p className="text-white/75">$0 down and 0% interest for 12 months through {site.financingPartner}, subject to credit approval.</p>
           </div>
         </div>
       </section>

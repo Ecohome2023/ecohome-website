@@ -116,7 +116,7 @@ export default function HeatPumps() {
                 Book a free estimate
               </a>
             </div>
-            <p className="mt-4 text-sm font-medium text-white/75">0% interest for 12 months available. Subject to credit approval.</p>
+            <p className="mt-4 text-sm font-medium text-white/75">$0 down and 0% interest for 12 months available. Subject to credit approval.</p>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10">
             <Image src="/images/heat-pumps-pair.jpg" alt="Two new dual-fuel heat pumps installed by Eco Home beside a Utah home" fill preload sizes="(min-width: 1024px) 560px, 100vw" className="object-cover" />
@@ -266,7 +266,7 @@ export default function HeatPumps() {
             <a href={site.instantPricingUrl} className="flex items-center gap-2.5 rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#7a0018] hover:brightness-110">
               <MailIcon className="h-5 w-5" /> Get my instant estimate
             </a>
-            <p className="text-white/75">0% interest for 12 months through {site.financingPartner}, subject to credit approval.</p>
+            <p className="text-white/75">$0 down and 0% interest for 12 months through {site.financingPartner}, subject to credit approval.</p>
           </div>
         </div>
       </section>
@@ -336,7 +336,7 @@ export default function HeatPumps() {
           <div>
             <h2 className="display text-4xl sm:text-5xl">See your heat pump price today</h2>
             <p className="mt-4 max-w-lg text-lg text-white/85">
-              Systems from {startingPrice} after incentives, $2,150 in rebates guaranteed, and 0% interest for 12 months.
+              Systems from {startingPrice} after incentives, $2,150 in rebates guaranteed, and $0 down with 0% interest for 12 months.
             </p>
           </div>
           <div className="grid gap-3">

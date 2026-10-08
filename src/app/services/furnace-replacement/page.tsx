@@ -82,7 +82,7 @@ const faqs = [
   },
   {
     q: "Do you offer financing?",
-    a: `Yes. We offer 0% interest for 12 months through ${site.financingPartner}, subject to credit approval.`,
+    a: `Yes. We offer $0 down and 0% interest for 12 months through ${site.financingPartner}, subject to credit approval.`,
   },
 ];
 
@@ -142,7 +142,7 @@ export default function FurnaceReplacement() {
             </div>
             <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-semibold">
               <li className="flex items-center gap-2"><Stars /> {site.rating.value} from {site.rating.count} Google reviews</li>
-              <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4 text-sky" /> 0% interest for 12 months</li>
+              <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4 text-sky" /> $0 down, 0% for 12 months</li>
               <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4 text-sky" /> Permit pulled on every job</li>
             </ul>
           </div>
@@ -313,7 +313,7 @@ export default function FurnaceReplacement() {
           <div>
             <h2 className="display text-4xl sm:text-5xl">Get your furnace price today</h2>
             <p className="mt-4 max-w-lg text-lg text-white/85">
-              Furnaces from {startingPrice}, installed in one day, with 0% interest for 12 months. Backed by our{" "}
+              Furnaces from {startingPrice}, installed in one day, with $0 down and 0% interest for 12 months. Backed by our{" "}
               <Link href="/smile-guarantee" className="font-bold text-white underline underline-offset-4">Smile Guarantee</Link>.
             </p>
           </div>

@@ -157,7 +157,7 @@ export const faqs = [
   },
   {
     q: "Do you offer financing?",
-    a: "Yes. We offer financing through Slice by FNBO Bank, including $0-down options for qualified buyers, so a new system doesn't have to wait.",
+    a: "Yes. We offer $0 down and 0% interest for 12 months through Slice by FNBO Bank, subject to credit approval, so a new system doesn't have to wait.",
   },
   {
     q: "What's included in the Essential Care Plan?",

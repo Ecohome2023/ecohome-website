@@ -63,7 +63,7 @@ const faqs = [
   },
   {
     q: "Do you offer financing?",
-    a: `Yes. We offer 0% interest for 12 months through ${site.financingPartner}, subject to credit approval.`,
+    a: `Yes. We offer $0 down and 0% interest for 12 months through ${site.financingPartner}, subject to credit approval.`,
   },
 ];
 
@@ -117,7 +117,7 @@ export default function AcReplacement() {
             </div>
             <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-semibold">
               <li className="flex items-center gap-2"><Stars /> {site.rating.value} from {site.rating.count} Google reviews</li>
-              <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4 text-sky" /> 0% interest for 12 months</li>
+              <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4 text-sky" /> $0 down, 0% for 12 months</li>
               <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4 text-sky" /> Permit pulled on every job</li>
             </ul>
           </div>
@@ -235,7 +235,7 @@ export default function AcReplacement() {
             <a href={site.instantPricingUrl} className="flex items-center gap-2.5 rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#7a0018] hover:brightness-110">
               <MailIcon className="h-5 w-5" /> Get my instant estimate
             </a>
-            <p className="text-white/75">0% interest for 12 months through {site.financingPartner}, subject to credit approval.</p>
+            <p className="text-white/75">$0 down and 0% interest for 12 months through {site.financingPartner}, subject to credit approval.</p>
           </div>
         </div>
       </section>
@@ -298,7 +298,7 @@ export default function AcReplacement() {
           <div>
             <h2 className="display text-4xl sm:text-5xl">See your heat pump price today</h2>
             <p className="mt-4 max-w-lg text-lg text-white/85">
-              $2,150 in rebates guaranteed, 0% interest for 12 months, and every install backed by our{" "}
+              $2,150 in rebates guaranteed, $0 down and 0% interest for 12 months, and every install backed by our{" "}
               <Link href="/smile-guarantee" className="font-bold text-white underline underline-offset-4">Smile Guarantee</Link>.
             </p>
           </div>
