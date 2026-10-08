@@ -8,6 +8,7 @@ export const site = {
   url: "https://ecohometoday.com",
   phone: "801-396-0019",
   phoneHref: "tel:+18013960019",
+  email: "support@ecohometoday.com",
   address: {
     street: "758 Automall Dr #9",
     city: "American Fork",

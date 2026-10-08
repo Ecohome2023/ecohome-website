@@ -63,7 +63,8 @@ export default function TermsOfService() {
       <p>
         {site.name}<br />
         {addr}<br />
-        <a href={site.phoneHref}>{site.phone}</a>
+        <a href={site.phoneHref}>{site.phone}</a><br />
+        <a href={`mailto:${site.email}`}>{site.email}</a>
       </p>
       <p>See also our <Link href="/privacy-policy">Privacy Policy</Link>.</p>
     </LegalPage>

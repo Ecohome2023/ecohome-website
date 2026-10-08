@@ -61,6 +61,7 @@ const businessSchema = {
   logo: `${site.url}/images/logo.png`,
   image: `${site.url}/images/furnace-tech-uniform.jpg`,
   telephone: "+1-801-396-0019",
+  email: site.email,
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",

@@ -19,6 +19,8 @@ export function Footer() {
             {site.address.city}, {site.address.region} {site.address.zip}
             <br />
             <a href={site.phoneHref} className="font-bold text-sky hover:underline">{site.phone}</a>
+            <br />
+            <a href={`mailto:${site.email}`} className="hover:text-white hover:underline">{site.email}</a>
           </address>
           <p className="mt-3 text-white/85">{site.hoursLabel}</p>
           <p className="mt-1 text-sm text-white/60">Utah contractor license #{site.license}</p>
