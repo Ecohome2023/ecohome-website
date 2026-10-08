@@ -145,6 +145,9 @@ export default function Home() {
           <div className="mt-12 grid max-w-4xl gap-5 md:grid-cols-2">
             {tiers.map((t, i) => (
               <div key={t.tier} data-reveal style={{ "--d": `${i * 140}ms` } as React.CSSProperties} className={`rounded-2xl p-7 ${t.featured ? "bg-sky text-ink" : "bg-white/[0.06] ring-1 ring-white/15"}`}>
+                <div className="relative -mx-2 -mt-2 mb-6 aspect-[16/10] overflow-hidden rounded-xl">
+                  <Image src={t.img} alt={t.alt} fill sizes="(min-width: 768px) 430px, 100vw" className="object-cover" />
+                </div>
                 <p className={`wrap-type text-2xl ${t.featured ? "text-white" : "text-sky"}`} style={t.featured ? undefined : { textShadow: "none" }}>{t.tier}</p>
                 <h3 className="display mt-2 text-3xl">{t.brand}</h3>
                 <p className={`mt-3 ${t.featured ? "text-ink/80" : "text-white/75"}`}>{t.line}</p>

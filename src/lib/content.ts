@@ -8,6 +8,6 @@ export const steps = [
 ];
 
 export const tiers = [
-  { tier: "Great value", brand: "ACiQ", line: "Dependable heating and cooling at a lower upfront cost.", points: ["Solid efficiency for the price", "A great fit for most homes and budgets", "Factory warranty included"] },
-  { tier: "Premium", brand: "Amana", line: "Top-tier performance and our longest coverage.", points: ["Highest efficiency and best cold-weather heating", "Quietest, steadiest comfort", "The strongest warranty we offer"], featured: true },
+  { tier: "Great value", brand: "ACiQ", img: "/images/aciq-system-eco-home-van.jpg", alt: "ACiQ heat pump and furnace ready for installation, with the Eco Home van behind them", line: "Dependable heating and cooling at a lower upfront cost.", points: ["Solid efficiency for the price", "A great fit for most homes and budgets", "Factory warranty included"] },
+  { tier: "Premium", brand: "Amana", img: "/images/amana-system-eco-home-van.jpg", alt: "Amana heat pump and furnace ready for installation, with the Eco Home van behind them", line: "Top-tier performance and our longest coverage.", points: ["Highest efficiency and best cold-weather heating", "Quietest, steadiest comfort", "The strongest warranty we offer"], featured: true },
 ];
