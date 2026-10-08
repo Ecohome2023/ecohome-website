@@ -4,6 +4,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import { steps, brandFaqs } from "@/lib/content";
 import { SystemOptions } from "@/components/SystemOptions";
+import { JobPromises } from "@/components/JobPromises";
 import { CheckIcon, MailIcon, PhoneIcon } from "@/components/icons";
 import { LoopVideo } from "@/components/LoopVideo";
 import { VideoTestimonial } from "@/components/VideoTestimonial";
@@ -297,6 +298,7 @@ export default function HeatPumps() {
             <p className="px-5 py-4 text-sm text-white/80">New trunk line going in on a basement finish in Utah County.</p>
           </div>
         </div>
+        <JobPromises />
       </section>
 
       {/* TESTIMONIAL */}

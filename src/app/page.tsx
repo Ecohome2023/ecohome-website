@@ -7,6 +7,7 @@ import { CheckIcon, MailIcon, PhoneIcon, Stars } from "@/components/icons";
 import { Hero, SmileBand } from "@/components/Hero";
 import { steps } from "@/lib/content";
 import { SystemOptions } from "@/components/SystemOptions";
+import { JobPromises } from "@/components/JobPromises";
 
 const services = [
   { title: "Heat pumps", body: "Heating and cooling from one efficient outdoor unit, built for Utah winters.", img: "/images/heat-pumps-pair.jpg", alt: "Two new heat pumps installed beside a Utah home", href: "/heat-pumps" },
@@ -126,6 +127,7 @@ export default function Home() {
             <p className="px-5 py-4 text-sm text-white/80">New trunk line going in on a basement finish in Utah County.</p>
           </div>
         </div>
+        <JobPromises reveal />
       </section>
 
       {/* OPTIONS */}

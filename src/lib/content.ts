@@ -61,3 +61,19 @@ export const brandFaqs = [
     a: "Amana is made by Daikin, and the two brands share the same parts. The difference is the warranty. Amana covers the compressor and the heat exchanger for life, which makes it the clear choice when you’re comparing the two.",
   },
 ];
+
+// Promises on every install. Pulling permits is a key difference from competitors.
+export const jobPromises = [
+  {
+    title: "We pull the permit",
+    body: "A permit means a city or county inspector checks the work for safety and code. It also protects you when you sell your home. Not every HVAC company pulls permits. We do on every job.",
+  },
+  {
+    title: "We haul away the old equipment",
+    body: "Your old furnace, AC or heat pump leaves with us. Nothing is left in your yard or garage for you to deal with.",
+  },
+  {
+    title: "We leave it cleaner than we found it",
+    body: "We clean up before we go and leave your home cleaner than we found it, so the only thing you notice is the new system.",
+  },
+];

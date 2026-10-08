@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { CheckIcon, MailIcon, PhoneIcon, Stars } from "@/components/icons";
+import { JobPromises } from "@/components/JobPromises";
 
 export const metadata: Metadata = {
   title: "Furnace Replacement in Utah County & Salt Lake",
@@ -48,10 +49,10 @@ const efficiency = [
 ];
 
 const installDay = [
-  { title: "Free in-home estimate", body: "We check your venting, gas line, ductwork and the size of your home, then recommend the furnace that fits. You get a clear price before any work is scheduled." },
-  { title: "Out with the old", body: "On install day, we safely disconnect and remove your old furnace and prepare the space for the new one." },
+  { title: "Free in-home estimate", body: "We check your venting, gas line, ductwork and the size of your home, then recommend the furnace that fits. You get a clear price before any work is scheduled, and we pull the permit for your job." },
+  { title: "Out with the old", body: "On install day, we safely disconnect your old furnace and haul it away." },
   { title: "Install the new furnace", body: "We set the new furnace and connect the gas, venting, electrical and thermostat, all to the manufacturer’s specifications." },
-  { title: "Test before we leave", body: "We check gas pressure, combustion and temperature rise, and test for carbon monoxide. Then we walk you through your new system." },
+  { title: "Test before we leave", body: "We check gas pressure, combustion and temperature rise, and test for carbon monoxide. Then we clean up, leave the space cleaner than we found it, and walk you through your new system." },
 ];
 
 const faqs = [
@@ -74,6 +75,10 @@ const faqs = [
   {
     q: "Should I replace my air conditioner at the same time?",
     a: `If your AC is getting older, it’s worth considering. Replacing your AC with a heat pump while you replace the furnace gives you a dual-fuel system, the most efficient way to heat and cool a Utah home for the cost. Every heat pump install comes with $2,150 in rebates guaranteed, and complete dual-fuel systems start at ${dualFuelPrice} after incentives.`,
+  },
+  {
+    q: "Do you pull a permit for furnace replacement?",
+    a: "Yes, on every job. A permit means a city or county inspector checks the work for safety and code, and it protects you when you sell your home. Not every HVAC company pulls permits, so it’s worth asking anyone you get a quote from.",
   },
   {
     q: "Which furnace brands do you install?",
@@ -142,7 +147,7 @@ export default function FurnaceReplacement() {
             <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-semibold">
               <li className="flex items-center gap-2"><Stars /> {site.rating.value} from {site.rating.count} Google reviews</li>
               <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4 text-sky" /> 0% interest for 12 months</li>
-              <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4 text-sky" /> Open 24/7</li>
+              <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4 text-sky" /> Permit pulled on every job</li>
             </ul>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10">
@@ -285,6 +290,7 @@ export default function FurnaceReplacement() {
             </div>
           </div>
         </div>
+        <JobPromises />
       </section>
 
       {/* FAQ */}
