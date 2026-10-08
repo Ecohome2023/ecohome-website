@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { RevealObserver } from "@/components/RevealObserver";
 import { site, allCities, isLive } from "@/lib/site";
+import { ogImage } from "@/lib/meta";
 
 const archivo = localFont({
   src: "../fonts/archivo.woff2",
@@ -27,20 +28,20 @@ const archivoItalic = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Eco Home Heating & Cooling | Heat Pumps & HVAC in American Fork, UT",
-    template: "%s | Eco Home Heating & Cooling",
+    default: "Eco Home Heating & Cooling | American Fork HVAC & Heat Pumps",
+    template: "%s | Eco Home",
   },
   description:
-    "Heat pump, furnace and AC installation and repair in Utah County and Salt Lake County. Systems sized to your home. Get instant pricing. Open 24/7. Call 801-396-0019.",
+    "Heat pump, furnace and AC installation and repair in Utah County and Salt Lake County. Instant pricing, permits pulled, open 24/7. Call 801-396-0019.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: site.name,
-    url: site.url,
-    title: "Eco Home Heating & Cooling | Heat Pump & HVAC Experts in Utah",
+    url: "/",
+    title: "Eco Home Heating & Cooling | American Fork HVAC & Heat Pumps",
     description:
-      "Heat pumps, furnaces and AC for Utah County and Salt Lake County. Open 24/7.",
-    images: [{ url: "/images/og-share.jpg", width: 1200, height: 630, alt: "Eco Home Heating & Cooling technician next to a heat pump" }],
+      "Heat pumps, furnaces and AC for Utah County and Salt Lake County. Instant pricing, permits pulled, open 24/7.",
+    images: [ogImage],
   },
   robots: isLive ? { index: true, follow: true } : { index: false, follow: false },
 };

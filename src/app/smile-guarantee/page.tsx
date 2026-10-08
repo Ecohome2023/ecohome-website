@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Image from "next/image";
 import { site } from "@/lib/site";
 import { CheckIcon, PhoneIcon } from "@/components/icons";
 
-export const metadata: Metadata = {
-  title: "Smile Guarantee: 1-Year Workmanship Guarantee",
-  description:
-    "Eco Home's Smile Guarantee: for one year, if anything goes wrong with the HVAC work we performed, we come back and fix it free, with no trip or diagnostic charge.",
-  alternates: { canonical: "/smile-guarantee" },
-};
+export const metadata: Metadata = pageMeta({ title: "Smile Guarantee: 1-Year Workmanship Guarantee", description: "Our Smile Guarantee: for one year, if anything goes wrong with HVAC work we did, we come back and fix it free, with no trip or diagnostic charge.", path: "/smile-guarantee" });
 
 // Terms drafted with John on 2026-10-06. Attorney review pending before launch.
 const promises = [
@@ -55,12 +51,12 @@ const terms = [
 export default function SmileGuarantee() {
   return (
     <>
-      <section className="relative overflow-hidden bg-alarm text-white">
+      <section className="relative overflow-hidden bg-alarm-strong text-white">
         <div className="mx-auto grid max-w-7xl items-end gap-8 px-4 pt-14 sm:px-6 md:grid-cols-[1.3fr_0.7fr]">
           <div className="pb-14">
             <p className="wrap-type text-2xl">Smile Guarantee</p>
             <h1 className="display mt-3 text-5xl sm:text-6xl">You smile, or we fix it free</h1>
-            <p className="mt-5 max-w-xl text-xl font-medium leading-relaxed text-white/95">
+            <p className="mt-5 max-w-xl text-xl font-medium leading-relaxed text-white">
               For one full year, if anything goes wrong with the work we did, we come back and make it right. No trip charge, no diagnostic fee, no surprise bill.
             </p>
           </div>

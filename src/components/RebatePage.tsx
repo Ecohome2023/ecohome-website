@@ -281,7 +281,7 @@ export function RebatePage({ program }: { program: RebateProgram }) {
           <p className="display text-6xl sm:text-7xl">100%</p>
           <div>
             <h2 className="display text-3xl sm:text-4xl">Every rebate on your estimate is guaranteed</h2>
-            <p className="mt-3 max-w-3xl text-lg text-white/90">
+            <p className="mt-3 max-w-3xl text-lg text-white">
               The rebates we show on your final estimate are 100% guaranteed. If we ever make a mistake and a rebate comes in short, we send you a refund for the missing amount.
             </p>
           </div>

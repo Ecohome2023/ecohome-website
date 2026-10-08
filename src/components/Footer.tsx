@@ -9,7 +9,7 @@ export function Footer() {
     <footer className="bg-ink text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
         <div>
-          <Image src="/images/logo-white.png" alt="Eco Home Heating & Cooling" width={1450} height={573} className="h-14 w-auto" />
+          <Image src="/images/logo-white.png" alt="Eco Home Heating & Cooling" width={152} height={60} sizes="152px" className="h-14 w-auto" />
           {/* NAP: must match Google Business Profile exactly */}
           <address className="mt-6 not-italic leading-relaxed text-white/85">
             <strong className="text-white">{site.name}</strong>

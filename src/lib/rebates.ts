@@ -47,7 +47,7 @@ export const programs: Record<"rmp" | "enbridge", RebateProgram> = {
     utility: "Rocky Mountain Power",
     metaTitle: "Rocky Mountain Power Wattsmart Heat Pump Rebates",
     metaDescription:
-      "Get $1,450 in Rocky Mountain Power Wattsmart rebates, guaranteed, on every heat pump we install. Eco Home is a Wattsmart Pro Network contractor and files the paperwork for you.",
+      "Get $1,450 in Rocky Mountain Power Wattsmart rebates, guaranteed, on every heat pump we install. We’re a Wattsmart Pro Network contractor and file for you.",
     h1: "Rocky Mountain Power Wattsmart rebates for Utah heat pumps",
     heroSub:
       "Get $1,450 in cash back, guaranteed, on every heat pump we install. As a Wattsmart Pro Network contractor, we handle the paperwork for you.",
@@ -102,9 +102,9 @@ export const programs: Record<"rmp" | "enbridge", RebateProgram> = {
     name: "Enbridge Gas ThermWise",
     short: "ThermWise",
     utility: "Enbridge Gas",
-    metaTitle: "Enbridge Gas ThermWise Rebates for Heat Pumps & Furnaces",
+    metaTitle: "Enbridge ThermWise Rebates: Heat Pumps & Furnaces",
     metaDescription:
-      "Get $700 to $1,000 in Enbridge Gas ThermWise rebates, guaranteed, on every dual-fuel heat pump we install. Eco Home files the paperwork and Enbridge mails you a check.",
+      "Get $700 to $1,000 in Enbridge Gas ThermWise rebates, guaranteed, on every dual-fuel heat pump we install. We file the paperwork for you.",
     h1: "Enbridge Gas ThermWise rebates for heat pumps and furnaces",
     heroSub:
       "Get $700 to $1,000 in cash back, guaranteed, on every heat pump and gas furnace system we install. We handle the paperwork, and Enbridge mails the check to you.",

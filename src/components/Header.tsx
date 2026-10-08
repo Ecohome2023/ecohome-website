@@ -107,8 +107,9 @@ export function Header() {
           <Image
             src="/images/logo.png"
             alt="Eco Home Heating & Cooling"
-            width={1450}
-            height={573}
+            width={152}
+            height={60}
+            sizes="152px"
             preload
             className="h-11 w-auto sm:h-12"
           />

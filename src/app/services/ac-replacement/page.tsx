@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
@@ -6,12 +7,7 @@ import { CheckIcon, MailIcon, PhoneIcon, Stars } from "@/components/icons";
 import { JobPromises } from "@/components/JobPromises";
 import { SystemOptions } from "@/components/SystemOptions";
 
-export const metadata: Metadata = {
-  title: "AC Replacement in Utah County & Salt Lake",
-  description:
-    "Replacing your air conditioner? Upgrade to an ACiQ or Amana heat pump that cools like an AC and adds efficient heat, with $2,150 in rebates guaranteed. Serving Utah County and Salt Lake County.",
-  alternates: { canonical: "/services/ac-replacement" },
-};
+export const metadata: Metadata = pageMeta({ title: "AC Replacement in Utah County & Salt Lake", description: "Replacing your AC? Upgrade to an ACiQ or Amana heat pump that cools like an AC and adds efficient heat, with $2,150 in rebates guaranteed.", path: "/services/ac-replacement" });
 
 const dualFuelPrice = "$9,990";
 

@@ -9,6 +9,7 @@
   --color-alarm-strong: #e6002f; /* button red: passes AA with white text */
   --color-heat: #ff4953;       /* "HEATING" text red */
   --color-cool: #3c99ff;       /* "COOLING" text blue */
+  --color-cool-strong: #1f6fe0; /* cooling blue for text on white: passes contrast */
   --color-teal: #0a617d;       /* deep teal */
   --color-ink: #14283a;        /* logo outline navy */
   --color-mist: #5b6b78;

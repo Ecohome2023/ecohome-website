@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
@@ -6,12 +7,7 @@ import { dealer, guaranteed } from "@/lib/rebates";
 import { RebateLinks } from "@/components/RebateLinks";
 import { CheckIcon, MailIcon, PhoneIcon } from "@/components/icons";
 
-export const metadata: Metadata = {
-  title: "Amana & ACiQ Dealer Rebates on Heat Pumps",
-  description:
-    "Manufacturer dealer rebates of $400 to $2,000 on select Amana and ACiQ heat pumps and dual-fuel systems, taken off your invoice instantly. Stack them with Wattsmart and ThermWise rebates.",
-  alternates: { canonical: dealer.href },
-};
+export const metadata: Metadata = pageMeta({ title: "Amana & ACiQ Dealer Rebates on Heat Pumps", description: "Amana and ACiQ dealer rebates of $400 to $2,000 on select heat pumps and dual-fuel systems, taken off your invoice instantly, on top of utility rebates.", path: "/rebates/dealer-rebates" });
 
 const howItWorks = [
   { title: "They come from the manufacturer", body: "Dealer rebates are offered directly by Amana and ACiQ on specific heat pumps and dual-fuel systems." },

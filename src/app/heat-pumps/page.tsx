@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
@@ -9,12 +10,7 @@ import { CheckIcon, MailIcon, PhoneIcon } from "@/components/icons";
 import { LoopVideo } from "@/components/LoopVideo";
 import { VideoTestimonial } from "@/components/VideoTestimonial";
 
-export const metadata: Metadata = {
-  title: "Dual-Fuel Heat Pumps in Utah County & Salt Lake",
-  description:
-    "Dual-fuel heat pump systems from $9,990 after incentives, with $2,150 in rebates guaranteed and up to $4,450 available. ACiQ and Amana. Serving Utah County and Salt Lake County.",
-  alternates: { canonical: "/heat-pumps" },
-};
+export const metadata: Metadata = pageMeta({ title: "Dual-Fuel Heat Pumps in Utah County & Salt Lake", description: "Dual-fuel heat pumps from $9,990 after incentives, with $2,150 in rebates guaranteed. ACiQ and Amana. Serving Utah County and Salt Lake County.", path: "/heat-pumps" });
 
 const startingPrice = "$9,990";
 
@@ -163,7 +159,7 @@ export default function HeatPumps() {
                 <p className="mt-2 text-ink/85">It pulls heat from the outdoor air and moves it inside. On the coldest days, your gas furnace takes over.</p>
               </div>
               <div className="rounded-2xl bg-white p-6">
-                <p className="wrap-type text-xl text-cool" style={{ textShadow: "none" }}>In summer</p>
+                <p className="wrap-type text-xl text-cool-strong" style={{ textShadow: "none" }}>In summer</p>
                 <p className="mt-2 text-ink/85">It runs in reverse, pulling heat out of your home and cooling it, just like an air conditioner.</p>
               </div>
             </div>
@@ -183,7 +179,7 @@ export default function HeatPumps() {
               We guarantee at least $2,150 in rebates on every heat pump we install, and many homeowners qualify for up to $4,450. We file all the rebate paperwork for you.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <div className="rounded-2xl bg-alarm px-6 py-5 text-white">
+              <div className="rounded-2xl bg-alarm-strong px-6 py-5 text-white">
                 <p className="display text-4xl">$2,150</p>
                 <p className="font-semibold">Guaranteed on every install</p>
               </div>

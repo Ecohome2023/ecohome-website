@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { CheckIcon, MailIcon, PhoneIcon, Stars } from "@/components/icons";
 import { JobPromises } from "@/components/JobPromises";
 
-export const metadata: Metadata = {
-  title: "Furnace Replacement in Utah County & Salt Lake",
-  description:
-    "New ACiQ and Amana gas furnaces from $3,990, installed in one day. 80% and 96%+ efficient options. Serving Utah County and Salt Lake County. Open 24/7.",
-  alternates: { canonical: "/services/furnace-replacement" },
-};
+export const metadata: Metadata = pageMeta({ title: "Furnace Replacement in Utah County & Salt Lake", description: "New ACiQ and Amana gas furnaces from $3,990, installed in one day. 80% and 96%+ efficient options. Serving Utah County and Salt Lake County. Open 24/7.", path: "/services/furnace-replacement" });
 
 const startingPrice = "$3,990";
 const dualFuelPrice = "$9,990";
