@@ -103,6 +103,7 @@ export const nav: NavItem[] = [
     children: [
       { label: "Rocky Mountain Power Wattsmart", href: "/rebates/rocky-mountain-power-wattsmart", built: true },
       { label: "Enbridge Gas ThermWise", href: "/rebates/enbridge-thermwise", built: true },
+      { label: "Dealer rebates", href: "/rebates/dealer-rebates", built: true },
     ],
   },
   { label: "Care Plan", href: "/#care-plan", built: true },

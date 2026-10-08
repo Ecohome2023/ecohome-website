@@ -29,7 +29,7 @@ const whyDualFuel = [
 const rebates = [
   { source: "Rocky Mountain Power Wattsmart", href: "/rebates/rocky-mountain-power-wattsmart", amount: "$1,450", note: "As a Wattsmart Pro Network contractor, we qualify for Rocky Mountain Power’s higher rebate amount." },
   { source: "Enbridge Gas ThermWise", href: "/rebates/enbridge-thermwise", amount: "$700 to $1,000", note: "$700 with an 80% furnace, $1,000 with a 96%+ furnace." },
-  { source: "Equipment dealer rebates", amount: "Up to $2,000", note: "Depends on the equipment you choose." },
+  { source: "Manufacturer dealer rebates", href: "/rebates/dealer-rebates", amount: "$400 to $2,000", note: "Offered by Amana and ACiQ on select systems, taken off your invoice instantly." },
 ];
 
 const faqs = [

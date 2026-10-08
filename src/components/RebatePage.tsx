@@ -3,6 +3,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import { programs, guaranteed, type RebateProgram } from "@/lib/rebates";
 import { CheckIcon, MailIcon, PhoneIcon } from "./icons";
+import { RebateLinks } from "./RebateLinks";
 
 const benefits = (p: RebateProgram) => [
   {
@@ -70,7 +71,6 @@ function FlagIcon({ className = "" }: { className?: string }) {
 }
 
 export function RebatePage({ program }: { program: RebateProgram }) {
-  const other = programs[program.key === "rmp" ? "enbridge" : "rmp"];
 
   const stack = [
     { key: "rmp", label: "Rocky Mountain Power Wattsmart", note: "Every heat pump install", amount: guaranteed.rmp, href: programs.rmp.href },
@@ -231,7 +231,7 @@ export function RebatePage({ program }: { program: RebateProgram }) {
               </li>
             </ul>
             <p className="mt-4 text-sm text-mist">
-              Equipment dealer rebates can add up to $2,000 more, for up to {guaranteed.max} in total. Total assumes you’re a customer of both Rocky Mountain Power and Enbridge Gas.
+              <Link href="/rebates/dealer-rebates" className="font-semibold text-teal underline underline-offset-4">Manufacturer dealer rebates</Link> can add $400 to $2,000 more when available, for up to {guaranteed.max} in total. Total assumes you’re a customer of both Rocky Mountain Power and Enbridge Gas.
             </p>
           </div>
         </div>
@@ -308,15 +308,7 @@ export function RebatePage({ program }: { program: RebateProgram }) {
 
       {/* OTHER PROGRAM */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-        <h2 className="display text-3xl sm:text-4xl">Learn about the other rebate</h2>
-        <Link href={other.href} className="group mt-8 grid items-center gap-6 rounded-2xl p-7 ring-1 ring-line hover:bg-sky-soft md:grid-cols-[auto_1fr_auto]">
-          <Image src={other.logos[0].src} alt={other.logos[0].alt} width={other.logos[0].w} height={other.logos[0].h} sizes="260px" className="h-14 w-auto" />
-          <span>
-            <span className="block text-2xl font-extrabold">{other.name} rebates</span>
-            <span className="mt-1 block text-lg text-ink/75">{other.crossBlurb}</span>
-          </span>
-          <span className="font-bold text-teal group-hover:underline">Read about {other.short} →</span>
-        </Link>
+        <RebateLinks current={program.key} />
         <p className="mt-8 max-w-4xl text-sm text-mist">
           Eco Home is an independent contractor. Wattsmart is a Rocky Mountain Power program and ThermWise is an Enbridge Gas program. Program rules and rebate amounts are set by the utilities and can change. Guaranteed amounts apply to qualifying installs by Eco Home.
         </p>

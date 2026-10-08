@@ -39,6 +39,7 @@ export function Footer() {
                 <Fragment key={n.label}>
                   <li><Link href="/rebates/rocky-mountain-power-wattsmart" className="hover:text-white hover:underline">Wattsmart rebates</Link></li>
                   <li><Link href="/rebates/enbridge-thermwise" className="hover:text-white hover:underline">ThermWise rebates</Link></li>
+                  <li><Link href="/rebates/dealer-rebates" className="hover:text-white hover:underline">Dealer rebates</Link></li>
                 </Fragment>
               ) : (
                 <li key={n.label}><Link href={hrefFor(n)} className="hover:text-white hover:underline">{n.label}</Link></li>

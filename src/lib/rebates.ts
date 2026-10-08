@@ -150,3 +150,25 @@ export const programs: Record<"rmp" | "enbridge", RebateProgram> = {
     crossBlurb: "Enbridge Gas customers get $700 to $1,000 back, guaranteed, on every heat pump and gas furnace system we install.",
   },
 };
+
+// Manufacturer dealer rebates (ACiQ and Amana). Offers change over time.
+export const dealer = {
+  href: "/rebates/dealer-rebates",
+  name: "Manufacturer dealer rebates",
+  short: "dealer rebates",
+  range: "$400 to $2,000",
+  crossBlurb: "ACiQ and Amana often offer $400 to $2,000 off select heat pumps and dual-fuel systems, taken right off your invoice.",
+  logos: [
+    { src: "/images/aciq-logo.png", w: 739, h: 281, alt: "ACiQ" },
+    { src: "/images/amana-logo.png", w: 900, h: 190, alt: "Amana" },
+  ] as Logo[],
+};
+
+export type RebateKey = "rmp" | "enbridge" | "dealer";
+
+// Cards used in "Learn about our other rebates" on every rebate page.
+export const rebateLinks: { key: RebateKey; href: string; title: string; blurb: string; logos: Logo[]; cta: string }[] = [
+  { key: "rmp", href: "/rebates/rocky-mountain-power-wattsmart", title: "Rocky Mountain Power Wattsmart rebates", blurb: "Rocky Mountain Power customers get $1,450 back, guaranteed, on every heat pump we install.", logos: [{ src: "/images/wattsmart-pro-network-logo.png", w: 849, h: 244, alt: "Wattsmart Pro Network contractor, Rocky Mountain Power" }], cta: "Read about Wattsmart" },
+  { key: "enbridge", href: "/rebates/enbridge-thermwise", title: "Enbridge Gas ThermWise rebates", blurb: "Enbridge Gas customers get $700 to $1,000 back, guaranteed, on every heat pump and gas furnace system we install.", logos: [{ src: "/images/enbridge-thermwise-logo.png", w: 586, h: 77, alt: "Enbridge Gas ThermWise" }], cta: "Read about ThermWise" },
+  { key: "dealer", href: "/rebates/dealer-rebates", title: "Manufacturer dealer rebates", blurb: "ACiQ and Amana often offer $400 to $2,000 off select heat pumps and dual-fuel systems, taken right off your invoice.", logos: [{ src: "/images/aciq-logo.png", w: 739, h: 281, alt: "ACiQ" }, { src: "/images/amana-logo.png", w: 900, h: 190, alt: "Amana" }], cta: "Read about dealer rebates" },
+];
