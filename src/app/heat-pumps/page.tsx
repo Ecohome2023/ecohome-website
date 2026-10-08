@@ -119,7 +119,7 @@ export default function HeatPumps() {
             </div>
             <p className="mt-4 text-sm font-medium text-white/75">0% interest for 12 months available. Subject to credit approval.</p>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10 hero-photo">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10">
             <Image src="/images/heat-pumps-pair.jpg" alt="Two new dual-fuel heat pumps installed by Eco Home beside a Utah home" fill preload sizes="(min-width: 1024px) 560px, 100vw" className="object-cover" />
           </div>
         </div>
