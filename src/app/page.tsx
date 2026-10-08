@@ -4,7 +4,7 @@ import { site, counties, faqs } from "@/lib/site";
 import { LoopVideo } from "@/components/LoopVideo";
 import { VideoTestimonial } from "@/components/VideoTestimonial";
 import { CheckIcon, MailIcon, PhoneIcon, Stars } from "@/components/icons";
-import { Mountains } from "@/components/Mountains";
+import { Hero, SmileBand } from "@/components/Hero";
 import { steps, tiers } from "@/lib/content";
 
 const services = [
@@ -48,75 +48,19 @@ const faqSchema = {
 export default function Home() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-sky">
-        <Mountains className="absolute inset-x-0 bottom-0 h-40 w-full sm:h-56" />
-        <div className="relative mx-auto grid max-w-7xl items-end gap-6 px-4 pt-10 sm:px-6 md:grid-cols-[1.15fr_0.85fr] md:pt-16">
-          <div className="pb-6 md:pb-20">
-            <h1 className="display text-[2.5rem] text-ink sm:text-6xl lg:text-[4.25rem]">
-              Heat pump & HVAC experts for Utah County and Salt Lake County
-            </h1>
-            <p className="mt-5 max-w-xl text-lg font-medium leading-relaxed text-ink/85 sm:text-xl">
-              Sized to your home and tested before we leave. Get instant pricing, and reach us day or night.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href={site.bookingUrl} className="rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#b80028] hover:brightness-110">
-                Book service
-              </a>
-              <a href={site.instantPricingUrl} className="rounded-full bg-white px-7 py-4 text-lg font-bold text-ink shadow-[0_4px_0_var(--color-ink)] hover:bg-sky-soft">
-                Get instant pricing
-              </a>
-            </div>
-            <p className="mt-3 flex items-center gap-2 text-sm font-semibold text-ink/80">
-              <MailIcon className="h-4 w-4" /> Answer a few quick questions and get your estimate emailed to you instantly.
-            </p>
-            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-semibold text-ink">
-              <li className="flex items-center gap-2"><Stars /> {site.rating.value} from {site.rating.count} Google reviews</li>
-              <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4" /> Licensed & insured</li>
-              <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4" /> Local to American Fork</li>
-            </ul>
-          </div>
-          <div className="relative mx-auto -mt-6 w-52 sm:w-72 md:mt-0 md:w-full md:max-w-md">
-            <Image
-              src="/images/mascot.png"
-              alt="Eco Home technician mascot"
-              width={900}
-              height={1192}
-              preload
-              sizes="(min-width: 768px) 420px, 320px"
-              className="relative z-10 h-auto w-full"
-            />
-          </div>
-        </div>
-        {/* Red band, like the van wrap */}
-        <div className="relative z-20 bg-alarm text-white">
-          <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-4 py-5 sm:px-6 md:flex-row md:items-center">
-            <div>
-              <p className="text-xl font-bold">
-                <span className="wrap-type text-xl">Smile Guarantee:</span>{" "}
-                you smile, or we fix it free.
-              </p>
-              <Link href="/smile-guarantee" className="mt-1 inline-block text-sm font-semibold underline underline-offset-4 hover:no-underline">
-                Conditions apply. Click to learn more
-              </Link>
-            </div>
-            <a href={site.phoneHref} className="display flex items-center gap-3 text-3xl hover:underline sm:text-4xl">
-              <PhoneIcon className="h-7 w-7" /> {site.phone}
-            </a>
-          </div>
-        </div>
-      </section>
+      <Hero variant="navy" />
+      <SmileBand />
 
       {/* SERVICES */}
       <section id="services" className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
         <div className="max-w-2xl">
-          <h2 className="display text-4xl sm:text-5xl">Where should we start?</h2>
+          <h2 data-reveal className="display text-4xl sm:text-5xl">Where should we start?</h2>
           <p className="mt-4 text-lg text-mist">Repairs, replacements and maintenance for every kind of home comfort system.</p>
         </div>
         <ul className="mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <li key={s.title}>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-sky-soft">
+          {services.map((s, i) => (
+            <li key={s.title} data-reveal style={{ "--d": `${(i % 3) * 100}ms` } as React.CSSProperties}>
+              <div className="zoom relative aspect-[4/3] overflow-hidden rounded-2xl bg-sky-soft">
                 <Image src={s.img} alt={s.alt} fill sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw" className="object-cover" style={"pos" in s ? { objectPosition: s.pos } : undefined} />
               </div>
               <h3 className="mt-4 text-xl font-extrabold">
@@ -131,11 +75,11 @@ export default function Home() {
       {/* HEAT PUMPS */}
       <section id="heat-pumps" className="bg-sky-soft">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 md:grid-cols-2">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+          <div data-reveal className="relative aspect-[4/3] overflow-hidden rounded-2xl">
             <Image src="/images/tech-leveling-heat-pump.jpg" alt="Eco Home technician leveling a new heat pump at a Utah home" fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
           </div>
           <div>
-            <h2 className="display text-4xl sm:text-5xl">Why heat pumps work in Utah</h2>
+            <h2 data-reveal className="display text-4xl sm:text-5xl">Why heat pumps work in Utah</h2>
             <p className="mt-5 text-lg leading-relaxed text-ink/85">
               Modern cold-climate heat pumps keep heating efficiently well below freezing. Pair one with a gas furnace and you get dual fuel: the heat pump handles most of the year, and the furnace takes over on the coldest nights. Your thermostat picks whichever is cheaper to run.
             </p>
@@ -144,8 +88,8 @@ export default function Home() {
                 "One outdoor unit for heating and cooling",
                 "Dual-fuel backup for January cold snaps",
                 "More than 9 out of 10 systems we install are heat pumps",
-              ].map((t) => (
-                <li key={t} className="flex gap-3"><CheckIcon className="mt-1 h-5 w-5 shrink-0 text-teal" />{t}</li>
+              ].map((t, i) => (
+                <li key={t} data-reveal style={{ "--d": `${i * 100}ms` } as React.CSSProperties} className="flex gap-3"><CheckIcon className="mt-1 h-5 w-5 shrink-0 text-teal" />{t}</li>
               ))}
             </ul>
             <Link href="/heat-pumps" className="mt-8 inline-block rounded-full bg-ink px-6 py-3 font-bold text-white hover:bg-teal">Learn more about heat pumps</Link>
@@ -157,11 +101,11 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
           <div>
-            <h2 className="display text-4xl sm:text-5xl">Our sized-right process</h2>
+            <h2 data-reveal className="display text-4xl sm:text-5xl">Our sized-right process</h2>
             <p className="mt-4 text-lg text-mist">Most comfort problems come from the wrong size system or tired ducts. Here’s how we get it right the first time.</p>
             <ol className="mt-10 space-y-8">
               {steps.map((s, i) => (
-                <li key={s.title} className="grid grid-cols-[3rem_1fr] gap-4">
+                <li key={s.title} data-reveal style={{ "--d": `${i * 120}ms` } as React.CSSProperties} className="grid grid-cols-[3rem_1fr] gap-4">
                   <span className="display grid h-12 w-12 place-items-center rounded-full bg-ink text-xl text-sky">{i + 1}</span>
                   <div>
                     <h3 className="text-xl font-extrabold">{s.title}</h3>
@@ -171,7 +115,7 @@ export default function Home() {
               ))}
             </ol>
           </div>
-          <div className="overflow-hidden rounded-2xl bg-ink lg:sticky lg:top-32">
+          <div data-reveal className="overflow-hidden rounded-2xl bg-ink lg:sticky lg:top-32">
             <LoopVideo
               src="/video/ductwork-loop.mp4"
               poster="/video/ductwork-poster.jpg"
@@ -186,21 +130,21 @@ export default function Home() {
       {/* OPTIONS */}
       <section id="options" className="bg-ink text-white">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-          <h2 className="display max-w-3xl text-4xl sm:text-5xl">Get instant pricing on every new system</h2>
+          <h2 data-reveal className="display max-w-3xl text-4xl sm:text-5xl">Get instant pricing on every new system</h2>
           <p className="mt-4 max-w-2xl text-lg text-white/75">
             Answer a few quick questions about your home and get an estimate with both options emailed to you instantly. No sales visit needed to see a price.
           </p>
           <ol className="mt-8 grid max-w-4xl gap-4 sm:grid-cols-3">
             {["Answer a few questions about your home", "Compare ACiQ and Amana side by side", "Get your estimate by email, instantly"].map((step, i) => (
-              <li key={step} className="flex items-center gap-3">
+              <li key={step} data-reveal style={{ "--d": `${i * 120}ms` } as React.CSSProperties} className="flex items-center gap-3">
                 <span className="display grid h-9 w-9 shrink-0 place-items-center rounded-full bg-sky text-lg text-ink">{i + 1}</span>
                 <span className="font-semibold">{step}</span>
               </li>
             ))}
           </ol>
           <div className="mt-12 grid max-w-4xl gap-5 md:grid-cols-2">
-            {tiers.map((t) => (
-              <div key={t.tier} className={`rounded-2xl p-7 ${t.featured ? "bg-sky text-ink" : "bg-white/[0.06] ring-1 ring-white/15"}`}>
+            {tiers.map((t, i) => (
+              <div key={t.tier} data-reveal style={{ "--d": `${i * 140}ms` } as React.CSSProperties} className={`rounded-2xl p-7 ${t.featured ? "bg-sky text-ink" : "bg-white/[0.06] ring-1 ring-white/15"}`}>
                 <p className={`wrap-type text-2xl ${t.featured ? "text-white" : "text-sky"}`} style={t.featured ? undefined : { textShadow: "none" }}>{t.tier}</p>
                 <h3 className="display mt-2 text-3xl">{t.brand}</h3>
                 <p className={`mt-3 ${t.featured ? "text-ink/80" : "text-white/75"}`}>{t.line}</p>
@@ -224,15 +168,15 @@ export default function Home() {
       {/* REVIEWS */}
       <section id="reviews" className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
         <div className="grid gap-12 md:grid-cols-[320px_1fr] md:items-center lg:gap-16">
-          <div className="mx-auto w-full max-w-[320px]">
+          <div data-reveal className="mx-auto w-full max-w-[320px]">
             <VideoTestimonial id="OaLfF9Z0RqQ" title="Ryan in Provo, Utah, on his experience with Eco Home" caption="Hear from Ryan in Provo, Utah" />
           </div>
           <div>
-            <h2 className="display text-4xl sm:text-5xl">What homeowners say</h2>
+            <h2 data-reveal className="display text-4xl sm:text-5xl">What homeowners say</h2>
             <p className="mt-3 flex items-center gap-2 text-lg font-semibold"><Stars className="h-5 w-5" /> {site.rating.value} out of 5 from {site.rating.count} Google reviews</p>
             <div className="mt-10 space-y-8">
-              {reviews.map((r) => (
-                <figure key={r.name} className="border-l-4 border-sky pl-5">
+              {reviews.map((r, i) => (
+                <figure key={r.name} data-reveal style={{ "--d": `${i * 120}ms` } as React.CSSProperties} className="border-l-4 border-sky pl-5">
                   <Stars />
                   <blockquote className="mt-3 text-xl font-medium leading-snug">“{r.text}”</blockquote>
                   <figcaption className="mt-2 font-bold text-mist">{r.name}</figcaption>
@@ -247,10 +191,10 @@ export default function Home() {
       {/* SPECIALS + PLAN */}
       <section id="specials" className="bg-sky-soft">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-          <h2 className="display text-4xl sm:text-5xl">Current specials</h2>
+          <h2 data-reveal className="display text-4xl sm:text-5xl">Current specials</h2>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {specials.map((s) => (
-              <div key={s.title} className="rounded-2xl border-2 border-dashed border-teal/50 bg-white p-7">
+            {specials.map((s, i) => (
+              <div key={s.title} data-reveal style={{ "--d": `${i * 120}ms` } as React.CSSProperties} className="rounded-2xl border-2 border-dashed border-teal/50 bg-white p-7">
                 <p className="display text-5xl text-alarm">{s.price}</p>
                 <h3 className="mt-2 text-xl font-extrabold">{s.title}</h3>
                 <p className="mt-2 text-mist">{s.body}</p>
@@ -267,13 +211,13 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <div className="grid gap-12 lg:grid-cols-[1.25fr_1fr]">
             <div>
-              <h2 className="display text-4xl sm:text-5xl">The Essential Care Plan</h2>
+              <h2 data-reveal className="display text-4xl sm:text-5xl">The Essential Care Plan</h2>
               <p className="mt-4 max-w-xl text-lg text-white/85">
                 Two tune-ups, priority scheduling and savings that grow every year you’re a member.
               </p>
               <ul className="mt-10 divide-y divide-white/15 border-y border-white/15">
-                {planBenefits.map((b) => (
-                  <li key={b.title} className="flex items-start justify-between gap-6 py-4">
+                {planBenefits.map((b, i) => (
+                  <li key={b.title} data-reveal style={{ "--d": `${i * 60}ms` } as React.CSSProperties} className="flex items-start justify-between gap-6 py-4">
                     <span className="flex gap-3">
                       <CheckIcon className="mt-1 h-5 w-5 shrink-0 text-sky" />
                       <span>
@@ -321,7 +265,7 @@ export default function Home() {
       <section id="service-area" className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-[1fr_1fr]">
           <div>
-            <h2 className="display text-4xl sm:text-5xl">Serving Utah County & Salt Lake County</h2>
+            <h2 data-reveal className="display text-4xl sm:text-5xl">Serving Utah County & Salt Lake County</h2>
             <p className="mt-4 text-lg text-mist">
               Based in American Fork, with technicians on the road across both valleys. Look for the bright blue vans.
             </p>
@@ -337,7 +281,7 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div className="overflow-hidden rounded-2xl ring-1 ring-line">
+            <div data-reveal className="overflow-hidden rounded-2xl ring-1 ring-line">
               <iframe
                 title="Map of Eco Home Heating & Cooling in American Fork, Utah"
                 src={site.googleMapEmbed}
@@ -354,8 +298,8 @@ export default function Home() {
       {/* FAQ */}
       <section className="bg-sky-soft">
         <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6">
-          <h2 className="display text-4xl sm:text-5xl">Common questions</h2>
-          <div className="mt-8 divide-y divide-line rounded-2xl bg-white">
+          <h2 data-reveal className="display text-4xl sm:text-5xl">Common questions</h2>
+          <div data-reveal className="mt-8 divide-y divide-line rounded-2xl bg-white">
             {faqs.map((f) => (
               <details key={f.q} className="group px-6 py-5">
                 <summary className="flex cursor-pointer items-center justify-between gap-4 text-lg font-bold">
@@ -374,12 +318,12 @@ export default function Home() {
       <section id="estimate" className="relative overflow-hidden bg-sky">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <h2 className="display text-4xl text-ink sm:text-5xl">Get a system that fits your home</h2>
+            <h2 data-reveal className="display text-4xl text-ink sm:text-5xl">Get a system that fits your home</h2>
             <p className="mt-4 max-w-lg text-lg text-ink/85">
               Get an instant estimate by email, book a visit online, or call and talk to a real person. We’re open 24/7.
             </p>
           </div>
-          <div className="grid gap-4">
+          <div data-reveal className="grid gap-4">
             <a href={site.instantPricingUrl} className="rounded-2xl bg-ink p-6 text-white shadow-[0_5px_0_#0a1622] hover:bg-teal">
               <span className="flex items-center gap-2 text-sm font-bold text-sky"><MailIcon className="h-4 w-4" /> Estimate emailed to you instantly</span>
               <span className="display mt-1 block text-3xl">Get instant pricing</span>

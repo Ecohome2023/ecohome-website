@@ -6,7 +6,6 @@ import { steps, tiers } from "@/lib/content";
 import { CheckIcon, MailIcon, PhoneIcon } from "@/components/icons";
 import { LoopVideo } from "@/components/LoopVideo";
 import { VideoTestimonial } from "@/components/VideoTestimonial";
-import { Mountains } from "@/components/Mountains";
 
 export const metadata: Metadata = {
   title: "Dual-Fuel Heat Pumps in Utah County & Salt Lake",
@@ -98,30 +97,29 @@ export default function HeatPumps() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-sky">
-        <Mountains className="absolute inset-x-0 bottom-0 h-32 w-full sm:h-44" />
+      <section className="relative overflow-hidden bg-ink text-white">
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:py-20">
           <div>
-            <nav aria-label="Breadcrumb" className="text-sm font-semibold text-ink/70">
+            <nav aria-label="Breadcrumb" className="text-sm font-semibold text-white/70">
               <Link href="/" className="hover:underline">Home</Link> <span aria-hidden>/</span> Heat Pumps
             </nav>
-            <h1 className="display mt-3 text-[2.4rem] text-ink sm:text-6xl">
+            <h1 className="display mt-3 text-[2.4rem] sm:text-6xl">
               Dual-fuel heat pumps for Utah County and Salt Lake County
             </h1>
-            <p className="mt-5 max-w-xl text-lg font-medium leading-relaxed text-ink/85 sm:text-xl">
-              Complete systems start at <strong>{startingPrice}</strong> after incentives, with <strong>$2,150 in rebates guaranteed</strong> on every heat pump install.
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/80 sm:text-xl">
+              Complete systems start at <strong className="text-white">{startingPrice}</strong> after incentives, with <strong className="text-white">$2,150 in rebates guaranteed</strong> on every heat pump install.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href={site.instantPricingUrl} className="flex items-center gap-2 rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#b80028] hover:brightness-110">
+              <a href={site.instantPricingUrl} className="flex items-center gap-2 rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#8a001c] hover:brightness-110">
                 <MailIcon className="h-5 w-5" /> Get instant pricing
               </a>
-              <a href={site.bookingUrl} className="rounded-full bg-white px-7 py-4 text-lg font-bold text-ink shadow-[0_4px_0_var(--color-ink)] hover:bg-sky-soft">
+              <a href={site.bookingUrl} className="rounded-full px-7 py-4 text-lg font-bold text-white ring-2 ring-white/60 hover:bg-white/10">
                 Book a free estimate
               </a>
             </div>
-            <p className="mt-4 text-sm font-semibold text-ink/80">0% interest for 12 months available. Subject to credit approval.</p>
+            <p className="mt-4 text-sm font-medium text-white/75">0% interest for 12 months available. Subject to credit approval.</p>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-[0_6px_0_var(--color-ink)]">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10 hero-photo">
             <Image src="/images/heat-pumps-pair.jpg" alt="Two new dual-fuel heat pumps installed by Eco Home beside a Utah home" fill preload sizes="(min-width: 1024px) 560px, 100vw" className="object-cover" />
           </div>
         </div>

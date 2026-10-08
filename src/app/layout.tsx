@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { RevealObserver } from "@/components/RevealObserver";
 import { site, allCities, isLive } from "@/lib/site";
 
 const archivo = localFont({
@@ -93,8 +94,15 @@ const businessSchema = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${archivo.variable} ${archivoItalic.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${archivo.variable} ${archivoItalic.variable}`}>
       <body className="min-h-screen flex flex-col">
+        <script
+          // Turn on scroll animations only for visitors who allow motion. If the
+          // page's JavaScript never loads, remove the class so nothing stays hidden.
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var d=document.documentElement;if(!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('motion');setTimeout(function(){if(!window.__revealReady)d.classList.remove('motion')},4000)}})();`,
+          }}
+        />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-white focus:px-4 focus:py-2"
@@ -104,6 +112,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main id="main" className="flex-1">{children}</main>
         <Footer />
+        <RevealObserver />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}

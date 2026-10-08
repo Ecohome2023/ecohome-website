@@ -43,7 +43,7 @@ function Trust({ dark }: { dark: boolean }) {
 
 export function SmileBand() {
   return (
-    <div className="bg-alarm text-white">
+    <div className="bg-alarm-strong text-white">
       <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-4 py-5 sm:px-6 md:flex-row md:items-center">
         <div>
           <p className="text-xl font-bold">
@@ -106,15 +106,15 @@ export function Hero({ variant = "navy" }: { variant?: Variant }) {
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:py-20">
         <div className="text-white">
           <h1 className="display text-[2.5rem] sm:text-6xl">{headline}</h1>
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/80 sm:text-xl">{sub}</p>
-          <Ctas dark />
-          <Trust dark />
+          <p className="hero-rise mt-5 max-w-xl text-lg leading-relaxed text-white/80 sm:text-xl" style={{ "--d": "80ms" } as React.CSSProperties}>{sub}</p>
+          <div className="hero-rise" style={{ "--d": "180ms" } as React.CSSProperties}><Ctas dark /></div>
+          <div className="hero-rise" style={{ "--d": "300ms" } as React.CSSProperties}><Trust dark /></div>
         </div>
         <div className="relative">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10">
+          <div className="hero-photo relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10">
             <Image src="/images/tech-portrait.jpg" alt="Eco Home technician next to a newly installed heat pump" fill preload sizes="(min-width: 1024px) 560px, 100vw" className="object-cover object-[65%_30%]" />
           </div>
-          <div className="absolute -bottom-5 left-5 flex items-center gap-3 rounded-xl bg-white px-4 py-3 text-ink shadow-lg">
+          <div className="hero-badge absolute -bottom-5 left-5 flex items-center gap-3 rounded-xl bg-white px-4 py-3 text-ink shadow-lg">
             <Stars className="h-4 w-4" />
             <span className="text-sm font-bold">{site.rating.value} · {site.rating.count} Google reviews</span>
           </div>
