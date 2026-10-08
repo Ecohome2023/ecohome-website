@@ -25,7 +25,7 @@ function Ctas({ dark }: { dark: boolean }) {
         </a>
       </div>
       <p className={`mt-3 text-sm font-medium ${dark ? "text-white/75" : "text-ink/70"}`}>
-        Answer a few quick questions and get your estimate emailed to you instantly.
+        Answer a few quick questions and see your price instantly.
       </p>
     </>
   );

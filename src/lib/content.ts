@@ -77,3 +77,11 @@ export const jobPromises = [
     body: "We clean up before we go and leave your home cleaner than we found it, so the only thing you notice is the new system.",
   },
 ];
+
+// Google reviews shown on the homepage and the instant estimate page.
+export const reviews = [
+  { name: "Paul Edmunds", text: "Their tech was efficient and polite… resolved immediately." },
+  { name: "Stacy Graham", text: "Highly recommend!! Andrew B was fast, professional and did a great job!" },
+  { name: "Maria-Isabel Acosta", text: "They're friendly, professional and honest." },
+];
+

@@ -5,7 +5,7 @@ import { LoopVideo } from "@/components/LoopVideo";
 import { VideoTestimonial } from "@/components/VideoTestimonial";
 import { CheckIcon, MailIcon, PhoneIcon, Stars } from "@/components/icons";
 import { Hero, SmileBand } from "@/components/Hero";
-import { steps } from "@/lib/content";
+import { steps, reviews } from "@/lib/content";
 import { SystemOptions } from "@/components/SystemOptions";
 import { JobPromises } from "@/components/JobPromises";
 
@@ -18,11 +18,6 @@ const services = [
   { title: "Tune-ups & maintenance", body: "Seasonal tune-ups that catch problems early and help protect your warranty.", img: "/images/tech-heat-pump-brick.jpg", alt: "Technician checking refrigerant pressures on a heat pump", href: "/services/heating-tune-up" },
 ];
 
-const reviews = [
-  { name: "Paul Edmunds", text: "Their tech was efficient and polite… resolved immediately." },
-  { name: "Stacy Graham", text: "Highly recommend!! Andrew B was fast, professional and did a great job!" },
-  { name: "Maria-Isabel Acosta", text: "They're friendly, professional and honest." },
-];
 
 const specials = [
   { price: "0%", title: "Interest for 12 months", body: "Get the system you need now with $0 down and 0% interest for 12 months.", fine: `Subject to credit approval. Financing provided by ${site.financingPartner}.`, cta: "Book a free estimate", href: site.bookingUrl },
@@ -135,10 +130,10 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <h2 data-reveal className="display max-w-3xl text-4xl sm:text-5xl">Get instant pricing on every new system</h2>
           <p className="mt-4 max-w-2xl text-lg text-white/75">
-            Answer a few quick questions about your home and get an estimate with both options emailed to you instantly. No sales visit needed to see a price.
+            Answer a few quick questions about your home and see your estimate on the next screen. No sales visit needed to see a price.
           </p>
           <ol className="mt-8 grid max-w-4xl gap-4 sm:grid-cols-3">
-            {["Answer a few questions about your home", "Compare ACiQ and Amana side by side", "Get your estimate by email, instantly"].map((step, i) => (
+            {["Answer a few questions about your home", "See your price on the next screen", "Slide to compare efficiency levels"].map((step, i) => (
               <li key={step} data-reveal style={{ "--d": `${i * 120}ms` } as React.CSSProperties} className="flex items-center gap-3">
                 <span className="display grid h-9 w-9 shrink-0 place-items-center rounded-full bg-sky text-lg text-ink">{i + 1}</span>
                 <span className="font-semibold">{step}</span>
@@ -322,11 +317,11 @@ export default function Home() {
           <div>
             <h2 data-reveal className="display text-4xl text-ink sm:text-5xl">Get a system that fits your home</h2>
             <p className="mt-4 max-w-lg text-lg text-ink/85">
-              Get an instant estimate by email, book a visit online, or give us a call. We’re open 24/7.
+              Get instant pricing online, book a visit, or give us a call. We’re open 24/7.
             </p>          </div>
           <div data-reveal className="grid gap-4">
             <a href={site.instantPricingUrl} className="rounded-2xl bg-ink p-6 text-white shadow-[0_5px_0_#0a1622] hover:bg-teal">
-              <span className="flex items-center gap-2 text-sm font-bold text-sky"><MailIcon className="h-4 w-4" /> Estimate emailed to you instantly</span>
+              <span className="flex items-center gap-2 text-sm font-bold text-sky"><MailIcon className="h-4 w-4" /> See your price in two minutes</span>
               <span className="display mt-1 block text-3xl">Get instant pricing</span>
             </a>
             <a href={site.bookingUrl} className="group rounded-2xl bg-white p-6 shadow-[0_5px_0_var(--color-ink)] hover:bg-sky-soft">

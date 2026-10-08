@@ -232,7 +232,7 @@ export default function AcReplacement() {
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <h2 className="display max-w-3xl text-4xl sm:text-5xl">Two great heat pump options</h2>
           <p className="mt-4 max-w-2xl text-lg text-white/75">
-            Both pair with a gas furnace and qualify for the same rebates. Get both priced for your home and emailed to you instantly.
+            Both pair with a gas furnace and qualify for the same rebates. Get a price for your home in about two minutes.
           </p>
           <SystemOptions />
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">

@@ -263,7 +263,7 @@ export default function HeatPumps() {
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <h2 className="display max-w-3xl text-4xl sm:text-5xl">Two great options</h2>
           <p className="mt-4 max-w-2xl text-lg text-white/75">
-            Complete dual-fuel systems start at {startingPrice} after incentives. Get both options priced for your home and emailed to you instantly.
+            Complete dual-fuel systems start at {startingPrice} after incentives. Get a price for your home in about two minutes.
           </p>
           <SystemOptions />
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
