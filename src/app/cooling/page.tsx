@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     "q": "When should I get an AC tune-up?",
-    "a": "Once a year, ideally in the spring before the summer heat. Essential Care Plan members get a cooling and a heating tune-up every year."
+    "a": "Once a year, ideally in the spring before the summer heat. AC tune-ups are $129, and Essential Care Plan members get a cooling and a heating tune-up every year."
   }
 ];
 

@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     "q": "How much does a furnace tune-up cost?",
-    "a": "Furnace tune-ups are $39 right now. Essential Care Plan members get a heating and a cooling tune-up every year."
+    "a": "Furnace tune-ups are regularly $129, and they’re $39 right now. Essential Care Plan members get a heating and a cooling tune-up every year."
   },
   {
     "q": "How much does a new furnace cost?",

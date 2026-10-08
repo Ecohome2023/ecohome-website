@@ -13,7 +13,7 @@ function SmartLink({ href, className, children }: { href: string; className: str
 }
 
 const whyUs = [
-  { title: "Open 24/7", body: "Nights, weekends and holidays. A real person answers." },
+  { title: "Open 24/7", body: "Nights, weekends and holidays. Call or book online any time." },
   { title: "Upfront pricing", body: "You see the price before any work starts." },
   { title: "Smile Guarantee", body: "One year on our workmanship. If it’s not right, we fix it free." },
   { title: "Licensed and insured", body: `Utah contractor license #${site.license}.` },
@@ -226,7 +226,7 @@ export function ServicePage({ service: s }: { service: Service }) {
             <p className="mt-4 max-w-lg text-lg text-white/85">
               {s.kind === "install"
                 ? "Get instant pricing online, or book a free in-home estimate."
-                : "Book online in a minute, or call and talk to a real person. We’re open 24/7."}
+                : "Book online in a minute, or give us a call. We’re open 24/7."}
             </p>
           </div>
           <div className="grid gap-3">

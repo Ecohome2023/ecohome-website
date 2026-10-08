@@ -139,11 +139,11 @@ export const services: Record<ServiceKey, Service> = {
     kind: "install",
     parent: { label: "Cooling", href: "/cooling" },
     metaTitle: "Ductless Mini-Splits in Utah County & Salt Lake",
-    metaDescription: "Ductless mini-split heat pumps for basements, additions, garages and rooms your ducts can’t reach. Installed and permitted by Eco Home. Get a price today.",
+    metaDescription: "Ductless mini-split heat pumps from $4,990 for basements, additions, garages and rooms your ducts can’t reach, with up to $1,700 in Wattsmart rebates.",
     h1: "Ductless mini-splits in Utah County and Salt Lake County",
-    heroSub: "Efficient heating and cooling for basements, additions, garages and any room your ducts don’t reach. No ductwork needed.",
+    heroSub: "Efficient heating and cooling for basements, additions, garages and any room your ducts don’t reach. Installs start at $4,990, with $600 to $1,700 in Wattsmart rebates available.",
     heroImg: { src: "/images/aciq-mini-split-heat-pump.jpg", alt: "Ductless mini-split heat pump installed by Eco Home on a Utah patio" },
-    trust: ["Heats and cools", "Permit pulled on every job", "Smile Guarantee"],
+    trust: ["From $4,990", "Up to $1,700 in rebates", "Permit pulled on every job"],
     listTitle: "Where mini-splits make sense",
     listIntro: "A mini-split is a small heat pump that heats and cools one area without any ductwork.",
     list: [
@@ -154,7 +154,7 @@ export const services: Record<ServiceKey, Service> = {
       { title: "One room that never feels right", body: "A mini-split gives that room its own temperature control." },
       { title: "ADUs and mother-in-law apartments", body: "Give a separate living space its own heating and cooling and its own thermostat." },
     ],
-    offer: { eyebrow: "Why ductless", title: "Heating and cooling in one quiet system", body: "Mini-splits are heat pumps, so one system cools in summer and heats in winter. Each indoor unit has its own controls, and they run quietly at low speed most of the time." },
+    offer: { eyebrow: "Clear pricing", title: "Mini-splits from $4,990, done right", body: "That includes the permit, the wall mount, a line hide to keep the refrigerant lines neat, and the electrical work, the parts that make an install safe and clean. Rocky Mountain Power customers can also get $600 to $1,700 back through Wattsmart." },
     stepsTitle: "How a mini-split install works",
     steps: [
       { title: "Free in-home estimate", body: "We look at the space, measure it and recommend the right size and number of indoor units. You get a clear price, and we pull the permit for your job." },
@@ -173,7 +173,8 @@ export const services: Record<ServiceKey, Service> = {
     faqs: [
       { q: "What is a ductless mini-split?", a: "A mini-split is a small heat pump with an outdoor unit and one or more indoor units mounted on the wall or ceiling. It heats and cools without any ductwork, and each indoor unit has its own controls." },
       { q: "Can a mini-split heat my basement in a Utah winter?", a: "Yes. Mini-splits are heat pumps, and today’s models keep heating efficiently well below freezing. They’re a great fit for basements, additions and other rooms that are hard to keep comfortable." },
-      { q: "How much does a mini-split cost?", a: "It depends on the size of the space and how many indoor units you need. Get instant pricing online or book a free estimate and we’ll give you a clear price." },
+      { q: "How much does a mini-split cost?", a: "Mini-split installs start at $4,990. That includes the permit, the wall mount, a line hide and the electrical work. Your exact price depends on the size of the space and how many indoor units you need." },
+      { q: "Are there rebates for mini-splits?", a: "Yes. Rocky Mountain Power customers can get $600 to $1,700 back through the Wattsmart program on qualifying mini-splits, and we file the paperwork for you." },
       { q: "Do you pull a permit for mini-split installs?", a: "Yes, on every job. A permit means a city or county inspector checks the work for safety and code, and it protects you when you sell your home." },
       { q: "Should I get a mini-split or a central heat pump?", a: "For one room or area, like a basement or addition, a mini-split is usually the right choice. For the whole house, a central heat pump paired with your gas furnace is usually the better value." },
     ],
@@ -187,7 +188,7 @@ export const services: Record<ServiceKey, Service> = {
     metaTitle: "$39 Furnace Tune-Ups in Utah County & Salt Lake",
     metaDescription: "Get your furnace cleaned, inspected and tuned before winter for $39, with safety checks and carbon monoxide testing. Utah County and Salt Lake County.",
     h1: "Furnace tune-ups in Utah County and Salt Lake County",
-    heroSub: "Clean, inspect and tune your furnace before the cold sets in. Furnace tune-ups are $39 right now.",
+    heroSub: "Clean, inspect and tune your furnace before the cold sets in. Furnace tune-ups are $39 right now, regularly $129.",
     heroImg: { src: "/images/furnace-install.jpg", alt: "Eco Home technician inspecting the inside of a furnace during a tune-up" },
     trust: ["$39 furnace tune-up", "Safety checks included", "Smile Guarantee"],
     listTitle: "What’s included in a furnace tune-up",
@@ -200,7 +201,7 @@ export const services: Record<ServiceKey, Service> = {
       { title: "Filter and thermostat", body: "We check your filter and make sure your thermostat is talking to the furnace correctly." },
       { title: "A clear report", body: "We tell you what we found, what’s in good shape and anything to keep an eye on. No pressure." },
     ],
-    offer: { eyebrow: "Limited-time special", title: "$39 furnace tune-up", body: "Get your furnace ready for winter for $39. It’s the easiest way to catch small problems before they become a no-heat call on the coldest night of the year." },
+    offer: { eyebrow: "Limited-time special", title: "$39 furnace tune-up", body: "Get your furnace ready for winter for $39, regularly $129. It’s the easiest way to catch small problems before they become a no-heat call on the coldest night of the year." },
     stepsTitle: "How a tune-up works",
     steps: [
       { title: "Book online or call", body: "Pick a time that works for you. We’re open 24/7." },
@@ -217,7 +218,7 @@ export const services: Record<ServiceKey, Service> = {
       secondary: { label: "Book a tune-up", href: "BOOK" },
     },
     faqs: [
-      { q: "How much is a furnace tune-up?", a: "Furnace tune-ups are $39 right now. Essential Care Plan members get a heating and a cooling tune-up every year as part of their plan." },
+      { q: "How much is a furnace tune-up?", a: "Furnace tune-ups are regularly $129, and they’re $39 right now. Essential Care Plan members get a heating and a cooling tune-up every year as part of their plan." },
       { q: "How often should I get my furnace tuned up?", a: "Once a year, ideally in the fall before the cold weather starts." },
       { q: "Does a tune-up help my warranty?", a: "Many manufacturers expect regular maintenance, and keeping a record of yearly tune-ups helps protect your warranty." },
       { q: "What if you find a problem?", a: "We’ll explain what we found and give you a clear, upfront price before any repair. You decide what to do, with no pressure." },
@@ -272,11 +273,11 @@ export const services: Record<ServiceKey, Service> = {
     kind: "tune-up",
     parent: { label: "Cooling", href: "/cooling" },
     metaTitle: "AC Tune-Ups in Utah County & Salt Lake",
-    metaDescription: "AC and heat pump tune-ups in Utah County and Salt Lake County. We clean, test and tune your system so it’s ready for summer. Book online or call 24/7.",
+    metaDescription: "$129 AC and heat pump tune-ups in Utah County and Salt Lake County. We clean, test and tune your system so it’s ready for summer. Book online 24/7.",
     h1: "AC tune-ups in Utah County and Salt Lake County",
-    heroSub: "Get your air conditioner or heat pump cleaned, tested and tuned before the summer heat hits.",
+    heroSub: "Get your air conditioner or heat pump cleaned, tested and tuned before the summer heat hits. AC tune-ups are $129.",
     heroImg: { src: "/images/tech-wiring-capacitor.jpg", alt: "Eco Home technician testing the electrical parts of an outdoor unit during an AC tune-up", pos: "45% 50%" },
-    trust: ["AC and heat pumps", "Book online 24/7", "Smile Guarantee"],
+    trust: ["$129 AC tune-up", "AC and heat pumps", "Smile Guarantee"],
     listTitle: "What’s included in an AC tune-up",
     listIntro: "Your technician checks the parts that keep your system cooling efficiently all summer.",
     list: [
@@ -287,7 +288,7 @@ export const services: Record<ServiceKey, Service> = {
       { title: "Airflow and filter", body: "We check airflow and your filter so cool air reaches every room." },
       { title: "A clear report", body: "We tell you what we found, what’s in good shape and anything to keep an eye on. No pressure." },
     ],
-    offer: { eyebrow: "Best value", title: "Tune-ups are included in the Essential Care Plan", body: "Members get a cooling tune-up and a heating tune-up every year, plus 10% off repairs, waived dispatch fees and priority scheduling when the heat waves hit." },
+    offer: { eyebrow: "Clear pricing", title: "$129 AC tune-up, or two a year with the Care Plan", body: "An AC or heat pump tune-up is $129. Essential Care Plan members get a cooling tune-up and a heating tune-up every year, plus 10% off repairs, waived dispatch fees and priority scheduling when the heat waves hit." },
     stepsTitle: "How a tune-up works",
     steps: [
       { title: "Book online or call", body: "Pick a time that works for you. Spring is the best time, before the summer rush." },
@@ -304,6 +305,7 @@ export const services: Record<ServiceKey, Service> = {
       secondary: { label: "Book a tune-up", href: "BOOK" },
     },
     faqs: [
+      { q: "How much is an AC tune-up?", a: "An AC or heat pump tune-up is $129. Essential Care Plan members get a cooling tune-up and a heating tune-up every year as part of their plan." },
       { q: "How often should I get my AC tuned up?", a: "Once a year, ideally in the spring before the summer heat. If you have a heat pump, which works year-round, a tune-up in spring and fall is best." },
       { q: "Do you tune up heat pumps too?", a: "Yes. Heat pumps are our specialty, and we tune them up for both cooling and heating." },
       { q: "Does a tune-up help my warranty?", a: "Many manufacturers expect regular maintenance, and keeping a record of yearly tune-ups helps protect your warranty." },
@@ -319,11 +321,11 @@ export const serviceCards: Record<string, { href: string; title: string; blurb: 
   "furnace-repair": { href: "/services/furnace-repair", title: "Furnace repair", blurb: "24/7 repairs with a $129 diagnostic and an upfront price.", img: "/images/furnace-tech-uniform.jpg", alt: "Eco Home technician beside a repaired furnace", pos: "50% 45%" },
   "heat-pumps": { href: "/heat-pumps", title: "Dual-fuel heat pumps", blurb: "Our top pick for Utah homes, with $2,150 in rebates guaranteed.", img: "/images/heat-pumps-pair.jpg", alt: "Two new heat pumps beside a Utah home" },
   "heat-pump-repair": { href: "/services/heat-pump-repair", title: "Heat pump repair", blurb: "Repairs from heat pump specialists, day or night.", img: "/images/tech-heat-pump-brick.jpg", alt: "Technician checking a heat pump", pos: "50% 60%" },
-  "mini-splits": { href: "/services/mini-splits", title: "Ductless mini-splits", blurb: "Heating and cooling for basements, additions and garages.", img: "/images/aciq-mini-split-heat-pump.jpg", alt: "Ductless mini-split heat pump on a patio" },
+  "mini-splits": { href: "/services/mini-splits", title: "Ductless mini-splits", blurb: "Heating and cooling for basements, additions and garages, from $4,990.", img: "/images/aciq-mini-split-heat-pump.jpg", alt: "Ductless mini-split heat pump on a patio" },
   "heating-tune-up": { href: "/services/heating-tune-up", title: "Furnace tune-ups", blurb: "Clean, inspect and tune your furnace for $39.", img: "/images/furnace-install.jpg", alt: "Technician inspecting a furnace" },
   "ac-replacement": { href: "/services/ac-replacement", title: "AC replacement", blurb: "Upgrade to a heat pump that cools like an AC and heats too.", img: "/images/tech-heat-pump-install.jpg", alt: "Technician installing a new heat pump", pos: "60% 50%" },
   "ac-repair": { href: "/services/ac-repair", title: "AC repair", blurb: "24/7 repairs with a $129 diagnostic and an upfront price.", img: "/images/ac-repair-techs-overhead.jpg", alt: "Two technicians repairing an air conditioner" },
-  "cooling-tune-up": { href: "/services/cooling-tune-up", title: "AC tune-ups", blurb: "Clean, test and tune your AC or heat pump before summer.", img: "/images/tech-wiring-capacitor.jpg", alt: "Technician testing an outdoor unit", pos: "45% 50%" },
+  "cooling-tune-up": { href: "/services/cooling-tune-up", title: "AC tune-ups", blurb: "Clean, test and tune your AC or heat pump for $129.", img: "/images/tech-wiring-capacitor.jpg", alt: "Technician testing an outdoor unit", pos: "45% 50%" },
 };
 
 export const heatingCards = ["heat-pumps", "furnace-replacement", "furnace-repair", "heat-pump-repair", "mini-splits", "heating-tune-up"];

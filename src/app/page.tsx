@@ -313,7 +313,7 @@ export default function Home() {
           <div>
             <h2 data-reveal className="display text-4xl text-ink sm:text-5xl">Get a system that fits your home</h2>
             <p className="mt-4 max-w-lg text-lg text-ink/85">
-              Get an instant estimate by email, book a visit online, or call and talk to a real person. We’re open 24/7.
+              Get an instant estimate by email, book a visit online, or give us a call. We’re open 24/7.
             </p>          </div>
           <div data-reveal className="grid gap-4">
             <a href={site.instantPricingUrl} className="rounded-2xl bg-ink p-6 text-white shadow-[0_5px_0_#0a1622] hover:bg-teal">

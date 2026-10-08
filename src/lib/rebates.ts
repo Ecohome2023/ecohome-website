@@ -84,6 +84,10 @@ export const programs: Record<"rmp" | "enbridge", RebateProgram> = {
         a: "You choose. We can take the rebate off your invoice right away, with Rocky Mountain Power paying the rebate to Eco Home, or Rocky Mountain Power can mail a check to you.",
       },
       {
+        q: "Do ductless mini-splits qualify for Wattsmart rebates?",
+        a: "Yes. Qualifying mini-splits get $600 to $1,700 back through Wattsmart, and we file the paperwork for you.",
+      },
+      {
         q: "How do I know if I’m a Rocky Mountain Power customer?",
         a: "Check who sends your electric bill. Some Utah County cities, like Provo, Lehi, Springville and Spanish Fork, run their own city power utilities, so homes there aren’t Rocky Mountain Power customers. Not sure? Ask us and we’ll help you check.",
       },

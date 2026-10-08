@@ -121,7 +121,7 @@ export function OverviewPage({
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.2fr_0.8fr]">
           <div>
             <h2 className="display text-4xl sm:text-5xl">We’re here day or night</h2>
-            <p className="mt-4 max-w-lg text-lg text-white/85">Book online in a minute, or call and talk to a real person. We’re open 24/7.</p>
+            <p className="mt-4 max-w-lg text-lg text-white/85">Book online in a minute, or give us a call. We’re open 24/7.</p>
           </div>
           <div className="grid gap-3">
             <a href={site.bookingUrl} className="flex items-center justify-center rounded-full bg-white px-7 py-4 text-lg font-bold text-ink shadow-[0_4px_0_#052f3d] hover:bg-sky-soft">Book service</a>
