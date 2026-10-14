@@ -1,6 +1,5 @@
 // Icons for "What do you have now?" and "What are you looking to replace?".
-// Same scene as the home-type icons: snowcapped peaks behind the equipment.
-import { Peaks, Pine, stroke } from "./HomeIcons";
+import { stroke } from "./HomeIcons";
 
 const INK = "#14283a", RED = "#e6002f", CYAN = "#0ad2ff", BLUE = "#1f6fe0";
 
@@ -100,9 +99,9 @@ function Radiator({ x }: { x: number }) {
 const ICONS: Record<string, Record<string, React.ReactNode>> = {
   setup: {
     furnace_central_ac: <><Furnace x={17} /><Condenser x={33} /></>,
-    furnace_no_ac: <><Furnace x={25} /><Pine x={51} /></>,
+    furnace_no_ac: <Furnace x={25} />,
     furnace_swamp_cooler: <><Furnace x={17} /><SwampCooler x={34} /></>,
-    heat_pump: <><Condenser x={19} w={22} /><Arrows x={45} /></>,
+    heat_pump: <><Condenser x={14} w={22} /><Arrows x={41} /></>,
     boiler_radiant: <><Boiler x={17} /><Radiator x={34} /></>,
     not_sure: (
       <Badge cx={32} cy={31} r={12}>
@@ -121,8 +120,7 @@ export const hasEquipmentIcons = (key: string) => key in ICONS;
 
 export function EquipmentIcon({ qkey, value, className }: { qkey: string; value: string; className?: string }) {
   return (
-    <svg viewBox="0 0 64 48" className={className} aria-hidden="true">
-      <Peaks />
+    <svg viewBox="0 8 64 40" className={className} aria-hidden="true">
       {ICONS[qkey]?.[value]}
     </svg>
   );
