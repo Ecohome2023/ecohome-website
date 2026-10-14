@@ -253,14 +253,18 @@ export const OPTIONS: Record<EstimateType, {
 };
 
 // ---------- Financing (decision 0010) ----------
-export const FIN = { years: 20, apr: 11.99 };
-// Second option: $0 down, 0% interest for 12 months (Slice by FNBO Bank).
-export const PROMO = { months: 12 };
-export const promoMonthly = (price: number) => price / PROMO.months;
-export function monthly(price: number) {
-  const r = FIN.apr / 100 / 12, n = FIN.years * 12;
+// Main plan: $0 down, 20 years at 9.99% APR.
+export const FIN = { years: 20, apr: 9.99 };
+// Second plan: 0% interest for 12 months (Slice by FNBO Bank). The payment shown is
+// the plan's monthly payment, figured over a 12-year term at 16.99% APR.
+export const PROMO = { promoMonths: 12, years: 12, apr: 16.99 };
+
+const payment = (price: number, apr: number, years: number) => {
+  const r = apr / 100 / 12, n = years * 12;
   return (price * r) / (1 - Math.pow(1 + r, -n));
-}
+};
+export const monthly = (price: number) => payment(price, FIN.apr, FIN.years);
+export const promoMonthly = (price: number) => payment(price, PROMO.apr, PROMO.years);
 
 export const usd = (n: number) => "$" + Math.round(n).toLocaleString("en-US");
 export const cleanName = (s: string | undefined | null) => (s || "").replace(/[^\p{L}\p{M}' .-]/gu, "").trim().slice(0, 30);

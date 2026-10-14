@@ -32,7 +32,7 @@ const faqs = [
   { q: "Why a heat pump with a gas furnace?", a: "The heat pump cools in summer and heats on most winter days using electricity, more efficiently than a furnace. On the coldest Utah nights the gas furnace takes over, so you’re never short on heat. It’s also the setup that qualifies for the biggest rebates." },
   { q: "Is the price on this page final?", a: "It’s an estimate. Your exact price is set at the free in-home visit, after we measure your home and check your current system and ducts." },
   { q: "What rebates can I get?", a: "On every heat pump we install, we guarantee $1,450 from Rocky Mountain Power Wattsmart, plus $700 to $1,000 from Enbridge ThermWise when it’s paired with a gas furnace. We confirm what you qualify for at your visit and file the paperwork for you." },
-  { q: "Do you offer financing?", a: `Yes. The monthly payment on this page is an estimate based on a ${FIN.years}-year plan. We also offer $0 down and 0% interest for 12 months through ${site.financingPartner}. Financing is subject to credit approval, and we’ll go over your options at your visit.` },
+  { q: "Do you offer financing?", a: `Yes. The monthly payment on this page is an estimate based on a ${FIN.years}-year plan. We also offer $0 down and 0% interest for ${PROMO.promoMonths} months through ${site.financingPartner}. Financing is subject to credit approval, and we’ll go over your options at your visit.` },
   { q: "How fast can you install?", a: "Often as soon as the next day after your free visit. Most installs take about a day, so your new system is usually running the same day." },
   { q: "Will I need new ductwork?", a: "Most replacements use your existing ducts. If we find crushed, leaking or undersized ducts at your visit, we’ll show you and include options to fix them." },
   { q: "Do I need a permit?", a: "Yes, and we take care of it. Not every HVAC company pulls permits. We do on every job, and it’s included in your price." },
@@ -88,7 +88,7 @@ export default async function EstimatePage({ searchParams }: PageProps<"/instant
           <p className="mt-6 max-w-4xl text-sm leading-relaxed text-mist">
             Due to many variables, we can’t give an exact price until we measure and inspect your home. Prices are shown after utility rebates, and we confirm your exact rebates at your visit.
             Monthly payments are estimates for illustration only, based on the estimated price at {FIN.apr}% APR over {FIN.years} years with no money down. This is not an offer of credit.
-            The 0% option is {PROMO.months} equal payments of the estimated price with $0 down, through {site.financingPartner}.
+            The 0% option is through {site.financingPartner}: 0% interest for the first {PROMO.promoMonths} months, with the monthly payment shown figured at {PROMO.apr}% APR over {PROMO.years} years.
             Financing is subject to credit approval by a third-party lender; your actual rate, term and payment may differ. Energy savings compare cooling efficiency with a 10 SEER unit; actual savings depend on usage, rates and weather.
           </p>
         </div>
