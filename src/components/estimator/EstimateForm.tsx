@@ -129,9 +129,6 @@ export function EstimateForm() {
 
       {status === "asking" && (
         <form key={key} noValidate onSubmit={(e) => { e.preventDefault(); next(); }} className="step-in mt-8 min-h-[22rem]">
-          <p className="text-sm font-bold tracking-wide text-alarm-strong">
-            Question {step + 1} of {STEPS.length}
-          </p>
 
           {key === "zip" && (
             <>
