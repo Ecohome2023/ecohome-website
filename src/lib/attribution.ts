@@ -14,18 +14,22 @@ const KEY = "eh_first_touch";
 
 const AI = /(^|\.)(chatgpt\.com|openai\.com|perplexity\.ai|copilot\.microsoft\.com|gemini\.google\.com|bard\.google\.com|claude\.ai|you\.com|meta\.ai)$/;
 const SEARCH = /(^|\.)(google\.[a-z.]+|bing\.com|duckduckgo\.com|yahoo\.com|ecosia\.org|brave\.com|search\.brave\.com)$/;
-const SOCIAL = /(^|\.)(facebook\.com|fb\.com|instagram\.com|tiktok\.com|youtube\.com|nextdoor\.com|x\.com|twitter\.com|linkedin\.com|pinterest\.com|reddit\.com)$/;
+const SOCIAL = /(^|\.)(facebook\.com|l\.facebook\.com|lm\.facebook\.com|m\.facebook\.com|fb\.com|instagram\.com|tiktok\.com|youtube\.com|nextdoor\.com|x\.com|twitter\.com|linkedin\.com|pinterest\.com|reddit\.com)$/;
 
 export function classify(referrerHost: string, p: URLSearchParams): string {
   const src = (p.get("utm_source") || "").toLowerCase();
   const med = (p.get("utm_medium") || "").toLowerCase();
   const camp = (p.get("utm_campaign") || "").toLowerCase();
   if (camp === "gbp" || src === "gbp" || src.includes("business_profile")) return "Google Business Profile";
+  // Meta (Facebook/Instagram) ads, tagged with UTMs in Ads Manager. fbclid alone isn't
+  // enough: Facebook adds it to organic post links too.
+  if (/facebook|instagram|meta|\bfb\b|\big\b/.test(src) && /paid|cpc|ppc|ads?$/.test(med)) return "Paid social";
+  if (/paid_?social/.test(med)) return "Paid social";
   if (p.get("gclid") || p.get("gbraid") || p.get("wbraid") || /cpc|ppc|paid/.test(med)) return "Paid search";
   if (src && /chatgpt|openai|perplexity|copilot|gemini/.test(src)) return "AI assistant";
   if (referrerHost && AI.test(referrerHost)) return "AI assistant";
   if (referrerHost && SEARCH.test(referrerHost)) return "Organic search";
-  if (/social/.test(med) || (referrerHost && SOCIAL.test(referrerHost))) return "Social";
+  if (/social/.test(med) || p.get("fbclid") || (referrerHost && SOCIAL.test(referrerHost))) return "Social";
   if (src) return "Referral";
   if (referrerHost) return "Referral";
   return "Direct";
@@ -50,7 +54,7 @@ export function recordFirstTouch(): FirstTouch {
     const r = document.referrer ? new URL(document.referrer).hostname.replace(/^www\./, "") : "";
     referrerHost = r && r !== location.hostname.replace(/^www\./, "") ? r : "";
   } catch {}
-  const campaign = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "gclid"]
+  const campaign = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid", "fbclid"]
     .filter((k) => p.get(k))
     .map((k) => `${k}=${p.get(k)}`)
     .join(" | ")
