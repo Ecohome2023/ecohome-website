@@ -2,12 +2,15 @@
 // snowcapped Wasatch peaks, with a pine or two, for a Utah feel.
 
 function Peaks() {
+  // A long, gentle ridgeline like the Wasatch Front: two snowcapped peaks on
+  // either side of the home, with a low ridge running behind it.
+  const ridge = "M0 44 L6 38 L12 30 L17 24 L21 27 L26 29 L33 31 L40 30 L47 31 L54 29 L59 26 L64 21 L69 25 L74 32 L80 40";
   return (
     <g>
-      <path d="M2 44 L22 14 L31 26 L42 8 L62 44 Z" fill="#cdeffa" />
-      <path d="M22 14 L27.5 22 L24 20.5 L21 23 L17.5 21 Z" fill="#fff" stroke="#14283a" strokeWidth="1.2" strokeLinejoin="round" />
-      <path d="M42 8 L48.5 18 L44.5 16 L41.5 19 L37.5 15.5 Z" fill="#fff" stroke="#14283a" strokeWidth="1.2" strokeLinejoin="round" />
-      <path d="M2 44 L22 14 L31 26 L42 8 L62 44" fill="none" stroke="#14283a" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d={`${ridge} L80 44 Z`} fill="#dcc3a1" />
+      <path d="M17 24 L20.3 26.5 L19 26.4 L17.6 28.2 L15.8 26.9 L13.7 28 Z" fill="#fff" stroke="#14283a" strokeWidth="1" strokeLinejoin="round" />
+      <path d="M64 21 L68.4 24.5 L66.6 24.3 L64.8 26 L62.8 24.5 L60 25 Z" fill="#fff" stroke="#14283a" strokeWidth="1" strokeLinejoin="round" />
+      <path d={ridge} fill="none" stroke="#14283a" strokeWidth="1.6" strokeLinejoin="round" />
     </g>
   );
 }
@@ -25,8 +28,9 @@ const stroke = { stroke: "#14283a", strokeWidth: 1.8, strokeLinejoin: "round" as
 
 export function HomeIcon({ kind, className }: { kind: string; className?: string }) {
   return (
-    <svg viewBox="0 0 64 48" className={className} aria-hidden="true">
+    <svg viewBox="0 0 80 48" className={className} aria-hidden="true">
       <Peaks />
+      <g transform="translate(8 0)">
       {kind === "Single Family" && (
         <g>
           <Pine x={53} />
@@ -73,6 +77,7 @@ export function HomeIcon({ kind, className }: { kind: string; className?: string
           <path d="M5 45 H52" stroke="#14283a" strokeWidth="1.6" />
         </g>
       )}
+      </g>
     </svg>
   );
 }
