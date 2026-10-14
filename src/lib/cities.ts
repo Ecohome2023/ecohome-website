@@ -27,10 +27,10 @@ export const cities: City[] = [
     slug: "american-fork",
     name: "American Fork",
     county: "Utah County",
-    metaTitle: "Heating & AC Repair in American Fork, UT",
+    metaTitle: "American Fork HVAC: Heating & Cooling, 24/7",
     metaDescription:
-      "Eco Home is based in American Fork. Furnace and AC repair, heat pump installs, $2,150+ in guaranteed rebates and permits on every job. Open 24/7.",
-    h1: "Heating and AC in American Fork, UT",
+      "Heating and cooling from our American Fork shop: furnace and AC repair, heat pump installs, $2,150+ in guaranteed rebates, permits pulled. Open 24/7.",
+    h1: "Heating and cooling in American Fork, UT",
     heroSub:
       "Our shop is on Automall Drive in American Fork, so we’re usually minutes from your door. Repairs, tune-ups and new heat pump and furnace systems, with the permit pulled on every job.",
     intro: [

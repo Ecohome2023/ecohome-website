@@ -36,7 +36,7 @@ export const cityServices: CityService[] = [
     slug: "furnace-repair",
     serviceName: "Furnace repair",
     mainHref: "/services/furnace-repair",
-    metaTitle: "Furnace Repair in American Fork, UT",
+    metaTitle: "Furnace Repair in American Fork, UT, Open 24/7",
     metaDescription:
       "Furnace repair from our American Fork shop on Automall Drive. Open 24/7, $129 diagnostic, an upfront price before any work. Call 801-396-0019.",
     h1: "Furnace repair in American Fork, UT",
@@ -117,7 +117,7 @@ export const cityServices: CityService[] = [
     slug: "ac-repair",
     serviceName: "AC repair",
     mainHref: "/services/ac-repair",
-    metaTitle: "AC Repair in American Fork, UT",
+    metaTitle: "AC Repair in American Fork, UT, Open 24/7",
     metaDescription:
       "AC repair from our American Fork shop. Open 24/7, a $129 diagnostic and an upfront price before any work. Warm air, leaks or no power, we fix it.",
     h1: "AC repair in American Fork, UT",
@@ -126,7 +126,7 @@ export const cityServices: CityService[] = [
     heroImg: { src: "/images/ac-repair-techs-overhead.jpg", alt: "Two Eco Home technicians repairing an outdoor air conditioner", pos: "50% 50%" },
     primaryCta: "BOOK",
     intro: [
-      "American Fork summers average in the low 90s in July, and upstairs bedrooms get hotter than that. When your air conditioner stops cooling, our technicians are close by: the shop is on Automall Drive, and we answer calls and online bookings 24/7.",
+      "American Fork summers average in the low 90s in July, and upstairs bedrooms get hotter than that. When your air conditioner stops cooling and you need air conditioning repair fast, our technicians are close by: the shop is on Automall Drive, and we answer calls and online bookings 24/7.",
       "We repair every major AC and heat pump brand. Every visit starts with a full diagnostic, and you approve the price before we start.",
     ],
     factorsTitle: "What’s hard on air conditioners in American Fork",
