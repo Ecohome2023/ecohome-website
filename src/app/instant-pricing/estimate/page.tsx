@@ -85,12 +85,6 @@ export default async function EstimatePage({ searchParams }: PageProps<"/instant
             </div>
           </div>
 
-          <p className="mt-6 max-w-4xl text-sm leading-relaxed text-mist">
-            Due to many variables, we can’t give an exact price until we measure and inspect your home. Prices are shown after utility rebates, and we confirm your exact rebates at your visit.
-            Monthly payments are estimates for illustration only, based on the estimated price at {FIN.apr}% APR over {FIN.years} years with no money down. This is not an offer of credit.
-            The 0% option is through {site.financingPartner}. Pay off the full balance within the first {PROMO.promoMonths} months and all interest is waived, so every payment you made during that time goes entirely toward your balance. If the balance isn’t paid off in {PROMO.promoMonths} months, interest applies at {PROMO.apr}% APR; the monthly payment shown is figured at that rate over {PROMO.years} years.
-            Financing is subject to credit approval by a third-party lender; your actual rate, term and payment may differ. Energy savings compare cooling efficiency with a 10 SEER unit; actual savings depend on usage, rates and weather.
-          </p>
         </div>
       </section>
 
@@ -171,6 +165,15 @@ export default async function EstimatePage({ searchParams }: PageProps<"/instant
             <a href={site.phoneHref} className="flex items-center gap-2 rounded-full bg-white px-6 py-4 text-lg font-bold ring-2 ring-ink"><PhoneIcon className="h-5 w-5" />{site.phone}</a>
           </div>
         </div>
+      </section>
+
+      <section aria-label="Disclosures" className="border-t border-line bg-white">
+          <p className="mx-auto max-w-7xl px-4 py-8 text-sm leading-relaxed text-mist sm:px-6">
+          Due to many variables, we can’t give an exact price until we measure and inspect your home. Prices are shown after utility rebates, and we confirm your exact rebates at your visit.
+          Monthly payments are estimates for illustration only, based on the estimated price at {FIN.apr}% APR over {FIN.years} years with no money down. This is not an offer of credit.
+          The 0% option is through {site.financingPartner}. Pay off the full balance within the first {PROMO.promoMonths} months and all interest is waived, so every payment you made during that time goes entirely toward your balance. If the balance isn’t paid off in {PROMO.promoMonths} months, interest applies at {PROMO.apr}% APR; the monthly payment shown is figured at that rate over {PROMO.years} years.
+          Financing is subject to credit approval by a third-party lender; your actual rate, term and payment may differ. Energy savings compare cooling efficiency with a 10 SEER unit; actual savings depend on usage, rates and weather.
+        </p>
       </section>
 
       <MobileBookBar watch="estimate-card" />
