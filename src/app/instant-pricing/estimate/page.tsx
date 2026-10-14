@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { reviews } from "@/lib/content";
-import { OPTIONS, TON_SIZES, FIN, cleanName, type EstimateType, type Tons } from "@/lib/estimator";
+import { OPTIONS, TON_SIZES, FIN, PROMO, cleanName, type EstimateType, type Tons } from "@/lib/estimator";
 import { EstimateCard } from "@/components/estimator/EstimateCard";
 import { MobileBookBar } from "@/components/estimator/MobileBookBar";
 import { JobPromises } from "@/components/JobPromises";
@@ -88,6 +88,7 @@ export default async function EstimatePage({ searchParams }: PageProps<"/instant
           <p className="mt-6 max-w-4xl text-sm leading-relaxed text-mist">
             Due to many variables, we can’t give an exact price until we measure and inspect your home. Prices are shown after utility rebates, and we confirm your exact rebates at your visit.
             Monthly payments are estimates for illustration only, based on the estimated price at {FIN.apr}% APR over {FIN.years} years with no money down. This is not an offer of credit.
+            The 0% option is {PROMO.months} equal payments of the estimated price with $0 down, through {site.financingPartner}.
             Financing is subject to credit approval by a third-party lender; your actual rate, term and payment may differ. Energy savings compare cooling efficiency with a 10 SEER unit; actual savings depend on usage, rates and weather.
           </p>
         </div>

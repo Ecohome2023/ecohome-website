@@ -254,6 +254,9 @@ export const OPTIONS: Record<EstimateType, {
 
 // ---------- Financing (decision 0010) ----------
 export const FIN = { years: 20, apr: 11.99 };
+// Second option: $0 down, 0% interest for 12 months (Slice by FNBO Bank).
+export const PROMO = { months: 12 };
+export const promoMonthly = (price: number) => price / PROMO.months;
 export function monthly(price: number) {
   const r = FIN.apr / 100 / 12, n = FIN.years * 12;
   return (price * r) / (1 - Math.pow(1 + r, -n));

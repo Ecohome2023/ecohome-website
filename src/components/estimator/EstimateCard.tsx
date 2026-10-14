@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { OPTIONS, FIN, monthly, usd, type EstimateType, type Tons } from "@/lib/estimator";
+import { OPTIONS, FIN, PROMO, monthly, promoMonthly, usd, type EstimateType, type Tons } from "@/lib/estimator";
 import { site } from "@/lib/site";
 import { CheckIcon, PhoneIcon } from "@/components/icons";
 
@@ -50,15 +50,25 @@ export function EstimateCard({ type, tons }: { type: EstimateType; tons: Tons })
   return (
     <div className="rounded-3xl bg-white p-6 ring-2 ring-ink shadow-[0_6px_0_#14283a] sm:p-8">
       <p className="text-sm font-bold uppercase tracking-wider text-mist">Your estimate</p>
-      <div className="mt-1 flex flex-wrap items-baseline gap-x-2">
-        <span className="display text-5xl tabular-nums sm:text-6xl">{usd(price)}</span>
-        <span className="font-semibold text-mist">after incentives</span>
+      <div className="mt-1 flex flex-wrap items-baseline gap-x-1">
+        <span className="display text-6xl tabular-nums sm:text-7xl">{usd(monthly(price))}</span>
+        <span className="text-2xl font-extrabold">/mo</span>
       </div>
-      <p className="mt-2 font-semibold">
-        or about <span className="tabular-nums">{usd(monthly(price))}</span>/mo
-        <span className="font-normal text-mist"> · {FIN.years} yr · {FIN.apr}% APR · estimate</span>
-      </p>
-      <p className="mt-1 text-sm text-mist">Range for your home: {usd(o.price(tons, 0))} to {usd(o.price(tons, max))}</p>
+      <p className="mt-1 text-sm font-semibold text-mist">$0 down · {FIN.years} years · {FIN.apr}% APR · estimate</p>
+
+      <div className="mt-5 grid grid-cols-2 gap-3">
+        <div className="rounded-2xl bg-sky-soft p-4">
+          <p className="text-xs font-bold uppercase tracking-wider text-mist">Price after incentives</p>
+          <p className="mt-1 text-2xl font-extrabold tabular-nums">{usd(price)}</p>
+          <p className="mt-0.5 text-xs text-mist">Rebates already taken off</p>
+        </div>
+        <div className="rounded-2xl bg-sky-soft p-4">
+          <p className="text-xs font-bold uppercase tracking-wider text-mist">Or 0% interest</p>
+          <p className="mt-1 text-2xl font-extrabold tabular-nums">{usd(promoMonthly(price))}<span className="text-base">/mo</span></p>
+          <p className="mt-0.5 text-xs text-mist">$0 down for {PROMO.months} months</p>
+        </div>
+      </div>
+      <p className="mt-3 text-sm text-mist">Price range for your home: {usd(o.price(tons, 0))} to {usd(o.price(tons, max))}</p>
 
       <section aria-labelledby="eff-h" className="mt-7 rounded-2xl bg-sky-soft p-5">
         <div className="flex items-start gap-3">
