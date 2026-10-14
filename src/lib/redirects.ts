@@ -1,3 +1,4 @@
+import { citySlugs } from "./cities";
 // Redirects from the old WordPress site (ecohometoday.com before October 2026).
 // permanent: true  = the old page is gone for good (308).
 // permanent: false = temporary (307) until we rebuild that page; then delete
@@ -45,9 +46,9 @@ export const oldSiteRedirects: R[] = [
 
   // Old city pages: temporary until each city page is rebuilt
   t("/service-area", "/#service-area"),
-  t("/service-area/american-fork", "/"),
   t("/service-area/:city(.*)-air-conditioner", "/cooling"),
-  t("/service-area/:slug*", "/heat-pumps"),
+  // Old city URLs without a new page yet. Cities with a page (lib/cities) are left out.
+  t(`/service-area/:slug((?!${citySlugs.join("|")}$).*)`, "/heat-pumps"),
 
   // Blog posts: migrated ones point to /blog; the rest are temporary until migrated
   p("/utah-ductless-mini-split-guide", "/blog/utah-ductless-mini-split-guide"),

@@ -6,6 +6,7 @@ import { VideoTestimonial } from "@/components/VideoTestimonial";
 import { CheckIcon, MailIcon, PhoneIcon, Stars } from "@/components/icons";
 import { Hero, SmileBand } from "@/components/Hero";
 import { steps, reviews } from "@/lib/content";
+import { cityHref } from "@/lib/cities";
 import { SystemOptions } from "@/components/SystemOptions";
 import { JobPromises } from "@/components/JobPromises";
 
@@ -262,7 +263,7 @@ export default function Home() {
                 <div key={c.name}>
                   <h3 className="text-lg font-extrabold">{c.name}</h3>
                   <ul className="mt-3 columns-2 gap-4 leading-8 text-ink/85">
-                    {c.cities.map((city) => <li key={city}>{city}</li>)}
+                    {c.cities.map((city) => { const href = cityHref(city); return <li key={city}>{href ? <Link href={href} className="font-bold underline underline-offset-2 hover:no-underline">{city}</Link> : city}</li>; })}
                   </ul>
                 </div>
               ))}

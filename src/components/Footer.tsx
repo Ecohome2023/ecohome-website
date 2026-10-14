@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { site, nav, counties, hrefFor } from "@/lib/site";
+import { cityHref } from "@/lib/cities";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -59,7 +60,17 @@ export function Footer() {
             {counties.map((c) => (
               <div key={c.name}>
                 <h3 className="text-sm font-bold text-white">{c.name}</h3>
-                <p className="mt-1 text-sm leading-6 text-white/70">{c.cities.join(" · ")}</p>
+                <p className="mt-1 text-sm leading-6 text-white/70">
+                  {c.cities.map((city, i) => {
+                    const href = cityHref(city);
+                    return (
+                      <Fragment key={city}>
+                        {i > 0 && " · "}
+                        {href ? <Link href={href} className="font-semibold text-white underline-offset-2 hover:underline">{city}</Link> : city}
+                      </Fragment>
+                    );
+                  })}
+                </p>
               </div>
             ))}
           </div>
