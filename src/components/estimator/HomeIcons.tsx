@@ -1,7 +1,7 @@
 // Home-type icons for the instant pricing form. Each sits in front of the
 // snowcapped Wasatch peaks, with a pine or two, for a Utah feel.
 
-function Peaks() {
+export function Peaks() {
   return (
     <g>
       <path d="M2 44 L22 14 L31 26 L42 8 L62 44 Z" fill="#cdeffa" />
@@ -12,7 +12,7 @@ function Peaks() {
   );
 }
 
-function Pine({ x }: { x: number }) {
+export function Pine({ x }: { x: number }) {
   return (
     <g>
       <path d={`M${x} 30 L${x + 4} 37 L${x + 2} 37 L${x + 5} 42 L${x - 5} 42 L${x - 2} 37 L${x - 4} 37 Z`} fill="#0a617d" stroke="#14283a" strokeWidth="1.2" strokeLinejoin="round" />
@@ -21,7 +21,7 @@ function Pine({ x }: { x: number }) {
   );
 }
 
-const stroke = { stroke: "#14283a", strokeWidth: 1.8, strokeLinejoin: "round" as const };
+export const stroke = { stroke: "#14283a", strokeWidth: 1.8, strokeLinejoin: "round" as const };
 
 export function HomeIcon({ kind, className }: { kind: string; className?: string }) {
   return (

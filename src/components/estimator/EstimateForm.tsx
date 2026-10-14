@@ -6,11 +6,13 @@ import { questions, SERVICE_AREA, estimateResult, emailFix, EMAIL_RE, type Answe
 import { site } from "@/lib/site";
 import { CheckIcon, PhoneIcon } from "@/components/icons";
 import { HomeIcon } from "./HomeIcons";
+import { EquipmentIcon } from "./EquipmentIcons";
 
 // One question per screen: ZIP, eight choice questions, then contact details.
 // Order of the screens (keys from questions in lib/estimator, plus zip and contact).
-const STEPS = ["hometype", "zip", "setup", "replace", "sqft", "age", "condition", "built", "timeline", "contact"];
-const ICON_STEPS = new Set(["hometype"]);
+const STEPS = ["hometype", "setup", "replace", "sqft", "age", "condition", "built", "timeline", "zip", "contact"];
+// Questions shown as picture tiles, and how many tiles per row on wider screens.
+const ICON_STEPS: Record<string, string> = { hometype: "grid-cols-2", setup: "grid-cols-2 sm:grid-cols-3", replace: "grid-cols-3" };
 const KEYS = "ABCDEFGH";
 
 type Status = "asking" | "sending" | "done";
@@ -146,17 +148,17 @@ export function EstimateForm() {
             <>
               <h2 ref={headingRef} tabIndex={-1} id="q" className="display mt-2 text-3xl outline-none sm:text-4xl">{question.title}</h2>
               <p className="mt-3 text-lg text-mist">{question.help}</p>
-              {ICON_STEPS.has(key) ? (
-              <div role="group" aria-labelledby="q" className="mt-7 grid grid-cols-2 gap-3">
+              {ICON_STEPS[key] ? (
+              <div role="group" aria-labelledby="q" className={`mt-7 grid gap-3 ${ICON_STEPS[key]}`}>
                 {question.choices.map((c, i) => {
                   const on = answers[key] === c.value;
                   return (
                     <button
                       key={c.value} type="button" aria-pressed={on} onClick={() => choose(c.value)}
-                      className={`relative flex flex-col items-center gap-2 rounded-2xl border-2 px-3 pb-4 pt-5 text-center text-lg font-semibold leading-tight transition-colors ${on ? "border-ink bg-sky-soft" : "border-transparent bg-[#f2f6f8] hover:border-line"}`}
+                      className={`relative flex flex-col items-center gap-2 rounded-2xl border-2 px-3 pb-4 pt-5 text-center font-semibold leading-tight ${key === "replace" ? "text-base sm:text-lg" : "text-lg"} transition-colors ${on ? "border-ink bg-sky-soft" : "border-transparent bg-[#f2f6f8] hover:border-line"}`}
                     >
                       <span className={`absolute left-2.5 top-2.5 grid h-6 w-6 place-items-center rounded-md border text-xs font-bold ${on ? "border-ink bg-ink text-white" : "border-line bg-white text-mist"}`}>{KEYS[i]}</span>
-                      <HomeIcon kind={c.value} className="h-16 w-auto sm:h-20" />
+                      {key === "hometype" ? <HomeIcon kind={c.value} className="h-16 w-auto sm:h-20" /> : <EquipmentIcon qkey={key} value={c.value} className="h-16 w-auto sm:h-20" />}
                       {c.label}
                     </button>
                   );
