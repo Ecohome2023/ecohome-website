@@ -5,9 +5,12 @@ import Link from "next/link";
 import { questions, SERVICE_AREA, estimateResult, emailFix, EMAIL_RE, type Answers } from "@/lib/estimator";
 import { site } from "@/lib/site";
 import { CheckIcon, PhoneIcon } from "@/components/icons";
+import { HomeIcon } from "./HomeIcons";
 
 // One question per screen: ZIP, eight choice questions, then contact details.
-const STEPS = ["zip", ...questions.map((q) => q.key), "contact"];
+// Order of the screens (keys from questions in lib/estimator, plus zip and contact).
+const STEPS = ["hometype", "zip", "setup", "replace", "sqft", "age", "condition", "built", "timeline", "contact"];
+const ICON_STEPS = new Set(["hometype"]);
 const KEYS = "ABCDEFGH";
 
 type Status = "asking" | "sending" | "done";
@@ -143,6 +146,23 @@ export function EstimateForm() {
             <>
               <h2 ref={headingRef} tabIndex={-1} id="q" className="display mt-2 text-3xl outline-none sm:text-4xl">{question.title}</h2>
               <p className="mt-3 text-lg text-mist">{question.help}</p>
+              {ICON_STEPS.has(key) ? (
+              <div role="group" aria-labelledby="q" className="mt-7 grid grid-cols-2 gap-3">
+                {question.choices.map((c, i) => {
+                  const on = answers[key] === c.value;
+                  return (
+                    <button
+                      key={c.value} type="button" aria-pressed={on} onClick={() => choose(c.value)}
+                      className={`relative flex flex-col items-center gap-2 rounded-2xl border-2 px-3 pb-4 pt-5 text-center text-lg font-semibold leading-tight transition-colors ${on ? "border-ink bg-sky-soft" : "border-transparent bg-[#f2f6f8] hover:border-line"}`}
+                    >
+                      <span className={`absolute left-2.5 top-2.5 grid h-6 w-6 place-items-center rounded-md border text-xs font-bold ${on ? "border-ink bg-ink text-white" : "border-line bg-white text-mist"}`}>{KEYS[i]}</span>
+                      <HomeIcon kind={c.value} className="h-16 w-auto sm:h-20" />
+                      {c.label}
+                    </button>
+                  );
+                })}
+              </div>
+              ) : (
               <div role="group" aria-labelledby="q" className="mt-7 grid gap-2.5">
                 {question.choices.map((c, i) => {
                   const on = answers[key] === c.value;
@@ -157,6 +177,7 @@ export function EstimateForm() {
                   );
                 })}
               </div>
+              )}
             </>
           )}
 
