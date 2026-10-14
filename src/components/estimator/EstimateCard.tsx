@@ -65,7 +65,7 @@ export function EstimateCard({ type, tons }: { type: EstimateType; tons: Tons })
         <div className="rounded-2xl bg-sky-soft p-4">
           <p className="text-xs font-bold uppercase tracking-wider text-mist">Or 0% for {PROMO.promoMonths} months</p>
           <p className="mt-1 text-2xl font-extrabold tabular-nums">{usd(promoMonthly(price))}<span className="text-base">/mo</span></p>
-          <p className="mt-0.5 text-xs text-mist">{PROMO.years} years · {PROMO.apr}% APR</p>
+          <p className="mt-0.5 text-xs text-mist">Terms apply</p>
         </div>
       </div>
       <p className="mt-3 text-sm text-mist">Price range for your home: {usd(o.price(tons, 0))} to {usd(o.price(tons, max))}</p>
