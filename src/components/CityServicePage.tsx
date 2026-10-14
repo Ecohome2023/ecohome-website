@@ -120,6 +120,16 @@ export function CityServicePage({ city: c, page: p }: { city: City; page: CitySe
                 <div><dt className="font-extrabold">The problem</dt><dd className="mt-1 text-ink/85">{p.job.problem}</dd></div>
                 <div><dt className="font-extrabold">What we installed</dt><dd className="mt-1 text-ink/85">{p.job.solution}</dd></div>
               </dl>
+              {p.job.before && p.job.after && (
+                <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4">
+                  {[{ ...p.job.before, label: "Before" }, { ...p.job.after, label: "After" }].map((ph) => (
+                    <figure key={ph.label} className="relative aspect-[3/4] overflow-hidden rounded-2xl ring-1 ring-line">
+                      <Image src={ph.src} alt={ph.alt} fill sizes="(min-width: 1024px) 340px, 50vw" className="object-cover" />
+                      <figcaption className="absolute left-3 top-3 rounded-full bg-ink px-3 py-1 text-sm font-bold text-white">{ph.label}</figcaption>
+                    </figure>
+                  ))}
+                </div>
+              )}
             </div>
             <div className="rounded-3xl bg-ink p-7 text-white lg:mt-10">
               <p className="text-sm font-bold uppercase tracking-wider text-sky">The result</p>

@@ -22,7 +22,7 @@ export type CityService = {
   listIntro: string;
   list: Item[];
   price: { title: string; body: string; points: string[] };
-  job?: { customer: string; title: string; problem: string; solution: string; result: string; img?: string; alt?: string };
+  job?: { customer: string; title: string; problem: string; solution: string; result: string; img?: string; alt?: string; before?: { src: string; alt: string }; after?: { src: string; alt: string } };
   decideTitle?: string;
   decide?: string[];
   safety?: { title: string; body: string };
@@ -242,6 +242,8 @@ export const cityServices: CityService[] = [
       problem: "Trent’s air conditioner ran, but it wasn’t cooling all the rooms in his American Fork home properly. Some rooms stayed comfortable while others never cooled down.",
       solution: "We recommended a variable-speed heat pump paired with a gas furnace. It adjusts its speed to what the house needs, so it runs longer and steadier and moves air to every room. The furnace takes over the heating on the coldest nights.",
       result: "Every room in Trent’s home now heats and cools evenly, and efficiently.",
+      before: { src: "/images/old-ac-unit.jpg", alt: "Trent B.’s old air conditioner at his American Fork home before the upgrade" },
+      after: { src: "/images/american-fork-heat-pump-install.jpg", alt: "Eco Home technician checking the new variable-speed heat pump at Trent B.’s home in American Fork" },
     },
     faqs: [
       {
