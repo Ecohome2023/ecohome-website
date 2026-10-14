@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { posts } from "@/lib/blog";
 import { cities } from "@/lib/cities";
+import { cityServices } from "@/lib/cityServices";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const blogPosts: MetadataRoute.Sitemap = posts.map((p) => ({ url: `${site.url}/blog/${p.slug}`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.6 }));
@@ -27,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.url}/terms-of-service`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.2 },
     { url: `${site.url}/smile-guarantee`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.4 },
     ...cities.map((c) => ({ url: `${site.url}/service-area/${c.slug}`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 })),
+    ...cityServices.map((p) => ({ url: `${site.url}/service-area/${p.city}/${p.slug}`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 })),
     ...blogPosts,
   ];
 }

@@ -7,6 +7,7 @@ import { googleReviews } from "@/lib/reviews";
 import { CheckIcon, MailIcon, PhoneIcon, Stars } from "./icons";
 import { JobPromises } from "./JobPromises";
 import { ReviewRotator } from "./ReviewRotator";
+import { servicesForCity } from "@/lib/cityServices";
 
 const services = [
   { href: "/services/furnace-repair", title: "Furnace repair", blurb: "No heat, short cycling or strange noises. Upfront price before any work." },
@@ -119,6 +120,7 @@ export function CityPage({ city: c }: { city: City }) {
             <p className="mt-3 text-2xl font-extrabold leading-snug">{c.job.result}</p>
             <p className="mt-5 font-semibold text-white/70">{c.job.customer}, {c.name}</p>
             <Link href={site.instantPricingUrl} className="mt-6 inline-block rounded-full bg-alarm-strong px-6 py-3 font-bold text-white hover:brightness-110">Price a system like this</Link>
+            {c.job.more && <Link href={c.job.more} className="mt-4 block font-bold text-sky hover:underline">Read the full story ›</Link>}
           </div>
         </div>
       </section>
@@ -163,14 +165,17 @@ export function CityPage({ city: c }: { city: City }) {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:py-20">
         <h2 className="display text-3xl sm:text-4xl">HVAC services in {c.name}</h2>
         <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s) => (
+          {services.map((s) => {
+            const local = servicesForCity(c.slug).find((l) => l.mainHref === s.href);
+            return (
             <li key={s.href}>
-              <Link href={s.href} className="block h-full rounded-2xl bg-white p-5 ring-1 ring-line hover:ring-ink">
+              <Link href={local ? `/service-area/${c.slug}/${local.slug}` : s.href} className="block h-full rounded-2xl bg-white p-5 ring-1 ring-line hover:ring-ink">
                 <span className="text-lg font-extrabold">{s.title} <span aria-hidden="true" className="text-alarm-strong">›</span></span>
                 <span className="mt-2 block text-mist">{s.blurb}</span>
               </Link>
             </li>
-          ))}
+            );
+          })}
         </ul>
         <JobPromises />
       </section>

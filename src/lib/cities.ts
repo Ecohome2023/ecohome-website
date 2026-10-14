@@ -16,7 +16,7 @@ export type City = {
   facts: { label: string; value: string }[];
   homes: { title: string; body: string }[];
   rmp: boolean; // Rocky Mountain Power customers (Wattsmart rebate applies)
-  job: { customer: string; title: string; problem: string; solution: string; result: string; img: string; alt: string };
+  job: { customer: string; title: string; problem: string; solution: string; result: string; img: string; alt: string; more?: string };
   faqs: CityFaq[];
   nearby: string[];
   mapEmbed?: string;
@@ -64,11 +64,12 @@ export const cities: City[] = [
       customer: "Trent B.",
       title: "Trent’s AC couldn’t cool every room. Now every room heats and cools evenly.",
       problem:
-        "Trent’s air conditioner ran, but it wasn’t cooling all the rooms in his American Fork home properly. Some rooms stayed comfortable while others never cooled down.",
+        "Trent’s AC ran, but some rooms in his home never cooled down.",
       solution:
-        "We recommended a variable-speed heat pump paired with a gas furnace. The heat pump adjusts its speed to what the house needs, so it runs longer and steadier and pushes air to every room. On the coldest nights, the gas furnace takes over the heating. As on every job, we pulled the permit and checked the refrigerant charge with digital gauges before we left.",
+        "A variable-speed heat pump with a gas furnace backup now moves steady air to every room, and the furnace covers the coldest nights.",
       result:
         "Every room in Trent’s home now heats and cools evenly, and the system uses less energy doing it.",
+      more: "/service-area/american-fork/heat-pump-installation",
       img: "/images/american-fork-heat-pump-install.jpg",
       alt: "Eco Home technician checking the refrigerant charge on a new variable-speed heat pump at Trent B.’s home in American Fork",
     },
