@@ -316,6 +316,9 @@ export function hubspotFields(a: Answers) {
     ["what_is_the_square_footage_of_your_home_", a.sqft], ["home_built_era", a.built],
     ["estimate_tons", gas ? tons : ""], ["replace_timeline", a.timeline],
     ["sms_estimate_consent", "true"], ["market", "Utah (HVAC)"], ["lead_type", "HVAC"], ["lead_source", "Instant Estimate"],
+    // Attribution (custom contact properties, hidden fields on the HubSpot form).
+    ["lead_channel", a.lead_channel], ["first_landing_page", a.first_landing_page],
+    ["first_referrer", a.first_referrer], ["campaign_details", a.campaign_details],
   ].filter(([, v]) => v) as [string, string][];
 }
 

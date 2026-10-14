@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
       <p>When you call us, book service, request an estimate or become a customer, we may collect your name, phone number, email address, service address, details about your home and equipment, and any notes you share with us.</p>
       <h3>Information collected automatically</h3>
       <p>
-        We use privacy-friendly website analytics to understand how many people visit our site and which pages are useful. This analytics does not use cookies and does not identify you personally. Like most websites, our hosting provider may also record basic technical information, such as your browser type and IP address, to keep the site secure and running.
+        We use privacy-friendly website analytics to understand how many people visit our site and which pages are useful. This analytics does not use cookies and does not identify you personally. Like most websites, our hosting provider may also record basic technical information, such as your browser type and IP address, to keep the site secure and running. To know which of our marketing works, your browser also remembers how you first found our site (for example, a Google search or an ad) and the first page you visited. If you request an estimate, we save that with your request.
       </p>
 
       <h2>How we use your information</h2>

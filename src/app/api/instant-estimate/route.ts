@@ -21,6 +21,14 @@ export async function POST(request: Request) {
   a.lname = cleanName(a.lname);
   a.phone = a.phone.replace(/\D/g, "").slice(-10);
 
+  // Where the lead first came from (set in the browser; see lib/attribution).
+  const ft = (typeof body.firstTouch === "object" && body.firstTouch) || {};
+  const s = (v: unknown, n: number) => (typeof v === "string" ? v.replace(/[\r\n]/g, " ").trim().slice(0, n) : "");
+  a.lead_channel = s((ft as Record<string, unknown>).channel, 40);
+  a.first_landing_page = s((ft as Record<string, unknown>).landing, 200);
+  a.first_referrer = s((ft as Record<string, unknown>).referrer, 120);
+  a.campaign_details = s((ft as Record<string, unknown>).campaign, 250);
+
   const bad = validate(a);
   if (bad) return Response.json({ ok: false, error: bad }, { status: 422 });
 

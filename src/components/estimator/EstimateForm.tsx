@@ -6,6 +6,8 @@ import { questions, SERVICE_AREA, estimateResult, emailFix, EMAIL_RE, type Answe
 import { site } from "@/lib/site";
 import { CheckIcon, PhoneIcon } from "@/components/icons";
 import { HomeIcon } from "./HomeIcons";
+import { firstTouch } from "@/lib/attribution";
+import { track } from "@vercel/analytics";
 import { EquipmentIcon } from "./EquipmentIcons";
 
 // One question per screen: ZIP, eight choice questions, then contact details.
@@ -87,9 +89,10 @@ export function EstimateForm() {
       const r = await fetch("/api/instant-estimate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...a, email: a.email.trim(), pageUri: location.href }),
+        body: JSON.stringify({ ...a, email: a.email.trim(), pageUri: location.href, firstTouch: firstTouch() }),
       });
       ok = r.ok;
+      if (ok) track("Estimate submitted", { channel: firstTouch()?.channel ?? "Unknown" });
     } catch {
       ok = false;
     }
