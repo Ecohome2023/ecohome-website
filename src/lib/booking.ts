@@ -17,9 +17,9 @@ export type Need = "repair" | "tune-up" | "new";
 
 // The three choices on the first screen.
 export const needs: { key: Need; title: string; sub: string; price: string }[] = [
+  { key: "new", title: "New system", sub: "Furnace, AC, heat pump or mini-split", price: "Free estimate" },
   { key: "repair", title: "Repair", sub: "Something isn’t working right", price: "$129" },
   { key: "tune-up", title: "Tune-up", sub: "Furnace or AC", price: "From $39" },
-  { key: "new", title: "New system", sub: "Furnace, AC, heat pump or mini-split", price: "Free estimate" },
 ];
 
 export type BookingService = {
