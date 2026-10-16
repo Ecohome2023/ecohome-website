@@ -1,5 +1,6 @@
 "use client";
 
+import { gaEvent } from "@/lib/gtag";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { questions, SERVICE_AREA, estimateResult, emailFix, EMAIL_RE, type Answers } from "@/lib/estimator";
@@ -92,7 +93,10 @@ export function EstimateForm() {
         body: JSON.stringify({ ...a, email: a.email.trim(), pageUri: location.href, firstTouch: firstTouch() }),
       });
       ok = r.ok;
-      if (ok) track("Estimate submitted", { channel: firstTouch()?.channel ?? "Unknown" });
+      if (ok) {
+        track("Estimate submitted", { channel: firstTouch()?.channel ?? "Unknown" });
+        gaEvent("generate_lead", { form: "instant_pricing" });
+      }
     } catch {
       ok = false;
     }

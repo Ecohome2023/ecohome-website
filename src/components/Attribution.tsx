@@ -1,5 +1,6 @@
 "use client";
 
+import { gaEvent } from "@/lib/gtag";
 import { useEffect } from "react";
 import { track } from "@vercel/analytics";
 import { recordFirstTouch } from "@/lib/attribution";
@@ -13,6 +14,7 @@ export function Attribution() {
       const a = (e.target as HTMLElement | null)?.closest?.('a[href^="tel:"]');
       if (!a) return;
       track("Phone tap", { channel: ft.channel, page: location.pathname });
+      gaEvent("phone_tap", { page: location.pathname });
     };
     document.addEventListener("click", onClick, { capture: true });
     return () => document.removeEventListener("click", onClick, { capture: true });

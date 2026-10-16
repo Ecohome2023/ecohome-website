@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { RevealObserver } from "@/components/RevealObserver";
 import { Analytics } from "@vercel/analytics/next";
 import { Attribution } from "@/components/Attribution";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { site, allCities, isLive } from "@/lib/site";
 import { ogImage } from "@/lib/meta";
 
@@ -119,6 +120,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <RevealObserver />
         <Analytics />
         <Attribution />
+        {isLive && <GoogleAnalytics />}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
