@@ -35,7 +35,7 @@ export function CityServicePage({ city: c, page: p }: { city: City; page: CitySe
       image: `${site.url}${p.heroImg.src}`,
       provider: { "@id": `${site.url}/#business` },
       areaServed: { "@type": "City", name: `${c.name}, UT` },
-      offers: { "@type": "Offer", price: p.offer.price, priceCurrency: "USD", description: p.offer.description },
+      ...(p.offer && { offers: { "@type": "Offer", price: p.offer.price, priceCurrency: "USD", description: p.offer.description } }),
     },
     {
       "@context": "https://schema.org",

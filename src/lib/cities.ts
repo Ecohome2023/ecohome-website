@@ -175,6 +175,80 @@ export const cities: City[] = [
     ],
     updated: "2026-10-16",
     nearby: ["Vineyard", "Lindon", "Provo", "Pleasant Grove", "American Fork", "Lehi"],
+  },  {
+    slug: "lehi",
+    name: "Lehi",
+    county: "Utah County",
+    metaTitle: "Lehi HVAC: Heating & Cooling, Open 24/7",
+    metaDescription:
+      "Heating and cooling for Lehi homes, from historic Main Street to Traverse Mountain: furnace and AC repair and dual-fuel heat pump systems. Open 24/7.",
+    h1: "Heating and cooling in Lehi, UT",
+    heroSub:
+      "Our shop is just over the line in American Fork, so Lehi is close. Furnace and AC repairs, tune-ups and dual-fuel heat pump systems, open 24/7 with the permit pulled on every job.",
+    intro: [
+      "Few cities in Utah have grown like Lehi. It had about 19,000 residents in 2000 and nearly 76,000 by 2020, as Silicon Slopes brought tech jobs and new neighborhoods spread across Traverse Mountain and the west side. Older homes around the Main Street Historic District now sit a few minutes from subdivisions that didn’t exist 20 years ago.",
+      "That boom means a lot of Lehi homes are now about 20 years old, and so is their original equipment. At about 4,560 feet, Lehi sees January lows in the mid-teens and July highs around 90°F, so a system has to work hard in both seasons. We size every install with a load calculation, and for most Lehi homes we recommend a heat pump paired with a gas furnace.",
+    ],
+    facts: [
+      { label: "Elevation", value: "About 4,560 ft" },
+      { label: "Winter nights", value: "Average low in the mid-teens in January" },
+      { label: "Summer days", value: "Average high around 90°F in July" },
+      { label: "Electric", value: "Lehi City Power" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+      { label: "Permits", value: "Lehi City Building and Inspections" },
+    ],
+    homes: [
+      {
+        title: "Older homes near Main Street",
+        body: "The blocks around Lehi’s Main Street Historic District hold the city’s oldest houses. Many were built long before central air, and their ducts were sized for a furnace alone. We check duct size and airflow before recommending a system, so new equipment isn’t fighting old ductwork.",
+      },
+      {
+        title: "Two-story homes from the 2000s boom",
+        body: "Lehi more than doubled between 2000 and 2010. Those homes, often with a loft or bonus room, are now about 20 years old, and the original furnace and AC are wearing out together. The upstairs runs hot in summer because a single-speed AC blasts on and off without mixing the air between floors.",
+      },
+      {
+        title: "Newer homes on Traverse Mountain and the west side",
+        body: "Lehi’s newest neighborhoods have bigger homes spread over three levels, from a finished basement to an upstairs loft. One system has to keep all three comfortable, which is where a variable-speed heat pump earns its keep: it runs longer at low speed and keeps air moving to every level.",
+      },
+    ],
+    rmp: false,
+    job: {
+      customer: "Bryce K.",
+      title: "Bryce’s upstairs and loft baked every afternoon. Now the house is even from the basement to the loft.",
+      problem:
+        "Bryce’s early-2000s home had a hot upstairs and loft by mid-afternoon, with the AC running almost nonstop. In winter, the 20-plus-year-old furnace was loud and uneven: the main floor overheated while the basement stayed cold.",
+      solution:
+        "A variable-speed heat pump paired with a natural gas furnace. The heat pump cools and handles mild-weather heating, and gas takes over when it gets colder.",
+      result:
+        "Even temperatures from the basement to the loft, and a quiet system in place of the old furnace’s roar.",
+      more: "/service-area/lehi/heat-pump-installation",
+      img: "/images/heat-pumps-pair.jpg",
+      alt: "Two inverter heat pumps beside a newer home on a paver patio",
+    },
+    faqs: [
+      {
+        q: "Do you serve all of Lehi?",
+        a: "Yes, from the historic homes near Main Street to Traverse Mountain, the neighborhoods around Thanksgiving Point and the west side. Our shop is right next door in American Fork, and we’re open 24/7.",
+      },
+      {
+        q: "Are there HVAC rebates in Lehi?",
+        a: "Yes, but they’re different from most nearby cities. Lehi runs its own city power, so the $1,450 Rocky Mountain Power Wattsmart rebate doesn’t apply. Enbridge Gas ThermWise still pays $700 to $1,000 when a heat pump is paired with a qualifying gas furnace, and manufacturer dealer rebates can add more when they’re offered. We’ll go over exactly what applies to your home at the estimate and file the paperwork.",
+      },
+      {
+        q: "Do I need a permit to replace a furnace or AC in Lehi?",
+        a: "Yes. Lehi City’s Building and Inspections department issues the permit, and the finished install is inspected. Not every HVAC company pulls permits. We do on every job, and it’s part of your price.",
+      },
+      {
+        q: "Does a dual-fuel system make sense for a newer Lehi home?",
+        a: "Often, yes, especially once the original equipment reaches 15 to 20 years old, or if you’re dealing with a hot upstairs and high summer bills. The heat pump handles cooling and mild-weather heating, and the gas furnace takes over when it’s colder.",
+      },
+      {
+        q: "How much does a new system cost in Lehi?",
+        a: "New furnaces start at $3,990, installed in one day. A heat pump and gas furnace system depends on your home’s size and the rebates that apply in Lehi, and we’ll show you the full price, rebates included, at a free estimate. 0% interest for 12 months is available.",
+      },
+    ],
+    updated: "2026-10-16",
+    nearby: ["American Fork", "Saratoga Springs", "Highland", "Alpine", "Eagle Mountain", "Bluffdale"],
   },
 ];
 

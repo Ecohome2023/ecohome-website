@@ -160,7 +160,7 @@ export function CityPage({ city: c }: { city: City }) {
                 : `${c.name} runs its own city power, so the Rocky Mountain Power rebate doesn’t apply. Enbridge Gas and manufacturer rebates still do, and we file the paperwork for you.`}
             </p>
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 font-semibold">
-              <Link href="/rebates/rocky-mountain-power-wattsmart" className="text-sky hover:underline">Wattsmart rebates ›</Link>
+              {c.rmp && <Link href="/rebates/rocky-mountain-power-wattsmart" className="text-sky hover:underline">Wattsmart rebates ›</Link>}
               <Link href="/rebates/enbridge-thermwise" className="text-sky hover:underline">ThermWise rebates ›</Link>
               <Link href="/rebates/dealer-rebates" className="text-sky hover:underline">Dealer rebates ›</Link>
             </div>
@@ -168,6 +168,7 @@ export function CityPage({ city: c }: { city: City }) {
           <ul className="grid gap-3 sm:grid-cols-2">
             {c.rmp && <li className="rounded-2xl bg-white/[0.06] p-5 ring-1 ring-white/15"><p className="display text-4xl text-sky">{guaranteed.rmp}</p><p className="mt-1 font-semibold">Rocky Mountain Power Wattsmart, on every heat pump</p></li>}
             <li className="rounded-2xl bg-white/[0.06] p-5 ring-1 ring-white/15"><p className="display text-4xl text-sky">{guaranteed.enbridge80}–{guaranteed.enbridge96}</p><p className="mt-1 font-semibold">Enbridge Gas ThermWise, with a gas furnace</p></li>
+            {!c.rmp && <li className="rounded-2xl bg-white/[0.06] p-5 ring-1 ring-white/15"><p className="display text-4xl text-sky">$400–$2,000</p><p className="mt-1 font-semibold">Amana and ACiQ dealer rebates, when offered</p></li>}
           </ul>
         </div>
       </section>
@@ -182,7 +183,7 @@ export function CityPage({ city: c }: { city: City }) {
             <li key={s.href}>
               <Link href={local ? `/service-area/${c.slug}/${local.slug}` : s.href} className="block h-full rounded-2xl bg-white p-5 ring-1 ring-line hover:ring-ink">
                 <span className="text-lg font-extrabold">{s.title} <span aria-hidden="true" className="text-alarm-strong">›</span></span>
-                <span className="mt-2 block text-mist">{s.blurb}</span>
+                <span className="mt-2 block text-mist">{!c.rmp && s.href === "/heat-pumps" ? "Inverter heat pumps paired with a gas furnace, with your rebates filed for you." : s.blurb}</span>
               </Link>
             </li>
             );

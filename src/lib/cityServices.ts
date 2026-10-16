@@ -22,7 +22,7 @@ export type CityService = {
   listIntro: string;
   list: Item[];
   price: { title: string; body: string; points: string[] };
-  offer: { price: number; description: string }; // the starting price shown on the page, for search and AI tools
+  offer?: { price: number; description: string }; // the starting price shown on the page, for search and AI tools; leave off when the city’s price differs
   updated: string; // YYYY-MM-DD, change when the page is meaningfully edited
   job?: { customer: string; title: string; problem: string; solution: string; result: string; img?: string; alt?: string; before?: { src: string; alt: string }; after?: { src: string; alt: string } };
   decideTitle?: string;
@@ -516,6 +516,250 @@ export const cityServices: CityService[] = [
       {
         q: "Do I need a permit for a heat pump in Orem?",
         a: "Yes. Orem requires a permit for heating and air conditioning work, issued by the city’s Building Safety Division. We pull it on every job, and it’s included in your price.",
+      },
+    ],
+  },
+  // ================================================================ LEHI
+  // Lehi runs its own city power: no Rocky Mountain Power rebate, so no
+  // "after incentives" prices on these pages.
+  // ---------------------------------------------------------------- FURNACE REPAIR
+  {
+    city: "lehi",
+    slug: "furnace-repair",
+    serviceName: "Furnace repair",
+    mainHref: "/services/furnace-repair",
+    metaTitle: "Furnace Repair in Lehi, UT, Open 24/7",
+    metaDescription:
+      "Lehi furnace repair from our shop next door in American Fork. Open 24/7, a $129 diagnostic and the repair price before any work. Call 801-396-0019.",
+    h1: "Furnace repair in Lehi, UT",
+    heroSub:
+      "Furnace quit on a January night in Lehi? Our shop is right next door in American Fork, and we’re open 24/7. A $129 diagnostic, and the repair price before any work.",
+    heroImg: { src: "/images/aciq-furnace-basement-install.jpg", alt: "Gas furnace installed in a basement utility room", pos: "50% 40%" },
+    primaryCta: "BOOK",
+    intro: [
+      "Thousands of Lehi homes went up in the 2000s, and the furnaces that came with them are now about 20 years old. That’s the age when ignitors, inducer motors and control boards start to fail, usually on the coldest nights of the year.",
+      "We repair every major furnace brand, including the builder-grade models that came with many newer homes. Your technician finds the real cause and gives you the price before any work starts.",
+    ],
+    factorsTitle: "What Lehi furnaces are up against",
+    factors: [
+      {
+        title: "Mid-teen January nights",
+        body: "January nights in Lehi average in the mid-teens. A furnace runs long and starts often in that cold, which is hardest on the ignitor, inducer motor and blower.",
+      },
+      {
+        title: "Original equipment turning 20",
+        body: "Many Lehi homes still have the furnace they were built with. At around 20 years, parts get harder to find and repairs add up, so we’ll tell you honestly when a repair is worth it.",
+      },
+      {
+        title: "Three levels, one furnace",
+        body: "Bigger homes with a basement, main floor and loft ask a lot of one furnace. Uneven heat between floors is often an airflow issue, and we check that before replacing parts.",
+      },
+    ],
+    listTitle: "Furnace repairs we make in Lehi",
+    listIntro: "Most are fixed on the first visit.",
+    list: [
+      { title: "No heat", body: "We test the ignitor, flame sensor, pressure switch and board, then replace only the part that failed." },
+      { title: "Loud startups", body: "A roar or boom at startup can mean delayed ignition or a failing inducer motor. Both are worth checking before they cause bigger damage." },
+      { title: "Short cycling", body: "It runs a few minutes and shuts off. Common causes are a dirty flame sensor, a clogged filter or an oversized furnace." },
+      { title: "Main floor hot, basement cold", body: "Usually airflow or ducts, not the furnace itself. We’ll show you what we find." },
+      { title: "Cold air from the vents", body: "The blower runs but the burners don’t stay lit, often a safety switch doing its job. We find out why." },
+      { title: "Thermostat trouble", body: "A smart thermostat with the wrong settings or wiring can keep a good furnace from running right." },
+    ],
+    price: {
+      title: "The price before the work",
+      body: "A furnace diagnostic is $129. You see the cost of the repair up front and decide before we begin.",
+      points: ["$129 diagnostic", "Price up front", "Essential Care Plan members save 10%", "Covered by our Smile Guarantee"],
+    },
+    offer: { price: 129, description: "Furnace diagnostic; repair priced upfront before any work" },
+    updated: "2026-10-16",
+    decideTitle: "Is it time to replace?",
+    decide: [
+      "If your furnace is younger than about 15 years and the repair is reasonable, repair it.",
+      "If it’s the original furnace from a 2000s build and needs a major part, price a replacement first. In Lehi, pairing a new gas furnace with a heat pump qualifies for $700 to $1,000 from Enbridge Gas, plus dealer rebates when they’re offered. A furnace on its own starts at $3,990, installed in one day.",
+    ],
+    safety: {
+      title: "Gas smell? Leave the house first.",
+      body: "If you notice a rotten-egg smell, get everyone out without touching light switches or appliances. Once you’re outside, call Enbridge Gas at 1-800-767-1689 or 911. Call us for the furnace after the gas company clears the home.",
+    },
+    faqs: [
+      {
+        q: "How soon can you get to my Lehi home?",
+        a: "Our shop is right next door in American Fork, and we’re open 24/7. Call 801-396-0019 or book online any time.",
+      },
+      {
+        q: "How much does furnace repair cost in Lehi?",
+        a: "$129 for the diagnostic, then an upfront price for the repair. A flame sensor or ignitor is a small repair; a blower or inducer motor costs more. Essential Care Plan members save 10%.",
+      },
+      {
+        q: "Why does my furnace roar when it starts?",
+        a: "Often the inducer motor is wearing out, or the burners are lighting late. Both get worse over time, so have it checked before it stops heating.",
+      },
+      {
+        q: "My Lehi home is about 20 years old. Should I repair the original furnace?",
+        a: "For a small part, usually yes. For a big repair, compare it with a new system first. A heat pump paired with a new gas furnace qualifies for Enbridge Gas rebates in Lehi.",
+      },
+      {
+        q: "Do you repair builder-grade furnaces?",
+        a: "Yes. We repair all major brands, including the builder-grade models that came with many newer homes.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- AC REPAIR
+  {
+    city: "lehi",
+    slug: "ac-repair",
+    serviceName: "AC repair",
+    mainHref: "/services/ac-repair",
+    metaTitle: "AC Repair in Lehi, UT, Open 24/7",
+    metaDescription:
+      "Lehi AC repair from right next door in American Fork. Open 24/7, a $129 diagnostic and an upfront repair price. Hot upstairs, warm air, no power.",
+    h1: "AC repair in Lehi, UT",
+    heroSub:
+      "Upstairs bedrooms baking by mid-afternoon? We’re right next door in American Fork and open 24/7, with a $129 diagnostic and a price before any work.",
+    heroImg: { src: "/images/tech-eco-home-shirt-heat-pump.jpg", alt: "Eco Home technician standing beside an outdoor air conditioner", pos: "45% 50%" },
+    primaryCta: "BOOK",
+    intro: [
+      "Lehi’s two-story homes and lofts take the brunt of summer. July afternoons average around 90°F, and heat rises, so the upstairs is usually the first place an aging AC falls behind. When you need air conditioning repair, we take calls and online bookings 24/7.",
+      "We repair every major AC and heat pump brand. You get a full diagnostic, a clear explanation of what failed and the price before we start.",
+    ],
+    factorsTitle: "Why Lehi air conditioners struggle",
+    factors: [
+      {
+        title: "Hot upstairs and lofts",
+        body: "In a two-story home, the upstairs can run several degrees warmer than the main floor. A single-speed AC cycles off before that air mixes, so the bedrooms never catch up.",
+      },
+      {
+        title: "Original equipment from the boom",
+        body: "Lehi more than doubled in size between 2000 and 2010, and many of those homes still have their first AC. Capacitors, contactors and fan motors wear out with age and heat.",
+      },
+      {
+        title: "Construction dust",
+        body: "With new neighborhoods still going up, dust collects on outdoor coils. A dirty coil can’t shed heat, so the system runs longer and cools less.",
+      },
+    ],
+    listTitle: "AC repairs we handle in Lehi",
+    listIntro: "Many are done in one visit.",
+    list: [
+      { title: "Warm air from the vents", body: "Most often a failed capacitor, contactor or outdoor fan motor, or a refrigerant leak." },
+      { title: "Upstairs won’t cool", body: "We check airflow, ductwork and refrigerant charge before suggesting anything." },
+      { title: "Unit won’t start", body: "A tripped breaker, a blown disconnect fuse, a thermostat problem or a full condensate drain." },
+      { title: "Ice on the lines", body: "Low airflow or low refrigerant. Turn it off and call; running it frozen can ruin the compressor." },
+      { title: "Water near the furnace", body: "A plugged condensate line or cracked pan, easy to fix if it’s caught early." },
+      { title: "Runs nonstop", body: "An AC that never shuts off may be undersized, low on refrigerant or losing cool air through leaky ducts." },
+    ],
+    price: {
+      title: "Price first, then the repair",
+      body: "Every AC call starts with a $129 diagnostic. You get the repair price before any work.",
+      points: ["$129 diagnostic", "Upfront pricing", "10% off for Essential Care Plan members", "Smile Guarantee on repairs"],
+    },
+    offer: { price: 129, description: "AC diagnostic; repair priced upfront before any work" },
+    updated: "2026-10-16",
+    decideTitle: "Repair it or move to a heat pump?",
+    decide: [
+      "If the AC is under about 12 years old and the repair is reasonable, repair it.",
+      "If it’s the original unit from a 2000s build, or it needs a compressor, compare the repair with a heat pump paired with a gas furnace. It cools the upstairs more evenly and heats most of the winter. Lehi homes don’t get the Rocky Mountain Power rebate, but Enbridge Gas rebates apply with a new furnace, and we’ll show you the full price at a free estimate.",
+    ],
+    faqs: [
+      {
+        q: "Can you get to my Lehi home quickly?",
+        a: "We’re right next door in American Fork and open 24/7. Call 801-396-0019 or book online, and many AC repairs are finished in one visit.",
+      },
+      {
+        q: "How much does AC repair cost in Lehi?",
+        a: "A $129 diagnostic, then an upfront price. Replacing a capacitor or contactor costs much less than a leak repair or a compressor. Essential Care Plan members save 10%.",
+      },
+      {
+        q: "Why is my upstairs so hot?",
+        a: "Heat rises, and a single-speed AC shuts off before it mixes the air between floors. Undersized return ducts upstairs make it worse. A variable-speed system runs longer and keeps the floors closer in temperature.",
+      },
+      {
+        q: "Is it a problem if my AC runs nonstop?",
+        a: "On the hottest afternoons, long run times are normal. If it runs all day and the house still won’t cool, it may be low on refrigerant, losing air through the ducts or too small for the house.",
+      },
+      {
+        q: "Are there rebates on a new AC or heat pump in Lehi?",
+        a: "Lehi runs its own city power, so the Rocky Mountain Power rebate doesn’t apply. Enbridge Gas rebates apply when a heat pump is paired with a qualifying gas furnace, and manufacturer rebates can add more when offered.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- HEAT PUMP INSTALLATION
+  {
+    city: "lehi",
+    slug: "heat-pump-installation",
+    serviceName: "Heat pump installation",
+    mainHref: "/heat-pumps",
+    metaTitle: "Heat Pump Installation in Lehi, UT",
+    metaDescription:
+      "Dual-fuel heat pump systems for Lehi homes, sized for every level from basement to loft. Enbridge and dealer rebates filed, permit pulled, one-day install.",
+    h1: "Heat pump installation in Lehi, UT",
+    heroSub:
+      "A variable-speed heat pump paired with a gas furnace keeps a Lehi home even from the basement to the loft, and picks the cheaper heat source on its own.",
+    heroImg: { src: "/images/aciq-system-eco-home-van.jpg", alt: "An ACiQ heat pump and matching gas furnace on pallets in front of an Eco Home van", pos: "58% 60%" },
+    primaryCta: "INSTANT",
+    intro: [
+      "Lehi summers are hot and winter nights get cold. A dual-fuel system handles both: a variable-speed heat pump does the cooling and the mild-weather heating, and a natural gas furnace takes over when it’s colder. The system chooses the cheaper source automatically.",
+      "We’ve helped more than 2,000 Utah homeowners with their heating and cooling, including homeowners all over Lehi. Every install includes a load calculation, the Lehi permit, haul-away of the old equipment and the rebate paperwork.",
+    ],
+    factorsTitle: "Why dual fuel fits Lehi",
+    factors: [
+      {
+        title: "Made for multi-level homes",
+        body: "Lehi’s two- and three-level homes need steady air to every floor. Variable-speed equipment runs longer at low speed instead of blasting on and off, which evens out the basement, main floor and loft.",
+      },
+      {
+        title: "Lehi’s own rebate picture",
+        body: "Lehi runs its own city power, so the $1,450 Rocky Mountain Power rebate doesn’t apply here. Enbridge Gas pays $700 to $1,000 when you pair the heat pump with a qualifying gas furnace, and manufacturer dealer rebates can add more when they’re offered. We file whatever you qualify for.",
+      },
+      {
+        title: "Backup for cold nights",
+        body: "January nights average in the mid-teens. The heat pump covers most of the heating season efficiently, and the gas furnace handles the coldest nights, so you’re never short on heat.",
+      },
+    ],
+    listTitle: "Included in every Lehi install",
+    listIntro: "One price, nothing left for you to chase.",
+    list: [
+      { title: "Load calculation", body: "Sized to your home’s square footage, levels, windows and insulation, not just the old unit." },
+      { title: "Lehi permit and inspection", body: "Pulled through Lehi City’s Building and Inspections department. Not every HVAC company pulls permits. We do on every job." },
+      { title: "Airflow to every level", body: "We check ducts and returns so the loft and basement get their share." },
+      { title: "Installed in one day", body: "Most installs are completed in one day." },
+      { title: "Rebates filed for you", body: "We submit your Enbridge Gas rebate and any dealer rebates." },
+      { title: "Smile Guarantee", body: "A year on our workmanship. If something isn’t right, we fix it free." },
+    ],
+    price: {
+      title: "What it costs in Lehi",
+      body: "Your price depends on your home’s size, the equipment you choose and the rebates that apply in Lehi. We’ll show you the full price, rebates included, at a free in-home estimate.",
+      points: ["Free in-home estimate", "Enbridge Gas rebates of $700 to $1,000", "0% interest for 12 months available", "Dealer rebates when offered"],
+    },
+    updated: "2026-10-16",
+    job: {
+      customer: "Bryce K.",
+      title: "Bryce’s upstairs and loft got hot by mid-afternoon. A dual-fuel system evened out every floor.",
+      problem: "Bryce’s home was built in the early 2000s, big enough for a growing family, but the original system was showing its age. In summer, the upstairs bedrooms and loft got hot by mid-afternoon while the AC ran almost nonstop, and the electric bills kept climbing. In winter, the furnace, by then more than 20 years old, was loud and inconsistent: the main floor overheated, the basement stayed cold, and every startup could be heard across the house.",
+      solution: "We replaced it with a dual-fuel system: a variable-speed heat pump paired with a natural gas furnace. The heat pump handles the cooling and mild-weather heating, gas takes over when it’s colder, and the system decides which is cheaper on its own.",
+      result: "Even temperatures from the basement to the loft, more efficient summer cooling, and a quiet system in place of the old furnace’s roar.",
+    },
+    faqs: [
+      {
+        q: "Do heat pumps work in Lehi winters?",
+        a: "Yes, paired with a gas furnace. January nights in Lehi average in the mid-teens. The heat pump heats efficiently through most of the season, and the furnace takes over on the coldest nights.",
+      },
+      {
+        q: "What rebates can I get on a heat pump in Lehi?",
+        a: "Lehi homes are on Lehi City Power, so the Rocky Mountain Power Wattsmart rebate doesn’t apply. Enbridge Gas ThermWise pays $700 with an 80% furnace or $1,000 with a 96%+ furnace when it’s paired with a heat pump, and dealer rebates can add more when available. We’ll confirm what you qualify for at your estimate.",
+      },
+      {
+        q: "Will a heat pump cool my upstairs and loft?",
+        a: "That’s one of the main reasons Lehi homeowners choose one. A variable-speed heat pump runs longer at lower speed, which keeps air moving to the upper floor instead of cycling off before it gets there. We also check the ducts and returns upstairs.",
+      },
+      {
+        q: "Is financing available?",
+        a: "Yes. 0% interest for 12 months is available, along with longer-term financing. We’ll go over the options at your estimate.",
+      },
+      {
+        q: "Do I need a permit for a heat pump in Lehi?",
+        a: "Yes. Lehi City Building and Inspections issues the permit and inspects the install. We pull it on every job, and it’s included in your price.",
       },
     ],
   },
