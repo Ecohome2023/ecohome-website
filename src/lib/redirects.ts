@@ -20,6 +20,10 @@ export const oldSiteRedirects: R[] = [
   p("/0-down-and-0-interest-cloned", "/#specials"),
   p("/utah-home-efficiency", "/instant-pricing"),
   p("/weather", "/"),
+  p("/rebate-savings", "/rebates/rocky-mountain-power-wattsmart"),
+  t("/rebates", "/rebates/rocky-mountain-power-wattsmart"), // until there is a rebates overview page
+  p("/new-construction-bid-requests", "/"),
+  p("/:path*/feed", "/:path*"),
   // Old solar posts (/utah-solar-ending-soon, /solar-pto-permission-to-operate,
   // /understanding-the-solar-city-...) are left as 404 on purpose: not HVAC.
 
