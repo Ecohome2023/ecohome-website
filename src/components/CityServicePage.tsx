@@ -19,11 +19,23 @@ export function CityServicePage({ city: c, page: p }: { city: City; page: CitySe
   const schema = [
     {
       "@context": "https://schema.org",
+      "@type": "WebPage",
+      url: `${site.url}${path}`,
+      name: p.h1,
+      dateModified: p.updated,
+      primaryImageOfPage: `${site.url}${p.heroImg.src}`,
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "Service",
       name: `${p.serviceName} in ${c.name}, UT`,
       serviceType: p.serviceName,
+      description: p.metaDescription,
+      url: `${site.url}${path}`,
+      image: `${site.url}${p.heroImg.src}`,
       provider: { "@id": `${site.url}/#business` },
       areaServed: { "@type": "City", name: `${c.name}, UT` },
+      offers: { "@type": "Offer", price: p.offer.price, priceCurrency: "USD", description: p.offer.description },
     },
     {
       "@context": "https://schema.org",
@@ -223,6 +235,10 @@ export function CityServicePage({ city: c, page: p }: { city: City; page: CitySe
           </ul>
         </div>
       </section>
+
+      <p className="mx-auto max-w-7xl px-4 py-6 text-sm text-mist sm:px-6">
+        Page updated <time dateTime={p.updated}>{new Date(`${p.updated}T12:00:00`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</time>
+      </p>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     </>

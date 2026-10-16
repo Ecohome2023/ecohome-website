@@ -22,6 +22,8 @@ export type CityService = {
   listIntro: string;
   list: Item[];
   price: { title: string; body: string; points: string[] };
+  offer: { price: number; description: string }; // the starting price shown on the page, for search and AI tools
+  updated: string; // YYYY-MM-DD, change when the page is meaningfully edited
   job?: { customer: string; title: string; problem: string; solution: string; result: string; img?: string; alt?: string; before?: { src: string; alt: string }; after?: { src: string; alt: string } };
   decideTitle?: string;
   decide?: string[];
@@ -78,6 +80,8 @@ export const cityServices: CityService[] = [
       body: "A furnace diagnostic is $129. After we find the problem, you get a price for the repair before any work starts, and you decide.",
       points: ["$129 diagnostic", "Price before any work", "Essential Care Plan members save 10% on repairs", "Repairs backed by our Smile Guarantee"],
     },
+    offer: { price: 129, description: "Furnace diagnostic; repair priced upfront before any work" },
+    updated: "2026-10-16",
     decideTitle: "Repair or replace?",
     decide: [
       "If your furnace is under about 15 years old and the repair is reasonable, repairing it usually makes sense. We’ll say so.",
@@ -159,6 +163,8 @@ export const cityServices: CityService[] = [
       body: "An AC diagnostic is $129. You get an upfront repair price and decide before we start.",
       points: ["$129 diagnostic", "Upfront repair price", "Essential Care Plan members save 10%", "Repairs backed by our Smile Guarantee"],
     },
+    offer: { price: 129, description: "AC diagnostic; repair priced upfront before any work" },
+    updated: "2026-10-16",
     decideTitle: "When it’s time to replace",
     decide: [
       "If your AC is under about 12 years old and the repair is reasonable, fix it.",
@@ -236,6 +242,8 @@ export const cityServices: CityService[] = [
       body: "Heat pump and gas furnace systems start at $9,990 after incentives. Your exact price depends on your home’s size and the efficiency level you choose.",
       points: ["From $9,990 after incentives", "$2,150 to $2,450 in rebates, guaranteed", "$0 down and 0% interest for 12 months available", "See your price in two minutes with instant pricing"],
     },
+    offer: { price: 9990, description: "Heat pump and gas furnace system, starting price after incentives" },
+    updated: "2026-10-16",
     job: {
       customer: "Trent B.",
       title: "Trent’s AC couldn’t cool every room. A variable-speed heat pump fixed it.",

@@ -19,6 +19,7 @@ export type City = {
   job: { customer: string; title: string; problem: string; solution: string; result: string; img: string; alt: string; more?: string };
   faqs: CityFaq[];
   nearby: string[];
+  updated: string; // YYYY-MM-DD, change when the page is meaningfully edited
   mapEmbed?: string;
 };
 
@@ -95,6 +96,7 @@ export const cities: City[] = [
         a: "New furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives. For a price sized to your home, use our instant pricing tool; it takes about two minutes.",
       },
     ],
+    updated: "2026-10-16",
     nearby: ["Lehi", "Highland", "Pleasant Grove", "Cedar Hills", "Lindon", "Alpine"],
   },
 ];

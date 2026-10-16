@@ -5,11 +5,11 @@ export const ogImage = { url: "/images/og-share.jpg", width: 1200, height: 630, 
 
 // Page metadata with its own social-share title, description and link.
 // Keep titles under about 49 characters so " | Eco Home" fits in Google results.
-export function pageMeta({ title, description, path }: { title: string; description: string; path: string }): Metadata {
+export function pageMeta({ title, description, path, image }: { title: string; description: string; path: string; image?: { src: string; alt: string } }): Metadata {
   return {
     title,
     description,
     alternates: { canonical: path },
-    openGraph: { type: "website", siteName: site.name, title: `${title} | Eco Home`, description, url: path, images: [ogImage] },
+    openGraph: { type: "website", siteName: site.name, title: `${title} | Eco Home`, description, url: path, images: [image ? { url: image.src, alt: image.alt } : ogImage] },
   };
 }

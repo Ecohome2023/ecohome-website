@@ -1,3 +1,4 @@
+import { CityLinks } from "@/components/CityLinks";
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/meta";
 import Image from "next/image";
@@ -333,6 +334,8 @@ export default function HeatPumps() {
           ))}
         </div>
       </section>
+
+      <div className="pb-20"><CityLinks mainHref="/heat-pumps" /></div>
 
       {/* CTA */}
       <section className="bg-teal text-white">

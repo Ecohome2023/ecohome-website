@@ -1,3 +1,4 @@
+import { CityLinks } from "./CityLinks";
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
@@ -209,6 +210,8 @@ export function ServicePage({ service: s }: { service: Service }) {
           </div>
         </div>
       </section>
+
+      <CityLinks mainHref={s.href} />
 
       {/* RELATED */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">

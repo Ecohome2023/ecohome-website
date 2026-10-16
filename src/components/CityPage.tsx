@@ -25,9 +25,20 @@ export function CityPage({ city: c }: { city: City }) {
   const schema = [
     {
       "@context": "https://schema.org",
+      "@type": "WebPage",
+      url: `${site.url}${path}`,
+      name: c.h1,
+      dateModified: c.updated,
+      primaryImageOfPage: `${site.url}${c.job.img}`,
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "Service",
       name: `Heating and air conditioning in ${c.name}, UT`,
       serviceType: "HVAC repair and installation",
+      description: c.metaDescription,
+      url: `${site.url}${path}`,
+      image: `${site.url}${c.job.img}`,
       provider: { "@id": `${site.url}/#business` },
       areaServed: { "@type": "City", name: `${c.name}, UT`, containedInPlace: { "@type": "AdministrativeArea", name: `${c.county}, UT` } },
     },
@@ -232,6 +243,10 @@ export function CityPage({ city: c }: { city: City }) {
           </div>
         </div>
       </section>
+
+      <p className="mx-auto max-w-7xl px-4 pb-10 text-sm text-mist sm:px-6">
+        Page updated <time dateTime={c.updated}>{new Date(`${c.updated}T12:00:00`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</time>
+      </p>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     </>

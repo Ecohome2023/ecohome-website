@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: PageProps<"/service-area/[cit
   const { city, service } = await params;
   const p = getCityService(city, service);
   if (!p) return {};
-  return pageMeta({ title: p.metaTitle, description: p.metaDescription, path: `/service-area/${city}/${service}` });
+  return pageMeta({ title: p.metaTitle, description: p.metaDescription, path: `/service-area/${city}/${service}`, image: p.heroImg });
 }
 
 export default async function Page({ params }: PageProps<"/service-area/[city]/[service]">) {

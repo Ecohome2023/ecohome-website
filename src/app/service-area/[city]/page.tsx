@@ -13,7 +13,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/service-area/[city]">): Promise<Metadata> {
   const c = getCity((await params).city);
   if (!c) return {};
-  return pageMeta({ title: c.metaTitle, description: c.metaDescription, path: `/service-area/${c.slug}` });
+  return pageMeta({ title: c.metaTitle, description: c.metaDescription, path: `/service-area/${c.slug}`, image: { src: c.job.img, alt: c.job.alt } });
 }
 
 export default async function Page({ params }: PageProps<"/service-area/[city]">) {
