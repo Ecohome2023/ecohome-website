@@ -1,4 +1,5 @@
 import { citySlugs } from "./cities";
+import { cityServices } from "./cityServices";
 // Redirects from the old WordPress site (ecohometoday.com before October 2026).
 // permanent: true  = the old page is gone for good (308).
 // permanent: false = temporary (307) until we rebuild that page; then delete
@@ -17,13 +18,13 @@ export const oldSiteRedirects: R[] = [
   p("/pages/air-conditioner-maintenance", "/services/cooling-tune-up"),
   p("/pages/air-conditioner-replacement", "/services/ac-replacement"),
   p("/pages/air-conditioner-repair-in-ogden", "/services/ac-repair"),
-  p("/pages/air-conditioner-repair-in-orem", "/services/ac-repair"),
+  p("/pages/air-conditioner-repair-in-orem", "/service-area/orem/ac-repair"),
   p("/pages/0-down-0-interest", "/#specials"),
   p("/0-down-and-0-interest", "/#specials"),
   p("/free-quote-quiz", "/#options"),
   p("/air-conditioner-help", "/services/ac-repair"),
-  p("/trusted-ac-repair-in-orem-utah", "/services/ac-repair"),
-  p("/air-conditioner-replacement-orem", "/services/ac-replacement"),
+  p("/trusted-ac-repair-in-orem-utah", "/service-area/orem/ac-repair"),
+  p("/air-conditioner-replacement-orem", "/service-area/orem/heat-pump-installation"),
   p("/air-conditioner-replacement-salt-lake-city", "/services/ac-replacement"),
   p("/air-conditioner-replacement-ogden", "/services/ac-replacement"),
   p("/pages/affordable-hvac/:slug*", "/heating"),
@@ -43,6 +44,12 @@ export const oldSiteRedirects: R[] = [
   p("/tester-testing", "/"),
   p("/projects/:slug*", "/"),
   p("/pages/:slug*", "/"),
+
+  // Old city pages for cities that now have a page: point them at it for good
+  ...citySlugs.flatMap((c) => [
+    p(`/service-area/${c}-heat-pump`, cityServices.some((s) => s.city === c && s.slug === "heat-pump-installation") ? `/service-area/${c}/heat-pump-installation` : `/service-area/${c}`),
+    p(`/service-area/${c}-air-conditioner`, `/service-area/${c}`),
+  ]),
 
   // Old city pages: temporary until each city page is rebuilt
   t("/service-area", "/#service-area"),
