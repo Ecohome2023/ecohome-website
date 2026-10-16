@@ -76,7 +76,7 @@ export function CityServicePage({ city: c, page: p }: { city: City; page: CitySe
             <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-semibold">
               <li className="flex items-center gap-2"><Stars /> {site.rating.value} from {site.rating.count} Google reviews</li>
               <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4 text-sky" /> Open 24/7</li>
-              <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4 text-sky" /> Based in {c.name}</li>
+              <li className="flex items-center gap-1.5"><CheckIcon className="h-4 w-4 text-sky" /> {c.name === site.address.city ? `Based in ${c.name}` : `Serving all of ${c.name}`}</li>
             </ul>
           </div>
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl ring-4 ring-white/10">

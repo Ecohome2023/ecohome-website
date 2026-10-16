@@ -89,7 +89,7 @@ export function CityPage({ city: c }: { city: City }) {
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl ring-4 ring-white/10">
               <Image src={c.job.img} alt={c.job.alt} fill preload sizes="(min-width: 1024px) 520px, 100vw" className="object-cover object-[50%_60%]" />
             </div>
-            <figcaption className="mt-3 text-sm font-semibold text-white/70">{c.job.customer}’s new heat pump and gas furnace system in {c.name}</figcaption>
+            {c.heroCaption && <figcaption className="mt-3 text-sm font-semibold text-white/70">{c.heroCaption}</figcaption>}
           </figure>
         </div>
       </section>
