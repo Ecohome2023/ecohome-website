@@ -16,7 +16,7 @@ export type City = {
   intro: string[];
   facts: { label: string; value: string }[];
   homes: { title: string; body: string }[];
-  rmp: boolean; // Rocky Mountain Power customers (Wattsmart rebate applies)
+  rmp: boolean; // Rocky Mountain Power customers (Wattsmart rebate applies). If false, Eco Home matches the $1,450 with its own credit.
   job: { customer: string; title: string; problem: string; solution: string; result: string; img: string; alt: string; more?: string };
   heroCaption?: string; // only when the hero photo is from this city's job
   faqs: CityFaq[];
@@ -232,7 +232,7 @@ export const cities: City[] = [
       },
       {
         q: "Are there HVAC rebates in Lehi?",
-        a: "Yes, but they’re different from most nearby cities. Lehi runs its own city power, so the $1,450 Rocky Mountain Power Wattsmart rebate doesn’t apply. Enbridge Gas ThermWise still pays $700 to $1,000 when a heat pump is paired with a qualifying gas furnace, and manufacturer dealer rebates can add more when they’re offered. We’ll go over exactly what applies to your home at the estimate and file the paperwork.",
+        a: "Yes. Lehi runs its own city power, so the $1,450 Rocky Mountain Power Wattsmart rebate doesn’t apply, but we match it with a $1,450 credit from Eco Home on every heat pump we install, so Lehi homes aren’t left out. Enbridge Gas ThermWise adds $700 to $1,000 when the heat pump is paired with a gas furnace. That’s $2,150 to $2,450, guaranteed, and we file the paperwork.",
       },
       {
         q: "Do I need a permit to replace a furnace or AC in Lehi?",
@@ -244,7 +244,7 @@ export const cities: City[] = [
       },
       {
         q: "How much does a new system cost in Lehi?",
-        a: "New furnaces start at $3,990, installed in one day. A heat pump and gas furnace system depends on your home’s size and the rebates that apply in Lehi, and we’ll show you the full price, rebates included, at a free estimate. 0% interest for 12 months is available.",
+        a: "New furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, including our $1,450 match, and 0% interest for 12 months is available. Our instant pricing tool gives you a price for your home in about two minutes.",
       },
     ],
     updated: "2026-10-16",

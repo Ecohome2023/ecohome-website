@@ -520,8 +520,8 @@ export const cityServices: CityService[] = [
     ],
   },
   // ================================================================ LEHI
-  // Lehi runs its own city power: no Rocky Mountain Power rebate, so no
-  // "after incentives" prices on these pages.
+  // Lehi runs its own city power, so no Rocky Mountain Power rebate. Eco Home
+  // matches the $1,450 with its own credit (owner's call, 2026-10-16).
   // ---------------------------------------------------------------- FURNACE REPAIR
   {
     city: "lehi",
@@ -575,7 +575,7 @@ export const cityServices: CityService[] = [
     decideTitle: "Is it time to replace?",
     decide: [
       "If your furnace is younger than about 15 years and the repair is reasonable, repair it.",
-      "If it’s the original furnace from a 2000s build and needs a major part, price a replacement first. In Lehi, pairing a new gas furnace with a heat pump qualifies for $700 to $1,000 from Enbridge Gas, plus dealer rebates when they’re offered. A furnace on its own starts at $3,990, installed in one day.",
+      "If it’s the original furnace from a 2000s build and needs a major part, price a replacement first. In Lehi, a heat pump paired with a new gas furnace gets at least $2,150 in rebates, guaranteed: our $1,450 match for the Rocky Mountain Power rebate plus $700 to $1,000 from Enbridge Gas. A furnace on its own starts at $3,990, installed in one day.",
     ],
     safety: {
       title: "Gas smell? Leave the house first.",
@@ -596,7 +596,7 @@ export const cityServices: CityService[] = [
       },
       {
         q: "My Lehi home is about 20 years old. Should I repair the original furnace?",
-        a: "For a small part, usually yes. For a big repair, compare it with a new system first. A heat pump paired with a new gas furnace qualifies for Enbridge Gas rebates in Lehi.",
+        a: "For a small part, usually yes. For a big repair, compare it with a new system first. In Lehi, a heat pump paired with a new gas furnace gets at least $2,150 in rebates, including our $1,450 match.",
       },
       {
         q: "Do you repair builder-grade furnaces?",
@@ -658,7 +658,7 @@ export const cityServices: CityService[] = [
     decideTitle: "Repair it or move to a heat pump?",
     decide: [
       "If the AC is under about 12 years old and the repair is reasonable, repair it.",
-      "If it’s the original unit from a 2000s build, or it needs a compressor, compare the repair with a heat pump paired with a gas furnace. It cools the upstairs more evenly and heats most of the winter. Lehi homes don’t get the Rocky Mountain Power rebate, but Enbridge Gas rebates apply with a new furnace, and we’ll show you the full price at a free estimate.",
+      "If it’s the original unit from a 2000s build, or it needs a compressor, compare the repair with a heat pump paired with a gas furnace. It cools the upstairs more evenly and heats most of the winter. Lehi homes don’t get the Rocky Mountain Power rebate, so we match it with a $1,450 credit from Eco Home on every heat pump we install.",
     ],
     faqs: [
       {
@@ -679,7 +679,7 @@ export const cityServices: CityService[] = [
       },
       {
         q: "Are there rebates on a new AC or heat pump in Lehi?",
-        a: "Lehi runs its own city power, so the Rocky Mountain Power rebate doesn’t apply. Enbridge Gas rebates apply when a heat pump is paired with a qualifying gas furnace, and manufacturer rebates can add more when offered.",
+        a: "Lehi runs its own city power, so the Rocky Mountain Power rebate doesn’t apply. We match it with a $1,450 credit on every heat pump we install, and Enbridge Gas adds $700 to $1,000 when it’s paired with a gas furnace.",
       },
     ],
   },
@@ -692,7 +692,7 @@ export const cityServices: CityService[] = [
     mainHref: "/heat-pumps",
     metaTitle: "Heat Pump Installation in Lehi, UT",
     metaDescription:
-      "Dual-fuel heat pump systems for Lehi homes, sized for every level from basement to loft. Enbridge and dealer rebates filed, permit pulled, one-day install.",
+      "Heat pump and gas furnace systems for Lehi homes from $9,990 after incentives. We match the $1,450 Rocky Mountain Power rebate. Permit pulled, one-day install.",
     h1: "Heat pump installation in Lehi, UT",
     heroSub:
       "A variable-speed heat pump paired with a gas furnace keeps a Lehi home even from the basement to the loft, and picks the cheaper heat source on its own.",
@@ -709,8 +709,8 @@ export const cityServices: CityService[] = [
         body: "Lehi’s two- and three-level homes need steady air to every floor. Variable-speed equipment runs longer at low speed instead of blasting on and off, which evens out the basement, main floor and loft.",
       },
       {
-        title: "Lehi’s own rebate picture",
-        body: "Lehi runs its own city power, so the $1,450 Rocky Mountain Power rebate doesn’t apply here. Enbridge Gas pays $700 to $1,000 when you pair the heat pump with a qualifying gas furnace, and manufacturer dealer rebates can add more when they’re offered. We file whatever you qualify for.",
+        title: "We match the rebate Lehi misses",
+        body: "Lehi runs its own city power, so the $1,450 Rocky Mountain Power rebate doesn’t apply here. We match it with a $1,450 credit from Eco Home, so Lehi homes aren’t left out. Enbridge Gas adds $700 to $1,000 when the heat pump is paired with a gas furnace: $2,150 to $2,450 in all, guaranteed.",
       },
       {
         title: "Backup for cold nights",
@@ -724,14 +724,15 @@ export const cityServices: CityService[] = [
       { title: "Lehi permit and inspection", body: "Pulled through Lehi City’s Building and Inspections department. Not every HVAC company pulls permits. We do on every job." },
       { title: "Airflow to every level", body: "We check ducts and returns so the loft and basement get their share." },
       { title: "Installed in one day", body: "Most installs are completed in one day." },
-      { title: "Rebates filed for you", body: "We submit your Enbridge Gas rebate and any dealer rebates." },
+      { title: "Rebates handled for you", body: "We apply our $1,450 match and file your Enbridge Gas rebate." },
       { title: "Smile Guarantee", body: "A year on our workmanship. If something isn’t right, we fix it free." },
     ],
     price: {
       title: "What it costs in Lehi",
-      body: "Your price depends on your home’s size, the equipment you choose and the rebates that apply in Lehi. We’ll show you the full price, rebates included, at a free in-home estimate.",
-      points: ["Free in-home estimate", "Enbridge Gas rebates of $700 to $1,000", "0% interest for 12 months available", "Dealer rebates when offered"],
+      body: "Heat pump and gas furnace systems start at $9,990 after incentives, including our $1,450 match for the Rocky Mountain Power rebate. Your exact price depends on your home’s size and the efficiency you choose.",
+      points: ["From $9,990 after incentives", "$1,450 Rocky Mountain Power match from Eco Home", "$2,150 to $2,450 in rebates, guaranteed", "0% interest for 12 months available"],
     },
+    offer: { price: 9990, description: "Heat pump and gas furnace system, starting price after incentives including Eco Home's $1,450 match" },
     updated: "2026-10-16",
     job: {
       customer: "Bryce K.",
@@ -747,7 +748,7 @@ export const cityServices: CityService[] = [
       },
       {
         q: "What rebates can I get on a heat pump in Lehi?",
-        a: "Lehi homes are on Lehi City Power, so the Rocky Mountain Power Wattsmart rebate doesn’t apply. Enbridge Gas ThermWise pays $700 with an 80% furnace or $1,000 with a 96%+ furnace when it’s paired with a heat pump, and dealer rebates can add more when available. We’ll confirm what you qualify for at your estimate.",
+        a: "Lehi homes are on Lehi City Power, so the Rocky Mountain Power Wattsmart rebate doesn’t apply. We match it with a $1,450 credit from Eco Home. Enbridge Gas ThermWise adds $700 with an 80% furnace or $1,000 with a 96%+ furnace when it’s paired with a heat pump. That’s $2,150 to $2,450, guaranteed, and we handle the paperwork.",
       },
       {
         q: "Will a heat pump cool my upstairs and loft?",

@@ -153,11 +153,11 @@ export function CityPage({ city: c }: { city: City }) {
       <section className="bg-ink text-white">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <h2 className="display text-3xl sm:text-4xl">{c.rmp ? `${guaranteed.total} in rebates, guaranteed, for ${c.name} homes` : `Rebates for ${c.name} homes`}</h2>
+            <h2 className="display text-3xl sm:text-4xl">{`${guaranteed.total} in rebates, guaranteed, for ${c.name} homes`}</h2>
             <p className="mt-4 max-w-xl text-lg text-white/80">
               {c.rmp
                 ? `${c.name} homes are served by Rocky Mountain Power and Enbridge Gas, so a heat pump paired with a gas furnace qualifies for both programs. We file the paperwork for you.`
-                : `${c.name} runs its own city power, so the Rocky Mountain Power rebate doesn’t apply. Enbridge Gas and manufacturer rebates still do, and we file the paperwork for you.`}
+                : `${c.name} runs its own city power, so the Rocky Mountain Power rebate doesn’t apply here. We match it with a ${guaranteed.rmp} credit from Eco Home, so ${c.name} homes aren’t left out. Enbridge Gas still applies with a gas furnace, and we file the paperwork for you.`}
             </p>
             <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 font-semibold">
               {c.rmp && <Link href="/rebates/rocky-mountain-power-wattsmart" className="text-sky hover:underline">Wattsmart rebates ›</Link>}
@@ -166,9 +166,8 @@ export function CityPage({ city: c }: { city: City }) {
             </div>
           </div>
           <ul className="grid gap-3 sm:grid-cols-2">
-            {c.rmp && <li className="rounded-2xl bg-white/[0.06] p-5 ring-1 ring-white/15"><p className="display text-4xl text-sky">{guaranteed.rmp}</p><p className="mt-1 font-semibold">Rocky Mountain Power Wattsmart, on every heat pump</p></li>}
+            <li className="rounded-2xl bg-white/[0.06] p-5 ring-1 ring-white/15"><p className="display text-4xl text-sky">{guaranteed.rmp}</p><p className="mt-1 font-semibold">{c.rmp ? "Rocky Mountain Power Wattsmart, on every heat pump" : "Eco Home match for the Rocky Mountain Power rebate, on every heat pump"}</p></li>
             <li className="rounded-2xl bg-white/[0.06] p-5 ring-1 ring-white/15"><p className="display text-4xl text-sky">{guaranteed.enbridge80}–{guaranteed.enbridge96}</p><p className="mt-1 font-semibold">Enbridge Gas ThermWise, with a gas furnace</p></li>
-            {!c.rmp && <li className="rounded-2xl bg-white/[0.06] p-5 ring-1 ring-white/15"><p className="display text-4xl text-sky">$400–$2,000</p><p className="mt-1 font-semibold">Amana and ACiQ dealer rebates, when offered</p></li>}
           </ul>
         </div>
       </section>
@@ -183,7 +182,7 @@ export function CityPage({ city: c }: { city: City }) {
             <li key={s.href}>
               <Link href={local ? `/service-area/${c.slug}/${local.slug}` : s.href} className="block h-full rounded-2xl bg-white p-5 ring-1 ring-line hover:ring-ink">
                 <span className="text-lg font-extrabold">{s.title} <span aria-hidden="true" className="text-alarm-strong">›</span></span>
-                <span className="mt-2 block text-mist">{!c.rmp && s.href === "/heat-pumps" ? "Inverter heat pumps paired with a gas furnace, with your rebates filed for you." : s.blurb}</span>
+                <span className="mt-2 block text-mist">{s.blurb}</span>
               </Link>
             </li>
             );
