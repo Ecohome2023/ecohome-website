@@ -11,6 +11,18 @@ const p = (source: string, destination: string): R => ({ source, destination, pe
 const t = (source: string, destination: string): R => ({ source, destination, permanent: false });
 
 export const oldSiteRedirects: R[] = [
+  // Junk links the WordPress editor left behind: drop the suffix, then the
+  // normal rules below send the page where it belongs
+  p("/:path*/_wp_link_placeholder", "/:path*"),
+
+  // Old pages Google still crawls (Search Console 404 report, Oct 2026)
+  p("/heat-pump", "/heat-pumps"),
+  p("/0-down-and-0-interest-cloned", "/#specials"),
+  p("/utah-home-efficiency", "/instant-pricing"),
+  p("/weather", "/"),
+  // Old solar posts (/utah-solar-ending-soon, /solar-pto-permission-to-operate,
+  // /understanding-the-solar-city-...) are left as 404 on purpose: not HVAC.
+
   // Old service and offer pages
   p("/pages/heat-pumps", "/heat-pumps"),
   p("/pages/mini-splits", "/services/mini-splits"),
