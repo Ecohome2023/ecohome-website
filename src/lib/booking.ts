@@ -7,6 +7,9 @@ import bookingZips from "./booking-zips.json";
 // Only Andrew takes online bookings for now. Add John's ID here to open his calendar too.
 export const BOOKABLE_PROS = ["pro_31c6aa5cca9442a1816696ed987067b3"]; // Andrew Brady
 
+// HubSpot form "Online Booking (website)": every booking also creates or updates the contact.
+export const HUBSPOT_BOOKING_FORM = "0375f5be-5974-490c-9b9a-bd8e55fa9b5e";
+
 // How many days of open times to show.
 export const DAYS_AHEAD = 14;
 

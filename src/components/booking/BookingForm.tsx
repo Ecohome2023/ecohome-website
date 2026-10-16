@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { track } from "@vercel/analytics";
+import { firstTouch } from "@/lib/attribution";
 import { bookingServices, needs, serviceByKey, BOOKING_ZIPS, fmtDay, fmtTime, dayKey, type Slot } from "@/lib/booking";
 import { EMAIL_RE, emailFix } from "@/lib/estimator";
 import { site } from "@/lib/site";
@@ -96,7 +97,7 @@ export function BookingForm({ initialService = "" }: { initialService?: string }
       const r = await fetch("/api/booking", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...f, email: (f.email || "").trim(), consent: f.consent === "true" }),
+        body: JSON.stringify({ ...f, email: (f.email || "").trim(), consent: f.consent === "true", pageUri: location.href, firstTouch: firstTouch() }),
       });
       const d = await r.json().catch(() => ({}));
       if (d.ok) {
