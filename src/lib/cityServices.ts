@@ -455,7 +455,7 @@ export const cityServices: CityService[] = [
     primaryCta: "INSTANT",
     intro: [
       "For most Orem homes, the best system is dual fuel: a variable-speed heat pump paired with a gas furnace. The heat pump does the cooling and handles mild winter days, and the furnace takes over when it gets cold. The system decides which one is cheaper to run, so you don’t have to.",
-      "We install ACiQ and Amana inverter heat pumps across Orem. Every job includes a load calculation, the city permit, removal of the old equipment and the rebate paperwork.",
+      "We’ve helped more than 2,000 Utah homeowners with their heating and cooling, and older Orem homes like Charles’s are some of the best candidates for dual fuel. We install ACiQ and Amana inverter heat pumps across Orem, and every job includes a load calculation, the city permit, removal of the old equipment and the rebate paperwork.",
     ],
     factorsTitle: "Why dual fuel works in Orem",
     factors: [
