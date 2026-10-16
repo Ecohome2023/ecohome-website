@@ -54,7 +54,7 @@ export const programs: Record<"rmp" | "enbridge", RebateProgram> = {
     logos: [rmpLogo],
     stats: [{ amount: "$1,450", label: "Guaranteed on every heat pump install" }],
     qualifies: [
-      { title: "You’re a Rocky Mountain Power customer", body: "The rebate is for homes that get their electricity from Rocky Mountain Power." },
+      { title: "You’re a Rocky Mountain Power customer", body: "The rebate is for homes that get their electricity from Rocky Mountain Power. On city power instead, like in Lehi or Provo? We match the $1,450 with a credit from Eco Home on every heat pump we install, so you aren’t left out." },
       {
         title: "A licensed, verified contractor installs it",
         body: "Eco Home is licensed and verified, and we’re a Wattsmart Pro Network contractor, one of Rocky Mountain Power’s highest-rated contractors.",
@@ -89,7 +89,7 @@ export const programs: Record<"rmp" | "enbridge", RebateProgram> = {
       },
       {
         q: "How do I know if I’m a Rocky Mountain Power customer?",
-        a: "Check who sends your electric bill. Some Utah County cities, like Provo, Lehi, Springville and Spanish Fork, run their own city power utilities, so homes there aren’t Rocky Mountain Power customers. Not sure? Ask us and we’ll help you check.",
+        a: "Check who sends your electric bill. Some Utah County cities, like Provo, Lehi, Springville and Spanish Fork, run their own city power utilities, so homes there aren’t Rocky Mountain Power customers. If that’s you, you don’t lose out: we match the $1,450 with a credit from Eco Home on every heat pump we install. Not sure who your provider is? Ask us and we’ll help you check.",
       },
       {
         q: "What is a Wattsmart Pro Network contractor?",
