@@ -1,5 +1,5 @@
 import { BOOKING_ZIPS, HUBSPOT_BOOKING_FORM, serviceByKey } from "@/lib/booking";
-import { EMAIL_RE, HUBSPOT, cleanName } from "@/lib/estimator";
+import { EMAIL_RE, HUBSPOT, OPTIONS, cleanName, questions, sizeFor, type EstimateType } from "@/lib/estimator";
 import { createBooking, openSlots } from "@/lib/hcp";
 
 // Books a visit in Housecall Pro: finds or creates the customer, then creates
@@ -25,7 +25,9 @@ export async function POST(request: Request) {
   const street = s("street", 120);
   const city = s("city", 60);
   const zip = s("zip", 5);
-  const notes = s("notes", 500);
+  const fromEstimate = body.source === "instant-estimate";
+  const customerNotes = s("notes", 500);
+  const notes = fromEstimate ? estimateNotes(body.answers) : customerNotes && `Customer notes: ${customerNotes}`;
 
   if (!service || !start) return Response.json({ ok: false, error: "Please pick a service and a time." }, { status: 422 });
   if (!fname || !lname) return Response.json({ ok: false, error: "Please add your first and last name." }, { status: 422 });
@@ -41,8 +43,8 @@ export async function POST(request: Request) {
     if (!slot) return Response.json({ ok: false, error: "taken" }, { status: 409 });
     // Vercel preview links are for clicking through: show the confirmation, book nothing.
     if (process.env.VERCEL_ENV === "preview") return Response.json({ ok: true, type: service.group === "estimate" ? "estimate" : "job", preview: true });
-    const booked = await createBooking({ service, slot, fname, lname, phone, email, street, city, zip, notes });
-    await sendToHubSpot(request, body, { fname, lname, phone, email, street, city, zip });
+    const booked = await createBooking({ service, slot, fname, lname, phone, email, street, city, zip, notes, source: fromEstimate ? "/instant-pricing" : "/book" });
+    await sendToHubSpot(request, body, { fname, lname, phone, email, street, city, zip }, fromEstimate);
     return Response.json({ ok: true, type: booked.type });
   } catch (e) {
     console.error("Booking failed", e);
@@ -57,6 +59,7 @@ async function sendToHubSpot(
   request: Request,
   body: Record<string, unknown>,
   c: { fname: string; lname: string; phone: string; email: string; street: string; city: string; zip: string },
+  fromEstimate: boolean,
 ) {
   const ft = (typeof body.firstTouch === "object" && body.firstTouch) || {};
   const t = (k: string, n: number) => {
@@ -67,7 +70,8 @@ async function sendToHubSpot(
     ["firstname", c.fname], ["lastname", c.lname], ["email", c.email], ["phone", c.phone],
     // One line, the same shape the eco-crm sync writes (contact standard, decision 0038).
     ["address", `${c.street}, ${c.city}, UT ${c.zip}`], ["city", c.city], ["zip", c.zip],
-    ["market", "Utah (HVAC)"], ["lead_source", "Call in/Online Booking"],
+    // The instant estimate already set these to "Instant Estimate"; keep that.
+    ...(fromEstimate ? [] : [["market", "Utah (HVAC)"], ["lead_source", "Call in/Online Booking"]]),
     ["lead_channel", t("channel", 40)], ["first_landing_page", t("landing", 200)],
     ["first_referrer", t("referrer", 120)], ["campaign_details", t("campaign", 250)],
   ].filter(([, v]) => v);
@@ -90,4 +94,19 @@ async function sendToHubSpot(
   } catch (e) {
     console.error("HubSpot booking form error", e);
   }
+}
+
+// The instant pricing answers, written into the Housecall Pro note for the comfort advisor.
+// Only known questions and choices are used, so nothing a visitor types reaches the note.
+function estimateNotes(raw: unknown): string {
+  const a = (typeof raw === "object" && raw) ? (raw as Record<string, unknown>) : {};
+  const lines = questions.flatMap((q) => {
+    const c = q.choices.find((x) => x.value === a[q.key]);
+    return c ? [`${q.title} ${c.label}`] : [];
+  });
+  if (!lines.length) return "From the instant pricing tool.";
+  const type = typeof a.replace === "string" && a.replace in OPTIONS ? (a.replace as EstimateType) : null;
+  const tons = typeof a.sqft === "string" && typeof a.built === "string" ? sizeFor(a.sqft, a.built) : "custom";
+  const rec = type ? `Instant estimate shown: ${OPTIONS[type].name}${tons !== "custom" ? `, ${OPTIONS[type].size(tons)}` : ""}` : "";
+  return ["From the instant pricing tool. Their answers:", ...lines, rec].filter(Boolean).join("\n");
 }

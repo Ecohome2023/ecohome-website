@@ -14,7 +14,7 @@ export function CityServicePage({ city: c, page: p }: { city: City; page: CitySe
   const others = servicesForCity(c.slug).filter((s) => s.slug !== p.slug);
   const primary = p.primaryCta === "INSTANT"
     ? { label: "Get instant pricing", href: site.instantPricingUrl, icon: true }
-    : { label: "Book a repair", href: site.bookingUrl, icon: false };
+    : { label: "Book a repair", href: site.bookLinks.repair, icon: false };
 
   const schema = [
     {

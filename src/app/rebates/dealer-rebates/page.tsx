@@ -78,7 +78,7 @@ export default function DealerRebates() {
               <a href={site.instantPricingUrl} className="flex items-center gap-2 rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#8a001c] hover:brightness-110">
                 <MailIcon className="h-5 w-5" /> See my price after rebates
               </a>
-              <a href={site.bookingUrl} className="rounded-full px-7 py-4 text-lg font-bold text-white ring-2 ring-white/60 hover:bg-white/10">
+              <a href={site.bookLinks.estimate} className="rounded-full px-7 py-4 text-lg font-bold text-white ring-2 ring-white/60 hover:bg-white/10">
                 Book a free estimate
               </a>
             </div>
@@ -130,7 +130,7 @@ export default function DealerRebates() {
             </p>
           </div>
           <div className="grid gap-3">
-            <a href={site.bookingUrl} className="flex items-center justify-center rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#8a001c] hover:brightness-110">
+            <a href={site.bookLinks.estimate} className="flex items-center justify-center rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#8a001c] hover:brightness-110">
               Book a free estimate
             </a>
             <a href={site.phoneHref} className="flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 text-lg font-bold text-ink shadow-[0_4px_0_var(--color-ink)] hover:bg-sky-soft">

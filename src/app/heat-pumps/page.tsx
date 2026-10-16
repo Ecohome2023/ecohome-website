@@ -117,7 +117,7 @@ export default function HeatPumps() {
               <a href={site.instantPricingUrl} className="flex items-center gap-2 rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#8a001c] hover:brightness-110">
                 <MailIcon className="h-5 w-5" /> Get instant pricing
               </a>
-              <a href={site.bookingUrl} className="rounded-full px-7 py-4 text-lg font-bold text-white ring-2 ring-white/60 hover:bg-white/10">
+              <a href={site.bookLinks.estimate} className="rounded-full px-7 py-4 text-lg font-bold text-white ring-2 ring-white/60 hover:bg-white/10">
                 Book a free estimate
               </a>
             </div>

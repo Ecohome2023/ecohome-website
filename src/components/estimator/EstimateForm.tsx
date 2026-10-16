@@ -3,7 +3,7 @@
 import { gaEvent } from "@/lib/gtag";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { questions, SERVICE_AREA, estimateResult, emailFix, EMAIL_RE, type Answers } from "@/lib/estimator";
+import { questions, SERVICE_AREA, estimateResult, emailFix, EMAIL_RE, ESTIMATE_CONTACT_KEY, type Answers } from "@/lib/estimator";
 import { site } from "@/lib/site";
 import { CheckIcon, PhoneIcon } from "@/components/icons";
 import { HomeIcon } from "./HomeIcons";
@@ -84,6 +84,9 @@ export function EstimateForm() {
 
   async function submit(a: Answers) {
     setStatus("sending");
+    // Kept in this browser tab only, so the visit calendar on the estimate page
+    // doesn't ask for name, phone and email again.
+    try { sessionStorage.setItem(ESTIMATE_CONTACT_KEY, JSON.stringify({ ...a, email: a.email.trim() })); } catch {}
     const started = Date.now();
     let ok = false;
     try {
@@ -265,7 +268,7 @@ export function EstimateForm() {
                 See my estimate →
               </Link>
             ) : (
-              <a href={site.bookingUrl} target="_blank" rel="noopener" className="rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#8a001c] hover:brightness-110">
+              <a href={site.bookLinks.estimate} className="rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#8a001c] hover:brightness-110">
                 Book a free visit →
               </a>
             )}

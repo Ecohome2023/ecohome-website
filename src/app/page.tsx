@@ -21,9 +21,9 @@ const services = [
 
 
 const specials = [
-  { price: "0%", title: "Interest for 12 months", body: "Get the system you need now with $0 down and 0% interest for 12 months.", fine: `Subject to credit approval. Financing provided by ${site.financingPartner}.`, cta: "Book a free estimate", href: site.bookingUrl },
+  { price: "0%", title: "Interest for 12 months", body: "Get the system you need now with $0 down and 0% interest for 12 months.", fine: `Subject to credit approval. Financing provided by ${site.financingPartner}.`, cta: "Book a free estimate", href: site.bookLinks.estimate },
   { price: "$2,150", title: "Guaranteed heat pump rebates", body: "Get $2,150 in rebates guaranteed when you purchase a new heat pump from Eco Home. We file all the paperwork for you.", fine: "Applies to qualifying heat pump purchases.", cta: "Get instant pricing", href: site.instantPricingUrl, more: { label: "How the rebates work", href: "/rebates/rocky-mountain-power-wattsmart" } },
-  { price: "$39", title: "Furnace tune-up", body: "Clean, inspect and tune your furnace before the cold sets in.", fine: "", cta: "Claim this offer", href: site.bookingUrl },
+  { price: "$39", title: "Furnace tune-up", body: "Clean, inspect and tune your furnace before the cold sets in.", fine: "", cta: "Claim this offer", href: site.bookLinks.furnaceTuneUp },
 ];
 
 const planBenefits = [
@@ -325,7 +325,7 @@ export default function Home() {
               <span className="flex items-center gap-2 text-sm font-bold text-sky"><MailIcon className="h-4 w-4" /> See your price in two minutes</span>
               <span className="display mt-1 block text-3xl">Get instant pricing</span>
             </a>
-            <a href={site.bookingUrl} className="group rounded-2xl bg-white p-6 shadow-[0_5px_0_var(--color-ink)] hover:bg-sky-soft">
+            <a href={site.bookLinks.estimate} className="group rounded-2xl bg-white p-6 shadow-[0_5px_0_var(--color-ink)] hover:bg-sky-soft">
               <span className="block text-sm font-bold text-teal">Pick a time that works for you</span>
               <span className="display mt-1 block text-3xl text-ink">Book a free estimate</span>
             </a>

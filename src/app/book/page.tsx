@@ -18,7 +18,8 @@ const points = [
 ];
 
 export default async function Book({ searchParams }: { searchParams: Promise<{ [k: string]: string | string[] | undefined }> }) {
-  const service = (await searchParams).service;
+  const sp = await searchParams;
+  const one = (v: string | string[] | undefined) => (typeof v === "string" ? v : "");
   return (
     <section className="bg-sky-soft">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-10 sm:px-6 md:py-16 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
@@ -44,7 +45,7 @@ export default async function Book({ searchParams }: { searchParams: Promise<{ [
           </p>
         </div>
 
-        <BookingForm initialService={typeof service === "string" ? service : ""} />
+        <BookingForm initialService={one(sp.service)} initialNeed={one(sp.need)} />
       </div>
     </section>
   );

@@ -62,7 +62,8 @@ export type BookingRequest = {
   street: string;
   city: string;
   zip: string;
-  notes: string;
+  notes: string; // extra lines for the Housecall Pro note
+  source: string; // where on the site it was booked
 };
 
 export async function createBooking(b: BookingRequest): Promise<{ type: "job" | "estimate"; id: string }> {
@@ -85,7 +86,7 @@ export async function createBooking(b: BookingRequest): Promise<{ type: "job" | 
   }
   if (!addressId) throw new Error("HCP customer has no address id");
 
-  const notes = ["Booked on ecohometoday.com/book", b.notes && `Customer notes: ${b.notes}`].filter(Boolean).join("\n");
+  const notes = [`Booked on ecohometoday.com${b.source}`, b.notes].filter(Boolean).join("\n");
   const line = { name: b.service.hcpName, unit_price: b.service.price, quantity: 1 };
 
   if (b.service.group === "estimate") {

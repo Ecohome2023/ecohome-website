@@ -6,6 +6,7 @@ import { reviews } from "@/lib/content";
 import { OPTIONS, TON_SIZES, FIN, PROMO, cleanName, type EstimateType, type Tons } from "@/lib/estimator";
 import { EstimateCard } from "@/components/estimator/EstimateCard";
 import { MobileBookBar } from "@/components/estimator/MobileBookBar";
+import { EstimateVisitBooking } from "@/components/estimator/EstimateVisitBooking";
 import { JobPromises } from "@/components/JobPromises";
 import { CheckIcon, PhoneIcon, Stars } from "@/components/icons";
 
@@ -89,10 +90,7 @@ export default async function EstimatePage({ searchParams }: PageProps<"/instant
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-        <div className="grid items-center gap-10 md:grid-cols-2">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl">
-            <Image src="/images/furnace-tech-uniform.jpg" alt="Eco Home technician in uniform" fill sizes="(min-width: 768px) 600px, 100vw" className="object-cover" />
-          </div>
+        <div id="book-visit" className="grid scroll-mt-28 items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <span className="rounded-full bg-alarm-strong px-3 py-1 text-sm font-bold text-white">FREE</span>
             <h2 className="display mt-3 text-3xl sm:text-4xl">In-home estimate visit</h2>
@@ -102,10 +100,11 @@ export default async function EstimatePage({ searchParams }: PageProps<"/instant
                 <li key={c} className="flex gap-3 font-semibold"><CheckIcon className="mt-1 h-5 w-5 shrink-0 text-alarm-strong" />{c}</li>
               ))}
             </ul>
-            <a href={site.bookingUrl} target="_blank" rel="noopener" className="mt-7 inline-block rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#8a001c] hover:brightness-110">
-              Book my free visit
-            </a>
+            <div className="relative mt-8 hidden aspect-[4/3] overflow-hidden rounded-3xl lg:block">
+              <Image src="/images/furnace-tech-uniform.jpg" alt="Eco Home technician in uniform" fill sizes="600px" className="object-cover" />
+            </div>
           </div>
+          <EstimateVisitBooking type={type} />
         </div>
 
         <h2 className="display mt-20 text-3xl sm:text-4xl">Simple 3-step process</h2>
@@ -161,7 +160,7 @@ export default async function EstimatePage({ searchParams }: PageProps<"/instant
             <p className="mt-2 text-lg">Book your free in-home visit, or <Link href="/heat-pumps" className="font-semibold underline">learn more about heat pumps</Link>.</p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <a href={site.bookingUrl} target="_blank" rel="noopener" className="rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#7a0018] hover:brightness-110">Book my free visit</a>
+            <a href="#book-visit" className="rounded-full bg-alarm-strong px-7 py-4 text-lg font-bold text-white shadow-[0_4px_0_#7a0018] hover:brightness-110">Book my free visit</a>
             <a href={site.phoneHref} className="flex items-center gap-2 rounded-full bg-white px-6 py-4 text-lg font-bold ring-2 ring-ink"><PhoneIcon className="h-5 w-5" />{site.phone}</a>
           </div>
         </div>

@@ -295,6 +295,9 @@ export const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 // ---------- Submission ----------
 export type Answers = Record<string, string>;
 
+// sessionStorage key for the answers, read by the visit calendar on the estimate page.
+export const ESTIMATE_CONTACT_KEY = "eh_estimate_answers";
+
 export function estimateResult(a: Answers) {
   const tons = sizeFor(a.sqft, a.built);
   const gas = HAS_GAS.has(a.setup);

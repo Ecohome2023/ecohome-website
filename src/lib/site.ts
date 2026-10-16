@@ -20,7 +20,17 @@ export const site = {
   rating: { value: "4.8", count: 112 },
   financingPartner: "Slice by FNBO Bank",
   // Housecall Pro online booking link (every "Book" button uses it).
-  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ||
+  // Every "Book" button opens our own booking page (/book), which books straight
+  // into Housecall Pro. bookLinks open it on a specific choice.
+  bookingUrl: "/book",
+  bookLinks: {
+    estimate: "/book?need=new",
+    repair: "/book?need=repair",
+    furnaceTuneUp: "/book?service=furnace-tune-up",
+    coolingTuneUp: "/book?service=cooling-tune-up",
+  },
+  // Housecall Pro's own booking page, kept as a backup.
+  hcpBookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ||
     "https://book.housecallpro.com/book/Eco-Home-Heating-and-Air-Experts/7aae129117144ef784412dbd1384725f?v2=true",
   // Instant estimate tool: questions at /instant-pricing, answers saved to HubSpot,
   // personalized estimate shown on the next screen.

@@ -24,7 +24,11 @@ export function ServicePage({ service: s }: { service: Service }) {
   const primaryHero =
     s.kind === "install"
       ? { label: "Get instant pricing", href: site.instantPricingUrl, mail: true }
-      : { label: s.kind === "tune-up" ? "Book a tune-up" : "Book service", href: site.bookingUrl, mail: false };
+      : {
+          label: s.kind === "tune-up" ? "Book a tune-up" : "Book service",
+          href: s.key === "heating-tune-up" ? site.bookLinks.furnaceTuneUp : s.key === "cooling-tune-up" ? site.bookLinks.coolingTuneUp : site.bookLinks.repair,
+          mail: false,
+        };
 
   const schema = [
     {
@@ -68,7 +72,7 @@ export function ServicePage({ service: s }: { service: Service }) {
                 {primaryHero.mail && <MailIcon className="h-5 w-5" />} {primaryHero.label}
               </a>
               {s.kind === "install" ? (
-                <a href={site.bookingUrl} className="rounded-full px-7 py-4 text-lg font-bold text-white ring-2 ring-white/60 hover:bg-white/10">Book a free estimate</a>
+                <a href={site.bookLinks.estimate} className="rounded-full px-7 py-4 text-lg font-bold text-white ring-2 ring-white/60 hover:bg-white/10">Book a free estimate</a>
               ) : (
                 <a href={site.phoneHref} className="flex items-center gap-2 rounded-full px-7 py-4 text-lg font-bold text-white ring-2 ring-white/60 hover:bg-white/10">
                   <PhoneIcon className="h-5 w-5" /> {site.phone}

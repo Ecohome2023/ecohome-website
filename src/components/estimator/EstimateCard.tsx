@@ -121,7 +121,7 @@ export function EstimateCard({ type, tons }: { type: EstimateType; tons: Tons })
       <div className="mt-7 rounded-2xl bg-ink p-6 text-white">
         <h3 className="display text-2xl">Lock in your price</h3>
         <p className="mt-2 text-white/80">Book a free in-home visit. No obligation. We confirm sizing and exactly which rebates you qualify for.</p>
-        <a href={site.bookingUrl} target="_blank" rel="noopener" className="mt-5 block rounded-full bg-alarm-strong px-6 py-4 text-center text-lg font-bold text-white shadow-[0_4px_0_#7a0018] hover:brightness-110">
+        <a href="#book-visit" className="mt-5 block rounded-full bg-alarm-strong px-6 py-4 text-center text-lg font-bold text-white shadow-[0_4px_0_#7a0018] hover:brightness-110">
           Book my free visit
         </a>
         <a href={site.phoneHref} className="mt-3 flex items-center justify-center gap-2 font-bold text-sky hover:underline">
