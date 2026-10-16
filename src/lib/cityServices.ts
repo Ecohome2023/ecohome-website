@@ -200,7 +200,7 @@ export const cityServices: CityService[] = [
     h1: "Heat pump installation in American Fork, UT",
     heroSub:
       "A heat pump paired with a gas furnace cools your American Fork home all summer and handles most of the winter heating. At least $2,150 in rebates, guaranteed, and installed in one day.",
-    heroImg: { src: "/images/american-fork-heat-pump-install.jpg", alt: "Eco Home technician commissioning a variable-speed heat pump at an American Fork home", pos: "50% 60%" },
+    heroImg: { src: "/images/heat-pump-install-vacuum.jpg", alt: "New inverter heat pump on its pad with gauges and a vacuum pump connected during an Eco Home installation", pos: "50% 55%" },
     primaryCta: "INSTANT",
     intro: [
       "Most American Fork homes have a gas furnace and a central AC. When the AC wears out, replacing it with an inverter heat pump is the smartest upgrade we know of: it cools like an AC, heats your home most of the winter for less, and your furnace stays as backup for the coldest nights.",

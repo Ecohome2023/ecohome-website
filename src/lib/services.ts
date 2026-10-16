@@ -142,7 +142,7 @@ export const services: Record<ServiceKey, Service> = {
     metaDescription: "Ductless mini-split heat pumps from $4,390 after rebates for basements, additions, garages and rooms your ducts can’t reach. Permit and install included.",
     h1: "Ductless mini-splits in Utah County and Salt Lake County",
     heroSub: "Efficient heating and cooling for basements, additions, garages and any room your ducts don’t reach. Installs start at $4,390 after Wattsmart rebates ($4,990 before rebates).",
-    heroImg: { src: "/images/aciq-mini-split-heat-pump.jpg", alt: "Ductless mini-split heat pump installed by Eco Home on a Utah patio" },
+    heroImg: { src: "/images/mini-split-garage-install.jpg", alt: "Two ductless mini-split heads being installed high on the wall of a large garage", pos: "50% 35%" },
     trust: ["From $4,390 after rebates", "$600 to $1,700 in rebates", "Permit pulled on every job"],
     listTitle: "Where mini-splits make sense",
     listIntro: "A mini-split is a small heat pump that heats and cools one area without any ductwork.",
