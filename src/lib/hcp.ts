@@ -1,4 +1,4 @@
-import { BOOKABLE_PROS, DAYS_AHEAD, type BookingService, type Slot } from "./booking";
+import { BOOKABLE_PROS, DAYS_AHEAD, TZ, WINDOW_STARTS, dayKey, type BookingService, type Slot } from "./booking";
 
 // Housecall Pro public API (https://docs.housecallpro.com). Server only: the key
 // lives in Vercel as HCP_API_KEY and never reaches the browser.
@@ -24,15 +24,27 @@ async function hcp<T>(path: string, init: RequestInit = {}): Promise<T> {
 // Open times for one service, on the calendars of the pros who take online bookings.
 // Without employee_ids Housecall Pro counts anyone free, so Andrew's booked times would show as open.
 export async function openSlots(service: BookingService): Promise<Slot[]> {
-  const q = new URLSearchParams({ show_for_days: String(DAYS_AHEAD), service_id: service.serviceId });
+  // Ask in half-hour pieces, then keep each of our one-hour windows whose two halves are both free.
+  const q = new URLSearchParams({ show_for_days: String(DAYS_AHEAD), service_id: service.serviceId, service_duration: "30" });
   for (const id of BOOKABLE_PROS) q.append("employee_ids[]", id);
   const d = await hcp<{ booking_windows: { start_time: string; end_time: string; available: boolean }[] }>(
     `/company/schedule_availability/booking_windows?${q}`,
   );
+  const local = (iso: string) => `${dayKey(iso)} ${new Date(iso).toLocaleTimeString("en-GB", { timeZone: TZ, hour: "2-digit", minute: "2-digit" })}`;
+  const halves = new Map(d.booking_windows.filter((w) => w.available).map((w) => [local(w.start_time), w]));
+  const days = [...new Set(d.booking_windows.map((w) => dayKey(w.start_time)))];
   const soon = Date.now() + 60 * 60 * 1000; // nothing starting within the hour
-  return d.booking_windows
-    .filter((w) => w.available && Date.parse(w.start_time) > soon)
-    .map((w) => ({ start: w.start_time, end: w.end_time }));
+  const slots: Slot[] = [];
+  for (const day of days) {
+    for (const t of WINDOW_STARTS) {
+      const [h, m] = t.split(":").map(Number);
+      const next = `${String(h + Math.floor((m + 30) / 60)).padStart(2, "0")}:${String((m + 30) % 60).padStart(2, "0")}`;
+      const first = halves.get(`${day} ${t}`);
+      const second = halves.get(`${day} ${next}`);
+      if (first && second && Date.parse(first.start_time) > soon) slots.push({ start: first.start_time, end: second.end_time });
+    }
+  }
+  return slots;
 }
 
 type Address = { id: string; street?: string; zip?: string };
