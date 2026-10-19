@@ -40,7 +40,9 @@ export const googleReviews: Review[] = [
   {
     name: "Savanna K.",
     service: "AC repair",
-    text: "Andrew was amazing. Professional, knowledgeable and friendly! … He came and did diagnostics and then the repairs for my AC unit. He communicates well responds quickly.",
+    city: "Salt Lake City",
+    featuredOn: ["/service-area/salt-lake-city/ac-repair", "/service-area/salt-lake-city"],
+    text: "Andrew was amazing. Professional, knowledgeable and friendly! I’d give him 10 starts if I could. He came and did diagnostics and then the repairs for my AC unit. He communicates well responds quickly. I Will definitely be using services next time!",
   },
   { name: "Paul E.", text: "Their tech was efficient and polite… resolved immediately." },
   { name: "Maria-Isabel A.", text: "They're friendly, professional and honest." },
