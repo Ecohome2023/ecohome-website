@@ -31,20 +31,72 @@ export async function openSlots(service: BookingService): Promise<Slot[]> {
     `/company/schedule_availability/booking_windows?${q}`,
   );
   const local = (iso: string) => `${dayKey(iso)} ${new Date(iso).toLocaleTimeString("en-GB", { timeZone: TZ, hour: "2-digit", minute: "2-digit" })}`;
+  const covered = new Set(d.booking_windows.map((w) => local(w.start_time)));
   const halves = new Map(d.booking_windows.filter((w) => w.available).map((w) => [local(w.start_time), w]));
   const days = [...new Set(d.booking_windows.map((w) => dayKey(w.start_time)))];
   const soon = Date.now() + 60 * 60 * 1000; // nothing starting within the hour
+  let busy: [number, number][] | null = null;
   const slots: Slot[] = [];
   for (const day of days) {
     for (const t of WINDOW_STARTS) {
       const [h, m] = t.split(":").map(Number);
       const next = `${String(h + Math.floor((m + 30) / 60)).padStart(2, "0")}:${String((m + 30) % 60).padStart(2, "0")}`;
-      const first = halves.get(`${day} ${t}`);
-      const second = halves.get(`${day} ${next}`);
-      if (first && second && Date.parse(first.start_time) > soon) slots.push({ start: first.start_time, end: second.end_time });
+      if (covered.has(`${day} ${t}`)) {
+        const first = halves.get(`${day} ${t}`);
+        const second = halves.get(`${day} ${next}`);
+        if (first && second && Date.parse(first.start_time) > soon) slots.push({ start: first.start_time, end: second.end_time });
+        continue;
+      }
+      // Outside the hours Housecall Pro reports (the 5:30 window): check Andrew's own calendar.
+      const start = utahToUtc(day, t);
+      const end = start + 60 * 60 * 1000;
+      if (start <= soon) continue;
+      busy ??= await busyTimes(Date.now(), Date.now() + (DAYS_AHEAD + 1) * 86400000);
+      if (!busy.some(([a, b]) => a < end && b > start)) slots.push({ start: new Date(start).toISOString(), end: new Date(end).toISOString() });
     }
   }
   return slots;
+}
+
+// A Utah wall-clock time on a date, as UTC milliseconds (handles daylight saving).
+function utahToUtc(day: string, hhmm: string): number {
+  const [y, mo, dd] = day.split("-").map(Number);
+  const [h, mi] = hhmm.split(":").map(Number);
+  const guess = Date.UTC(y, mo - 1, dd, h, mi);
+  const p = Object.fromEntries(new Intl.DateTimeFormat("en-US", { timeZone: TZ, hourCycle: "h23", year: "numeric", month: "numeric", day: "numeric", hour: "numeric", minute: "numeric" })
+    .formatToParts(new Date(guess)).map((x) => [x.type, Number(x.value)]));
+  const wall = Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute);
+  return guess - (wall - guess);
+}
+
+type Scheduled = { schedule?: { scheduled_start?: string; scheduled_end?: string; start_time?: string; end_time?: string } | null; work_status?: string; assigned_employees?: { id: string }[] };
+
+// Times the online-bookable pros are busy: their jobs, estimates and calendar blocks (events).
+async function busyTimes(from: number, to: number): Promise<[number, number][]> {
+  const range = new URLSearchParams({ scheduled_start_min: new Date(from - 86400000).toISOString(), scheduled_start_max: new Date(to).toISOString(), page_size: "100" });
+  for (const id of BOOKABLE_PROS) range.append("employee_ids[]", id);
+  const [jobs, estimates] = await Promise.all([
+    hcp<{ jobs: Scheduled[] }>(`/jobs?${range}`),
+    hcp<{ estimates: Scheduled[] }>(`/estimates?${range}`),
+  ]);
+  // Events have no date filter: newest start first, stop once they are in the past.
+  const events: Scheduled[] = [];
+  for (let page = 1; page <= 5; page++) {
+    const e = await hcp<{ events: Scheduled[]; total_pages: number }>(`/events?page=${page}&page_size=100&sort_by=start_time&sort_direction=desc`);
+    events.push(...e.events);
+    const last = e.events.at(-1)?.schedule?.start_time;
+    if (page >= e.total_pages || !last || Date.parse(last) < from - 86400000) break;
+  }
+  const mine = (x: Scheduled) => !x.assigned_employees?.length || x.assigned_employees.some((p) => BOOKABLE_PROS.includes(p.id));
+  const span = (x: Scheduled): [number, number] | null => {
+    const a = Date.parse(x.schedule?.scheduled_start || x.schedule?.start_time || "");
+    const b = Date.parse(x.schedule?.scheduled_end || x.schedule?.end_time || "");
+    return a && b ? [a, b] : null;
+  };
+  return [...jobs.jobs, ...estimates.estimates, ...events]
+    .filter((x) => !/cancel/i.test(x.work_status || "") && mine(x))
+    .map(span)
+    .filter((x): x is [number, number] => !!x);
 }
 
 type Address = { id: string; street?: string; zip?: string };
