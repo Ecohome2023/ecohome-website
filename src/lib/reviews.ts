@@ -1,9 +1,18 @@
 // 5-star Google reviews from homeowners, quoted as written (trimmed with "…"
 // only where shown). Source: Eco Home's Google Business Profile, Oct 2026.
 // To add more, copy the text from Google exactly and use first name + last initial.
-export type Review = { name: string; text: string; service?: string };
+// featuredOn: page paths where this review is shown on its own, as a local
+// review (only pages for the city the customer lives in).
+export type Review = { name: string; text: string; service?: string; city?: string; featuredOn?: string[] };
 
 export const googleReviews: Review[] = [
+  {
+    name: "Rebecca M.",
+    service: "Heating repair",
+    city: "American Fork",
+    featuredOn: ["/service-area/american-fork/furnace-repair", "/service-area/american-fork"],
+    text: "He was able to fix our heater. Where others said we needed to buy a new one. He saved us thousands of dollars. Being that were selling our home we really didn't want to buy a new one.",
+  },
   {
     name: "Patrick T.",
     service: "AC repair",

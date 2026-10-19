@@ -7,6 +7,7 @@ import { googleReviews } from "@/lib/reviews";
 import { CheckIcon, MailIcon, PhoneIcon, Stars } from "./icons";
 import { JobPromises } from "./JobPromises";
 import { ReviewRotator } from "./ReviewRotator";
+import { FeaturedReview } from "./FeaturedReview";
 
 export function CityServicePage({ city: c, page: p }: { city: Pick<City, "slug" | "name">; page: CityService }) {
   const cityPath = `/service-area/${c.slug}`;
@@ -201,8 +202,9 @@ export function CityServicePage({ city: c, page: p }: { city: Pick<City, "slug" 
             <a href={site.googleProfileUrl} className="mt-4 inline-flex items-center gap-2 text-lg font-semibold hover:underline">
               <Stars /> {site.rating.value} from {site.rating.count} Google reviews
             </a>
+            <FeaturedReview path={path} />
           </div>
-          <ReviewRotator reviews={googleReviews} />
+          <ReviewRotator reviews={googleReviews.filter((r) => !r.featuredOn?.includes(path))} />
         </div>
       </section>
 

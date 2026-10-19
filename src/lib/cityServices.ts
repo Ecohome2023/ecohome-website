@@ -44,7 +44,7 @@ export const cityServices: CityService[] = [
     h1: "Furnace repair in American Fork, UT",
     heroSub:
       "No heat on a 15° night? Our shop is on Automall Drive in American Fork, and we’re open 24/7. You get a $129 diagnostic and an upfront price before we touch anything.",
-    heroImg: { src: "/images/furnace-tech-thumbs-up.jpg", alt: "Eco Home technician beside an open gas furnace after a repair", pos: "50% 35%" },
+    heroImg: { src: "/images/american-fork-furnace-repair-lennox.jpg", alt: "Lennox gas furnace opened up for an Eco Home repair in an American Fork basement", pos: "50% 45%" },
     primaryCta: "BOOK",
     intro: [
       "When a furnace quits in American Fork, it usually quits at the worst time: a January night when it’s been running for hours to keep up. Because our shop is here in town, a technician isn’t far away.",
