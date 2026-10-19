@@ -12,8 +12,7 @@ export const HUBSPOT_BOOKING_FORM = "0375f5be-5974-490c-9b9a-bd8e55fa9b5e";
 
 // Arrival windows offered online, Utah time: each is one hour from these start
 // times (the same times set in Housecall Pro). A window shows only when Andrew is
-// free for the whole hour: inside the hours Housecall Pro reports that comes from its
-// booking windows; later windows (5:30) are checked against his jobs, estimates and blocks.
+// free for the whole hour and it falls inside Housecall Pro's business hours.
 export const WINDOW_STARTS = ["08:30", "10:00", "11:30", "13:00", "14:30", "16:00", "17:30"];
 
 // How many days of open times to show.
