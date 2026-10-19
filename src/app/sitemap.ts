@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { posts } from "@/lib/blog";
 import { cities } from "@/lib/cities";
+import { countyPages } from "@/lib/counties";
 import { cityServices } from "@/lib/cityServices";
 
 // lastModified only where we know the real date (city pages, blog posts).
@@ -29,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.url}/privacy-policy`, changeFrequency: "yearly", priority: 0.2 },
     { url: `${site.url}/terms-of-service`, changeFrequency: "yearly", priority: 0.2 },
     { url: `${site.url}/smile-guarantee`, changeFrequency: "yearly", priority: 0.4 },
+    ...countyPages.map((c) => ({ url: `${site.url}/service-area/${c.slug}`, lastModified: c.updated, changeFrequency: "monthly" as const, priority: 0.8 })),
     ...cities.map((c) => ({ url: `${site.url}/service-area/${c.slug}`, lastModified: c.updated, changeFrequency: "monthly" as const, priority: 0.8 })),
     ...cityServices.map((p) => ({ url: `${site.url}/service-area/${p.city}/${p.slug}`, lastModified: p.updated, changeFrequency: "monthly" as const, priority: 0.8 })),
     ...blogPosts,

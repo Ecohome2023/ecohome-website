@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { cityServices } from "@/lib/cityServices";
 import { getCity } from "@/lib/cities";
+import { getCounty } from "@/lib/counties";
 
 // Links a general service page to its city versions, e.g. /services/furnace-repair
 // to "Furnace repair in American Fork". Shows nothing until a city version exists.
@@ -14,7 +15,7 @@ export function CityLinks({ mainHref }: { mainHref: string }) {
         {pages.map((p) => (
           <li key={p.city}>
             <Link href={`/service-area/${p.city}/${p.slug}`} className="inline-block rounded-full bg-white px-5 py-3 font-bold ring-2 ring-ink hover:bg-sky-soft">
-              {p.serviceName} in {getCity(p.city)?.name}
+              {p.serviceName} in {(getCity(p.city) ?? getCounty(p.city))?.name}
             </Link>
           </li>
         ))}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { pageMeta } from "@/lib/meta";
 import { getCity } from "@/lib/cities";
+import { getCounty } from "@/lib/counties";
 import { cityServices, getCityService } from "@/lib/cityServices";
 import { CityServicePage } from "@/components/CityServicePage";
 
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: PageProps<"/service-area/[cit
 
 export default async function Page({ params }: PageProps<"/service-area/[city]/[service]">) {
   const { city, service } = await params;
-  const c = getCity(city);
+  const c = getCity(city) ?? getCounty(city);
   const p = getCityService(city, service);
   if (!c || !p) notFound();
   return <CityServicePage city={c} page={p} />;

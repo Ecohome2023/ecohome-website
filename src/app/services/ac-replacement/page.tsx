@@ -6,6 +6,7 @@ import { site } from "@/lib/site";
 import { CheckIcon, MailIcon, PhoneIcon, Stars } from "@/components/icons";
 import { JobPromises } from "@/components/JobPromises";
 import { SystemOptions } from "@/components/SystemOptions";
+import { CityLinks } from "@/components/CityLinks";
 
 export const metadata: Metadata = pageMeta({ title: "AC Replacement in Utah County & Salt Lake", description: "Replacing your AC? Upgrade to an ACiQ or Amana heat pump that cools like an AC and adds efficient heat, with $2,150 in rebates guaranteed.", path: "/services/ac-replacement" });
 
@@ -277,6 +278,8 @@ export default function AcReplacement() {
         </div>
         <JobPromises />
       </section>
+
+      <div className="pb-20"><CityLinks mainHref="/services/ac-replacement" /></div>
 
       {/* FAQ */}
       <section className="bg-sky-soft">
