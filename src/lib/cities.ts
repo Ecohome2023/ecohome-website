@@ -395,6 +395,78 @@ export const cities: City[] = [
     ],
     updated: "2026-10-19",
     nearby: ["Salt Lake City", "West Jordan", "Taylorsville", "Kearns", "Magna", "South Salt Lake"],
+  },  {
+    slug: "west-jordan",
+    name: "West Jordan",
+    county: "Salt Lake County",
+    metaTitle: "West Jordan HVAC: Heating & Cooling, Open 24/7",
+    metaDescription:
+      "West Jordan heating and cooling: furnace and AC repair any hour, dual-fuel heat pump systems for two-story homes, and $2,150+ in rebates guaranteed.",
+    h1: "Heating and cooling in West Jordan, UT",
+    heroSub:
+      "Two-story homes with hot bedrooms, 20-year-old furnaces, ACs that never shut off: we fix and replace heating and cooling across West Jordan, day or night.",
+    intro: [
+      "West Jordan has quadrupled since 1980, from about 27,000 people to nearly 117,000 in the 2020 census, which makes it Utah’s third-largest city. Most of that growth came as two-story subdivisions spreading west from the Jordan River, and the homes built in the 1990s and early 2000s are now hitting the age when their original furnaces and air conditioners give out together.",
+      "From the historic mills at Gardner Village to the newest streets west of 4800 West, the common complaint is the same: an upstairs that won’t cool in July. A properly sized variable-speed heat pump, paired with a gas furnace for the coldest nights, is the fix we recommend most often here.",
+    ],
+    facts: [
+      { label: "People", value: "Nearly 117,000 (2020 census)" },
+      { label: "Growth", value: "About 27,000 in 1980; 68,000 in 2000" },
+      { label: "Elevation", value: "About 4,350 ft" },
+      { label: "Electric / gas", value: "Rocky Mountain Power / Enbridge Gas" },
+      { label: "Landmarks", value: "Gardner Village, Jordan Landing, the Jordan River" },
+    ],
+    homes: [
+      {
+        title: "Two-story homes from the 1990s and 2000s",
+        body: "West Jordan more than doubled between 1980 and 2000 and kept building after that. These houses usually have one system serving two floors, so bedrooms upstairs, especially west-facing ones, run hot all summer. Their original equipment is now 20 to 25 years old.",
+      },
+      {
+        title: "Older homes near the Jordan River and Gardner Village",
+        body: "The east side of the city has its oldest neighborhoods, settled back when West Jordan was farms and mills. Smaller ducts and add-on air conditioning are common, so we check airflow before sizing anything new.",
+      },
+      {
+        title: "Newer homes west of 4800 West",
+        body: "The fastest recent growth has been on the city’s west side. Those homes are tighter and better insulated, but many came with entry-level equipment that’s worth upgrading to an inverter heat pump when it wears out.",
+      },
+    ],
+    rmp: true,
+    job: {
+      customer: "Jared N.",
+      title: "Jared’s west-facing bedrooms never cooled. A variable-speed system fixed both floors and cut his summer bill 43%.",
+      problem:
+        "Jared’s late-1990s two-story near Jordan Landing ran the AC nonstop all summer, yet the west-facing bedrooms never cooled. His 22-year-old furnace short-cycled during cold snaps.",
+      solution:
+        "A dual-fuel system: a variable-speed heat pump matched with a gas furnace that adjusts its speed to keep both floors even.",
+      result: "Both levels stay comfortable, and his summer electric bill fell from $290 to $165 a month.",
+      more: "/service-area/west-jordan/heat-pump-installation",
+      img: "/images/aciq-system-eco-home-van.jpg",
+      alt: "ACiQ heat pump and matching gas furnace in front of an Eco Home van",
+    },
+    faqs: [
+      {
+        q: "What part of West Jordan do you cover?",
+        a: "The whole city, from the older streets near Gardner Village and the Jordan River to Jordan Landing and the newer neighborhoods west of 4800 West. Call or book online 24/7.",
+      },
+      {
+        q: "Which rebates apply in West Jordan?",
+        a: "West Jordan homes are Rocky Mountain Power and Enbridge Gas customers, so a heat pump with a gas furnace earns $1,450 plus $700 to $1,000, guaranteed. Jared N. added a $1,000 dealer rebate for $3,150 total.",
+      },
+      {
+        q: "Why are my upstairs bedrooms hot when the AC never shuts off?",
+        a: "In two-story homes, heat rises and a single-speed AC cycles off before the air mixes. West-facing rooms also take the afternoon sun. A variable-speed system that runs longer and slower usually solves it.",
+      },
+      {
+        q: "Is a permit required to replace a furnace or AC in West Jordan?",
+        a: "Yes, a mechanical permit and inspection through West Jordan’s building department. Not every HVAC company pulls permits. We do on every job, and the cost is in your quote.",
+      },
+      {
+        q: "What does a new system cost in West Jordan?",
+        a: "Furnaces alone start at $3,990. A full dual-fuel system starts at $9,990 after rebates, and you can take 12 months at 0%. Our instant pricing tool gives a home-specific number in two minutes.",
+      },
+    ],
+    updated: "2026-10-19",
+    nearby: ["West Valley City", "South Jordan", "Taylorsville", "Riverton", "Kearns", "Herriman"],
   },
 ];
 

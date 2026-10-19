@@ -1264,6 +1264,256 @@ export const cityServices: CityService[] = [
     ],
   },
 
+  // ================================================================ WEST JORDAN
+  // ---------------------------------------------------------------- FURNACE REPAIR
+  {
+    city: "west-jordan",
+    slug: "furnace-repair",
+    serviceName: "Furnace repair",
+    mainHref: "/services/furnace-repair",
+    metaTitle: "Furnace Repair in West Jordan, UT, Open 24/7",
+    metaDescription:
+      "West Jordan furnace repair any hour: $129 to diagnose, and you approve the repair price first. Short cycling, no heat or a cold upstairs, all brands.",
+    h1: "Furnace repair in West Jordan, UT",
+    heroSub:
+      "Furnace short-cycling in a cold snap, or not lighting at all? West Jordan homeowners can reach us 24/7. It’s $129 to diagnose, and you see the repair price first.",
+    heroImg: { src: "/images/aciq-furnace-basement-install.jpg", alt: "Gas furnace installed in a basement utility room", pos: "50% 40%" },
+    primaryCta: "BOOK",
+    intro: [
+      "Thousands of West Jordan homes went up in the 1990s and 2000s, and the furnaces installed back then are now 20 to 25 years old. At that age, short cycling during cold snaps is one of the first warning signs, followed by slow warm-ups and louder starts.",
+      "Our technicians service every major brand. They track down what’s actually failing and give you a firm price before touching it.",
+    ],
+    factorsTitle: "Why West Jordan furnaces start failing",
+    factors: [
+      {
+        title: "Original equipment hitting 20-plus",
+        body: "Most of the city’s furnaces date to the building boom. Past 20 years, ignitors, inducer motors and control boards wear out, and parts get harder to source.",
+      },
+      {
+        title: "Cold snaps after mild weeks",
+        body: "A furnace that idles through a mild stretch and then runs hard through a cold snap gets the most strain. That’s when weak flame sensors and pressure switches show up.",
+      },
+      {
+        title: "Two floors, one furnace",
+        body: "One furnace pushing air to two stories often overheats the main floor while the upstairs lags. That’s usually airflow and ducts, which we check before replacing parts.",
+      },
+    ],
+    listTitle: "Furnace problems we fix in West Jordan",
+    listIntro: "A first visit takes care of many of them.",
+    list: [
+      { title: "Short cycling in cold weather", body: "Starts, runs a few minutes, quits. Usually a flame sensor, a choked filter or an overheating heat exchanger." },
+      { title: "Won’t light", body: "Each part in the ignition sequence is tested until we find the one that failed." },
+      { title: "Upstairs too cold", body: "Typically duct balance or blower speed in a two-story home." },
+      { title: "Long, loud startups", body: "An inducer motor on its way out, or burners lighting late." },
+      { title: "Constant blower", body: "A stuck relay, a board fault or a thermostat fan left on." },
+      { title: "Smart thermostat problems", body: "Miswired or misconfigured thermostats can stop a healthy furnace from running." },
+    ],
+    price: {
+      title: "Know the cost before we start",
+      body: "Diagnosis is $129. You get the repair price, in writing, and nothing happens until you approve it.",
+      points: ["$129 diagnosis", "Written price before work", "Care Plan members save 10%", "Smile Guarantee on repairs"],
+    },
+    offer: { price: 129, description: "Furnace diagnostic; repair priced upfront before any work" },
+    updated: "2026-10-19",
+    decideTitle: "Fix the old furnace, or move on?",
+    decide: [
+      "Under 15 years old with a modest repair? Keep it running.",
+      "Twenty-plus years old and short cycling? Compare the repair to a new dual-fuel system first. Jared N. near Jordan Landing replaced his 22-year-old furnace and AC together, took $3,150 in rebates, and cut his summer electric bill 43%. Furnaces alone start at $3,990, installed in one day.",
+    ],
+    safety: {
+      title: "Smell gas? Everyone out.",
+      body: "A rotten-egg smell means leave now. Don’t use switches, phones or anything that could spark inside. From outside, call Enbridge Gas at 1-800-767-1689 or 911, then call us once the gas company clears the house.",
+    },
+    faqs: [
+      {
+        q: "Can I get furnace repair in West Jordan at night or on weekends?",
+        a: "Yes. We’re open 24/7, holidays included. Call 801-396-0019 or book online.",
+      },
+      {
+        q: "What does furnace repair cost in West Jordan?",
+        a: "$129 to diagnose, then a written repair price. A flame sensor or ignitor is a small bill; an inducer or blower motor is a larger one. Care Plan members get 10% off.",
+      },
+      {
+        q: "Why does my furnace short cycle when it gets really cold?",
+        a: "A dirty flame sensor or clogged filter is the usual cause. The furnace either loses its flame signal or overheats and shuts itself off.",
+      },
+      {
+        q: "My furnace is 22 years old. Is it worth repairing?",
+        a: "For a cheap part, maybe. For anything significant, get a replacement price: West Jordan homes receive at least $2,150 in guaranteed rebates on a heat pump plus gas furnace.",
+      },
+      {
+        q: "Do you fix furnaces that came with the house?",
+        a: "Yes, including builder-grade units from the 1990s and 2000s, and every major brand.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- AC REPAIR
+  {
+    city: "west-jordan",
+    slug: "ac-repair",
+    serviceName: "AC repair",
+    mainHref: "/services/ac-repair",
+    metaTitle: "AC Repair in West Jordan, UT, Open 24/7",
+    metaDescription:
+      "West Jordan AC repair, 24/7. $129 to diagnose, written price before work. Hot west-facing rooms, warm air or an AC that never stops running.",
+    h1: "AC repair in West Jordan, UT",
+    heroSub:
+      "AC running all afternoon and the upstairs still hot? We repair air conditioners across West Jordan 24/7, with a $129 diagnosis and a price you approve first.",
+    heroImg: { src: "/images/tech-heat-pump-install.jpg", alt: "Eco Home technician connecting gauges to an outdoor unit beside a basement window", pos: "45% 50%" },
+    primaryCta: "BOOK",
+    intro: [
+      "West Jordan’s two-story homes are hard on air conditioners. Bedrooms that face west soak up afternoon sun, the AC runs for hours, and a 20-year-old unit eventually can’t keep pace. If you need air conditioning repair, call any time.",
+      "We work on every major AC and heat pump brand, show you what’s wrong, and quote the fix before doing it.",
+    ],
+    factorsTitle: "What pushes West Jordan ACs to the limit",
+    factors: [
+      {
+        title: "West-facing upstairs rooms",
+        body: "Afternoon sun on the west side of a two-story house adds heat faster than an aging single-speed AC can remove it.",
+      },
+      {
+        title: "Nonstop summer run times",
+        body: "Running from June through August without a break wears capacitors, contactors and outdoor fan motors first.",
+      },
+      {
+        title: "Equipment from the building boom",
+        body: "Units installed in the late 1990s and early 2000s are past their expected life, and some still run R-22.",
+      },
+    ],
+    listTitle: "AC repairs we handle in West Jordan",
+    listIntro: "We finish most in one trip.",
+    list: [
+      { title: "Never shuts off", body: "Low refrigerant, a dirty coil, leaky ducts or a unit that’s simply too small." },
+      { title: "Warm air", body: "Often a capacitor, contactor or fan motor; sometimes a leak." },
+      { title: "Hot upstairs bedrooms", body: "We look at return air, duct sizing and charge before quoting anything." },
+      { title: "Won’t start", body: "Breaker, disconnect fuse, thermostat or a tripped condensate switch." },
+      { title: "Frozen lines", body: "Turn it off. Ice points to airflow or refrigerant problems that can kill a compressor." },
+      { title: "Leaking water", body: "A clogged drain line or cracked pan near the furnace." },
+    ],
+    price: {
+      title: "Straightforward AC repair pricing",
+      body: "$129 covers the diagnosis. You get the repair price in writing and decide from there.",
+      points: ["$129 diagnosis", "Written price first", "10% off with the Care Plan", "Smile Guarantee"],
+    },
+    offer: { price: 129, description: "AC diagnostic; repair priced upfront before any work" },
+    updated: "2026-10-19",
+    decideTitle: "Is it worth fixing?",
+    decide: [
+      "An AC younger than about 12 years with a reasonable repair: fix it.",
+      "An original late-1990s or 2000s unit, an R-22 system or a failed compressor: look at a heat pump instead. It cools both floors more evenly and comes with a guaranteed $1,450 Rocky Mountain Power rebate in West Jordan.",
+    ],
+    faqs: [
+      {
+        q: "Do you do emergency AC repair in West Jordan?",
+        a: "Yes, around the clock. Call 801-396-0019 or book online, and most repairs wrap up on the first visit.",
+      },
+      {
+        q: "What does AC repair cost in West Jordan?",
+        a: "$129 to diagnose. Capacitors and contactors are inexpensive; leak repairs and compressors are not. You see the number first, and Care Plan members save 10%.",
+      },
+      {
+        q: "Why won’t my west-facing bedrooms cool down?",
+        a: "Afternoon sun heats them faster than an older single-speed AC can cool them, and they’re often at the end of the duct run. Jared N. near Jordan Landing fixed exactly this with a variable-speed heat pump.",
+      },
+      {
+        q: "My AC runs all day. Is that normal?",
+        a: "On a 100° afternoon, long runs are fine. If it runs all day and the house never cools, it may be low on refrigerant, losing air through ducts or undersized.",
+      },
+      {
+        q: "Should I replace a 20-year-old AC with a heat pump?",
+        a: "Usually. A heat pump cools like an AC, heats most of the winter with your furnace as backup, and earns a guaranteed $1,450 rebate here.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- HEAT PUMP INSTALLATION
+  {
+    city: "west-jordan",
+    slug: "heat-pump-installation",
+    serviceName: "Heat pump installation",
+    mainHref: "/heat-pumps",
+    metaTitle: "Heat Pump Installation in West Jordan, UT",
+    metaDescription:
+      "Dual-fuel heat pump systems for West Jordan two-story homes from $9,990 after incentives, with $2,150+ in guaranteed rebates and a one-day install.",
+    h1: "Heat pump installation in West Jordan, UT",
+    heroSub:
+      "A variable-speed heat pump and gas furnace keep both floors of a West Jordan two-story comfortable, and they cost less to run than the system you have. At least $2,150 in rebates, guaranteed.",
+    heroImg: { src: "/images/heat-pump-install-vacuum.jpg", alt: "New inverter heat pump on its pad with gauges and a vacuum pump connected during an install", pos: "50% 55%" },
+    primaryCta: "INSTANT",
+    intro: [
+      "In a West Jordan two-story, the problem is rarely the size of the AC. It’s that a single-speed system blasts cold air, shuts off and lets the upstairs bake. A variable-speed heat pump runs slower and longer, so cool air reaches the second floor and stays there. Paired with a gas furnace, it also handles most of the winter heating.",
+      "Eco Home has installed heating and cooling for more than 2,000 Utah homeowners. A West Jordan install covers sizing, the permit and inspection, removing the old equipment and every rebate form.",
+    ],
+    factorsTitle: "Why West Jordan homes do well with dual fuel",
+    factors: [
+      {
+        title: "Built for two floors",
+        body: "Variable-speed airflow keeps the upstairs much closer to the main floor’s temperature than a single-speed system that blasts on and off.",
+      },
+      {
+        title: "Guaranteed rebates here",
+        body: "As Rocky Mountain Power and Enbridge Gas customers, West Jordan homeowners get $1,450 for the heat pump and $700 to $1,000 for the furnace. Manufacturer rebates can stack on top.",
+      },
+      {
+        title: "Cheaper heating most of the winter",
+        body: "On mild winter days the heat pump heats for less than gas. When it’s truly cold, the furnace takes over, and the thermostat handles the switch.",
+      },
+    ],
+    listTitle: "What a West Jordan install includes",
+    listIntro: "Everything below is in the price.",
+    list: [
+      { title: "Room-by-room sizing", body: "We calculate the load for each floor instead of matching the old unit." },
+      { title: "Permit and inspection", body: "Through West Jordan’s building department. Not every HVAC company pulls permits. We do on every job." },
+      { title: "Upstairs airflow check", body: "Returns and supply ducts to the second floor get looked at before we quote." },
+      { title: "Done in a day", body: "Most systems are installed and running the same day we start." },
+      { title: "All the rebate forms", body: "Wattsmart, ThermWise and any dealer rebate, filed by us." },
+      { title: "One-year Smile Guarantee", body: "If our workmanship isn’t right, we come back and fix it at no charge." },
+    ],
+    price: {
+      title: "Dual fuel pricing in West Jordan",
+      body: "Systems start at $9,990 after rebates. Size and efficiency tier set the final price, and 12 months at 0% interest is available.",
+      points: ["$9,990 and up after rebates", "$2,150–$2,450 in utility rebates, guaranteed", "Manufacturer rebates when offered", "12 months at 0%"],
+    },
+    offer: { price: 9990, description: "Heat pump and gas furnace system, starting price after incentives" },
+    updated: "2026-10-19",
+    job: {
+      customer: "Jared N.",
+      title: "Jared’s west-facing bedrooms never cooled. Now both floors do, and his summer bill is down 43%.",
+      problem: "Jared lives in a late-1990s two-story near Jordan Landing. “Our AC ran non-stop from June to August, but the west-facing bedrooms that take the afternoon sun never cooled down,” he told us. His 22-year-old furnace had started short-cycling during winter cold snaps, and summer electric bills averaged $290 a month.",
+      solution: "We installed a dual-fuel system: a variable-speed heat pump matched with a natural gas furnace. Instead of blasting on and off, the variable-speed motor adjusts itself to hold the same temperature on both levels. In winter, the system runs the heat pump when it’s the cheaper option and switches to gas when it’s colder. Jared’s rebates came to $3,150: $1,450 from Rocky Mountain Power, $700 from Enbridge Gas and a $1,000 dealer rebate off the invoice, with 12 months at 0%.",
+      result: "Both floors stay comfortable, the furnace no longer short-cycles, and his summer electric bill dropped from $290 to $165 a month.",
+      stats: [
+        { value: "22 years", label: "Age of the old system" },
+        { value: "$290 → $165", label: "Summer electric bill" },
+        { value: "43%", label: "Lower summer bill" },
+        { value: "$3,150", label: "Rebates stacked" },
+      ],
+    },
+    faqs: [
+      {
+        q: "Will a heat pump cool the upstairs of my two-story home?",
+        a: "Yes, that’s where variable speed helps most. It runs longer at lower speed, so cool air keeps reaching the second floor. Jared N. in West Jordan solved his hot west-facing bedrooms this way.",
+      },
+      {
+        q: "How much can a heat pump lower my bills in West Jordan?",
+        a: "It depends on the house. Jared N.’s summer electric bill went from $290 to $165 a month, a 43% drop, after replacing a 22-year-old system.",
+      },
+      {
+        q: "What rebates do West Jordan homes get?",
+        a: "Rocky Mountain Power pays $1,450 per heat pump we install. Enbridge Gas adds $700 for an 80% furnace or $1,000 for 96%+. Dealer rebates, when offered, come off the invoice.",
+      },
+      {
+        q: "Does a heat pump work in winter here?",
+        a: "With a gas furnace as backup, yes. The heat pump handles mild days and the furnace takes the coldest ones.",
+      },
+      {
+        q: "Is a permit needed for a heat pump in West Jordan?",
+        a: "Yes. We pull the permit and schedule the inspection on every install, at no extra charge.",
+      },
+    ],
+  },
+
   // ================================================================ UTAH COUNTY
   // ---------------------------------------------------------------- AC REPLACEMENT
   {

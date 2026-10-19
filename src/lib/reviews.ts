@@ -7,6 +7,13 @@ export type Review = { name: string; text: string; service?: string; city?: stri
 
 export const googleReviews: Review[] = [
   {
+    name: "Jared N.",
+    service: "Heating and AC installation",
+    city: "West Jordan",
+    featuredOn: ["/service-area/west-jordan/heat-pump-installation", "/service-area/west-jordan"],
+    text: "They were very helpful and friendly when it came time to discuss my issues with my existing unit. When the decision came to get a new unit very professional and quick with the installation",
+  },
+  {
     name: "Rebecca M.",
     service: "Heating repair",
     city: "American Fork",

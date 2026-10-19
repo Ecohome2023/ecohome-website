@@ -99,6 +99,83 @@ export const countyPages: County[] = [
     ],
     updated: "2026-10-19",
   },
+  {
+    slug: "salt-lake-county",
+    name: "Salt Lake County",
+    metaTitle: "Salt Lake County HVAC: Heating & Cooling",
+    metaDescription:
+      "Heating and cooling across Salt Lake County: 24/7 furnace and AC repair, dual-fuel heat pump systems and $2,150+ in rebates guaranteed in every city.",
+    h1: "HVAC company serving all of Salt Lake County",
+    heroSub:
+      "From Sugar House bungalows to West Valley split-levels and West Jordan two-stories, we repair and replace furnaces, air conditioners and heat pumps across Salt Lake County, 24/7.",
+    heroImg: {
+      src: "/images/tech-heat-pump-install.jpg",
+      alt: "Eco Home technician connecting gauges to a new outdoor heat pump",
+      pos: "45% 50%",
+    },
+    intro: [
+      "Salt Lake County is Utah’s most populous county, with 1,185,238 people in the 2020 census. Its housing spans more than a century, from Victorians in the Avenues to post-war ramblers, 1970s split-levels and the two-story subdivisions that filled the west side in the 1990s and 2000s. Each era has its own heating and cooling headaches.",
+      "What ties them together is the valley itself: hot July afternoons in the mid-90s, January nights in the 20s, and winter inversions that sit on the valley floor for days. For most homes here, we recommend a variable-speed heat pump paired with a gas furnace, sized with a load calculation for that specific house.",
+    ],
+    facts: [
+      { label: "People", value: "1,185,238 (2020 census)" },
+      { label: "Valley floor", value: "About 4,200 to 4,500 ft" },
+      { label: "Electric", value: "Rocky Mountain Power in most cities; Murray runs city power" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+      { label: "Permits", value: "Each city’s building department; Salt Lake County for unincorporated areas" },
+    ],
+    jobs: [
+      {
+        city: "salt-lake-city",
+        customer: "Mark T.",
+        problem: "A 1940s Sugar House bungalow at 82° upstairs, a clanking 24-year-old furnace and $340 summer bills.",
+        result: "A 14° swing between floors gone, and the summer bill down to $195.",
+      },
+      {
+        city: "west-valley-city",
+        customer: "Dave R.",
+        problem: "A 30-year-old furnace that “sounded like a freight train,” a dead central AC and three window units.",
+        result: "The window units are gone, and the whole split-level heats and cools quietly.",
+      },
+      {
+        city: "west-jordan",
+        customer: "Jared N.",
+        problem: "A late-1990s two-story whose west-facing bedrooms never cooled, with a short-cycling 22-year-old furnace.",
+        result: "Both floors comfortable, and the summer bill down 43%, from $290 to $165.",
+      },
+    ],
+    rebates: {
+      title: "$2,150 to $2,450 in rebates, guaranteed, anywhere in Salt Lake County",
+      body: "Nearly every Salt Lake County city is on Rocky Mountain Power, which pays $1,450 for every heat pump we install. Murray runs its own city power, so we match the $1,450 there with an Eco Home credit. Enbridge Gas adds $700 to $1,000 when the heat pump is paired with a gas furnace, and dealer rebates can stack on top: Mark, Dave and Jared each added $1,000 more.",
+      points: [
+        { amount: "$1,450", label: "Rocky Mountain Power Wattsmart, or our match in Murray" },
+        { amount: "$700–$1,000", label: "Enbridge Gas ThermWise, with a gas furnace" },
+      ],
+    },
+    faqs: [
+      {
+        q: "Which Salt Lake County cities do you serve?",
+        a: "All of them, from Salt Lake City, South Salt Lake and Millcreek to West Valley City, West Jordan, Sandy, Draper, Riverton, Herriman and Bluffdale. We’re open 24/7.",
+      },
+      {
+        q: "Who should I hire to replace my HVAC system in Salt Lake County?",
+        a: "Choose a licensed contractor who sizes the system with a load calculation, pulls the permit, and puts the equipment, warranty and rebates in writing. That’s how we handle every job, and for most homes here we recommend a heat pump paired with a gas furnace.",
+      },
+      {
+        q: "I live in Murray. Do I still get the heat pump rebate?",
+        a: "Yes. Murray City Power isn’t part of Rocky Mountain Power’s program, so we match the $1,450 with a credit from Eco Home on every heat pump we install. Enbridge Gas rebates still apply.",
+      },
+      {
+        q: "Do I need a permit to replace a furnace or AC in Salt Lake County?",
+        a: "Yes. Your city’s building department issues it, or Salt Lake County for unincorporated areas. Not every HVAC company pulls permits. We do on every job, and it’s included in your price.",
+      },
+      {
+        q: "How much does a new heating and cooling system cost in Salt Lake County?",
+        a: "Furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, with 0% interest for 12 months available. Instant pricing gives you a number for your home in about two minutes.",
+      },
+    ],
+    updated: "2026-10-19",
+  },
 ];
 
 export const countySlugs = countyPages.map((c) => c.slug);
