@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fmtDay, fmtTime, dayKey, type Slot } from "@/lib/booking";
+import { fmtDay, fmtRange, dayKey, type Slot } from "@/lib/booking";
 import { site } from "@/lib/site";
 
 // Open times for one service, read live from Housecall Pro. Bump `reload` to fetch again.
@@ -70,8 +70,8 @@ export function SlotPicker({ slots, failed, selected, onSelect }: {
           const on = selected === s.start;
           return (
             <button key={s.start} type="button" aria-pressed={on} onClick={() => onSelect(s)}
-              className={`rounded-xl border-2 px-3 py-3 text-center text-lg font-semibold transition-colors ${on ? "border-ink bg-sky-soft" : "border-transparent bg-[#f2f6f8] hover:border-line"}`}>
-              {fmtTime(s.start)}–{fmtTime(s.end)}
+              className={`flex h-14 items-center justify-center whitespace-nowrap rounded-xl border-2 px-2 text-center text-base font-semibold tabular-nums transition-colors sm:text-lg ${on ? "border-ink bg-sky-soft" : "border-transparent bg-[#f2f6f8] hover:border-line"}`}>
+              {fmtRange(s.start, s.end)}
             </button>
           );
         })}

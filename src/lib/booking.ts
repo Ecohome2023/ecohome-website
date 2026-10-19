@@ -94,4 +94,9 @@ export const fmtDay = (iso: string) =>
   new Date(iso).toLocaleDateString("en-US", { timeZone: TZ, weekday: "short", month: "short", day: "numeric" });
 export const fmtTime = (iso: string) =>
   new Date(iso).toLocaleTimeString("en-US", { timeZone: TZ, hour: "numeric", minute: "2-digit" }).replace(":00", "");
+// "8:30–9:30 AM", "11:30–12:30 PM": the AM/PM once, at the end, like Housecall Pro.
+export const fmtRange = (start: string, end: string) => {
+  const t = (iso: string) => new Date(iso).toLocaleTimeString("en-US", { timeZone: TZ, hour: "numeric", minute: "2-digit" });
+  return `${t(start).replace(/\s?[AP]M$/, "")}–${t(end)}`;
+};
 export const dayKey = (iso: string) => new Date(iso).toLocaleDateString("en-CA", { timeZone: TZ });

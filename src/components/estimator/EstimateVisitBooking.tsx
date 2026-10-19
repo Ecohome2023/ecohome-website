@@ -4,7 +4,7 @@ import { useMemo, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { track } from "@vercel/analytics";
 import { firstTouch } from "@/lib/attribution";
-import { BOOKING_ZIPS, fmtDay, fmtTime, serviceByKey, type Slot } from "@/lib/booking";
+import { BOOKING_ZIPS, fmtDay, fmtRange, serviceByKey, type Slot } from "@/lib/booking";
 import { EMAIL_RE, ESTIMATE_CONTACT_KEY, emailFix, type Answers, type EstimateType } from "@/lib/estimator";
 import { site } from "@/lib/site";
 import { CheckIcon, PhoneIcon } from "@/components/icons";
@@ -115,7 +115,7 @@ export function EstimateVisitBooking({ type }: { type: EstimateType }) {
         <span className="grid h-12 w-12 place-items-center rounded-full bg-[#1e8e4f] text-white"><CheckIcon className="h-6 w-6" /></span>
         <h3 className="display mt-4 text-3xl">You’re booked, {(c.fname || "").trim()}.</h3>
         <p className="mt-3 rounded-xl bg-sky-soft px-4 py-3 text-lg font-semibold">
-          Free in-home estimate<br />{fmtDay(slot.start)}, {fmtTime(slot.start)}–{fmtTime(slot.end)}
+          Free in-home estimate<br />{fmtDay(slot.start)}, {fmtRange(slot.start, slot.end)}
         </p>
         {previewOnly && <p className="mt-4 rounded-xl bg-alarm-strong/10 p-4 font-semibold text-alarm-strong">Preview link: nothing was booked in Housecall Pro.</p>}
         <p className="mt-4 text-lg text-mist">You’re on our schedule. Need to change something? Call or text us.</p>

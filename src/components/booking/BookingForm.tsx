@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { track } from "@vercel/analytics";
 import { firstTouch } from "@/lib/attribution";
-import { bookingServices, needs, serviceByKey, BOOKING_ZIPS, fmtDay, fmtTime } from "@/lib/booking";
+import { bookingServices, needs, serviceByKey, BOOKING_ZIPS, fmtDay, fmtRange } from "@/lib/booking";
 import { SlotPicker, useSlots } from "./SlotPicker";
 import { EMAIL_RE, emailFix } from "@/lib/estimator";
 import { site } from "@/lib/site";
@@ -177,7 +177,7 @@ export function BookingForm({ initialService = "", initialNeed = "" }: { initial
               <h2 ref={headingRef} tabIndex={-1} id="q" className="display mt-2 text-3xl outline-none sm:text-4xl">Your details</h2>
               {service && picked && (
                 <p className="mt-3 rounded-xl bg-sky-soft px-4 py-3 font-semibold">
-                  {service.name} · {fmtDay(picked.start)}, {fmtTime(picked.start)}–{fmtTime(picked.end)}
+                  {service.name} · {fmtDay(picked.start)}, {fmtRange(picked.start, picked.end)}
                 </p>
               )}
               <div className="mt-5 grid grid-cols-2 gap-x-5 gap-y-5">
@@ -243,7 +243,7 @@ export function BookingForm({ initialService = "", initialNeed = "" }: { initial
           <span className="grid h-12 w-12 place-items-center rounded-full bg-[#1e8e4f] text-white"><CheckIcon className="h-6 w-6" /></span>
           <h2 ref={headingRef} tabIndex={-1} className="display mt-5 text-3xl outline-none sm:text-4xl">You’re booked, {(f.fname || "").trim()}.</h2>
           <p className="mt-3 rounded-xl bg-sky-soft px-4 py-3 text-lg font-semibold">
-            {service.name}<br />{fmtDay(picked.start)}, {fmtTime(picked.start)}–{fmtTime(picked.end)}
+            {service.name}<br />{fmtDay(picked.start)}, {fmtRange(picked.start, picked.end)}
           </p>
           {previewOnly && <p className="mt-4 rounded-xl bg-alarm-strong/10 p-4 font-semibold text-alarm-strong">Preview link: nothing was booked in Housecall Pro.</p>}
           <p className="mt-4 text-lg text-mist">You’re on our schedule. Need to change something? Call or text us.</p>
