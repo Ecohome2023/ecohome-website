@@ -7,6 +7,13 @@ export type Review = { name: string; text: string; service?: string; city?: stri
 
 export const googleReviews: Review[] = [
   {
+    name: "Chris P.",
+    service: "System installation",
+    city: "West Valley City",
+    featuredOn: ["/service-area/west-valley-city/heat-pump-installation", "/service-area/west-valley-city"],
+    text: "Garritt and Erwin showed up on time and started working, they answered all my questions throughout the day and were very professional and courteous. The install went flawless and looks great. They walked me through the thermostat settings and insured all systems were working properly before leaving. These gentleman did an awesome job, thanks.",
+  },
+  {
     name: "Jared N.",
     service: "Heating and AC installation",
     city: "West Jordan",

@@ -1068,7 +1068,7 @@ export const cityServices: CityService[] = [
     decideTitle: "Repair it, or replace it?",
     decide: [
       "A furnace younger than roughly 15 years with a modest repair bill is almost always worth fixing.",
-      "If it’s 25 or 30 years old and getting louder, price a replacement before you put money into it. That’s what Dave R. did: his 30-year-old furnace came out, a dual-fuel system went in, and $3,450 in rebates came off. If you only want a furnace, ours start at $3,990, installed in one day.",
+      "If it’s 25 or 30 years old and getting louder, price a replacement before you put money into it. That’s what Chris P. did: his 30-year-old furnace came out, a dual-fuel system went in, and $3,450 in rebates came off. If you only want a furnace, ours start at $3,990, installed in one day.",
     ],
     safety: {
       title: "Gas smell? Get out first.",
@@ -1228,10 +1228,10 @@ export const cityServices: CityService[] = [
     offer: { price: 9990, description: "Heat pump and gas furnace system, starting price after incentives" },
     updated: "2026-10-19",
     job: {
-      customer: "Dave R.",
-      title: "Dave’s 30-year-old furnace sounded like a freight train. Dual fuel replaced it, and the window units.",
-      problem: "Dave had been nursing a 30-year-old furnace along in his 1970s split-level. “It sounded like a freight train rattling through the floorboards every time it kicked on, and we were terrified it would give out in January,” he told us. His central AC had stopped working three summers earlier, so the family relied on noisy window units that ran constantly, ran up the power bill and still left the back rooms stifling.",
-      solution: "We removed the window units and replaced the old equipment with a variable-speed heat pump and a high-efficiency natural gas furnace. The heat pump cools quietly on the hottest days and handles mild-weather heating, and the system switches to the gas furnace during sub-freezing storms, when gas is the cheaper fuel. Dave’s incentives added up to $3,450, made up of the $1,450 Wattsmart rebate, $1,000 from ThermWise and $1,000 from the manufacturer off the invoice, and he financed the rest at 0% for a year.",
+      customer: "Chris P.",
+      title: "Chris’s 30-year-old furnace sounded like a freight train. Dual fuel replaced it, and the window units.",
+      problem: "Chris had been nursing a 30-year-old furnace along in his 1970s split-level. “It sounded like a freight train rattling through the floorboards every time it kicked on, and we were terrified it would give out in January,” he told us. His central AC had stopped working three summers earlier, so the family relied on noisy window units that ran constantly, ran up the power bill and still left the back rooms stifling.",
+      solution: "We removed the window units and replaced the old equipment with a variable-speed heat pump and a high-efficiency natural gas furnace. The heat pump cools quietly on the hottest days and handles mild-weather heating, and the system switches to the gas furnace during sub-freezing storms, when gas is the cheaper fuel. Chris’s incentives added up to $3,450, made up of the $1,450 Wattsmart rebate, $1,000 from ThermWise and $1,000 from the manufacturer off the invoice, and he financed the rest at 0% for a year.",
       result: "Three window units gone, a furnace that no longer shakes the floor, and balanced, quiet heating and cooling in every room.",
       stats: [
         { value: "30 years", label: "Age of the old furnace" },
@@ -1251,7 +1251,7 @@ export const cityServices: CityService[] = [
       },
       {
         q: "What rebates can I get on a heat pump in West Valley City?",
-        a: "Wattsmart pays $1,450 per heat pump we install. ThermWise adds $700 for an 80% furnace or $1,000 for a 96%+ model. When Amana or ACiQ run a dealer rebate, that comes off the invoice too, as it did for Dave R.",
+        a: "Wattsmart pays $1,450 per heat pump we install. ThermWise adds $700 for an 80% furnace or $1,000 for a 96%+ model. When Amana or ACiQ run a dealer rebate, that comes off the invoice too, as it did for Chris P.",
       },
       {
         q: "How much does a heat pump cost in West Valley City?",

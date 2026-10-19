@@ -360,10 +360,10 @@ export const cities: City[] = [
     ],
     rmp: true,
     job: {
-      customer: "Dave R.",
-      title: "Dave’s 30-year-old furnace sounded like a freight train. Now three window units are gone and the house is quiet.",
+      customer: "Chris P.",
+      title: "Chris’s 30-year-old furnace sounded like a freight train. Now three window units are gone and the house is quiet.",
       problem:
-        "Dave’s 1970s split-level had a 30-year-old furnace that rattled through the floorboards every time it kicked on, and the central AC had died three summers earlier. The family got by with three noisy window units, high power bills and stifling back rooms.",
+        "Chris’s 1970s split-level had a 30-year-old furnace that rattled through the floorboards every time it kicked on, and the central AC had died three summers earlier. The family got by with three noisy window units, high power bills and stifling back rooms.",
       solution:
         "A variable-speed heat pump paired with a high-efficiency gas furnace, with the window units removed. The heat pump cools and handles mild-weather heating, and the furnace takes over in sub-freezing storms.",
       result: "Quiet, balanced heating and cooling in every room, with $3,450 in rebates stacked.",
@@ -378,7 +378,7 @@ export const cities: City[] = [
       },
       {
         q: "What rebates can West Valley City homeowners get on a heat pump?",
-        a: "A dual-fuel install here earns $2,150 to $2,450 in guaranteed utility rebates: $1,450 from Rocky Mountain Power and $700 to $1,000 from Enbridge Gas. With a manufacturer rebate on top, Dave R. reached $3,450.",
+        a: "A dual-fuel install here earns $2,150 to $2,450 in guaranteed utility rebates: $1,450 from Rocky Mountain Power and $700 to $1,000 from Enbridge Gas. With a manufacturer rebate on top, Chris P. reached $3,450.",
       },
       {
         q: "Can you replace window AC units with central air?",

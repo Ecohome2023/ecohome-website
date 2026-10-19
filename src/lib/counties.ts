@@ -133,7 +133,7 @@ export const countyPages: County[] = [
       },
       {
         city: "west-valley-city",
-        customer: "Dave R.",
+        customer: "Chris P.",
         problem: "A 30-year-old furnace that “sounded like a freight train,” a dead central AC and three window units.",
         result: "The window units are gone, and the whole split-level heats and cools quietly.",
       },
@@ -146,7 +146,7 @@ export const countyPages: County[] = [
     ],
     rebates: {
       title: "$2,150 to $2,450 in rebates, guaranteed, anywhere in Salt Lake County",
-      body: "Nearly every Salt Lake County city is on Rocky Mountain Power, which pays $1,450 for every heat pump we install. Murray runs its own city power, so we match the $1,450 there with an Eco Home credit. Enbridge Gas adds $700 to $1,000 when the heat pump is paired with a gas furnace, and dealer rebates can stack on top: Mark, Dave and Jared each added $1,000 more.",
+      body: "Nearly every Salt Lake County city is on Rocky Mountain Power, which pays $1,450 for every heat pump we install. Murray runs its own city power, so we match the $1,450 there with an Eco Home credit. Enbridge Gas adds $700 to $1,000 when the heat pump is paired with a gas furnace, and dealer rebates can stack on top: Mark, Chris and Jared each added $1,000 more.",
       points: [
         { amount: "$1,450", label: "Rocky Mountain Power Wattsmart, or our match in Murray" },
         { amount: "$700–$1,000", label: "Enbridge Gas ThermWise, with a gas furnace" },
