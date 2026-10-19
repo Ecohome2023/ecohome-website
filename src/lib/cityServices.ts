@@ -617,7 +617,7 @@ export const cityServices: CityService[] = [
     h1: "AC repair in Lehi, UT",
     heroSub:
       "Upstairs bedrooms baking by mid-afternoon? We’re right next door in American Fork and open 24/7, with a $129 diagnostic and a price before any work.",
-    heroImg: { src: "/images/tech-eco-home-shirt-heat-pump.jpg", alt: "Eco Home technician standing beside an outdoor air conditioner", pos: "45% 50%" },
+    heroImg: { src: "/images/tech-eco-home-shirt-heat-pump.jpg", alt: "Eco Home technician leveling an outdoor unit beside a brick home", pos: "45% 50%" },
     primaryCta: "BOOK",
     intro: [
       "Lehi’s two-story homes and lofts take the brunt of summer. July afternoons average around 90°F, and heat rises, so the upstairs is usually the first place an aging AC falls behind. When you need air conditioning repair, we take calls and online bookings 24/7.",
