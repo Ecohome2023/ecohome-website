@@ -8,7 +8,7 @@ import { CheckIcon, MailIcon, PhoneIcon, Stars } from "./icons";
 import { JobPromises } from "./JobPromises";
 import { ReviewRotator } from "./ReviewRotator";
 
-export function CityServicePage({ city: c, page: p }: { city: City; page: CityService }) {
+export function CityServicePage({ city: c, page: p }: { city: Pick<City, "slug" | "name">; page: CityService }) {
   const cityPath = `/service-area/${c.slug}`;
   const path = `${cityPath}/${p.slug}`;
   const others = servicesForCity(c.slug).filter((s) => s.slug !== p.slug);
@@ -231,7 +231,7 @@ export function CityServicePage({ city: c, page: p }: { city: City; page: CitySe
             {others.map((o) => (
               <li key={o.slug}><Link href={`${cityPath}/${o.slug}`} className="inline-block rounded-full bg-white px-5 py-3 font-bold ring-2 ring-ink hover:bg-sky-soft">{o.serviceName} in {c.name}</Link></li>
             ))}
-            <li><Link href={p.mainHref} className="inline-block rounded-full bg-white px-5 py-3 font-bold ring-2 ring-ink hover:bg-sky-soft">{p.serviceName} across Utah County</Link></li>
+            <li><Link href={p.mainHref} className="inline-block rounded-full bg-white px-5 py-3 font-bold ring-2 ring-ink hover:bg-sky-soft">{c.name.endsWith("County") ? `More about ${p.serviceName.toLowerCase()}` : `${p.serviceName} across Utah County`}</Link></li>
           </ul>
         </div>
       </section>

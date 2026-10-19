@@ -5,7 +5,7 @@
 type Item = { title: string; body: string };
 
 export type CityService = {
-  city: string; // slug in lib/cities
+  city: string; // slug in lib/cities or lib/counties
   slug: string; // e.g. "furnace-repair"
   serviceName: string; // short name, e.g. "Furnace repair"
   mainHref: string; // the general service page
@@ -761,6 +761,85 @@ export const cityServices: CityService[] = [
       {
         q: "Do I need a permit for a heat pump in Lehi?",
         a: "Yes. Lehi City Building and Inspections issues the permit and inspects the install. We pull it on every job, and it’s included in your price.",
+      },
+    ],
+  },
+  // ================================================================ UTAH COUNTY
+  // ---------------------------------------------------------------- AC REPLACEMENT
+  {
+    city: "utah-county",
+    slug: "ac-replacement",
+    serviceName: "AC replacement",
+    mainHref: "/services/ac-replacement",
+    metaTitle: "AC Replacement in Utah County, UT",
+    metaDescription:
+      "Replacing an AC in Utah County? A heat pump cools like an AC and heats most of the winter. $2,150+ in rebates guaranteed in every city, installed in one day.",
+    h1: "AC replacement in Utah County, UT",
+    heroSub:
+      "When your air conditioner wears out, replace it with a heat pump. It cools like an AC, heats most of the winter alongside your gas furnace, and gets a guaranteed $1,450 rebate in every Utah County city.",
+    heroImg: { src: "/images/heat-pump-install-lawn.jpg", alt: "New inverter heat pump installed in place of an old air conditioner beside a Utah home", pos: "55% 50%" },
+    primaryCta: "INSTANT",
+    intro: [
+      "Most Utah County homes have a gas furnace and a central air conditioner, and a central AC usually lasts about 12 to 15 years. When yours gives out, there’s a better choice than another AC: an inverter heat pump. It cools your home all summer just like an air conditioner, and it heats most of the winter for less, with your gas furnace taking over on the coldest nights.",
+      "That’s the replacement we recommend for nearly every Utah County home, and it’s what we installed for Trent B. in American Fork, Charles H. in Orem and Bryce K. in Lehi. Every replacement includes a load calculation, the permit, haul-away of the old unit and the rebate paperwork.",
+    ],
+    factorsTitle: "Why a heat pump beats a new AC in Utah County",
+    factors: [
+      {
+        title: "Same cooling, plus heat",
+        body: "A heat pump is an air conditioner that can also run in reverse. In summer it cools exactly like an AC. From fall to spring it heats your home on all but the coldest days, so your gas furnace runs much less.",
+      },
+      {
+        title: "A guaranteed rebate in every city",
+        body: "Most Utah County cities are on Rocky Mountain Power, which pays $1,450 on every heat pump we install. Provo, Lehi, Springville and Spanish Fork run their own city power, so we match the $1,450 there with a credit from Eco Home.",
+      },
+      {
+        title: "Made for Utah County winters",
+        body: "January lows here run from the mid-teens in Lehi and American Fork to around 20°F in Orem. Paired with your gas furnace, a variable-speed heat pump handles that easily, because the furnace covers the coldest nights.",
+      },
+    ],
+    listTitle: "Signs your AC is ready to be replaced",
+    listIntro: "If two or more of these sound familiar, get a replacement price before paying for another repair.",
+    list: [
+      { title: "It’s past 12 to 15 years old", body: "Breakdowns get more frequent and efficiency keeps sliding as an AC reaches the end of its life." },
+      { title: "It still runs on R-22", body: "R-22 refrigerant is no longer produced, so a leak on an older unit gets expensive to recharge." },
+      { title: "The repair bills keep coming", body: "Several repairs in two summers, or one big quote for a compressor, usually means it’s time." },
+      { title: "Upstairs rooms never cool", body: "Common in Utah County two-story homes. Sometimes it’s ducts, often it’s a tired single-speed system." },
+      { title: "Summer power bills keep rising", body: "An aging AC uses more electricity for the same cooling, and the bill shows it." },
+      { title: "Ice, leaks or loud noises", body: "Frozen lines, water around the furnace, or grinding and buzzing from the outdoor unit are worth a look now." },
+    ],
+    price: {
+      title: "What AC replacement costs in Utah County",
+      body: "A heat pump paired with a gas furnace starts at $9,990 after incentives. If your furnace still has years left, we can usually keep it and replace only the AC with a heat pump, which costs less. Instant pricing gives you a number for your home in about two minutes.",
+      points: ["Heat pump + furnace systems from $9,990 after incentives", "$1,450 rebate guaranteed in every Utah County city", "0% interest for 12 months available", "Load calculation, permit and haul-away included"],
+    },
+    offer: { price: 9990, description: "Heat pump and gas furnace system replacing a central AC, starting price after incentives" },
+    updated: "2026-10-19",
+    decideTitle: "Replace just the AC, or the furnace too?",
+    decide: [
+      "If your furnace is younger than about 15 years and working well, we’ll usually keep it and replace only the AC with a heat pump. You get the heat pump’s efficiency without paying for a new furnace.",
+      "If the furnace is as old as the AC, replacing both at once is usually cheaper than two separate jobs, and pairing the heat pump with a 96%+ furnace raises the Enbridge Gas rebate to $1,000.",
+    ],
+    faqs: [
+      {
+        q: "Should I replace my AC with a heat pump in Utah County?",
+        a: "For most homes, yes. A heat pump cools like an AC, heats most of the winter alongside your gas furnace, and gets a guaranteed $1,450 rebate in every Utah County city. A new AC only cools.",
+      },
+      {
+        q: "How much does it cost to replace an AC in Utah County?",
+        a: "Heat pump and gas furnace systems start at $9,990 after incentives. Keeping a good furnace and replacing only the AC with a heat pump costs less. Instant pricing gives you a price for your home in about two minutes.",
+      },
+      {
+        q: "I live in Provo, Lehi, Springville or Spanish Fork. Do I still get the rebate?",
+        a: "Yes. Those cities run their own power, so the Rocky Mountain Power rebate doesn’t apply, but we match the $1,450 with a credit from Eco Home on every heat pump we install.",
+      },
+      {
+        q: "How long does an AC replacement take?",
+        a: "Most are done in one day, including recovering the refrigerant from the old unit and hauling it away.",
+      },
+      {
+        q: "Do I need a permit to replace my AC in Utah County?",
+        a: "Yes. Each city’s building department issues it, and Utah County handles homes in unincorporated areas. Not every HVAC company pulls permits. We do on every job.",
       },
     ],
   },

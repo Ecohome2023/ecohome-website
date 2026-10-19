@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { site, nav, counties, hrefFor } from "@/lib/site";
 import { cityHref } from "@/lib/cities";
+import { countyHref } from "@/lib/counties";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -59,7 +60,7 @@ export function Footer() {
           <div className="mt-4 grid gap-x-8 gap-y-5 sm:grid-cols-2">
             {counties.map((c) => (
               <div key={c.name}>
-                <h3 className="text-sm font-bold text-white">{c.name}</h3>
+                <h3 className="text-sm font-bold text-white">{countyHref(c.name) ? <Link href={countyHref(c.name)!} className="underline-offset-2 hover:underline">{c.name}</Link> : c.name}</h3>
                 <p className="mt-1 text-sm leading-6 text-white/70">
                   {c.cities.map((city, i) => {
                     const href = cityHref(city);
