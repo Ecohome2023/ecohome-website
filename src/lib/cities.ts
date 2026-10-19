@@ -17,7 +17,7 @@ export type City = {
   facts: { label: string; value: string }[];
   homes: { title: string; body: string }[];
   rmp: boolean; // Rocky Mountain Power customers (Wattsmart rebate applies). If false, Eco Home matches the $1,450 with its own credit.
-  job: { customer: string; title: string; problem: string; solution: string; result: string; img: string; alt: string; more?: string };
+  job: { customer: string; title: string; problem: string; solution: string; result: string; img: string; alt: string; more?: string; stats?: { value: string; label: string }[] };
   heroCaption?: string; // only when the hero photo is from this city's job
   faqs: CityFaq[];
   nearby: string[];
@@ -249,6 +249,79 @@ export const cities: City[] = [
     ],
     updated: "2026-10-16",
     nearby: ["American Fork", "Saratoga Springs", "Highland", "Alpine", "Eagle Mountain", "Bluffdale"],
+  },  {
+    slug: "salt-lake-city",
+    name: "Salt Lake City",
+    county: "Salt Lake County",
+    metaTitle: "Salt Lake City HVAC: Heating & Cooling, 24/7",
+    metaDescription:
+      "Heating and cooling for Salt Lake City homes, from Sugar House bungalows to the east bench: furnace and AC repair, heat pumps, $2,150+ in rebates.",
+    h1: "Heating and cooling in Salt Lake City, UT",
+    heroSub:
+      "Furnace and AC repair, tune-ups and heat pump systems for Salt Lake City homes, open 24/7. We pull the permit on every job and file your rebates for you.",
+    intro: [
+      "Salt Lake City has some of the oldest homes on the Wasatch Front: Victorians in the Avenues, brick bungalows in Sugar House, and post-war ramblers in Rose Park and on the east bench. Many were built long before central air, and their heating and cooling has been added to and patched over the decades. That’s where most comfort problems here start.",
+      "The city sits at about 4,300 feet. January nights average in the mid-20s, July afternoons average in the mid-90s, and winter inversions can trap cold, dirty air in the valley for days. We size every install with a load calculation for your home, and for most Salt Lake City houses we recommend a variable-speed heat pump paired with a gas furnace.",
+    ],
+    facts: [
+      { label: "Elevation", value: "About 4,300 ft" },
+      { label: "Winter nights", value: "Average low in the mid-20s in January" },
+      { label: "Summer days", value: "Average high in the mid-90s in July" },
+      { label: "Electric", value: "Rocky Mountain Power" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+      { label: "Permits", value: "Salt Lake City Building Services" },
+    ],
+    homes: [
+      {
+        title: "Brick bungalows in Sugar House",
+        body: "Sugar House is full of brick bungalows from the early 1900s through the 1940s. Many have upstairs bedrooms that the original ductwork barely reaches, so the upstairs bakes in summer while the main floor stays cool. A variable-speed system that runs longer at low speed is what evens that out.",
+      },
+      {
+        title: "Older homes in the Avenues",
+        body: "The Avenues is one of Salt Lake City’s oldest neighborhoods, with homes going back to the late 1800s. Thick brick walls, small or missing ducts and tight basements make every install different, and a ductless mini-split is often the cleanest way to cool rooms the ducts never reached.",
+      },
+      {
+        title: "Post-war ramblers in Rose Park and on the east bench",
+        body: "Neighborhoods like Rose Park filled with single-story homes after World War II. Their ducts were usually sized for a furnace alone, so when air conditioning was added later, airflow suffered. We check duct size and airflow before recommending equipment.",
+      },
+    ],
+    rmp: true,
+    job: {
+      customer: "Mark T.",
+      title: "Mark’s upstairs hit 82° every summer. The 14° swing between floors is gone.",
+      problem:
+        "In Mark and Sarah’s 1940s Sugar House bungalow, the upstairs hit 82° all summer while the main floor stayed cold. The 24-year-old furnace clanked, and the old AC rattled outside the home office window.",
+      solution:
+        "A variable-speed heat pump paired with a high-efficiency gas furnace. It runs steadily at low speed, so air moves evenly between floors, and it switches to gas when temperatures drop below freezing.",
+      result: "The 14° swing between floors is gone, and the summer electric bill dropped from $340 to $195.",
+      more: "/service-area/salt-lake-city/heat-pump-installation",
+      img: "/images/amana-system-side-eco-home-van.jpg",
+      alt: "Amana heat pump and gas furnace on pallets beside an Eco Home van",
+    },
+    faqs: [
+      {
+        q: "Do you serve all of Salt Lake City?",
+        a: "Yes, from the Avenues and Capitol Hill to Sugar House, Rose Park, Glendale and the east bench. We’re open 24/7, and you can call or book online any time.",
+      },
+      {
+        q: "What rebates can Salt Lake City homeowners get on a heat pump?",
+        a: "At least $2,150, guaranteed. Salt Lake City is on Rocky Mountain Power and Enbridge Gas, so a heat pump paired with a gas furnace gets $1,450 from Wattsmart plus $700 to $1,000 from ThermWise. Dealer rebates can add more: Mark T. in Sugar House stacked $3,450 in all.",
+      },
+      {
+        q: "Can you install a heat pump in an older Salt Lake City home?",
+        a: "Usually, yes. We check the ducts, the electrical panel and where the outdoor unit can go. In older homes with small or missing ducts, a ductless mini-split can cool rooms the ducts never reached.",
+      },
+      {
+        q: "Do I need a permit to replace a furnace or AC in Salt Lake City?",
+        a: "Yes. Salt Lake City’s Building Services division issues the permit and inspects the work. Not every HVAC company pulls permits. We do on every job, and it’s included in your price.",
+      },
+      {
+        q: "How much does a new system cost in Salt Lake City?",
+        a: "New furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, with $0 down and 0% interest for 12 months available. Instant pricing gives you a number for your home in about two minutes.",
+      },
+    ],
+    updated: "2026-10-19",
+    nearby: ["South Salt Lake", "Millcreek", "Holladay", "West Valley City", "North Salt Lake", "Murray"],
   },
 ];
 

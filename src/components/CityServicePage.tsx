@@ -147,6 +147,16 @@ export function CityServicePage({ city: c, page: p }: { city: Pick<City, "slug" 
             <div className="rounded-3xl bg-ink p-7 text-white lg:mt-10">
               <p className="text-sm font-bold uppercase tracking-wider text-sky">The result</p>
               <p className="mt-3 text-2xl font-extrabold leading-snug">{p.job.result}</p>
+              {p.job.stats && (
+                <dl className="mt-6 grid grid-cols-2 gap-3">
+                  {p.job.stats.map((s) => (
+                    <div key={s.label} className="rounded-xl bg-white/[0.08] p-3">
+                      <dt className="sr-only">{s.label}</dt>
+                      <dd><span className="block text-xl font-extrabold text-sky">{s.value}</span><span className="mt-1 block text-sm text-white/75">{s.label}</span></dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
               <p className="mt-5 font-semibold text-white/70">{p.job.customer}, {c.name}</p>
             </div>
           </div>

@@ -130,6 +130,16 @@ export function CityPage({ city: c }: { city: City }) {
           <div className="rounded-3xl bg-ink p-7 text-white lg:mt-10">
             <p className="text-sm font-bold uppercase tracking-wider text-sky">The result</p>
             <p className="mt-3 text-2xl font-extrabold leading-snug">{c.job.result}</p>
+            {c.job.stats && (
+              <dl className="mt-6 grid grid-cols-2 gap-3">
+                {c.job.stats.map((s) => (
+                  <div key={s.label} className="rounded-xl bg-white/[0.08] p-3">
+                    <dt className="sr-only">{s.label}</dt>
+                    <dd><span className="block text-xl font-extrabold text-sky">{s.value}</span><span className="mt-1 block text-sm text-white/75">{s.label}</span></dd>
+                  </div>
+                ))}
+              </dl>
+            )}
             <p className="mt-5 font-semibold text-white/70">{c.job.customer}, {c.name}</p>
             <Link href={site.instantPricingUrl} className="mt-6 inline-block rounded-full bg-alarm-strong px-6 py-3 font-bold text-white hover:brightness-110">Price a system like this</Link>
             {c.job.more && <Link href={c.job.more} className="mt-4 block font-bold text-sky hover:underline">Read the full story ›</Link>}

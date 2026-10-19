@@ -7,6 +7,13 @@ export type Review = { name: string; text: string; service?: string; city?: stri
 
 export const googleReviews: Review[] = [
   {
+    name: "Mark T.",
+    service: "Heat pump installation",
+    city: "Salt Lake City",
+    featuredOn: ["/service-area/salt-lake-city/heat-pump-installation", "/service-area/salt-lake-city"],
+    text: "Eco Home is phenomenal. The upstairs of our Sugar House home is finally cool in the summer, and the new system is so whisper-quiet we have to check the vents to verify it’s running. Between the Rocky Mountain Power rebates, the $1,000 dealer discount, and 0% financing for a year, replacing the entire system was well within our budget.",
+  },
+  {
     name: "Rebecca M.",
     service: "Heating repair",
     city: "American Fork",

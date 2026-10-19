@@ -24,7 +24,7 @@ export type CityService = {
   price: { title: string; body: string; points: string[] };
   offer?: { price: number; description: string }; // the starting price shown on the page, for search and AI tools; leave off when the city’s price differs
   updated: string; // YYYY-MM-DD, change when the page is meaningfully edited
-  job?: { customer: string; title: string; problem: string; solution: string; result: string; img?: string; alt?: string; before?: { src: string; alt: string }; after?: { src: string; alt: string } };
+  job?: { customer: string; title: string; problem: string; solution: string; result: string; img?: string; alt?: string; before?: { src: string; alt: string }; after?: { src: string; alt: string }; stats?: { value: string; label: string }[] };
   decideTitle?: string;
   decide?: string[];
   safety?: { title: string; body: string };
@@ -692,7 +692,7 @@ export const cityServices: CityService[] = [
     mainHref: "/heat-pumps",
     metaTitle: "Heat Pump Installation in Lehi, UT",
     metaDescription:
-      "Heat pump and gas furnace systems for Lehi homes from $9,990 after incentives. We match the $1,450 Rocky Mountain Power rebate. Permit pulled, one-day install.",
+      "Heat pump + gas furnace systems for Lehi homes from $9,990 after incentives. We match the $1,450 Rocky Mountain Power rebate. One-day install.",
     h1: "Heat pump installation in Lehi, UT",
     heroSub:
       "A variable-speed heat pump paired with a gas furnace keeps a Lehi home even from the basement to the loft, and picks the cheaper heat source on its own.",
@@ -764,6 +764,256 @@ export const cityServices: CityService[] = [
       },
     ],
   },
+  // ================================================================ SALT LAKE CITY
+  // ---------------------------------------------------------------- FURNACE REPAIR
+  {
+    city: "salt-lake-city",
+    slug: "furnace-repair",
+    serviceName: "Furnace repair",
+    mainHref: "/services/furnace-repair",
+    metaTitle: "Furnace Repair in Salt Lake City, UT, Open 24/7",
+    metaDescription:
+      "Salt Lake City furnace repair, open 24/7. A $129 diagnostic and the repair price before any work. Clanking, no heat or short cycling, all brands.",
+    h1: "Furnace repair in Salt Lake City, UT",
+    heroSub:
+      "No heat on a January night in Salt Lake City? We’re open 24/7. Start with a $129 diagnostic, and see the repair price before any work.",
+    heroImg: { src: "/images/furnace-tech-thumbs-up.jpg", alt: "Eco Home technician beside an open gas furnace after a repair", pos: "50% 35%" },
+    primaryCta: "BOOK",
+    intro: [
+      "Salt Lake City has some of the oldest furnaces on the Wasatch Front, tucked into the basements of bungalows and ramblers that have been through decades of winters. A furnace that clanks, short cycles or won’t light usually gives some warning first, and catching it early often keeps the repair small.",
+      "We repair all major furnace brands. Every visit starts with a full diagnostic, and you approve the price before any work begins.",
+    ],
+    factorsTitle: "What’s hard on Salt Lake City furnaces",
+    factors: [
+      {
+        title: "Inversion season",
+        body: "Winter inversions can hold dirty air in the Salt Lake Valley for days. Filters clog faster, airflow drops, and an overheating furnace shuts itself off on its limit switch. A fresh filter is the first thing to check.",
+      },
+      {
+        title: "Older furnaces in tight basements",
+        body: "Many Salt Lake City furnaces sit in small basement utility rooms that were never designed for them. Dust and poor combustion air wear out inducer motors and flame sensors faster.",
+      },
+      {
+        title: "Long January nights",
+        body: "January lows average in the mid-20s here. A furnace that runs long cycles all night puts the most wear on its ignitor, blower motor and control board.",
+      },
+    ],
+    listTitle: "Furnace repairs we handle in Salt Lake City",
+    listIntro: "Many are fixed on the first visit.",
+    list: [
+      { title: "Clanking or banging", body: "A loose blower wheel, a failing inducer motor or delayed ignition. All of them get worse if they’re ignored." },
+      { title: "No heat", body: "We test the ignitor, flame sensor, pressure switch and control board, and replace only what failed." },
+      { title: "Short cycling", body: "Usually a dirty flame sensor, a clogged filter or a furnace that’s too big for the house." },
+      { title: "Hot upstairs, cold main floor", body: "Often an airflow or duct balance problem in an older home, not a bad furnace." },
+      { title: "A burning or gas smell", body: "Dust burning off at the first cold snap is normal. A gas smell is not: leave the house and call Enbridge Gas first." },
+      { title: "Thermostat problems", body: "Wiring or settings that keep a good furnace from responding." },
+    ],
+    price: {
+      title: "A clear price before any repair",
+      body: "A furnace diagnostic is $129. You see the repair price up front and decide before we start.",
+      points: ["$129 diagnostic", "Upfront repair price", "Essential Care Plan members save 10%", "Backed by our Smile Guarantee"],
+    },
+    offer: { price: 129, description: "Furnace diagnostic; repair priced upfront before any work" },
+    updated: "2026-10-19",
+    decideTitle: "Repair or replace?",
+    decide: [
+      "If your furnace is under about 15 years old and the repair is reasonable, repair it, and we’ll tell you so.",
+      "If it’s past 20 years old, clanking, or needs a major part, price a replacement first. Mark T. in Sugar House replaced a 24-year-old furnace and AC with a heat pump and high-efficiency furnace and stacked $3,450 in rebates. A furnace on its own starts at $3,990, installed in one day.",
+    ],
+    safety: {
+      title: "Smell gas? Leave, then call.",
+      body: "If you smell rotten eggs, get everyone outside and don’t flip switches or light anything. From outside, call Enbridge Gas at 1-800-767-1689 or 911. Call us for the furnace once the gas company says the home is safe.",
+    },
+    faqs: [
+      {
+        q: "Do you offer 24/7 furnace repair in Salt Lake City?",
+        a: "Yes. We’re open 24/7, including nights, weekends and holidays. Call 801-396-0019 or book online any time.",
+      },
+      {
+        q: "How much does furnace repair cost in Salt Lake City?",
+        a: "The diagnostic is $129, and you see the repair price before any work. Flame sensors and ignitors are small repairs; blower and inducer motors cost more. Essential Care Plan members save 10%.",
+      },
+      {
+        q: "Why does my furnace clank when it runs?",
+        a: "Usually a loose blower wheel, a worn motor mount or a failing inducer motor. It rarely fixes itself, so have it checked before a small repair turns into a big one.",
+      },
+      {
+        q: "Why does my furnace keep shutting off during inversions?",
+        a: "Dirty air clogs the filter faster, the furnace overheats, and its safety switch shuts it down. Replace the filter first; if it keeps happening, call us.",
+      },
+      {
+        q: "Is my 20-year-old furnace worth fixing?",
+        a: "For a small part, often yes. For a major repair, compare it with a new system: Salt Lake City homes get at least $2,150 in guaranteed rebates on a heat pump paired with a gas furnace.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- AC REPAIR
+  {
+    city: "salt-lake-city",
+    slug: "ac-repair",
+    serviceName: "AC repair",
+    mainHref: "/services/ac-repair",
+    metaTitle: "AC Repair in Salt Lake City, UT, Open 24/7",
+    metaDescription:
+      "Salt Lake City AC repair, open 24/7: a $129 diagnostic and an upfront repair price. Warm air, a hot upstairs or a noisy outdoor unit, all brands.",
+    h1: "AC repair in Salt Lake City, UT",
+    heroSub:
+      "July afternoons in Salt Lake City average in the mid-90s. If your AC quits, we’re open 24/7, with a $129 diagnostic and a price before any work.",
+    heroImg: { src: "/images/tech-wiring-capacitor.jpg", alt: "Eco Home technician testing the wiring and capacitor inside an air conditioner", pos: "50% 50%" },
+    primaryCta: "BOOK",
+    intro: [
+      "Older Salt Lake City homes ask a lot of an air conditioner. Upstairs bedrooms in bungalows and story-and-a-half homes heat up fast, and an aging AC can run all afternoon without catching up. When you need air conditioning repair, we take calls and online bookings 24/7.",
+      "We fix all major AC and heat pump brands. You get a full diagnostic, a clear explanation of what failed and the price before we start.",
+    ],
+    factorsTitle: "What wears out Salt Lake City air conditioners",
+    factors: [
+      {
+        title: "Mid-90s July afternoons",
+        body: "Long run times in July and August wear out capacitors, contactors and fan motors, the parts that fail most often.",
+      },
+      {
+        title: "Hot upstairs rooms",
+        body: "In older homes, upstairs rooms often have few or undersized ducts. Sometimes the AC is fine and the problem is airflow, so we check both.",
+      },
+      {
+        title: "Outdoor units in tight spaces",
+        body: "Many city lots put the outdoor unit against a wall or under a window. Poor airflow around the coil makes it run hotter, louder and less efficiently.",
+      },
+    ],
+    listTitle: "AC repairs we make in Salt Lake City",
+    listIntro: "Most are handled in one visit.",
+    list: [
+      { title: "Warm air", body: "A failed capacitor, contactor or fan motor, a dirty coil, or low refrigerant from a leak." },
+      { title: "A loud or vibrating outdoor unit", body: "Worn motor bearings, a loose fan blade or a unit that’s settled off level." },
+      { title: "Upstairs won’t cool", body: "We check airflow, return ducts and refrigerant charge before recommending anything." },
+      { title: "Won’t turn on", body: "A tripped breaker, a blown disconnect fuse, a thermostat problem or a full condensate drain." },
+      { title: "Ice on the lines", body: "Low airflow or low refrigerant. Turn it off and call so the compressor isn’t damaged." },
+      { title: "Water near the furnace", body: "A plugged condensate line or cracked drain pan, a quick fix if it’s caught early." },
+    ],
+    price: {
+      title: "Upfront pricing on every AC repair",
+      body: "Every AC repair starts with a $129 diagnostic, and you see the price for the fix before we begin.",
+      points: ["$129 diagnostic", "Price before any work", "10% off for Essential Care Plan members", "Smile Guarantee on repairs"],
+    },
+    offer: { price: 129, description: "AC diagnostic; repair priced upfront before any work" },
+    updated: "2026-10-19",
+    decideTitle: "When to stop repairing it",
+    decide: [
+      "An AC under about 12 years old with a reasonable repair is usually worth fixing.",
+      "If it’s older, runs on R-22 or needs a compressor, compare the repair with a heat pump. It cools like an AC, heats most of the winter, and Salt Lake City homes get $1,450 back from Rocky Mountain Power, guaranteed, on every heat pump we install.",
+    ],
+    faqs: [
+      {
+        q: "How fast can you get to my Salt Lake City home?",
+        a: "We’re open 24/7 and take calls and online bookings any time. Call 801-396-0019, and many AC repairs are finished in one visit.",
+      },
+      {
+        q: "How much does AC repair cost in Salt Lake City?",
+        a: "A $129 diagnostic, then an upfront price. A capacitor or contactor costs much less than a refrigerant leak repair or a compressor. Essential Care Plan members save 10%.",
+      },
+      {
+        q: "Why is the upstairs of my older home so hot?",
+        a: "Older Salt Lake City homes often have few or undersized ducts upstairs, and heat rises. A single-speed AC shuts off before it mixes the air. A variable-speed heat pump runs longer and steadier, which is how Mark T. in Sugar House got rid of a 14° difference between floors.",
+      },
+      {
+        q: "Why is my outdoor AC unit so loud?",
+        a: "Worn fan motor bearings, a loose fan blade or a failing compressor are common causes. A unit that suddenly gets louder should be checked soon.",
+      },
+      {
+        q: "Should I repair my old AC or replace it with a heat pump?",
+        a: "Repair it if it’s under about 12 years old and the fix is reasonable. If it’s older or needs a compressor, a heat pump is usually the better buy, with a guaranteed $1,450 Rocky Mountain Power rebate.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- HEAT PUMP INSTALLATION
+  {
+    city: "salt-lake-city",
+    slug: "heat-pump-installation",
+    serviceName: "Heat pump installation",
+    mainHref: "/heat-pumps",
+    metaTitle: "Heat Pump Installation in Salt Lake City, UT",
+    metaDescription:
+      "Heat pump and gas furnace systems for Salt Lake City homes from $9,990 after incentives. $2,150+ in rebates guaranteed, permit pulled, one-day install.",
+    h1: "Heat pump installation in Salt Lake City, UT",
+    heroSub:
+      "A variable-speed heat pump paired with a gas furnace evens out older Salt Lake City homes from the basement to the upstairs bedrooms. At least $2,150 in rebates, guaranteed.",
+    heroImg: { src: "/images/tech-portrait.jpg", alt: "Eco Home technician standing next to an outdoor heat pump", pos: "45% 40%" },
+    primaryCta: "INSTANT",
+    intro: [
+      "For most Salt Lake City homes, the best upgrade is dual fuel: a variable-speed heat pump paired with a high-efficiency gas furnace. The heat pump cools all summer and heats on mild days, and the furnace takes over when temperatures drop below freezing. The system picks the cheaper source on its own.",
+      "We’ve helped more than 2,000 Utah homeowners with their heating and cooling. Every Salt Lake City install includes a load calculation, the city permit, haul-away of the old equipment and the rebate paperwork.",
+    ],
+    factorsTitle: "Why dual fuel fits Salt Lake City",
+    factors: [
+      {
+        title: "Made for older, uneven homes",
+        body: "Bungalows and story-and-a-half homes often run much warmer upstairs. A variable-speed heat pump runs continuously at low speed, which keeps air moving between floors instead of blasting on and off.",
+      },
+      {
+        title: "Rebates that stack",
+        body: "Salt Lake City homes are on Rocky Mountain Power and Enbridge Gas, so dual fuel qualifies for $1,450 from Wattsmart plus $700 to $1,000 from ThermWise, guaranteed. Dealer rebates can add more when they’re offered.",
+      },
+      {
+        title: "Quiet enough for a home office",
+        body: "City lots put the outdoor unit close to windows and neighbors. A variable-speed heat pump runs at low speed most of the time, so it’s far quieter than an old single-stage AC.",
+      },
+    ],
+    listTitle: "Every Salt Lake City install includes",
+    listIntro: "One price, nothing left for you to chase.",
+    list: [
+      { title: "A load calculation", body: "Sized to your home’s square footage, insulation, windows and floors, not the old unit’s label." },
+      { title: "The Salt Lake City permit", body: "Pulled through Building Services and inspected. Not every HVAC company pulls permits. We do on every job." },
+      { title: "A duct and airflow check", body: "Especially in older homes, so the upstairs gets its share." },
+      { title: "A one-day install", body: "Most systems are finished in a single day." },
+      { title: "Rebate filing", body: "We submit your Wattsmart, ThermWise and any dealer rebates." },
+      { title: "The Smile Guarantee", body: "A year on our workmanship. If something isn’t right, we fix it free." },
+    ],
+    price: {
+      title: "What it costs in Salt Lake City",
+      body: "Heat pump and gas furnace systems start at $9,990 after incentives, with $0 down and 0% interest for 12 months available. Your exact price depends on your home’s size and the efficiency you choose.",
+      points: ["From $9,990 after incentives", "$2,150 to $2,450 in rebates, guaranteed", "Dealer rebates when offered", "$0 down and 0% interest for 12 months available"],
+    },
+    offer: { price: 9990, description: "Heat pump and gas furnace system, starting price after incentives" },
+    updated: "2026-10-19",
+    job: {
+      customer: "Mark T.",
+      title: "Mark and Sarah’s upstairs hit 82° all summer. A dual-fuel system ended the 14° swing.",
+      problem: "Mark and Sarah live in a 1940s brick bungalow in Sugar House. “Our upstairs was 82° all summer, but the main floor was freezing,” Mark said. Their 24-year-old furnace clanked in the basement, the aging AC vibrated right outside the home office window, and July and August electric bills routinely climbed past $340.",
+      solution: "We replaced both with a variable-speed heat pump paired with a high-efficiency natural gas furnace. The variable-speed compressor runs continuously at low speed, circulating air evenly between floors, and the system uses the heat pump on mild spring and fall days and switches to gas when temperatures drop below freezing. Their rebates stacked to $3,450: $1,450 from Rocky Mountain Power, $1,000 from Enbridge Gas and a $1,000 dealer rebate taken off the invoice, with $0 down and 0% interest for 12 months.",
+      result: "The 14° difference between floors is gone, the system runs whisper-quiet, and their summer electric bill dropped from $340 to $195.",
+      stats: [
+        { value: "24 years", label: "Age of the old furnace and AC" },
+        { value: "14°", label: "Swing between floors, now gone" },
+        { value: "$340 → $195", label: "Summer electric bill" },
+        { value: "$3,450", label: "Rebates stacked" },
+      ],
+    },
+    faqs: [
+      {
+        q: "Do heat pumps work in Salt Lake City winters?",
+        a: "Yes, paired with a gas furnace. January nights average in the mid-20s here. The heat pump handles mild days efficiently, and the furnace takes over when temperatures drop below freezing.",
+      },
+      {
+        q: "How much can a heat pump save in Salt Lake City?",
+        a: "It depends on the home, but Mark T. in Sugar House saw his summer electric bill drop from $340 to $195 after replacing a 24-year-old AC and furnace with a variable-speed heat pump and gas furnace.",
+      },
+      {
+        q: "What rebates can I get on a heat pump in Salt Lake City?",
+        a: "$1,450 from Rocky Mountain Power Wattsmart on every heat pump we install, plus $700 with an 80% furnace or $1,000 with a 96%+ furnace from Enbridge Gas ThermWise. Dealer rebates can add more when they’re offered.",
+      },
+      {
+        q: "Will a heat pump work in my older Salt Lake City home?",
+        a: "Usually. We check your ducts, electrical panel and where the outdoor unit can go. Older homes with small ducts sometimes need a few changes, and we tell you before we quote.",
+      },
+      {
+        q: "Do I need a permit for a heat pump in Salt Lake City?",
+        a: "Yes. Salt Lake City Building Services issues the permit and inspects the install. We pull it on every job, and it’s included in your price.",
+      },
+    ],
+  },
+
   // ================================================================ UTAH COUNTY
   // ---------------------------------------------------------------- AC REPLACEMENT
   {
@@ -773,7 +1023,7 @@ export const cityServices: CityService[] = [
     mainHref: "/services/ac-replacement",
     metaTitle: "AC Replacement in Utah County, UT",
     metaDescription:
-      "Replacing an AC in Utah County? A heat pump cools like an AC and heats most of the winter. $2,150+ in rebates guaranteed in every city, installed in one day.",
+      "Replacing an AC in Utah County? A heat pump cools like an AC and heats most of the winter. $2,150+ in rebates guaranteed, installed in one day.",
     h1: "AC replacement in Utah County, UT",
     heroSub:
       "When your air conditioner wears out, replace it with a heat pump. It cools like an AC, heats most of the winter alongside your gas furnace, and gets a guaranteed $1,450 rebate in every Utah County city.",
