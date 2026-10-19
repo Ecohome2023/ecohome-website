@@ -322,6 +322,79 @@ export const cities: City[] = [
     ],
     updated: "2026-10-19",
     nearby: ["South Salt Lake", "Millcreek", "Holladay", "West Valley City", "North Salt Lake", "Murray"],
+  },  {
+    slug: "west-valley-city",
+    name: "West Valley City",
+    county: "Salt Lake County",
+    metaTitle: "West Valley City HVAC: Heating & Cooling",
+    metaDescription:
+      "Heating and cooling for West Valley City homes: furnace and AC repair 24/7, heat pump and gas furnace systems, $2,150+ in rebates guaranteed.",
+    h1: "Heating and cooling in West Valley City, UT",
+    heroSub:
+      "From a furnace that won’t light to a house still cooled by window units, we fix and replace heating and cooling in West Valley City around the clock, permit included.",
+    intro: [
+      "West Valley City is Utah’s second-largest city, with about 140,000 people in the 2020 census. It only incorporated in 1980, but it already had more than 72,000 residents that year, so a big share of its homes were built in the 1960s and 1970s. Many of those houses are on their second or third furnace, and plenty have air conditioning that was added long after they were built.",
+      "Down on the valley floor, inversions park over West Valley City for days each winter, and July afternoons regularly reach the mid-90s. Our recommendation for most homes here is a dual-fuel system, sized with a room-by-room load calculation rather than copied from whatever was there before.",
+    ],
+    facts: [
+      { label: "People", value: "About 140,000 (2020 census)" },
+      { label: "Elevation", value: "About 4,300 ft" },
+      { label: "January", value: "Lows in the mid-20s on average" },
+      { label: "July", value: "Highs in the mid-90s on average" },
+      { label: "Electric / gas", value: "Rocky Mountain Power / Enbridge Gas" },
+      { label: "Permits", value: "West Valley City Building Inspection Division" },
+    ],
+    homes: [
+      {
+        title: "Split-levels and ramblers from the 1960s and 1970s",
+        body: "These homes make up much of the older part of the city. Split-levels put three short floors on one system, so the top level runs hot in summer and the lowest level stays cold in winter. A variable-speed system that runs longer and gentler keeps air moving between levels.",
+      },
+      {
+        title: "Homes from the 1980s and 1990s boom",
+        body: "West Valley City grew from about 72,000 people in 1980 to nearly 109,000 by 2000. Homes from those years often still have their original ductwork and a second-generation AC, sometimes one that runs on R-22, which is no longer made.",
+      },
+      {
+        title: "Newer homes built since 2000",
+        body: "The city added more than 30,000 people between 2000 and 2020. Those newer homes are tighter, but many came with builder-grade equipment that’s now reaching the end of its life, which is a good time to step up to an inverter heat pump.",
+      },
+    ],
+    rmp: true,
+    job: {
+      customer: "Dave R.",
+      title: "Dave’s 30-year-old furnace sounded like a freight train. Now three window units are gone and the house is quiet.",
+      problem:
+        "Dave’s 1970s split-level had a 30-year-old furnace that rattled through the floorboards every time it kicked on, and the central AC had died three summers earlier. The family got by with three noisy window units, high power bills and stifling back rooms.",
+      solution:
+        "A variable-speed heat pump paired with a high-efficiency gas furnace, with the window units removed. The heat pump cools and handles mild-weather heating, and the furnace takes over in sub-freezing storms.",
+      result: "Quiet, balanced heating and cooling in every room, with $3,450 in rebates stacked.",
+      more: "/service-area/west-valley-city/heat-pump-installation",
+      img: "/images/tech-eco-home-shirt-heat-pump.jpg",
+      alt: "Eco Home technician leveling a new heat pump beside a brick home",
+    },
+    faqs: [
+      {
+        q: "Do you serve all of West Valley City?",
+        a: "All of it, from the older streets around Valley Fair Mall and the Utah Cultural Celebration Center to the newer subdivisions farther west. Phones and online booking are open 24/7.",
+      },
+      {
+        q: "What rebates can West Valley City homeowners get on a heat pump?",
+        a: "A dual-fuel install here earns $2,150 to $2,450 in guaranteed utility rebates: $1,450 from Rocky Mountain Power and $700 to $1,000 from Enbridge Gas. With a manufacturer rebate on top, Dave R. reached $3,450.",
+      },
+      {
+        q: "Can you replace window AC units with central air?",
+        a: "Yes. If your home has ducts, a heat pump paired with your furnace cools every room and heats most of the winter. If some rooms have no ducts, a ductless mini-split can cover them.",
+      },
+      {
+        q: "Do I need a permit to replace a furnace or AC in West Valley City?",
+        a: "Yes. The city’s Building Inspection Division lists furnace and AC replacement as work that needs a permit and an inspection. Not every HVAC company pulls permits. We do on every job, and it’s part of the price you’re quoted.",
+      },
+      {
+        q: "How much does a new system cost in West Valley City?",
+        a: "A furnace by itself starts at $3,990. A full dual-fuel system starts at $9,990 once rebates come off, and 0% financing for 12 months is available. For your home’s number, the instant pricing tool takes about two minutes.",
+      },
+    ],
+    updated: "2026-10-19",
+    nearby: ["Salt Lake City", "West Jordan", "Taylorsville", "Kearns", "Magna", "South Salt Lake"],
   },
 ];
 

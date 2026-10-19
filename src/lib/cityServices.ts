@@ -1014,6 +1014,256 @@ export const cityServices: CityService[] = [
     ],
   },
 
+  // ================================================================ WEST VALLEY CITY
+  // ---------------------------------------------------------------- FURNACE REPAIR
+  {
+    city: "west-valley-city",
+    slug: "furnace-repair",
+    serviceName: "Furnace repair",
+    mainHref: "/services/furnace-repair",
+    metaTitle: "Furnace Repair in West Valley City, UT, 24/7",
+    metaDescription:
+      "West Valley City furnace repair, open 24/7: a $129 diagnostic and the repair price before any work. Loud, old or not heating, all major brands.",
+    h1: "Furnace repair in West Valley City, UT",
+    heroSub:
+      "Furnace rattling, short cycling or not heating at all? We’re open 24/7 for West Valley City homes, with a $129 diagnostic and the price before any work.",
+    heroImg: { src: "/images/furnace-install.jpg", alt: "Eco Home technician working inside an open gas furnace", pos: "60% 50%" },
+    primaryCta: "BOOK",
+    intro: [
+      "A lot of West Valley City homes were built in the 1960s and 1970s, and some are still running furnaces that are 25 or 30 years old. Those furnaces usually tell you they’re struggling before they quit: louder startups, rattling ducts, longer warm-up times. Catching it early keeps the repair small.",
+      "Our techs work on every major brand. They find the actual cause, explain it in plain terms, and quote the fix before doing anything.",
+    ],
+    factorsTitle: "What wears out West Valley City furnaces",
+    factors: [
+      {
+        title: "Age",
+        body: "Furnaces past 20 years start losing parts that are hard to find, from inducer motors to control boards. We’ll tell you honestly when a repair is a good investment and when it isn’t.",
+      },
+      {
+        title: "Valley-floor inversions",
+        body: "West Valley City sits low in the Salt Lake Valley, where inversion air settles. Filters clog faster, and a furnace starved of air overheats and shuts itself off. Check the filter first.",
+      },
+      {
+        title: "Split-level layouts",
+        body: "In a split-level, one furnace serves three short floors. Rooms that never warm up are often an airflow problem rather than a bad furnace, and we check that before replacing parts.",
+      },
+    ],
+    listTitle: "Furnace repairs we make in West Valley City",
+    listIntro: "Plenty are fixed on the first visit.",
+    list: [
+      { title: "Loud rattling or rumbling", body: "Loose panels, a worn blower wheel or a failing inducer motor. The noise usually grows before the part fails." },
+      { title: "Furnace won’t fire", body: "Ignitor, flame sensor, pressure switch or board: each gets tested so you only pay for the failed part." },
+      { title: "Short cycling", body: "Often a dirty flame sensor, a clogged filter or an overheating furnace." },
+      { title: "Cold lower level", body: "Common in split-levels. We check airflow and duct balance before blaming the furnace." },
+      { title: "Yellow or flickering flame", body: "A sign of poor combustion that should be checked soon, for safety as much as comfort." },
+      { title: "Blower that won’t stop", body: "A stuck relay, a thermostat fan set to ON, or a control board fault." },
+    ],
+    price: {
+      title: "The price comes first",
+      body: "Every furnace repair starts with a $129 diagnostic. You see the repair price before any work and decide whether to go ahead.",
+      points: ["$129 to diagnose", "You approve the price first", "10% off for Care Plan members", "Smile Guarantee on the work"],
+    },
+    offer: { price: 129, description: "Furnace diagnostic; repair priced upfront before any work" },
+    updated: "2026-10-19",
+    decideTitle: "Repair it, or replace it?",
+    decide: [
+      "A furnace younger than roughly 15 years with a modest repair bill is almost always worth fixing.",
+      "If it’s 25 or 30 years old and getting louder, price a replacement before you put money into it. That’s what Dave R. did: his 30-year-old furnace came out, a dual-fuel system went in, and $3,450 in rebates came off. If you only want a furnace, ours start at $3,990, installed in one day.",
+    ],
+    safety: {
+      title: "Gas smell? Get out first.",
+      body: "If you smell rotten eggs, leave the house with everyone, without flipping switches or lighting anything. Once you’re outside, call Enbridge Gas at 1-800-767-1689 or 911. Call us for the furnace after the gas company clears the home.",
+    },
+    faqs: [
+      {
+        q: "Is your furnace repair available 24/7 in West Valley City?",
+        a: "Yes. Nights, weekends and holidays included. Call 801-396-0019 or book online whenever the heat goes out.",
+      },
+      {
+        q: "How much does furnace repair cost in West Valley City?",
+        a: "A visit starts at $129 for the diagnostic. Flame sensors and ignitors are inexpensive fixes; blower and inducer motors are the bigger ones. Care Plan members get 10% off either way.",
+      },
+      {
+        q: "Why is my old furnace so loud?",
+        a: "A worn blower wheel, a failing inducer motor or loose ductwork are the usual causes. A furnace that’s getting louder every winter is telling you something, so have it checked before January.",
+      },
+      {
+        q: "Should I repair a 30-year-old furnace?",
+        a: "Only for a small, inexpensive part. Before a major repair, get a replacement price, because a dual-fuel system in West Valley City comes with at least $2,150 in guaranteed rebates.",
+      },
+      {
+        q: "Why is the bottom level of my split-level so cold?",
+        a: "Cool air settles in the lowest level, and a single-speed furnace shuts off before the air mixes. Duct balance and a variable-speed system usually fix it.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- AC REPAIR
+  {
+    city: "west-valley-city",
+    slug: "ac-repair",
+    serviceName: "AC repair",
+    mainHref: "/services/ac-repair",
+    metaTitle: "AC Repair in West Valley City, UT, Open 24/7",
+    metaDescription:
+      "West Valley City AC repair, open 24/7. A $129 diagnostic and an upfront price. Warm air, a dead unit or hot back rooms, we fix all major brands.",
+    h1: "AC repair in West Valley City, UT",
+    heroSub:
+      "West Valley City summers average in the mid-90s in July. If your AC stops cooling, we’re open 24/7, with a $129 diagnostic and a price before any work.",
+    heroImg: { src: "/images/ac-repair-techs-overhead.jpg", alt: "Two Eco Home technicians repairing an outdoor air conditioner", pos: "50% 50%" },
+    primaryCta: "BOOK",
+    intro: [
+      "When a central AC dies in West Valley City, a lot of families fall back on window units, and some never go back. If that’s you, or your AC is limping through another summer, we can tell you whether it’s worth an air conditioning repair or whether it’s time for something better.",
+      "Every brand of central AC and heat pump is fair game. We’ll show you what broke, tell you what it costs to fix, and let you decide.",
+    ],
+    factorsTitle: "Why West Valley City ACs fail",
+    factors: [
+      {
+        title: "Hot valley-floor summers",
+        body: "July afternoons in the mid-90s keep an AC running for hours. Capacitors, contactors and fan motors take the most wear.",
+      },
+      {
+        title: "Second-generation equipment",
+        body: "Many homes from the 1980s and 1990s are on their second AC, and some of those still run R-22 refrigerant, which is no longer produced.",
+      },
+      {
+        title: "Back rooms far from the furnace",
+        body: "In long ramblers and split-levels, the rooms farthest from the furnace get the least air. Sometimes the fix is airflow, not the AC.",
+      },
+    ],
+    listTitle: "AC repairs we make in West Valley City",
+    listIntro: "Most are done in one visit.",
+    list: [
+      { title: "AC stopped cooling", body: "Usually a bad capacitor or contactor, a fan motor that quit, a coil packed with dirt, or a leak." },
+      { title: "AC won’t turn on", body: "Breakers, disconnect fuses, the thermostat or a drain safety switch. We check them in order." },
+      { title: "Hot back bedrooms", body: "We check airflow and duct balance to the far rooms before recommending anything." },
+      { title: "Ice on the copper lines", body: "Ice means the system is starved of air or refrigerant. Turn the AC off to protect the compressor and call us." },
+      { title: "Water leaking indoors", body: "A plugged condensate drain or cracked pan, usually a quick fix when caught early." },
+      { title: "Loud outdoor unit", body: "Worn fan bearings, a loose blade or a struggling compressor." },
+    ],
+    price: {
+      title: "An upfront price on every AC repair",
+      body: "We charge $129 to diagnose the problem, then quote the repair. Nothing happens until you say yes.",
+      points: ["$129 to diagnose", "Quote before any work", "Care Plan members save 10%", "Repairs covered by the Smile Guarantee"],
+    },
+    offer: { price: 129, description: "AC diagnostic; repair priced upfront before any work" },
+    updated: "2026-10-19",
+    decideTitle: "Repair, or move past window units for good?",
+    decide: [
+      "If your AC is under about 12 years old and the repair is reasonable, fix it.",
+      "If it’s older, on R-22, or already dead and replaced by window units, look at a heat pump. It cools the whole house through your ducts, does most of the winter heating, and comes with a guaranteed $1,450 Wattsmart rebate.",
+    ],
+    faqs: [
+      {
+        q: "How quickly can you get to my West Valley City home?",
+        a: "Any hour, any day. Call 801-396-0019 or book online; most AC problems we see are fixed in a single trip.",
+      },
+      {
+        q: "How much does AC repair cost in West Valley City?",
+        a: "Diagnosis is $129, and the repair is quoted before we start. Capacitors and contactors are on the low end; leak repairs and compressors on the high end. Care Plan members save 10%.",
+      },
+      {
+        q: "My central AC died and we’re using window units. What should I do?",
+        a: "Get a price on a heat pump before another summer of window units. It cools the whole house through your existing ducts, heats most of the winter with your furnace as backup, and gets a guaranteed $1,450 rebate.",
+      },
+      {
+        q: "Why are the back rooms always hotter?",
+        a: "They’re usually the farthest from the furnace, so they get the least air. Leaky or undersized ducts make it worse. We check airflow before recommending anything.",
+      },
+      {
+        q: "Can you still repair an R-22 air conditioner?",
+        a: "Yes, but R-22 is no longer produced, so recharging is expensive. If yours needs refrigerant or a major part, a heat pump is usually the better buy.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- HEAT PUMP INSTALLATION
+  {
+    city: "west-valley-city",
+    slug: "heat-pump-installation",
+    serviceName: "Heat pump installation",
+    mainHref: "/heat-pumps",
+    metaTitle: "Heat Pump Installation in West Valley City, UT",
+    metaDescription:
+      "Heat pump and gas furnace systems for West Valley City homes from $9,990 after incentives. $2,150+ in rebates guaranteed, installed in one day.",
+    h1: "Heat pump installation in West Valley City, UT",
+    heroSub:
+      "Replace an old furnace, a dead AC or a house full of window units with one quiet system: a variable-speed heat pump paired with a gas furnace. At least $2,150 in rebates, guaranteed.",
+    heroImg: { src: "/images/heat-pumps-pair.jpg", alt: "Two inverter heat pumps installed on a paver patio beside a home", pos: "35% 50%" },
+    primaryCta: "INSTANT",
+    intro: [
+      "Most West Valley City homes are best served by dual fuel. An inverter heat pump does the cooling and the shoulder-season heating, a new gas furnace handles sub-freezing weather, and the thermostat hands off between them based on whichever costs less to run at that temperature.",
+      "More than 2,000 Utah homeowners have trusted us with their heating and cooling. In West Valley City, that means sizing the system to your house, getting it permitted and inspected, hauling off the old furnace, AC and window units, and filing every rebate.",
+    ],
+    factorsTitle: "Why dual fuel fits West Valley City",
+    factors: [
+      {
+        title: "One system instead of window units",
+        body: "A heat pump uses your existing ducts to cool every room at once, quietly, so the window units can come out for good.",
+      },
+      {
+        title: "Both rebates apply",
+        body: "Homes here buy power from Rocky Mountain Power and gas from Enbridge, so one dual-fuel install earns two utility rebates: $1,450 for the heat pump and $700 to $1,000 for the furnace. Manufacturer rebates sometimes stack on top.",
+      },
+      {
+        title: "Cheapest fuel, automatically",
+        body: "January nights here average in the mid-20s. The heat pump handles mild days, and the furnace takes over when it’s colder and gas costs less to run.",
+      },
+    ],
+    listTitle: "Every West Valley City install includes",
+    listIntro: "One price covers all of it.",
+    list: [
+      { title: "Sizing that fits the house", body: "We measure rooms, windows, insulation and levels instead of copying the old unit’s tonnage." },
+      { title: "The West Valley City permit", body: "Pulled through the Building Inspection Division and inspected. Not every HVAC company pulls permits. We do on every job." },
+      { title: "Window unit removal", body: "If you’ve been getting by with window units, we take them out when the new system goes in." },
+      { title: "In and out in a day", body: "Most West Valley City installs start in the morning and are running by evening." },
+      { title: "Paperwork handled", body: "Wattsmart, ThermWise and dealer rebate forms are filed by our office, not you." },
+      { title: "Backed by the Smile Guarantee", body: "Our workmanship is covered for a year; if anything we did isn’t right, the fix is free." },
+    ],
+    price: {
+      title: "What it costs in West Valley City",
+      body: "A dual-fuel system starts at $9,990 once rebates come off. The final number depends on square footage and which efficiency tier you pick, and you can spread it out at 0% for the first 12 months.",
+      points: ["Starts at $9,990 after rebates", "Utility rebates of $2,150 to $2,450, guaranteed", "Manufacturer rebates when available", "0% for 12 months on approved credit"],
+    },
+    offer: { price: 9990, description: "Heat pump and gas furnace system, starting price after incentives" },
+    updated: "2026-10-19",
+    job: {
+      customer: "Dave R.",
+      title: "Dave’s 30-year-old furnace sounded like a freight train. Dual fuel replaced it, and the window units.",
+      problem: "Dave had been nursing a 30-year-old furnace along in his 1970s split-level. “It sounded like a freight train rattling through the floorboards every time it kicked on, and we were terrified it would give out in January,” he told us. His central AC had stopped working three summers earlier, so the family relied on noisy window units that ran constantly, ran up the power bill and still left the back rooms stifling.",
+      solution: "We removed the window units and replaced the old equipment with a variable-speed heat pump and a high-efficiency natural gas furnace. The heat pump cools quietly on the hottest days and handles mild-weather heating, and the system switches to the gas furnace during sub-freezing storms, when gas is the cheaper fuel. Dave’s incentives added up to $3,450, made up of the $1,450 Wattsmart rebate, $1,000 from ThermWise and $1,000 from the manufacturer off the invoice, and he financed the rest at 0% for a year.",
+      result: "Three window units gone, a furnace that no longer shakes the floor, and balanced, quiet heating and cooling in every room.",
+      stats: [
+        { value: "30 years", label: "Age of the old furnace" },
+        { value: "3", label: "Window units removed" },
+        { value: "$3,450", label: "Rebates stacked" },
+        { value: "0%", label: "Interest for 12 months" },
+      ],
+    },
+    faqs: [
+      {
+        q: "Do heat pumps work in West Valley City winters?",
+        a: "Paired with a gas furnace, yes. On a 40° day the heat pump is the cheaper heat; on a 10° night the furnace is. A dual-fuel thermostat switches between them for you.",
+      },
+      {
+        q: "Can a heat pump replace my window AC units?",
+        a: "Yes, if your home has ducts. A heat pump cools every room through the ducts, much more quietly than window units. Rooms without ducts can get a ductless mini-split.",
+      },
+      {
+        q: "What rebates can I get on a heat pump in West Valley City?",
+        a: "Wattsmart pays $1,450 per heat pump we install. ThermWise adds $700 for an 80% furnace or $1,000 for a 96%+ model. When Amana or ACiQ run a dealer rebate, that comes off the invoice too, as it did for Dave R.",
+      },
+      {
+        q: "How much does a heat pump cost in West Valley City?",
+        a: "Dual-fuel systems start at $9,990 after rebates. For a number specific to your house, the instant pricing tool asks a few questions and gives you a price in about two minutes.",
+      },
+      {
+        q: "Do I need a permit for a heat pump in West Valley City?",
+        a: "Yes, the city’s Building Inspection Division inspects every heat pump and furnace install. The permit is part of every Eco Home job and part of the quoted price.",
+      },
+    ],
+  },
+
   // ================================================================ UTAH COUNTY
   // ---------------------------------------------------------------- AC REPLACEMENT
   {
