@@ -307,11 +307,32 @@ export function estimateResult(a: Answers) {
   return { tons, gas, instant, link: `/instant-pricing/estimate?${q}` };
 }
 
+// Short link for texts: /e/<code>/<first name>, where the code is the size, the
+// system and the current setup, one character each (e.g. /e/2s0/Sarah).
+// /e/[code] redirects it to the full estimate page.
+const TYPE_CODES: Record<EstimateType, string> = { system: "s", ac: "a", furnace: "f" };
+const setupValues = () => questions.find((q) => q.key === "setup")!.choices.map((c) => c.value);
+
+export function shortLink(a: Answers): string {
+  const { tons } = estimateResult(a);
+  const code = `${TON_SIZES.indexOf(tons as Tons)}${TYPE_CODES[a.replace as EstimateType]}${setupValues().indexOf(a.setup)}`;
+  return `/e/${code}/${encodeURIComponent(cleanName(a.fname))}`;
+}
+
+export function longLink(code: string, name: string): string | null {
+  const tons = TON_SIZES[Number(code[0])];
+  const type = (Object.keys(TYPE_CODES) as EstimateType[]).find((t) => TYPE_CODES[t] === code[1]);
+  const setup = setupValues()[Number(code[2])];
+  if (code.length !== 3 || !tons || !type || !setup) return null;
+  const q = new URLSearchParams({ fname: cleanName(name), tons, setup, type });
+  return `/instant-pricing/estimate?${q}`;
+}
+
 // HubSpot contact property -> value. Every name must be on the HubSpot form, or
 // HubSpot silently drops it. Market, Lead Type and Lead Source are sent here
 // because hidden-field defaults don't apply to Forms API submissions.
 export function hubspotFields(a: Answers) {
-  const { tons, gas, instant, link } = estimateResult(a);
+  const { tons, gas, instant } = estimateResult(a);
   return [
     ["firstname", a.fname], ["lastname", a.lname], ["phone", a.phone], ["email", a.email],
     ["zip", a.zip], ["service_area", SERVICE_AREA[a.zip]], ["estimate_replacing", a.replace],
@@ -320,7 +341,7 @@ export function hubspotFields(a: Answers) {
     ["what_is_the_square_footage_of_your_home_", a.sqft], ["home_built_era", a.built],
     ["estimate_tons", gas ? tons : ""], ["replace_timeline", a.timeline],
     // The estimate page link, texted to them by the HubSpot workflow. Only when there's an instant price.
-    ["estimate_link", instant ? `${site.url}${link}` : ""],
+    ["estimate_link", instant ? `${site.url.replace("https://", "")}${shortLink(a)}` : ""],
     ["sms_estimate_consent", "true"], ["market", "Utah (HVAC)"], ["lead_type", "HVAC"], ["lead_source", "Instant Estimate"],
     // Attribution (custom contact properties, hidden fields on the HubSpot form).
     ["lead_channel", a.lead_channel], ["first_landing_page", a.first_landing_page],
