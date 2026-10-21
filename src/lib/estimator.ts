@@ -4,6 +4,7 @@
 // Pure TypeScript so the form, the estimate page and the API route share it.
 
 import serviceArea from "./service-area.json";
+import { site } from "./site";
 
 export const SERVICE_AREA = serviceArea as Record<string, "core" | "extended">;
 
@@ -310,7 +311,7 @@ export function estimateResult(a: Answers) {
 // HubSpot silently drops it. Market, Lead Type and Lead Source are sent here
 // because hidden-field defaults don't apply to Forms API submissions.
 export function hubspotFields(a: Answers) {
-  const { tons, gas } = estimateResult(a);
+  const { tons, gas, instant, link } = estimateResult(a);
   return [
     ["firstname", a.fname], ["lastname", a.lname], ["phone", a.phone], ["email", a.email],
     ["zip", a.zip], ["service_area", SERVICE_AREA[a.zip]], ["estimate_replacing", a.replace],
@@ -318,6 +319,8 @@ export function hubspotFields(a: Answers) {
     ["system_age", a.age], ["hvac_functioning_", a.condition],
     ["what_is_the_square_footage_of_your_home_", a.sqft], ["home_built_era", a.built],
     ["estimate_tons", gas ? tons : ""], ["replace_timeline", a.timeline],
+    // The estimate page link, texted to them by the HubSpot workflow. Only when there's an instant price.
+    ["estimate_link", instant ? `${site.url}${link}` : ""],
     ["sms_estimate_consent", "true"], ["market", "Utah (HVAC)"], ["lead_type", "HVAC"], ["lead_source", "Instant Estimate"],
     // Attribution (custom contact properties, hidden fields on the HubSpot form).
     ["lead_channel", a.lead_channel], ["first_landing_page", a.first_landing_page],
