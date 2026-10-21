@@ -341,7 +341,7 @@ export function hubspotFields(a: Answers) {
     ["what_is_the_square_footage_of_your_home_", a.sqft], ["home_built_era", a.built],
     ["estimate_tons", gas ? tons : ""], ["replace_timeline", a.timeline],
     // The estimate page link, texted to them by the HubSpot workflow. Only when there's an instant price.
-    ["estimate_link", instant ? `${site.url.replace("https://", "")}${shortLink(a)}` : ""],
+    ["estimate_link", instant ? `${site.url}${shortLink(a)}` : ""],
     ["sms_estimate_consent", "true"], ["market", "Utah (HVAC)"], ["lead_type", "HVAC"], ["lead_source", "Instant Estimate"],
     // Attribution (custom contact properties, hidden fields on the HubSpot form).
     ["lead_channel", a.lead_channel], ["first_landing_page", a.first_landing_page],
