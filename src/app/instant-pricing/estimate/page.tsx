@@ -7,6 +7,7 @@ import { OPTIONS, TON_SIZES, FIN, PROMO, cleanName, type EstimateType, type Tons
 import { EstimateCard } from "@/components/estimator/EstimateCard";
 import { MobileBookBar } from "@/components/estimator/MobileBookBar";
 import { EstimateVisitBooking } from "@/components/estimator/EstimateVisitBooking";
+import { LinkClick } from "@/components/estimator/LinkClick";
 import { JobPromises } from "@/components/JobPromises";
 import { CheckIcon, PhoneIcon, Stars } from "@/components/icons";
 
@@ -50,6 +51,7 @@ export default async function EstimatePage({ searchParams }: PageProps<"/instant
 
   return (
     <>
+      <LinkClick k={one(sp.k)} />
       <section className="bg-sky-soft">
         <div className="mx-auto max-w-7xl px-4 pb-14 pt-10 sm:px-6 md:pt-14">
           <p className="wrap-type text-2xl text-alarm-strong" style={{ textShadow: "none" }}>Your instant estimate</p>

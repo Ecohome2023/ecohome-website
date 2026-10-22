@@ -32,6 +32,10 @@ export async function POST(request: Request) {
   const bad = validate(a);
   if (bad) return Response.json({ ok: false, error: bad }, { status: 422 });
 
+  // Private code for the texted estimate link, so the website can record when it's opened.
+  const abc = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789";
+  a.link_code = Array.from(crypto.getRandomValues(new Uint8Array(5)), (n) => abc[n % abc.length]).join("");
+
   const cookies = request.headers.get("cookie") || "";
   const hutk = cookies.match(/(?:^|;\s*)hubspotutk=([^;]+)/)?.[1];
   const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim();
