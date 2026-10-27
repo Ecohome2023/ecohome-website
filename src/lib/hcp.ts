@@ -5,7 +5,7 @@ import { BOOKABLE_PROS, DAYS_AHEAD, TZ, WINDOW_STARTS, dayKey, type BookingServi
 
 const BASE = "https://api.housecallpro.com";
 
-async function hcp<T>(path: string, init: RequestInit = {}): Promise<T> {
+export async function hcp<T>(path: string, init: RequestInit = {}): Promise<T> {
   const key = process.env.HCP_API_KEY;
   const r = await fetch(BASE + path, {
     ...init,
