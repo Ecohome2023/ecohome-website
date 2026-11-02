@@ -17,7 +17,7 @@ export const site = {
   },
   hoursLabel: "Open 24/7",
   license: "13607597-5501",
-  rating: { value: "4.8", count: 112 },
+  rating: { value: "4.8", count: 114 },
   financingPartner: "Slice by FNBO Bank",
   // Housecall Pro online booking link (every "Book" button uses it).
   // Every "Book" button opens our own booking page (/book), which books straight

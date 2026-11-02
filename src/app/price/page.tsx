@@ -180,7 +180,7 @@ export default function PriceLanding() {
             <p className="mt-3 text-lg leading-relaxed text-ink/85">
               Rated {site.rating.value} stars from {site.rating.count} Google reviews. Every install is backed by our Smile Guarantee.
             </p>
-            <a href={site.googleMapsUrl} target="_blank" rel="noopener" className="mt-5 inline-block font-bold text-teal underline underline-offset-4 hover:text-ink">Read our Google reviews</a>
+            <GetPriceButton className="mt-6" />
           </div>
         </div>
       </section>
