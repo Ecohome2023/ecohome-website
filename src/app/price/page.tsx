@@ -27,12 +27,6 @@ const steps = [
   { n: "3", title: "Book a free visit if you like it", body: "We confirm the details in person. Nothing to sign until you’re ready." },
 ];
 
-const results = [
-  { stat: "$340 → $195", label: "Summer electric bill", who: "Mark T., Salt Lake City" },
-  { stat: "43% lower", label: "Summer electric bill", who: "Jared N., West Jordan" },
-  { stat: "3 window units", label: "Gone for good", who: "Chris P., West Valley City" },
-];
-
 const reviewNames = ["Rebecca M.", "Savanna K.", "Jared N."];
 
 function GetPriceButton({ className = "" }: { className?: string }) {
@@ -94,40 +88,6 @@ export default function PriceLanding() {
             </li>
           ))}
         </ol>
-      </section>
-
-      {/* Our team */}
-      <section className="bg-sky-soft">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <h2 className="display text-3xl sm:text-4xl">Real Eco Home techs, real installs</h2>
-          <p className="mt-2 max-w-2xl text-lg text-ink/80">These are our people. Every install is permitted, inspected and backed by our Smile Guarantee.</p>
-          <div className="mt-8 grid gap-4 md:grid-cols-[1.45fr_1fr]">
-            <figure className="relative aspect-[16/10] overflow-hidden rounded-2xl ring-1 ring-line md:aspect-auto md:h-full">
-              <Image src="/images/tech-portrait.jpg" alt="Smiling Eco Home technician beside a newly installed outdoor heat pump" fill sizes="(min-width: 768px) 640px, 100vw" className="object-cover" style={{ objectPosition: "60% 40%" }} />
-            </figure>
-            <figure className="relative aspect-[4/5] overflow-hidden rounded-2xl ring-1 ring-line">
-              <Image src="/images/furnace-tech-uniform.jpg" alt="Eco Home technician giving a thumbs up next to a new gas furnace" fill sizes="(min-width: 768px) 440px, 100vw" className="object-cover" />
-            </figure>
-          </div>
-          <GetPriceButton className="mt-8" />
-        </div>
-      </section>
-
-      {/* Real results */}
-      <section className="bg-ink text-white">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <h2 className="display text-3xl sm:text-4xl">Real Utah homes, real results</h2>
-          <ul className="mt-8 grid gap-4 sm:grid-cols-3">
-            {results.map((r) => (
-              <li key={r.who} className="rounded-2xl bg-white/[0.06] p-6 ring-1 ring-white/15">
-                <p className="display text-3xl text-sky">{r.stat}</p>
-                <p className="mt-1 font-semibold">{r.label}</p>
-                <p className="mt-3 text-sm text-white/70">{r.who}</p>
-              </li>
-            ))}
-          </ul>
-          <GetPriceButton className="mt-10" />
-        </div>
       </section>
 
       {/* Reviews */}
