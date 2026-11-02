@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SiteChrome } from "@/components/SiteChrome";
 import { RevealObserver } from "@/components/RevealObserver";
 import { Analytics } from "@vercel/analytics/next";
 import { Attribution } from "@/components/Attribution";
@@ -114,9 +115,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to content
         </a>
-        <Header />
+        <SiteChrome><Header /></SiteChrome>
         <main id="main" className="flex-1">{children}</main>
-        <Footer />
+        <SiteChrome><Footer /></SiteChrome>
         <RevealObserver />
         <Analytics />
         <Attribution />
