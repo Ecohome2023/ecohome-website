@@ -60,23 +60,23 @@ export default function PriceLanding() {
         </div>
       </div>
 
-      {/* Headline + form, centered */}
-      <section className="bg-sky-soft">
+      {/* Headline + form, centered on navy so the white form stands out */}
+      <section className="bg-ink">
         <div className="mx-auto max-w-3xl px-4 py-6 text-center sm:px-6 md:py-12">
-          <p className="wrap-type text-xl text-alarm-strong" style={{ textShadow: "none" }}>Free instant pricing</p>
-          <h1 className="display mt-1 text-[2rem] leading-tight sm:text-5xl">See your new heating and cooling price in 2 minutes</h1>
-          <p className="mt-3 flex items-center justify-center gap-2 font-semibold"><Stars /> {site.rating.value} from {site.rating.count} Google reviews</p>
+          <p className="wrap-type text-xl text-sky" style={{ textShadow: "none" }}>Free instant pricing</p>
+          <h1 className="display mt-1 text-[2rem] leading-tight text-white sm:text-5xl">See your new heating and cooling price in 2 minutes</h1>
+          <p className="mt-3 flex items-center justify-center gap-2 font-semibold text-white"><Stars /> {site.rating.value} from {site.rating.count} Google reviews</p>
           <ul className="mt-4 flex flex-wrap justify-center gap-2">
             {chips.map((c) => (
-              <li key={c} className="flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-sm font-semibold ring-1 ring-line">
-                <CheckIcon className="h-4 w-4 shrink-0 text-teal" /> {c}
+              <li key={c} className="flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-sm font-semibold text-white ring-1 ring-white/25">
+                <CheckIcon className="h-4 w-4 shrink-0 text-sky" /> {c}
               </li>
             ))}
           </ul>
           <div id="pricing" className="mt-6 scroll-mt-4 text-left md:mt-8">
             <EstimateForm />
           </div>
-          <p className="mt-6 hidden text-sm leading-relaxed text-ink/70 sm:block">
+          <p className="mt-6 hidden text-sm leading-relaxed text-white/70 sm:block">
             Heat pumps, furnaces and dual-fuel systems for homes in Utah County and Salt Lake County. Licensed, permitted on every job, and backed by our Smile Guarantee.
           </p>
         </div>
