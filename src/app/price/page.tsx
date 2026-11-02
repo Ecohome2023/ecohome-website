@@ -215,9 +215,11 @@ export default function PriceLanding() {
 
       {/* Minimal footer */}
       <footer className="bg-ink text-sm text-white/60">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 sm:flex-row sm:justify-between sm:px-6">
-          <p>© {new Date().getFullYear()} {site.name} · Utah contractor license #{site.license}</p>
-          <p className="flex gap-4">
+        <div className="mx-auto max-w-6xl px-4 py-8 text-center sm:px-6">
+          <p>© {new Date().getFullYear()} {site.name}</p>
+          <p className="mt-1">Utah contractor license #{site.license}</p>
+          <address className="mt-1 not-italic">{site.address.street}, {site.address.city}, {site.address.region} {site.address.zip}</address>
+          <p className="mt-4 flex justify-center gap-4">
             <a href="/privacy-policy" className="hover:underline">Privacy policy</a>
             <a href="/terms-of-service" className="hover:underline">Terms</a>
           </p>
