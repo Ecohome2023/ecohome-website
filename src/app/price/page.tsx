@@ -146,13 +146,20 @@ export default function PriceLanding() {
       </section>
 
       {/* Final push */}
-      <section className="bg-sky">
-        <div className="mx-auto flex max-w-6xl flex-col items-start gap-5 px-4 py-12 sm:px-6 md:flex-row md:items-center md:justify-between">
-          <div>
-            <h2 className="display text-3xl text-ink sm:text-4xl">Your price is two minutes away</h2>
-            <p className="mt-2 text-lg text-ink/85">At least $2,150 in rebates, guaranteed. 0% interest for 12 months available.</p>
+      <section className="overflow-hidden bg-sky">
+        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 pt-12 sm:px-6 md:flex-row md:items-end md:gap-10">
+          <div className="pb-0 md:flex-1 md:pb-12">
+            <p className="wrap-type text-xl text-ink" style={{ textShadow: "none" }}>Smile Guarantee</p>
+            <h2 className="display mt-2 text-3xl text-ink sm:text-4xl">You smile, or we fix it free</h2>
+            <p className="mt-3 max-w-xl text-lg text-ink/85">
+              For one full year, if anything goes wrong with the work we did, we come back and make it right. No trip charge, no diagnostic fee, no surprise bill.
+            </p>
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <GetPriceButton />
+              <a href="/smile-guarantee" target="_blank" className="text-sm font-semibold text-ink/80 underline underline-offset-4">Conditions apply, see terms</a>
+            </div>
           </div>
-          <GetPriceButton />
+          <Image src="/images/dan-eco-home-man.png" alt="Dan, the Eco Home Man" width={600} height={795} sizes="240px" className="mx-auto h-auto w-44 shrink-0 sm:w-52 md:mx-0 md:w-60" />
         </div>
       </section>
 
