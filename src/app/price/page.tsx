@@ -57,27 +57,25 @@ export default function PriceLanding() {
         </div>
       </div>
 
-      {/* Headline + form */}
+      {/* Headline + form, centered */}
       <section className="bg-sky-soft">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-6 sm:px-6 md:py-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-          <div className="lg:sticky lg:top-8">
-            <p className="wrap-type text-xl text-alarm-strong" style={{ textShadow: "none" }}>Free instant pricing</p>
-            <h1 className="display mt-1 text-[2rem] leading-tight sm:text-5xl">See your new heating and cooling price in 2 minutes</h1>
-            <p className="mt-3 flex items-center gap-2 font-semibold"><Stars /> {site.rating.value} from {site.rating.count} Google reviews</p>
-            <ul className="mt-4 flex flex-wrap gap-2 lg:flex-col lg:gap-3">
-              {chips.map((c) => (
-                <li key={c} className="flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-sm font-semibold ring-1 ring-line lg:bg-transparent lg:p-0 lg:text-base lg:ring-0">
-                  <CheckIcon className="h-4 w-4 shrink-0 text-teal" /> {c}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-6 hidden leading-relaxed text-ink/80 lg:block">
-              Heat pumps, furnaces and dual-fuel systems for homes in Utah County and Salt Lake County. Licensed, permitted on every job, and backed by our Smile Guarantee.
-            </p>
-          </div>
-          <div id="pricing" className="scroll-mt-4">
+        <div className="mx-auto max-w-3xl px-4 py-6 text-center sm:px-6 md:py-12">
+          <p className="wrap-type text-xl text-alarm-strong" style={{ textShadow: "none" }}>Free instant pricing</p>
+          <h1 className="display mt-1 text-[2rem] leading-tight sm:text-5xl">See your new heating and cooling price in 2 minutes</h1>
+          <p className="mt-3 flex items-center justify-center gap-2 font-semibold"><Stars /> {site.rating.value} from {site.rating.count} Google reviews</p>
+          <ul className="mt-4 flex flex-wrap justify-center gap-2">
+            {chips.map((c) => (
+              <li key={c} className="flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-sm font-semibold ring-1 ring-line">
+                <CheckIcon className="h-4 w-4 shrink-0 text-teal" /> {c}
+              </li>
+            ))}
+          </ul>
+          <div id="pricing" className="mt-6 scroll-mt-4 text-left md:mt-8">
             <EstimateForm />
           </div>
+          <p className="mt-6 hidden text-sm leading-relaxed text-ink/70 sm:block">
+            Heat pumps, furnaces and dual-fuel systems for homes in Utah County and Salt Lake County. Licensed, permitted on every job, and backed by our Smile Guarantee.
+          </p>
         </div>
       </section>
 
