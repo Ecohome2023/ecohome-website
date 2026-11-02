@@ -3,6 +3,7 @@ import Image from "next/image";
 import { site } from "@/lib/site";
 import { googleReviews } from "@/lib/reviews";
 import { EstimateForm } from "@/components/estimator/EstimateForm";
+import { VideoTestimonial } from "@/components/VideoTestimonial";
 import { CheckIcon, PhoneIcon, Stars } from "@/components/icons";
 
 // Landing page for paid ads (A/B test against /instant-pricing). No site header
@@ -25,6 +26,23 @@ const steps = [
   { n: "1", title: "Answer 10 quick questions", body: "Your home’s size, age and what you have now. About two minutes, all taps." },
   { n: "2", title: "See your price on the spot", body: "A price sized to your home, with rebates already taken off, plus monthly payment options." },
   { n: "3", title: "Book a free visit if you like it", body: "We confirm the details in person. Nothing to sign until you’re ready." },
+];
+
+const rebates = [
+  { source: "Rocky Mountain Power Wattsmart", amount: "$1,450", note: "As a Wattsmart Pro Network contractor, we qualify for Rocky Mountain Power’s higher rebate amount." },
+  { source: "Enbridge Gas ThermWise", amount: "$700 to $1,000", note: "$700 with an 80% furnace, $1,000 with a 96%+ furnace." },
+  { source: "Manufacturer dealer rebates", amount: "$400 to $2,000", note: "Offered by Amana and ACiQ on select systems, taken off your invoice instantly." },
+];
+
+// Same rows as the heat pump page comparison.
+const comparison = [
+  { label: "Cooling", dual: "Variable-speed heat pump cools efficiently", standard: "Standard AC, usually on/off" },
+  { label: "Heating", dual: "Heat pump plus gas furnace, picks the cheaper fuel automatically", standard: "Gas furnace only" },
+  { label: "Comfort", dual: "Steady, even temperatures", standard: "Temperature swings as it cycles on and off" },
+  { label: "Noise", dual: "Quiet, runs at low speed most of the time", standard: "Louder, runs at full blast" },
+  { label: "Efficiency", dual: "Higher efficiency ratings", standard: "Standard efficiency" },
+  { label: "Heating backup", dual: "Two heat sources, so one can cover if the other needs repair", standard: "One heat source" },
+  { label: "Rebates", dual: "$2,150 guaranteed, up to $4,450", standard: "Fewer rebates available" },
 ];
 
 const reviewNames = ["Rebecca M.", "Savanna K.", "Jared N."];
@@ -88,6 +106,104 @@ export default function PriceLanding() {
             </li>
           ))}
         </ol>
+      </section>
+
+      {/* Dual fuel vs standard (from the heat pump page) */}
+      <section className="bg-sky-soft">
+        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6">
+          <h2 className="display text-3xl sm:text-4xl">Dual fuel vs. a standard AC and furnace</h2>
+          <p className="mt-3 max-w-2xl text-lg text-ink/85">
+            Both setups heat and cool your home. Here’s how a heat pump with a gas furnace compares to the traditional AC and gas furnace most Utah homes have today.
+          </p>
+          <div className="mt-8 overflow-hidden rounded-2xl bg-white ring-1 ring-line">
+            <table className="w-full table-fixed text-left text-sm sm:text-base">
+              <caption className="sr-only">Comparison of a dual-fuel heat pump system and a standard AC with gas furnace</caption>
+              <thead>
+                <tr>
+                  <th scope="col" className="w-[24%] p-3 sm:p-5"><span className="sr-only">Feature</span></th>
+                  <th scope="col" className="bg-ink p-3 align-bottom text-white sm:p-5">
+                    <span className="block text-xs font-bold text-sky sm:text-sm">What we install</span>
+                    <span className="display block text-lg sm:text-2xl">Heat pump + gas furnace</span>
+                  </th>
+                  <th scope="col" className="p-3 align-bottom sm:p-5">
+                    <span className="block text-xs font-bold text-mist sm:text-sm">Traditional</span>
+                    <span className="display block text-lg sm:text-2xl">AC + gas furnace</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparison.map((row) => (
+                  <tr key={row.label} className="border-t border-line">
+                    <th scope="row" className="p-3 align-top font-extrabold sm:p-5">{row.label}</th>
+                    <td className="bg-sky/10 p-3 align-top sm:p-5">
+                      <span className="flex gap-2"><CheckIcon className="mt-0.5 hidden h-5 w-5 shrink-0 text-teal sm:block" />{row.dual}</span>
+                    </td>
+                    <td className="p-3 align-top text-mist sm:p-5">{row.standard}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
+            <GetPriceButton />
+            <p className="text-ink/80">Dual-fuel systems start at $9,990 after incentives.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Rebates (from the heat pump page) */}
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <h2 className="display text-3xl sm:text-4xl">$2,150 in rebates, guaranteed</h2>
+            <p className="mt-3 text-lg leading-relaxed text-ink/85">
+              We guarantee at least $2,150 in rebates on every heat pump we install, and many homeowners qualify for up to $4,450. We file all the rebate paperwork for you.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <div className="rounded-2xl bg-alarm-strong px-6 py-5 text-white">
+                <p className="display text-4xl">$2,150</p>
+                <p className="font-semibold">Guaranteed on every install</p>
+              </div>
+              <div className="rounded-2xl bg-ink px-6 py-5 text-white">
+                <p className="display text-4xl text-sky">$4,450</p>
+                <p className="font-semibold">Maximum available</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 className="text-xl font-extrabold">Where the rebates come from</h3>
+            <ul className="mt-4 divide-y divide-line border-y border-line">
+              {rebates.map((r) => (
+                <li key={r.source} className="flex flex-wrap items-start justify-between gap-x-6 gap-y-1 py-5">
+                  <span className="max-w-md">
+                    <span className="block text-lg font-bold text-teal">{r.source}</span>
+                    <span className="block text-mist">{r.note}</span>
+                  </span>
+                  <span className="display text-2xl text-teal">{r.amount}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm text-mist">
+              Utility rebate programs are run by Rocky Mountain Power and Enbridge Gas, and their amounts can change. The $2,150 guarantee applies to qualifying heat pump installs by Eco Home.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Video testimonial (from the heat pump page) */}
+      <section className="bg-sky-soft">
+        <div className="mx-auto grid max-w-5xl items-center gap-10 px-4 py-14 sm:px-6 md:grid-cols-[300px_1fr]">
+          <div className="mx-auto w-full max-w-[300px]">
+            <VideoTestimonial id="OaLfF9Z0RqQ" title="Ryan in Provo, Utah, on his experience with Eco Home" caption="Hear from Ryan in Provo, Utah" />
+          </div>
+          <div>
+            <h2 className="display text-3xl sm:text-4xl">Homeowners love the comfort</h2>
+            <p className="mt-3 text-lg leading-relaxed text-ink/85">
+              Rated {site.rating.value} stars from {site.rating.count} Google reviews. Every install is backed by our Smile Guarantee.
+            </p>
+            <a href={site.googleMapsUrl} target="_blank" rel="noopener" className="mt-5 inline-block font-bold text-teal underline underline-offset-4 hover:text-ink">Read our Google reviews</a>
+          </div>
+        </div>
       </section>
 
       {/* Reviews */}
