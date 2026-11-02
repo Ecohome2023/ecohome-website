@@ -193,7 +193,9 @@ export default function PriceLanding() {
             <p className="mt-3 text-lg leading-relaxed text-ink/85">
               Rated {site.rating.value} stars from {site.rating.count} Google reviews. Every install is backed by our Smile Guarantee.
             </p>
-            <GetPriceButton className="mt-6" />
+            <div className="mt-6 flex justify-center md:justify-start">
+              <GetPriceButton />
+            </div>
           </div>
         </div>
       </section>
@@ -207,7 +209,9 @@ export default function PriceLanding() {
             <p className="mt-3 max-w-xl text-lg text-ink/85">
               For one full year, if anything goes wrong with the work we did, we come back and make it right. No trip charge, no diagnostic fee, no surprise bill.
             </p>
-            <GetPriceButton className="mt-6" />
+            <div className="mt-6 flex justify-center md:justify-start">
+              <GetPriceButton />
+            </div>
           </div>
           <Image src="/images/dan-eco-home-man.png" alt="Dan, the Eco Home Man" width={600} height={795} sizes="240px" className="mx-auto h-auto w-44 shrink-0 sm:w-52 md:mx-0 md:w-60" />
         </div>
