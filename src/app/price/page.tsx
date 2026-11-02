@@ -18,7 +18,6 @@ export const metadata: Metadata = {
 
 const chips = [
   "$2,150+ in rebates, guaranteed",
-  "Prices shown after rebates",
   "No obligation",
 ];
 
