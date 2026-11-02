@@ -188,7 +188,7 @@ export default function PriceLanding() {
           <div className="mx-auto w-full max-w-[300px]">
             <VideoTestimonial id="OaLfF9Z0RqQ" title="Ryan in Provo, Utah, on his experience with Eco Home" caption="Hear from Ryan in Provo, Utah" />
           </div>
-          <div>
+          <div className="text-center md:text-left">
             <h2 className="display text-3xl sm:text-4xl">Homeowners love the comfort</h2>
             <p className="mt-3 text-lg leading-relaxed text-ink/85">
               Rated {site.rating.value} stars from {site.rating.count} Google reviews. Every install is backed by our Smile Guarantee.
@@ -203,10 +203,10 @@ export default function PriceLanding() {
       {/* Final push */}
       <section className="overflow-hidden bg-sky">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 pt-12 sm:px-6 md:flex-row md:items-end md:gap-10">
-          <div className="pb-0 md:flex-1 md:pb-12">
+          <div className="pb-0 text-center md:flex-1 md:pb-12 md:text-left">
             <p className="wrap-type text-xl text-ink" style={{ textShadow: "none" }}>Smile Guarantee</p>
             <h2 className="display mt-2 text-3xl text-ink sm:text-4xl">You smile, or we fix it free</h2>
-            <p className="mt-3 max-w-xl text-lg text-ink/85">
+            <p className="mx-auto mt-3 max-w-xl text-lg text-ink/85 md:mx-0">
               For one full year, if anything goes wrong with the work we did, we come back and make it right. No trip charge, no diagnostic fee, no surprise bill.
             </p>
             <div className="mt-6 flex justify-center md:justify-start">
