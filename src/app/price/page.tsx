@@ -57,7 +57,7 @@ export default function PriceLanding() {
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
           <Image src="/images/logo.png" alt="Eco Home Heating & Cooling" width={152} height={60} sizes="152px" preload className="h-10 w-auto shrink-0 sm:h-11" />
           <p className="flex-1 text-center text-xs font-semibold leading-snug text-ink/80 sm:text-sm">
-            Licensed &amp; insured<span className="hidden sm:inline"> · </span><br className="sm:hidden" />Utah #{site.license}
+            Utah contractor license<span className="hidden sm:inline"> </span><br className="sm:hidden" />#{site.license}
           </p>
           <a href={site.phoneHref} className="flex shrink-0 items-center gap-2 rounded-full px-4 py-2 font-bold text-ink ring-2 ring-ink hover:bg-sky-soft">
             <PhoneIcon className="h-4 w-4" /> <span className="hidden sm:inline">{site.phone}</span><span className="sm:hidden">Call</span>
