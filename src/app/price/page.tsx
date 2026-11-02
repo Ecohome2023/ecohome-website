@@ -89,13 +89,7 @@ export default function PriceLanding() {
 
       {/* Reviews */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-          <h2 className="display text-3xl sm:text-4xl">What homeowners say</h2>
-          {/* Small and lazy-loaded (below the fold), so it doesn't slow the form */}
-          <div className="relative aspect-[16/10] w-full max-w-[380px] shrink-0 overflow-hidden rounded-2xl ring-1 ring-line">
-            <Image src="/images/tech-heat-pump-portrait.jpg" alt="Eco Home technician next to a newly installed heat pump" fill sizes="(min-width: 640px) 380px, 100vw" className="object-cover object-[55%_35%]" />
-          </div>
-        </div>
+        <h2 className="display text-center text-3xl sm:text-4xl">What homeowners say</h2>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           {reviews.map((r) => (
             <figure key={r.name} className="rounded-2xl bg-white p-6 ring-1 ring-line">
@@ -110,8 +104,8 @@ export default function PriceLanding() {
       {/* Dual fuel vs standard (from the heat pump page) */}
       <section className="bg-sky-soft">
         <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6">
-          <h2 className="display text-3xl sm:text-4xl">Dual fuel vs. a standard AC and furnace</h2>
-          <p className="mt-3 max-w-2xl text-lg text-ink/85">
+          <h2 className="display text-center text-3xl sm:text-4xl">Dual fuel vs. a standard AC and furnace</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-ink/85">
             Both setups heat and cool your home. Here’s how a heat pump with a gas furnace compares to the traditional AC and gas furnace most Utah homes have today.
           </p>
           <div className="mt-8 overflow-hidden rounded-2xl bg-white ring-1 ring-line">
