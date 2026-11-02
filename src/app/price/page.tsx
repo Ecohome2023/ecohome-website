@@ -89,19 +89,7 @@ export default function PriceLanding() {
 
       {/* Reviews */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
-          <h2 className="display text-3xl sm:text-4xl">What homeowners say</h2>
-          {/* Small, lazy-loaded (below the fold), so it doesn't slow the form */}
-          <div className="relative w-full max-w-[340px] shrink-0 pb-5">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-2xl ring-1 ring-line">
-              <Image src="/images/tech-portrait.jpg" alt="Eco Home technician next to a newly installed heat pump" fill sizes="340px" className="object-cover object-[60%_30%]" />
-            </div>
-            <div className="absolute bottom-0 left-4 flex items-center gap-2 rounded-xl bg-white px-3 py-2 text-ink shadow-lg ring-1 ring-line">
-              <Stars className="h-4 w-4" />
-              <span className="text-sm font-bold">{site.rating.value} · {site.rating.count} Google reviews</span>
-            </div>
-          </div>
-        </div>
+        <h2 className="display text-3xl sm:text-4xl">What homeowners say</h2>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           {reviews.map((r) => (
             <figure key={r.name} className="rounded-2xl bg-white p-6 ring-1 ring-line">
