@@ -96,6 +96,23 @@ export default function PriceLanding() {
         </ol>
       </section>
 
+      {/* Our team */}
+      <section className="bg-sky-soft">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+          <h2 className="display text-3xl sm:text-4xl">Real Eco Home techs, real installs</h2>
+          <p className="mt-2 max-w-2xl text-lg text-ink/80">These are our people. Every install is permitted, inspected and backed by our Smile Guarantee.</p>
+          <div className="mt-8 grid gap-4 md:grid-cols-[1.45fr_1fr]">
+            <figure className="relative aspect-[16/10] overflow-hidden rounded-2xl ring-1 ring-line md:aspect-auto md:h-full">
+              <Image src="/images/tech-portrait.jpg" alt="Smiling Eco Home technician beside a newly installed outdoor heat pump" fill sizes="(min-width: 768px) 640px, 100vw" className="object-cover" style={{ objectPosition: "60% 40%" }} />
+            </figure>
+            <figure className="relative aspect-[4/5] overflow-hidden rounded-2xl ring-1 ring-line">
+              <Image src="/images/furnace-tech-uniform.jpg" alt="Eco Home technician giving a thumbs up next to a new gas furnace" fill sizes="(min-width: 768px) 440px, 100vw" className="object-cover" />
+            </figure>
+          </div>
+          <GetPriceButton className="mt-8" />
+        </div>
+      </section>
+
       {/* Real results */}
       <section className="bg-ink text-white">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
