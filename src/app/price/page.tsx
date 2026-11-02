@@ -137,9 +137,8 @@ export default function PriceLanding() {
               </tbody>
             </table>
           </div>
-          <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
+          <div className="mt-8 flex justify-center">
             <GetPriceButton />
-            <p className="text-ink/80">Dual-fuel systems start at $9,990 after incentives.</p>
           </div>
         </div>
       </section>
