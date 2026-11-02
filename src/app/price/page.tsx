@@ -10,7 +10,7 @@ import { CheckIcon, PhoneIcon, Stars } from "@/components/icons";
 // or footer (see lib/landing), not indexed, not in the sitemap. Everything on
 // the page points back to the pricing form.
 export const metadata: Metadata = {
-  title: "See Your Heating & Cooling Price in 2 Minutes",
+  title: "See Your Heating & Cooling Price in 1 Minute",
   description: "Answer 10 quick questions and see your price for a new heat pump, furnace or dual-fuel system, after rebates. No obligation.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/instant-pricing" },
@@ -20,12 +20,6 @@ const chips = [
   "$2,150+ in rebates, guaranteed",
   "Prices shown after rebates",
   "No obligation",
-];
-
-const steps = [
-  { n: "1", title: "Answer 10 quick questions", body: "Your home’s size, age and what you have now. About two minutes, all taps." },
-  { n: "2", title: "See your price on the spot", body: "A price sized to your home, with rebates already taken off, plus monthly payment options." },
-  { n: "3", title: "Book a free visit if you like it", body: "We confirm the details in person. Nothing to sign until you’re ready." },
 ];
 
 const rebates = [
@@ -76,7 +70,7 @@ export default function PriceLanding() {
       <section className="bg-ink">
         <div className="mx-auto max-w-3xl px-4 py-6 text-center sm:px-6 md:py-12">
           <p className="wrap-type text-xl text-sky" style={{ textShadow: "none" }}>Free instant pricing</p>
-          <h1 className="display mt-1 text-[2rem] leading-tight text-white sm:text-5xl">See your new heating and cooling price in 2 minutes</h1>
+          <h1 className="display mt-1 text-[2rem] leading-tight text-white sm:text-5xl">See your new heating and cooling price in 1 minute</h1>
           <p className="mt-3 flex items-center justify-center gap-2 font-semibold text-white"><Stars /> {site.rating.value} from {site.rating.count} Google reviews</p>
           <ul className="mt-4 flex flex-wrap justify-center gap-2">
             {chips.map((c) => (
@@ -92,20 +86,6 @@ export default function PriceLanding() {
             Heat pumps, furnaces and dual-fuel systems for homes in Utah County and Salt Lake County. Licensed, permitted on every job, and backed by our Smile Guarantee.
           </p>
         </div>
-      </section>
-
-      {/* How it works */}
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <h2 className="display text-3xl sm:text-4xl">How it works</h2>
-        <ol className="mt-8 grid gap-5 md:grid-cols-3">
-          {steps.map((s) => (
-            <li key={s.n} className="rounded-2xl bg-white p-6 ring-1 ring-line">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-ink font-extrabold text-white">{s.n}</span>
-              <h3 className="mt-4 text-xl font-extrabold">{s.title}</h3>
-              <p className="mt-2 leading-relaxed text-mist">{s.body}</p>
-            </li>
-          ))}
-        </ol>
       </section>
 
       {/* Dual fuel vs standard (from the heat pump page) */}
