@@ -87,6 +87,21 @@ export default function PriceLanding() {
         </div>
       </section>
 
+      {/* Reviews */}
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+        <h2 className="display text-3xl sm:text-4xl">What homeowners say</h2>
+        <p className="mt-2 flex items-center gap-2 font-semibold"><Stars /> {site.rating.value} from {site.rating.count} Google reviews</p>
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          {reviews.map((r) => (
+            <figure key={r.name} className="rounded-2xl bg-white p-6 ring-1 ring-line">
+              <Stars className="h-4 w-4" />
+              <blockquote className="mt-3 leading-relaxed">“{r.text}”</blockquote>
+              <figcaption className="mt-3 text-sm font-bold">{r.name}{r.city ? `, ${r.city}` : ""} <span className="font-normal text-mist">· Google review</span></figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       {/* Dual fuel vs standard (from the heat pump page) */}
       <section className="bg-sky-soft">
         <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6">
@@ -182,21 +197,6 @@ export default function PriceLanding() {
             </p>
             <GetPriceButton className="mt-6" />
           </div>
-        </div>
-      </section>
-
-      {/* Reviews */}
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <h2 className="display text-3xl sm:text-4xl">What homeowners say</h2>
-        <p className="mt-2 flex items-center gap-2 font-semibold"><Stars /> {site.rating.value} from {site.rating.count} Google reviews</p>
-        <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {reviews.map((r) => (
-            <figure key={r.name} className="rounded-2xl bg-white p-6 ring-1 ring-line">
-              <Stars className="h-4 w-4" />
-              <blockquote className="mt-3 leading-relaxed">“{r.text}”</blockquote>
-              <figcaption className="mt-3 text-sm font-bold">{r.name}{r.city ? `, ${r.city}` : ""} <span className="font-normal text-mist">· Google review</span></figcaption>
-            </figure>
-          ))}
         </div>
       </section>
 
