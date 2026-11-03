@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { site } from "@/lib/site";
-import { EstimateForm, type FormQuote } from "@/components/estimator/EstimateForm";
+import { EstimateForm } from "@/components/estimator/EstimateForm";
 import { googleReviews } from "@/lib/reviews";
 import { CheckIcon, PhoneIcon, Stars } from "@/components/icons";
 
@@ -16,24 +16,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/instant-pricing" },
 };
 
-// One short quote under the form, changing with each question. Each is an exact
-// excerpt of a Google review in lib/reviews ("…" marks a cut); the check below
-// drops any quote that no longer matches its review word for word.
-const excerpts: { name: string; text: string }[] = [
-  { name: "Chris P.", text: "The install went flawless and looks great." },
-  { name: "Savanna K.", text: "Andrew was amazing. Professional, knowledgeable and friendly!" },
-  { name: "Stacy G.", text: "…they came in the lowest and knew what they were doing." },
-  { name: "Jared N.", text: "…very professional and quick with the installation" },
-  { name: "Patrick T.", text: "I really appreciate their honesty and willingness to go the second mile." },
-  { name: "Rebecca M.", text: "He saved us thousands of dollars." },
-  { name: "Maria-Isabel A.", text: "They're friendly, professional and honest." },
-  { name: "Paul E.", text: "Their tech was efficient and polite… resolved immediately." },
-];
-const quotes: FormQuote[] = excerpts.flatMap(({ name, text }) => {
-  const r = googleReviews.find((g) => g.name === name);
-  const exact = text.replace(/^…/, "");
-  return r && r.text.toLowerCase().includes(exact.toLowerCase()) ? [{ text, name, city: r.city }] : [];
-});
+// The review under the form: an exact excerpt of Rebecca M.'s Google review in
+// lib/reviews. It only shows while it still matches that review word for word.
+const reviewText = "He was able to fix our heater. Where others said we needed to buy a new one. He saved us thousands of dollars.";
+const review = googleReviews.find((r) => r.name === "Rebecca M." && r.text.startsWith(reviewText));
 
 export default function GetPriceSqueeze() {
   return (
@@ -41,14 +27,16 @@ export default function GetPriceSqueeze() {
       <div className="bg-white">
         <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-1.5 sm:px-6 lg:max-w-6xl">
           <Image src="/images/logo.png" alt="Eco Home Heating & Cooling" width={152} height={60} sizes="120px" preload className="h-8 w-auto shrink-0 sm:h-10" />
-          <p className="flex items-center gap-1.5 text-xs font-semibold text-ink sm:text-sm"><Stars className="h-3.5 w-3.5" /> {site.rating.value} · {site.rating.count} reviews</p>
+          <p className="flex-1 text-center text-xs font-semibold leading-snug text-ink/80 sm:text-sm">
+            Utah contractor license<span className="hidden sm:inline"> </span><br className="sm:hidden" />#{site.license}
+          </p>
           <a href={site.phoneHref} className="flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-bold text-ink ring-2 ring-ink hover:bg-sky-soft">
             <PhoneIcon className="h-4 w-4" /> <span className="hidden sm:inline">{site.phone}</span><span className="sm:hidden">Call</span>
           </a>
         </div>
       </div>
 
-      <main className="mx-auto w-full max-w-2xl flex-1 px-3 py-3 sm:px-6 sm:pb-3 sm:pt-[3vh] lg:max-w-4xl">
+      <main className="mx-auto w-full max-w-2xl flex-1 px-3 py-2.5 sm:px-6 sm:pb-2 sm:pt-[3vh] lg:max-w-4xl">
         <div className="text-center">
           <p className="wrap-type text-base text-sky sm:text-xl" style={{ textShadow: "none" }}>Free instant pricing</p>
           <h1 className="display mt-0.5 text-balance text-[1.45rem] leading-tight text-white sm:text-3xl tall:text-[2.6rem]">See your heating &amp; cooling price in 1 minute</h1>
@@ -59,12 +47,24 @@ export default function GetPriceSqueeze() {
           </p>
         </div>
         <div id="pricing" className="mx-auto mt-3 sm:mt-4 lg:max-w-3xl">
-          <EstimateForm compact quotes={quotes} />
+          <EstimateForm
+            compact
+            below={
+              <div className="mx-auto mt-2.5 max-w-xl text-center sm:mt-3">
+                {review && (
+                  <figure>
+                    <blockquote className="text-[13px] font-semibold leading-snug text-white sm:text-[15px]">“{reviewText}”</blockquote>
+                    <figcaption className="mt-0.5 text-xs text-white/65">{review.name}, {review.city} · Google review</figcaption>
+                  </figure>
+                )}
+                <p className="mt-1 flex items-center justify-center gap-1.5 text-[13px] font-semibold text-white sm:text-sm"><Stars className="h-4 w-4" /> {site.rating.value} from {site.rating.count} Google reviews</p>
+              </div>
+            }
+          />
         </div>
       </main>
 
-      <p className="px-4 pb-2 text-center text-xs text-white/60">
-        Utah contractor license #{site.license} ·{" "}
+      <p className="px-4 pb-1.5 text-center text-xs text-white/60">
         <a href="/privacy-policy" className="hover:underline">Privacy</a> ·{" "}
         <a href="/terms-of-service" className="hover:underline">Terms</a>
       </p>
