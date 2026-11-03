@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { questions, SERVICE_AREA, estimateResult, emailFix, EMAIL_RE, ESTIMATE_CONTACT_KEY, type Answers } from "@/lib/estimator";
 import { site } from "@/lib/site";
-import { CheckIcon, PhoneIcon } from "@/components/icons";
+import { CheckIcon, PhoneIcon, Stars } from "@/components/icons";
 import { HomeIcon } from "./HomeIcons";
 import { firstTouch } from "@/lib/attribution";
 import { track } from "@vercel/analytics";
@@ -22,7 +22,10 @@ type Status = "asking" | "sending" | "done";
 
 // compact: tighter spacing so every question fits on one phone screen with no
 // scrolling (the /get-price squeeze page). Default layout is unchanged.
-export function EstimateForm({ compact = false }: { compact?: boolean } = {}) {
+// quotes: short Google review quotes; one shows under the form, changing with
+// each question (white text, for a dark background).
+export type FormQuote = { text: string; name: string; city?: string };
+export function EstimateForm({ compact = false, quotes }: { compact?: boolean; quotes?: FormQuote[] } = {}) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [error, setError] = useState("");
@@ -130,10 +133,16 @@ export function EstimateForm({ compact = false }: { compact?: boolean } = {}) {
   const result = status === "done" ? estimateResult(answers) : null;
   const input = `w-full border-0 border-b-2 border-line bg-transparent px-0 ${compact ? "py-1 text-lg" : "py-2 text-2xl"} font-medium text-ink outline-none placeholder:text-mist/50 focus:border-ink`;
   const c = compact
-    ? { card: "p-4 sm:p-6", body: "mt-3", h: "text-[1.4rem] leading-tight sm:text-3xl", help: "mt-1 hidden text-base sm:block", group: "mt-3 sm:mt-4", tile: "gap-1 px-2 pb-2.5 pt-3 text-sm sm:text-base", icon: "h-10 w-auto sm:h-12", row: "py-2.5 text-[15px] sm:text-base", rowGap: "gap-2", err: "mt-2 empty:hidden", btns: "mt-3", ok: "py-3", badge: "hidden sm:grid", enter: "hidden" }
+    ? { card: "p-4 sm:p-6", body: "mt-3", h: "text-[1.4rem] leading-tight sm:text-3xl lg:text-[1.75rem]", help: "mt-1 hidden text-base sm:block", group: "mt-3 sm:mt-4", tile: "gap-1 px-2 pb-2.5 pt-3 text-sm sm:text-base", icon: "h-10 w-auto sm:h-12", row: "py-2.5 text-[15px] sm:text-base", rowGap: "gap-2", err: "mt-2 empty:hidden", btns: "mt-3", ok: "py-3", badge: "hidden sm:grid", enter: "hidden" }
     : { card: "p-6 sm:p-10", body: "mt-8 min-h-[22rem]", h: "text-3xl sm:text-4xl", help: "mt-3 text-lg", group: "mt-7", tile: "px-3 pb-4 pt-5", icon: "h-16 w-auto sm:h-20", row: "py-3.5 text-lg", rowGap: "gap-2.5", err: "mt-4 min-h-6", btns: "mt-6", ok: "py-4", badge: "grid", enter: "hidden [@media(pointer:fine)]:block" };
 
+  // compact picture tiles lie flat (icon beside label) on phones, except the 3-across "replace" step
+  const flat = compact && key !== "replace";
+  // (not on the contact step, which needs the room for its fields)
+  const quote = quotes?.length && status === "asking" && key !== "contact" ? quotes[step % quotes.length] : null;
+
   return (
+    <>
     <div ref={cardRef} className={`scroll-mt-28 rounded-3xl bg-white shadow-[0_6px_0_#14283a] ring-2 ring-ink ${c.card}`}>
       {/* progress */}
       <div className="flex gap-1.5" aria-hidden="true">
@@ -167,10 +176,10 @@ export function EstimateForm({ compact = false }: { compact?: boolean } = {}) {
                   return (
                     <button
                       key={ch.value} type="button" aria-pressed={on} onClick={() => choose(ch.value)}
-                      className={`relative flex flex-col items-center ${compact ? "" : "gap-2"} rounded-2xl border-2 text-center font-semibold leading-tight ${c.tile} ${compact ? "" : key === "replace" ? "text-base sm:text-lg" : "text-lg"} transition-colors ${on ? "border-ink bg-sky-soft" : "border-transparent bg-[#f2f6f8] hover:border-line"}`}
+                      className={`relative flex rounded-2xl border-2 font-semibold leading-tight ${flat ? "flex-row items-center gap-2 px-2.5 py-2 text-left text-sm sm:flex-col sm:gap-1 sm:px-2 sm:pb-2.5 sm:pt-3 sm:text-center sm:text-base" : `flex-col items-center text-center ${compact ? "" : "gap-2"} ${c.tile}`} ${compact ? "" : key === "replace" ? "text-base sm:text-lg" : "text-lg"} transition-colors ${on ? "border-ink bg-sky-soft" : "border-transparent bg-[#f2f6f8] hover:border-line"}`}
                     >
                       <span className={`absolute left-2.5 top-2.5 ${c.badge} h-6 w-6 place-items-center rounded-md border text-xs font-bold ${on ? "border-ink bg-ink text-white" : "border-line bg-white text-mist"}`}>{KEYS[i]}</span>
-                      {key === "hometype" ? <HomeIcon kind={ch.value} className={c.icon} /> : <EquipmentIcon qkey={key} value={ch.value} className={c.icon} />}
+                      {key === "hometype" ? <HomeIcon kind={ch.value} className={flat ? "h-7 w-10 shrink-0 sm:h-12 sm:w-auto" : c.icon} /> : <EquipmentIcon qkey={key} value={ch.value} className={flat ? "h-7 w-10 shrink-0 sm:h-12 sm:w-auto" : c.icon} />}
                       {ch.label}
                     </button>
                   );
@@ -213,7 +222,7 @@ export function EstimateForm({ compact = false }: { compact?: boolean } = {}) {
                 <label className="col-span-2 block"><span className={`${compact ? "text-xs" : "text-sm"} font-semibold text-mist`}>Email</span>
                   <input className={input} type="email" inputMode="email" autoComplete="email" placeholder="sam@example.com" value={answers.email || ""} onChange={(e) => set("email", e.target.value)} /></label>
               </div>
-              <label className={`flex items-start gap-3 text-sm text-mist ${compact ? "mt-3 leading-snug" : "mt-6 leading-relaxed"}`}>
+              <label className={`flex items-start gap-3 text-mist ${compact ? "mt-3 text-xs leading-snug sm:text-sm" : "mt-6 text-sm leading-relaxed"}`}>
                 <input type="checkbox" className="mt-0.5 h-5 w-5 shrink-0 accent-ink" checked={answers.consent === "true"} onChange={(e) => set("consent", e.target.checked ? "true" : "")} />
                 <span>I agree to receive texts from {site.name} about my estimate. Message and data rates may apply. Reply STOP to opt out. See our <Link href="/privacy-policy" className="underline">Privacy Policy</Link>.</span>
               </label>
@@ -284,5 +293,14 @@ export function EstimateForm({ compact = false }: { compact?: boolean } = {}) {
         </div>
       )}
     </div>
+    {quote && (
+      <figure key={step} className="step-in mx-auto mt-3 max-w-md text-center sm:mt-4">
+        <blockquote className="text-sm font-semibold leading-snug text-white sm:text-base">
+          <span className="mr-1.5 inline-flex align-[-1px]"><Stars className="h-3.5 w-3.5" /></span>“{quote.text}”
+        </blockquote>
+        <figcaption className="mt-0.5 text-xs text-white/65">{quote.name}{quote.city ? `, ${quote.city}` : ""} · Google review</figcaption>
+      </figure>
+    )}
+    </>
   );
 }
