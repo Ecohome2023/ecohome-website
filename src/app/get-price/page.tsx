@@ -36,24 +36,24 @@ export default function GetPriceSqueeze() {
         </div>
       </div>
 
-      <main className="mx-auto w-full max-w-2xl flex-1 px-3 py-2.5 sm:px-6 sm:pb-2 sm:pt-[3vh] lg:max-w-4xl">
+      <main className="mx-auto w-full max-w-2xl flex-1 px-3 py-4 sm:px-6 sm:py-2.5 sm:pb-2 sm:pt-[3vh] lg:max-w-4xl">
         <div className="text-center">
           <p className="wrap-type text-base text-sky sm:text-xl" style={{ textShadow: "none" }}>Free instant pricing</p>
-          <h1 className="display mt-0.5 text-balance text-[1.45rem] leading-tight text-white sm:text-3xl tall:text-[2.6rem]">See your heating &amp; cooling price in 1 minute</h1>
+          <h1 className="display mt-0.5 text-balance text-[1.6rem] leading-tight text-white sm:text-3xl tall:text-[2.6rem]">See your heating &amp; cooling price in 1 minute</h1>
           <p className="mt-1.5 flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm font-semibold text-white sm:mt-2 sm:text-base lg:gap-x-6">
             <span className="flex items-center gap-1"><CheckIcon className="h-4 w-4 text-sky" /> $2,150+ in rebates, guaranteed</span>
             <span className="flex items-center gap-1"><CheckIcon className="h-4 w-4 text-sky" /> No obligation</span>
             <span className="hidden items-center gap-1 lg:flex"><CheckIcon className="h-4 w-4 text-sky" /> Licensed, permitted on every job</span>
           </p>
         </div>
-        <div id="pricing" className="mx-auto mt-3 sm:mt-4 lg:max-w-3xl">
+        <div id="pricing" className="mx-auto mt-4 lg:max-w-3xl">
           <EstimateForm
             compact
             below={
-              <div className="mx-auto mt-2.5 max-w-xl text-center sm:mt-3">
+              <div className="mx-auto mt-4 max-w-xl text-center sm:mt-3">
                 {review && (
                   <figure>
-                    <blockquote className="text-[13px] font-semibold leading-snug text-white sm:text-[15px]">“{reviewText}”</blockquote>
+                    <blockquote className="text-sm font-semibold leading-snug text-white sm:text-[15px]">“{reviewText}”</blockquote>
                     <figcaption className="mt-0.5 text-xs text-white/65">{review.name}, {review.city} · Google review</figcaption>
                   </figure>
                 )}

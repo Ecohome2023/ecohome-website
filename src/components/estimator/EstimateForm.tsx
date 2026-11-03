@@ -130,13 +130,11 @@ export function EstimateForm({ compact = false, below }: { compact?: boolean; be
   });
 
   const result = status === "done" ? estimateResult(answers) : null;
-  const input = `w-full border-0 border-b-2 border-line bg-transparent px-0 ${compact ? "py-1 text-lg tall:text-xl" : "py-2 text-2xl"} font-medium text-ink outline-none placeholder:text-mist/50 focus:border-ink`;
+  const input = `w-full border-0 border-b-2 border-line bg-transparent px-0 ${compact ? "py-1.5 text-xl sm:py-1 sm:text-lg tall:text-xl" : "py-2 text-2xl"} font-medium text-ink outline-none placeholder:text-mist/50 focus:border-ink`;
   const c = compact
-    ? { card: "p-4 sm:p-5 tall:px-10 tall:py-8", body: "mt-3", h: "text-[1.4rem] leading-tight sm:text-3xl tall:text-[2rem]", help: "mt-1 hidden text-lg tall:block", group: "mt-3 tall:mt-5", tile: "gap-1 px-2 pb-2.5 pt-3 text-sm sm:text-base tall:pb-3 tall:pt-4 tall:text-lg", icon: "h-10 w-auto tall:h-14", row: "py-2.5 text-[15px] sm:text-base tall:py-3 tall:text-lg", rowGap: "gap-2", err: "mt-2 empty:hidden", btns: "mt-3", ok: "py-2.5 sm:py-3 tall:py-4", badge: "hidden sm:grid", enter: "hidden" }
+    ? { card: "p-4 sm:p-5 tall:px-10 tall:py-8", body: "mt-4 sm:mt-3", h: "text-[1.65rem] leading-tight sm:text-3xl tall:text-[2rem]", help: "mt-1.5 text-base sm:hidden tall:block tall:text-lg", group: "mt-4 sm:mt-3 tall:mt-5", tile: "gap-1.5 px-2 pb-3 pt-3.5 text-base sm:gap-1 sm:pb-2.5 sm:pt-3 tall:pb-3 tall:pt-4 tall:text-lg", icon: "h-11 w-auto sm:h-9 tall:h-14", row: "py-3.5 text-base sm:py-2.5 tall:py-3 tall:text-lg", rowGap: "gap-2.5 sm:gap-2", err: "mt-2 empty:hidden", btns: "mt-4 sm:mt-3", ok: "py-4 sm:py-3 tall:py-4", badge: "hidden sm:grid", enter: "hidden" }
     : { card: "p-6 sm:p-10", body: "mt-8 min-h-[22rem]", h: "text-3xl sm:text-4xl", help: "mt-3 text-lg", group: "mt-7", tile: "px-3 pb-4 pt-5", icon: "h-16 w-auto sm:h-20", row: "py-3.5 text-lg", rowGap: "gap-2.5", err: "mt-4 min-h-6", btns: "mt-6", ok: "py-4", badge: "grid", enter: "hidden [@media(pointer:fine)]:block" };
 
-  // compact picture tiles lie flat (icon beside label) on phones, except the 3-across "replace" step
-  const flat = compact && key !== "replace";
   const showBelow = below && status === "asking" && key !== "contact";
 
   return (
@@ -174,10 +172,10 @@ export function EstimateForm({ compact = false, below }: { compact?: boolean; be
                   return (
                     <button
                       key={ch.value} type="button" aria-pressed={on} onClick={() => choose(ch.value)}
-                      className={`relative flex rounded-2xl border-2 font-semibold leading-tight ${flat ? "flex-row items-center gap-2 px-2.5 py-2 text-left text-sm sm:flex-col sm:gap-1 sm:px-2 sm:pb-2.5 sm:pt-3 sm:text-center sm:text-base tall:pb-3 tall:pt-4 tall:text-lg" : `flex-col items-center text-center ${compact ? "" : "gap-2"} ${c.tile}`} ${compact ? "" : key === "replace" ? "text-base sm:text-lg" : "text-lg"} transition-colors ${on ? "border-ink bg-sky-soft" : "border-transparent bg-[#f2f6f8] hover:border-line"}`}
+                      className={`relative flex rounded-2xl border-2 font-semibold leading-tight flex-col items-center text-center ${compact ? "" : "gap-2"} ${c.tile} ${compact ? "" : key === "replace" ? "text-base sm:text-lg" : "text-lg"} transition-colors ${on ? "border-ink bg-sky-soft" : "border-transparent bg-[#f2f6f8] hover:border-line"}`}
                     >
                       <span className={`absolute left-2.5 top-2.5 ${c.badge} h-6 w-6 place-items-center rounded-md border text-xs font-bold ${on ? "border-ink bg-ink text-white" : "border-line bg-white text-mist"}`}>{KEYS[i]}</span>
-                      {key === "hometype" ? <HomeIcon kind={ch.value} className={flat ? "h-7 w-10 shrink-0 sm:h-9 sm:w-auto tall:h-14" : c.icon} /> : <EquipmentIcon qkey={key} value={ch.value} className={flat ? "h-7 w-10 shrink-0 sm:h-9 sm:w-auto tall:h-14" : c.icon} />}
+                      {key === "hometype" ? <HomeIcon kind={ch.value} className={c.icon} /> : <EquipmentIcon qkey={key} value={ch.value} className={c.icon} />}
                       {ch.label}
                     </button>
                   );
@@ -190,7 +188,7 @@ export function EstimateForm({ compact = false, below }: { compact?: boolean; be
                   return (
                     <button
                       key={ch.value} type="button" aria-pressed={on} onClick={() => choose(ch.value)}
-                      className={`flex w-full items-center gap-3 rounded-xl border-2 ${compact ? "px-3" : "px-4"} text-left font-semibold ${c.row} transition-colors ${on ? "border-ink bg-sky-soft" : "border-transparent bg-[#f2f6f8] hover:border-line"}`}
+                      className={`flex w-full items-center gap-3 rounded-xl border-2 ${compact && question.choices.length > 4 ? "whitespace-nowrap px-3 text-[14px] sm:px-4 sm:text-base" : "px-4"} text-left font-semibold ${c.row} transition-colors ${on ? "border-ink bg-sky-soft" : "border-transparent bg-[#f2f6f8] hover:border-line"}`}
                     >
                       <span className={`${c.badge} h-7 w-7 shrink-0 place-items-center rounded-md border text-sm font-bold ${on ? "border-ink bg-ink text-white" : "border-line bg-white text-mist"}`}>{KEYS[i]}</span>
                       {ch.label}
@@ -206,21 +204,21 @@ export function EstimateForm({ compact = false, below }: { compact?: boolean; be
             <>
               <h2 ref={headingRef} tabIndex={-1} id="q" className={`display mt-2 outline-none ${c.h}`}>Where should we send your estimate?</h2>
               <p className={`${c.help} text-mist`}>You’ll see it right away, and we’ll text you a link to come back to it.</p>
-              <div className={`grid grid-cols-2 gap-x-5 ${compact ? "mt-2 gap-y-2" : "mt-6 gap-y-5"}`}>
-                <label className="block"><span className={`${compact ? "text-xs" : "text-sm"} font-semibold text-mist`}>First name</span>
+              <div className={`grid grid-cols-2 gap-x-5 ${compact ? "mt-4 gap-y-4 sm:mt-2 sm:gap-y-2" : "mt-6 gap-y-5"}`}>
+                <label className="block"><span className={`${compact ? "text-sm sm:text-xs" : "text-sm"} font-semibold text-mist`}>First name</span>
                   <input className={input} autoComplete="given-name" placeholder="Sam" value={answers.fname || ""} onChange={(e) => set("fname", e.target.value)} /></label>
-                <label className="block"><span className={`${compact ? "text-xs" : "text-sm"} font-semibold text-mist`}>Last name</span>
+                <label className="block"><span className={`${compact ? "text-sm sm:text-xs" : "text-sm"} font-semibold text-mist`}>Last name</span>
                   <input className={input} autoComplete="family-name" placeholder="Jones" value={answers.lname || ""} onChange={(e) => set("lname", e.target.value)} /></label>
-                <label className="col-span-2 block"><span className={`${compact ? "text-xs" : "text-sm"} font-semibold text-mist`}>Mobile phone</span>
+                <label className="col-span-2 block"><span className={`${compact ? "text-sm sm:text-xs" : "text-sm"} font-semibold text-mist`}>Mobile phone</span>
                   <input className={input} type="tel" inputMode="tel" autoComplete="tel" placeholder="(801) 555-0123" value={answers.phone || ""}
                     onChange={(e) => {
                       const d = e.target.value.replace(/\D/g, "").replace(/^1/, "").slice(0, 10);
                       set("phone", d.length > 6 ? `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}` : d.length > 3 ? `(${d.slice(0, 3)}) ${d.slice(3)}` : d);
                     }} /></label>
-                <label className="col-span-2 block"><span className={`${compact ? "text-xs" : "text-sm"} font-semibold text-mist`}>Email</span>
+                <label className="col-span-2 block"><span className={`${compact ? "text-sm sm:text-xs" : "text-sm"} font-semibold text-mist`}>Email</span>
                   <input className={input} type="email" inputMode="email" autoComplete="email" placeholder="sam@example.com" value={answers.email || ""} onChange={(e) => set("email", e.target.value)} /></label>
               </div>
-              <label className={`flex items-start gap-3 text-mist ${compact ? "mt-3 text-xs leading-snug sm:text-sm" : "mt-6 text-sm leading-relaxed"}`}>
+              <label className={`flex items-start gap-3 text-mist ${compact ? "mt-5 text-sm leading-snug sm:mt-3" : "mt-6 text-sm leading-relaxed"}`}>
                 <input type="checkbox" className="mt-0.5 h-5 w-5 shrink-0 accent-ink" checked={answers.consent === "true"} onChange={(e) => set("consent", e.target.checked ? "true" : "")} />
                 <span>I agree to receive texts from {site.name} about my estimate. Message and data rates may apply. Reply STOP to opt out. See our <Link href="/privacy-policy" className="underline">Privacy Policy</Link>.</span>
               </label>
