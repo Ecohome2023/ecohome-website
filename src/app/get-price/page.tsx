@@ -29,7 +29,8 @@ export default function GetPriceSqueeze() {
       </div>
 
       <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col px-3 py-3 sm:px-6 sm:pb-5 sm:pt-[6vh]">
-        <h1 className="display text-balance text-center text-[1.45rem] leading-tight text-white sm:text-3xl">See your heating &amp; cooling price in 1 minute</h1>
+        <p className="wrap-type text-center text-base text-sky sm:text-xl" style={{ textShadow: "none" }}>Free instant pricing</p>
+        <h1 className="display mt-0.5 text-balance text-center text-[1.45rem] leading-tight text-white sm:text-3xl">See your heating &amp; cooling price in 1 minute</h1>
         <div id="pricing" className="mt-3 sm:mt-5">
           <EstimateForm compact />
         </div>
