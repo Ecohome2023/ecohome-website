@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Desktop screens tall enough for the larger squeeze-page form (/get-price) */
+@custom-variant tall (@media (min-width: 1024px) and (min-height: 820px));
+
 /* Eco Home brand tokens (from Eco_Home_Company_Colors.pdf) */
 @theme {
   --color-sky: #0ad2ff;        /* van-wrap cyan */

@@ -48,19 +48,17 @@ export default function GetPriceSqueeze() {
         </div>
       </div>
 
-      {/* Phones and tablets: one column. Desktop: headline left, form right, so
-          the form never needs scrolling on a laptop screen. */}
-      <main className="mx-auto w-full max-w-2xl flex-1 px-3 py-3 sm:px-6 sm:pb-5 sm:pt-[5vh] lg:grid lg:max-w-6xl lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-14 lg:py-3">
-        <div className="text-center lg:text-left">
-          <p className="wrap-type text-base text-sky sm:text-xl lg:text-2xl" style={{ textShadow: "none" }}>Free instant pricing</p>
-          <h1 className="display mt-0.5 text-balance text-[1.45rem] leading-tight text-white sm:text-3xl lg:mt-2 lg:text-5xl">See your heating &amp; cooling price in 1 minute</h1>
-          <p className="mt-1.5 flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm font-semibold text-white sm:mt-2 sm:text-base lg:mt-6 lg:flex-col lg:gap-y-3 lg:text-lg">
-            <span className="flex items-center gap-1 lg:gap-2"><CheckIcon className="h-4 w-4 text-sky lg:h-5 lg:w-5" /> $2,150+ in rebates, guaranteed</span>
-            <span className="flex items-center gap-1 lg:gap-2"><CheckIcon className="h-4 w-4 text-sky lg:h-5 lg:w-5" /> No obligation</span>
-            <span className="hidden items-center gap-2 lg:flex"><CheckIcon className="h-5 w-5 text-sky" /> Licensed, permitted on every job</span>
+      <main className="mx-auto w-full max-w-2xl flex-1 px-3 py-3 sm:px-6 sm:pb-3 sm:pt-[3vh] lg:max-w-4xl">
+        <div className="text-center">
+          <p className="wrap-type text-base text-sky sm:text-xl" style={{ textShadow: "none" }}>Free instant pricing</p>
+          <h1 className="display mt-0.5 text-balance text-[1.45rem] leading-tight text-white sm:text-3xl tall:text-[2.6rem]">See your heating &amp; cooling price in 1 minute</h1>
+          <p className="mt-1.5 flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm font-semibold text-white sm:mt-2 sm:text-base lg:gap-x-6">
+            <span className="flex items-center gap-1"><CheckIcon className="h-4 w-4 text-sky" /> $2,150+ in rebates, guaranteed</span>
+            <span className="flex items-center gap-1"><CheckIcon className="h-4 w-4 text-sky" /> No obligation</span>
+            <span className="hidden items-center gap-1 lg:flex"><CheckIcon className="h-4 w-4 text-sky" /> Licensed, permitted on every job</span>
           </p>
         </div>
-        <div id="pricing" className="mt-3 sm:mt-5 lg:mt-0">
+        <div id="pricing" className="mx-auto mt-3 sm:mt-4 lg:max-w-3xl">
           <EstimateForm compact quotes={quotes} />
         </div>
       </main>

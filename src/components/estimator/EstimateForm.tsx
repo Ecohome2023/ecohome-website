@@ -131,9 +131,9 @@ export function EstimateForm({ compact = false, quotes }: { compact?: boolean; q
   });
 
   const result = status === "done" ? estimateResult(answers) : null;
-  const input = `w-full border-0 border-b-2 border-line bg-transparent px-0 ${compact ? "py-1 text-lg" : "py-2 text-2xl"} font-medium text-ink outline-none placeholder:text-mist/50 focus:border-ink`;
+  const input = `w-full border-0 border-b-2 border-line bg-transparent px-0 ${compact ? "py-1 text-lg tall:text-xl" : "py-2 text-2xl"} font-medium text-ink outline-none placeholder:text-mist/50 focus:border-ink`;
   const c = compact
-    ? { card: "p-4 sm:p-6", body: "mt-3", h: "text-[1.4rem] leading-tight sm:text-3xl lg:text-[1.75rem]", help: "mt-1 hidden text-base sm:block", group: "mt-3 sm:mt-4", tile: "gap-1 px-2 pb-2.5 pt-3 text-sm sm:text-base", icon: "h-10 w-auto sm:h-12", row: "py-2.5 text-[15px] sm:text-base", rowGap: "gap-2", err: "mt-2 empty:hidden", btns: "mt-3", ok: "py-3", badge: "hidden sm:grid", enter: "hidden" }
+    ? { card: "p-4 sm:p-5 tall:px-10 tall:py-8", body: "mt-3", h: "text-[1.4rem] leading-tight sm:text-3xl tall:text-[2rem]", help: "mt-1 hidden text-lg tall:block", group: "mt-3 tall:mt-5", tile: "gap-1 px-2 pb-2.5 pt-3 text-sm sm:text-base tall:pb-3 tall:pt-4 tall:text-lg", icon: "h-10 w-auto tall:h-14", row: "py-2.5 text-[15px] sm:text-base tall:py-3 tall:text-lg", rowGap: "gap-2", err: "mt-2 empty:hidden", btns: "mt-3", ok: "py-3 tall:py-4", badge: "hidden sm:grid", enter: "hidden" }
     : { card: "p-6 sm:p-10", body: "mt-8 min-h-[22rem]", h: "text-3xl sm:text-4xl", help: "mt-3 text-lg", group: "mt-7", tile: "px-3 pb-4 pt-5", icon: "h-16 w-auto sm:h-20", row: "py-3.5 text-lg", rowGap: "gap-2.5", err: "mt-4 min-h-6", btns: "mt-6", ok: "py-4", badge: "grid", enter: "hidden [@media(pointer:fine)]:block" };
 
   // compact picture tiles lie flat (icon beside label) on phones, except the 3-across "replace" step
@@ -176,17 +176,17 @@ export function EstimateForm({ compact = false, quotes }: { compact?: boolean; q
                   return (
                     <button
                       key={ch.value} type="button" aria-pressed={on} onClick={() => choose(ch.value)}
-                      className={`relative flex rounded-2xl border-2 font-semibold leading-tight ${flat ? "flex-row items-center gap-2 px-2.5 py-2 text-left text-sm sm:flex-col sm:gap-1 sm:px-2 sm:pb-2.5 sm:pt-3 sm:text-center sm:text-base" : `flex-col items-center text-center ${compact ? "" : "gap-2"} ${c.tile}`} ${compact ? "" : key === "replace" ? "text-base sm:text-lg" : "text-lg"} transition-colors ${on ? "border-ink bg-sky-soft" : "border-transparent bg-[#f2f6f8] hover:border-line"}`}
+                      className={`relative flex rounded-2xl border-2 font-semibold leading-tight ${flat ? "flex-row items-center gap-2 px-2.5 py-2 text-left text-sm sm:flex-col sm:gap-1 sm:px-2 sm:pb-2.5 sm:pt-3 sm:text-center sm:text-base tall:pb-3 tall:pt-4 tall:text-lg" : `flex-col items-center text-center ${compact ? "" : "gap-2"} ${c.tile}`} ${compact ? "" : key === "replace" ? "text-base sm:text-lg" : "text-lg"} transition-colors ${on ? "border-ink bg-sky-soft" : "border-transparent bg-[#f2f6f8] hover:border-line"}`}
                     >
                       <span className={`absolute left-2.5 top-2.5 ${c.badge} h-6 w-6 place-items-center rounded-md border text-xs font-bold ${on ? "border-ink bg-ink text-white" : "border-line bg-white text-mist"}`}>{KEYS[i]}</span>
-                      {key === "hometype" ? <HomeIcon kind={ch.value} className={flat ? "h-7 w-10 shrink-0 sm:h-12 sm:w-auto" : c.icon} /> : <EquipmentIcon qkey={key} value={ch.value} className={flat ? "h-7 w-10 shrink-0 sm:h-12 sm:w-auto" : c.icon} />}
+                      {key === "hometype" ? <HomeIcon kind={ch.value} className={flat ? "h-7 w-10 shrink-0 sm:h-10 sm:w-auto tall:h-14" : c.icon} /> : <EquipmentIcon qkey={key} value={ch.value} className={flat ? "h-7 w-10 shrink-0 sm:h-10 sm:w-auto tall:h-14" : c.icon} />}
                       {ch.label}
                     </button>
                   );
                 })}
               </div>
               ) : (
-              <div role="group" aria-labelledby="q" className={`${c.group} grid ${c.rowGap} ${compact && question.choices.length > 4 ? "grid-cols-2" : ""}`}>
+              <div role="group" aria-labelledby="q" className={`${c.group} grid ${c.rowGap} ${compact ? (question.choices.length > 4 ? "grid-cols-2 lg:grid-cols-3" : "sm:grid-cols-2") : ""}`}>
                 {question.choices.map((ch, i) => {
                   const on = answers[key] === ch.value;
                   return (
