@@ -1,6 +1,7 @@
 "use client";
 
 import { gaEvent } from "@/lib/gtag";
+import { metaEvent } from "@/lib/metaPixel";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { questions, SERVICE_AREA, estimateResult, emailFix, EMAIL_RE, ESTIMATE_CONTACT_KEY, type Answers } from "@/lib/estimator";
@@ -103,6 +104,7 @@ export function EstimateForm({ compact = false, below }: { compact?: boolean; be
       if (ok) {
         track("Estimate submitted", { channel: firstTouch()?.channel ?? "Unknown" });
         gaEvent("generate_lead", { form: "instant_pricing" });
+        metaEvent("Lead", { content_name: "instant_pricing" });
       }
     } catch {
       ok = false;

@@ -8,6 +8,7 @@ import { RevealObserver } from "@/components/RevealObserver";
 import { Analytics } from "@vercel/analytics/next";
 import { Attribution } from "@/components/Attribution";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { MetaPixel } from "@/components/MetaPixel";
 import { site, allCities, isLive } from "@/lib/site";
 import { ogImage } from "@/lib/meta";
 
@@ -122,6 +123,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Analytics />
         <Attribution />
         {isLive && <GoogleAnalytics />}
+        {isLive && <MetaPixel />}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
