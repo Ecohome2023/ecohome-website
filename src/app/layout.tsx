@@ -12,9 +12,13 @@ import { MetaPixel } from "@/components/MetaPixel";
 import { site, allCities, isLive } from "@/lib/site";
 import { ogImage } from "@/lib/meta";
 
+// Both font files are trimmed to what the site uses, to load faster: the main
+// font keeps weights 400–900 and widths 100–112%; the italic is a single
+// 900-weight, 115%-wide style (the van-wrap ".wrap-type" accent). Re-trim from
+// the full Archivo files if the site starts using other weights or widths.
 const archivo = localFont({
   src: "../fonts/archivo.woff2",
-  weight: "100 900",
+  weight: "400 900",
   style: "normal",
   variable: "--font-archivo",
   display: "swap",
@@ -23,7 +27,7 @@ const archivo = localFont({
 // Italic is only used for small accents, so it isn't preloaded.
 const archivoItalic = localFont({
   src: "../fonts/archivo-italic.woff2",
-  weight: "100 900",
+  weight: "900",
   style: "italic",
   variable: "--font-archivo-italic",
   display: "swap",
