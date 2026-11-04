@@ -6,18 +6,18 @@ import { site } from "@/lib/site";
 
 // Open times for one service, read live from Housecall Pro. Bump `reload` to fetch again.
 // slots is null while loading; failed is true when the schedule couldn't be read.
-export function useSlots(service: string, reload = 0) {
+export function useSlots(service: string, reload = 0, plan = false) {
   const [loaded, setLoaded] = useState<{ service: string; slots: Slot[] | null; n: number }>({ service: "", slots: null, n: 0 });
   useEffect(() => {
     if (!service) return;
     let live = true;
     const done = (slots: Slot[] | null) => live && setLoaded({ service, slots, n: reload });
-    fetch(`/api/booking/slots?service=${encodeURIComponent(service)}`)
+    fetch(`/api/booking/slots?service=${encodeURIComponent(service)}${plan ? "&plan=1" : ""}`)
       .then((r) => r.json())
       .then((d) => done(d.ok ? d.slots : null))
       .catch(() => done(null));
     return () => { live = false; };
-  }, [service, reload]);
+  }, [service, reload, plan]);
   const current = loaded.service === service && loaded.n === reload;
   return { slots: current ? loaded.slots : null, failed: current && loaded.slots === null };
 }

@@ -15,6 +15,9 @@ export const HUBSPOT_BOOKING_FORM = "0375f5be-5974-490c-9b9a-bd8e55fa9b5e";
 // free for the whole hour and it falls inside Housecall Pro's business hours.
 export const WINDOW_STARTS = ["08:30", "10:00", "11:30", "13:00", "14:30", "16:00", "17:30"];
 
+// Care Plan tune-ups (/plan/<visit>) skip the last two windows of the day.
+export const PLAN_WINDOW_STARTS = WINDOW_STARTS.filter((t) => t !== "16:00" && t !== "17:30");
+
 // How many days of open times to show.
 export const DAYS_AHEAD = 14;
 

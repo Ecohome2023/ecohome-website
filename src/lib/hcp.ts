@@ -23,7 +23,7 @@ export async function hcp<T>(path: string, init: RequestInit = {}): Promise<T> {
 
 // Open times for one service, on the calendars of the pros who take online bookings.
 // Without employee_ids Housecall Pro counts anyone free, so Andrew's booked times would show as open.
-export async function openSlots(service: BookingService): Promise<Slot[]> {
+export async function openSlots(service: BookingService, starts: string[] = WINDOW_STARTS): Promise<Slot[]> {
   // Ask in half-hour pieces, then keep each of our one-hour windows whose two halves are both free.
   const q = new URLSearchParams({ show_for_days: String(DAYS_AHEAD), service_id: service.serviceId, service_duration: "30" });
   for (const id of BOOKABLE_PROS) q.append("employee_ids[]", id);
@@ -36,7 +36,7 @@ export async function openSlots(service: BookingService): Promise<Slot[]> {
   const soon = Date.now() + 60 * 60 * 1000; // nothing starting within the hour
   const slots: Slot[] = [];
   for (const day of days) {
-    for (const t of WINDOW_STARTS) {
+    for (const t of starts) {
       const [h, m] = t.split(":").map(Number);
       const next = `${String(h + Math.floor((m + 30) / 60)).padStart(2, "0")}:${String((m + 30) % 60).padStart(2, "0")}`;
       const first = halves.get(`${day} ${t}`);
