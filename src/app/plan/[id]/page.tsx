@@ -20,7 +20,7 @@ export default async function PlanVisitPage({ params }: PageProps<"/plan/[id]">)
   return (
     <section className="bg-sky-soft">
       <div className="mx-auto max-w-2xl px-4 py-10 sm:px-6 md:py-14">
-        <p className="wrap-type text-2xl text-alarm-strong" style={{ textShadow: "none" }}>Essential Care Plan</p>
+        <p className="wrap-type text-2xl text-alarm-strong" style={{ textShadow: "none" }}>{v.plan}</p>
         <h1 className="display mt-2 text-4xl sm:text-5xl">{v.firstName ? `${v.firstName}, your free tune-up is due` : "Your free tune-up is due"}</h1>
         {v.address && <p className="mt-3 text-lg text-ink/80">At {v.address}</p>}
 

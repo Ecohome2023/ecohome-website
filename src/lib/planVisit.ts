@@ -1,10 +1,9 @@
 import { BOOKABLE_PROS, type Slot } from "./booking";
 import { hcp } from "./hcp";
 
-// Care Plan tune-up booking (/plan/<visit>). Housecall Pro creates each service plan
-// visit as a $0 job named "Visit #N" that needs scheduling; the link carries that
-// job's id (without "job_"), and booking schedules that same job on Andrew's calendar,
-// so it stays the plan visit. Server only.
+// Care Plan tune-up booking (/plan/<visit>). Each service plan visit becomes a $0 job
+// that needs scheduling; the link carries that job's id (without "job_"), and booking
+// schedules that same job on Andrew's calendar, so it stays the plan visit. Server only.
 
 export const VISIT_ID_RE = /^[0-9a-f]{32}$/;
 
@@ -18,8 +17,11 @@ type HcpJob = {
   schedule?: { scheduled_start?: string | null; scheduled_end?: string | null } | null;
 };
 
+type HcpLine = { name: string; kind: string };
+
 export type PlanVisit = {
   id: string;
+  plan: string; // plan name from its discount line, or "Care Plan"
   firstName: string;
   address: string;
   status: "open" | "booked" | "closed";
@@ -37,14 +39,23 @@ async function getJob(id: string): Promise<HcpJob | null> {
   }
 }
 
-// Only service plan visits ("Visit #N", $0) can be booked from a plan link.
+// Visit names: Housecall Pro's "Visit #N", or ours like "Fall 2026 Tune-Up".
+const VISIT_NAME_RE = /^(Visit #\d+|(Winter|Spring|Summer|Fall) \d{4} Tune-Up)$/;
+
+// Only service plan visits can be booked from a plan link: a $0 job that carries its
+// plan's "<plan> discount" line (paid plans) or has a visit name (plans with no discount,
+// like the free year).
 export async function getPlanVisit(id: string): Promise<PlanVisit | null> {
   const j = await getJob(id);
-  if (!j || !/^Visit #\d+/.test(j.description || "") || j.total_amount !== 0) return null;
+  if (!j || j.total_amount !== 0) return null;
+  const lines = (await hcp<{ line_items?: HcpLine[]; data?: HcpLine[] }>(`/jobs/${j.id}/line_items`));
+  const discount = (lines.line_items || lines.data || []).find((l) => l.kind === "percent discount" && / discount$/.test(l.name.trim()));
+  if (!discount && !VISIT_NAME_RE.test((j.description || "").trim())) return null;
   const start = j.schedule?.scheduled_start || null;
   const status = j.work_status === "needs scheduling" ? "open" : j.work_status === "scheduled" && start ? "booked" : "closed";
   return {
     id,
+    plan: discount ? discount.name.trim().replace(/ discount$/, "") : "Care Plan",
     firstName: (j.customer.first_name || "").trim(),
     address: [j.address?.street, j.address?.city].filter(Boolean).join(", "),
     status,

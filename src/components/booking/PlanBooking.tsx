@@ -43,7 +43,7 @@ export function PlanBooking({ id, firstName }: { id: string; firstName: string }
       <div className={card} aria-live="polite">
         <span className="grid h-12 w-12 place-items-center rounded-full bg-[#1e8e4f] text-white"><CheckIcon className="h-6 w-6" /></span>
         <h2 className="display mt-4 text-3xl">You’re booked{firstName ? `, ${firstName}` : ""}.</h2>
-        <p className="mt-3 rounded-xl bg-sky-soft px-4 py-3 text-lg font-semibold">Care Plan tune-up<br />{fmtDay(slot.start)}, {fmtRange(slot.start, slot.end)}</p>
+        <p className="mt-3 rounded-xl bg-sky-soft px-4 py-3 text-lg font-semibold">Service plan tune-up<br />{fmtDay(slot.start)}, {fmtRange(slot.start, slot.end)}</p>
         {previewOnly && <p className="mt-4 rounded-xl bg-alarm-strong/10 p-4 font-semibold text-alarm-strong">Preview link: nothing was booked in Housecall Pro.</p>}
         <p className="mt-4 text-lg text-mist">Your technician arrives within that hour. Need to change it? Call or text us.</p>
         <a href={site.phoneHref} className="mt-5 inline-flex items-center gap-2 rounded-full border-2 border-ink px-6 py-4 text-lg font-bold"><PhoneIcon className="h-5 w-5" /> {site.phone}</a>
