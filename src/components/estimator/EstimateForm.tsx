@@ -1,7 +1,8 @@
 "use client";
 
 import { gaEvent } from "@/lib/gtag";
-import { useEffect, useRef, useState } from "react";
+import { metaEvent } from "@/lib/metaPixel";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { questions, SERVICE_AREA, estimateResult, emailFix, EMAIL_RE, ESTIMATE_CONTACT_KEY, type Answers } from "@/lib/estimator";
 import { site } from "@/lib/site";
@@ -20,7 +21,11 @@ const KEYS = "ABCDEFGH";
 
 type Status = "asking" | "sending" | "done";
 
-export function EstimateForm() {
+// compact: tighter spacing so every question fits on one phone screen with no
+// scrolling (the /get-price squeeze page). Default layout is unchanged.
+// below: shown under the form while questions are being answered (hidden on the
+// contact step, which needs the room for its fields).
+export function EstimateForm({ compact = false, below }: { compact?: boolean; below?: ReactNode } = {}) {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [error, setError] = useState("");
@@ -99,6 +104,7 @@ export function EstimateForm() {
       if (ok) {
         track("Estimate submitted", { channel: firstTouch()?.channel ?? "Unknown" });
         gaEvent("generate_lead", { form: "instant_pricing" });
+        metaEvent("Lead", { content_name: "instant_pricing" });
       }
     } catch {
       ok = false;
@@ -126,10 +132,16 @@ export function EstimateForm() {
   });
 
   const result = status === "done" ? estimateResult(answers) : null;
-  const input = "w-full border-0 border-b-2 border-line bg-transparent px-0 py-2 text-2xl font-medium text-ink outline-none placeholder:text-mist/50 focus:border-ink";
+  const input = `w-full border-0 border-b-2 border-line bg-transparent px-0 ${compact ? "py-1.5 text-xl sm:py-1 sm:text-lg lg:py-2 lg:text-2xl" : "py-2 text-2xl"} font-medium text-ink outline-none placeholder:text-mist/50 focus:border-ink`;
+  const c = compact
+    ? { card: "p-4 sm:p-5 lg:px-12 lg:py-9", body: "mt-4 sm:mt-3 lg:mt-5", h: "text-[1.65rem] leading-tight sm:text-3xl lg:text-[2.25rem]", help: "mt-1.5 text-base sm:hidden lg:mt-2 lg:block lg:text-lg", group: "mt-4 sm:mt-3 lg:mt-6", tile: "gap-1.5 px-2 pb-3 pt-3.5 text-base sm:gap-1 sm:pb-2.5 sm:pt-3 lg:gap-2 lg:pb-4 lg:pt-5 lg:text-lg", icon: "h-11 w-auto sm:h-9 lg:h-14", row: "py-3.5 text-base sm:py-2.5 lg:py-4 lg:text-lg", rowGap: "gap-2.5 sm:gap-2 lg:gap-3", err: "mt-2 empty:hidden", btns: "mt-4 sm:mt-3 lg:mt-6", ok: "py-4 sm:py-3 lg:py-4", badge: "hidden sm:grid", enter: "hidden" }
+    : { card: "p-6 sm:p-10", body: "mt-8 min-h-[22rem]", h: "text-3xl sm:text-4xl", help: "mt-3 text-lg", group: "mt-7", tile: "px-3 pb-4 pt-5", icon: "h-16 w-auto sm:h-20", row: "py-3.5 text-lg", rowGap: "gap-2.5", err: "mt-4 min-h-6", btns: "mt-6", ok: "py-4", badge: "grid", enter: "hidden [@media(pointer:fine)]:block" };
+
+  const showBelow = below && status === "asking" && key !== "contact";
 
   return (
-    <div ref={cardRef} className="scroll-mt-28 rounded-3xl bg-white p-6 shadow-[0_6px_0_#14283a] ring-2 ring-ink sm:p-10">
+    <>
+    <div ref={cardRef} className={`scroll-mt-28 rounded-3xl bg-white shadow-[0_6px_0_#14283a] ring-2 ring-ink ${c.card}`}>
       {/* progress */}
       <div className="flex gap-1.5" aria-hidden="true">
         {STEPS.map((s, i) => (
@@ -138,14 +150,14 @@ export function EstimateForm() {
       </div>
 
       {status === "asking" && (
-        <form key={key} noValidate onSubmit={(e) => { e.preventDefault(); next(); }} className="step-in mt-8 min-h-[22rem]">
+        <form key={key} noValidate onSubmit={(e) => { e.preventDefault(); next(); }} className={`step-in ${c.body}`}>
 
           {key === "zip" && (
             <>
-              <h2 ref={headingRef} tabIndex={-1} id="q" className="display mt-2 text-3xl outline-none sm:text-4xl">What’s your ZIP code?</h2>
-              <p className="mt-3 text-lg text-mist">We use this to check that you’re in our service area.</p>
+              <h2 ref={headingRef} tabIndex={-1} id="q" className={`display mt-2 outline-none ${c.h}`}>What’s your ZIP code?</h2>
+              <p className={`${c.help} text-mist`}>We use this to check that you’re in our service area.</p>
               <input
-                aria-labelledby="q" className={`${input} mt-8`} inputMode="numeric" autoComplete="postal-code" maxLength={5} placeholder="84003"
+                aria-labelledby="q" className={`${input} ${compact ? "mt-5 lg:mt-8" : "mt-8"}`} inputMode="numeric" autoComplete="postal-code" maxLength={5} placeholder="84003"
                 value={answers.zip || ""} onChange={(e) => set("zip", e.target.value.replace(/\D/g, ""))} autoFocus={step > 0}
               />
             </>
@@ -153,35 +165,35 @@ export function EstimateForm() {
 
           {question && (
             <>
-              <h2 ref={headingRef} tabIndex={-1} id="q" className="display mt-2 text-3xl outline-none sm:text-4xl">{question.title}</h2>
-              <p className="mt-3 text-lg text-mist">{question.help}</p>
+              <h2 ref={headingRef} tabIndex={-1} id="q" className={`display mt-2 outline-none ${c.h}`}>{question.title}</h2>
+              <p className={`${c.help} text-mist`}>{question.help}</p>
               {ICON_STEPS[key] ? (
-              <div role="group" aria-labelledby="q" className={`mt-7 grid gap-3 ${ICON_STEPS[key]}`}>
-                {question.choices.map((c, i) => {
-                  const on = answers[key] === c.value;
+              <div role="group" aria-labelledby="q" className={`${c.group} grid gap-3 ${ICON_STEPS[key]}`}>
+                {question.choices.map((ch, i) => {
+                  const on = answers[key] === ch.value;
                   return (
                     <button
-                      key={c.value} type="button" aria-pressed={on} onClick={() => choose(c.value)}
-                      className={`relative flex flex-col items-center gap-2 rounded-2xl border-2 px-3 pb-4 pt-5 text-center font-semibold leading-tight ${key === "replace" ? "text-base sm:text-lg" : "text-lg"} transition-colors ${on ? "border-ink bg-sky-soft" : "border-transparent bg-[#f2f6f8] hover:border-line"}`}
+                      key={ch.value} type="button" aria-pressed={on} onClick={() => choose(ch.value)}
+                      className={`relative flex rounded-2xl border-2 font-semibold leading-tight flex-col items-center text-center ${compact ? "" : "gap-2"} ${c.tile} ${compact ? "" : key === "replace" ? "text-base sm:text-lg" : "text-lg"} transition-colors ${on ? "border-ink bg-sky-soft" : "border-transparent bg-[#f2f6f8] hover:border-line"}`}
                     >
-                      <span className={`absolute left-2.5 top-2.5 grid h-6 w-6 place-items-center rounded-md border text-xs font-bold ${on ? "border-ink bg-ink text-white" : "border-line bg-white text-mist"}`}>{KEYS[i]}</span>
-                      {key === "hometype" ? <HomeIcon kind={c.value} className="h-16 w-auto sm:h-20" /> : <EquipmentIcon qkey={key} value={c.value} className="h-16 w-auto sm:h-20" />}
-                      {c.label}
+                      <span className={`absolute left-2.5 top-2.5 ${c.badge} h-6 w-6 place-items-center rounded-md border text-xs font-bold ${on ? "border-ink bg-ink text-white" : "border-line bg-white text-mist"}`}>{KEYS[i]}</span>
+                      {key === "hometype" ? <HomeIcon kind={ch.value} className={c.icon} /> : <EquipmentIcon qkey={key} value={ch.value} className={c.icon} />}
+                      {ch.label}
                     </button>
                   );
                 })}
               </div>
               ) : (
-              <div role="group" aria-labelledby="q" className="mt-7 grid gap-2.5">
-                {question.choices.map((c, i) => {
-                  const on = answers[key] === c.value;
+              <div role="group" aria-labelledby="q" className={`${c.group} grid ${c.rowGap} ${compact ? (question.choices.length > 4 ? "grid-cols-2" : "sm:grid-cols-2 lg:grid-cols-1") : ""}`}>
+                {question.choices.map((ch, i) => {
+                  const on = answers[key] === ch.value;
                   return (
                     <button
-                      key={c.value} type="button" aria-pressed={on} onClick={() => choose(c.value)}
-                      className={`flex w-full items-center gap-3 rounded-xl border-2 px-4 py-3.5 text-left text-lg font-semibold transition-colors ${on ? "border-ink bg-sky-soft" : "border-transparent bg-[#f2f6f8] hover:border-line"}`}
+                      key={ch.value} type="button" aria-pressed={on} onClick={() => choose(ch.value)}
+                      className={`flex w-full items-center gap-3 rounded-xl border-2 ${compact && question.choices.length > 4 ? "whitespace-nowrap px-3 text-[14px] sm:px-4 sm:text-base" : "px-4"} text-left font-semibold ${c.row} transition-colors ${on ? "border-ink bg-sky-soft" : "border-transparent bg-[#f2f6f8] hover:border-line"}`}
                     >
-                      <span className={`grid h-7 w-7 shrink-0 place-items-center rounded-md border text-sm font-bold ${on ? "border-ink bg-ink text-white" : "border-line bg-white text-mist"}`}>{KEYS[i]}</span>
-                      {c.label}
+                      <span className={`${c.badge} h-7 w-7 shrink-0 place-items-center rounded-md border text-sm font-bold ${on ? "border-ink bg-ink text-white" : "border-line bg-white text-mist"}`}>{KEYS[i]}</span>
+                      {ch.label}
                     </button>
                   );
                 })}
@@ -192,48 +204,48 @@ export function EstimateForm() {
 
           {key === "contact" && (
             <>
-              <h2 ref={headingRef} tabIndex={-1} id="q" className="display mt-2 text-3xl outline-none sm:text-4xl">Where should we send your estimate?</h2>
-              <p className="mt-3 text-lg text-mist">You’ll see it right away, and we’ll text you a link to come back to it.</p>
-              <div className="mt-6 grid grid-cols-2 gap-x-5 gap-y-5">
-                <label className="block"><span className="text-sm font-semibold text-mist">First name</span>
+              <h2 ref={headingRef} tabIndex={-1} id="q" className={`display mt-2 outline-none ${c.h}`}>Where should we send your estimate?</h2>
+              <p className={`${c.help} text-mist`}>You’ll see it right away, and we’ll text you a link to come back to it.</p>
+              <div className={`grid grid-cols-2 gap-x-5 ${compact ? "mt-4 gap-y-4 sm:mt-2 sm:gap-y-2 lg:mt-6 lg:gap-y-6" : "mt-6 gap-y-5"}`}>
+                <label className="block"><span className={`${compact ? "text-sm sm:text-xs lg:text-sm" : "text-sm"} font-semibold text-mist`}>First name</span>
                   <input className={input} autoComplete="given-name" placeholder="Sam" value={answers.fname || ""} onChange={(e) => set("fname", e.target.value)} /></label>
-                <label className="block"><span className="text-sm font-semibold text-mist">Last name</span>
+                <label className="block"><span className={`${compact ? "text-sm sm:text-xs lg:text-sm" : "text-sm"} font-semibold text-mist`}>Last name</span>
                   <input className={input} autoComplete="family-name" placeholder="Jones" value={answers.lname || ""} onChange={(e) => set("lname", e.target.value)} /></label>
-                <label className="col-span-2 block"><span className="text-sm font-semibold text-mist">Mobile phone</span>
+                <label className="col-span-2 block"><span className={`${compact ? "text-sm sm:text-xs lg:text-sm" : "text-sm"} font-semibold text-mist`}>Mobile phone</span>
                   <input className={input} type="tel" inputMode="tel" autoComplete="tel" placeholder="(801) 555-0123" value={answers.phone || ""}
                     onChange={(e) => {
                       const d = e.target.value.replace(/\D/g, "").replace(/^1/, "").slice(0, 10);
                       set("phone", d.length > 6 ? `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}` : d.length > 3 ? `(${d.slice(0, 3)}) ${d.slice(3)}` : d);
                     }} /></label>
-                <label className="col-span-2 block"><span className="text-sm font-semibold text-mist">Email</span>
+                <label className="col-span-2 block"><span className={`${compact ? "text-sm sm:text-xs lg:text-sm" : "text-sm"} font-semibold text-mist`}>Email</span>
                   <input className={input} type="email" inputMode="email" autoComplete="email" placeholder="sam@example.com" value={answers.email || ""} onChange={(e) => set("email", e.target.value)} /></label>
               </div>
-              <label className="mt-6 flex items-start gap-3 text-sm leading-relaxed text-mist">
+              <label className={`flex items-start gap-3 text-mist ${compact ? "mt-5 text-sm leading-snug sm:mt-3 lg:mt-6" : "mt-6 text-sm leading-relaxed"}`}>
                 <input type="checkbox" className="mt-0.5 h-5 w-5 shrink-0 accent-ink" checked={answers.consent === "true"} onChange={(e) => set("consent", e.target.checked ? "true" : "")} />
                 <span>I agree to receive texts from {site.name} about my estimate. Message and data rates may apply. Reply STOP to opt out. See our <Link href="/privacy-policy" className="underline">Privacy Policy</Link>.</span>
               </label>
             </>
           )}
 
-          <p role="alert" className="mt-4 min-h-6 font-semibold text-alarm-strong">{error}</p>
+          <p role="alert" className={`${c.err} font-semibold text-alarm-strong`}>{error}</p>
           {fix && (
             <button type="button" onClick={() => { set("email", fix); setFix(null); setError(""); }} className="mt-1 rounded-lg border-2 border-ink px-4 py-2 font-semibold">
               Use {fix}
             </button>
           )}
 
-          <div className="mt-6 flex gap-3">
+          <div className={`${c.btns} flex gap-3`}>
             <button
               type="button" aria-label="Back" disabled={step === 0} onClick={() => { setError(""); setFix(null); setStep((s) => s - 1); }}
               className="grid w-16 place-items-center rounded-full border-2 border-ink bg-white disabled:opacity-30"
             >
               <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M11.5 3 5.5 9l6 6" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </button>
-            <button type="submit" className="flex-1 rounded-full bg-alarm-strong px-6 py-4 text-lg font-bold text-white shadow-[0_4px_0_#8a001c] hover:brightness-110">
+            <button type="submit" className={`flex-1 rounded-full bg-alarm-strong px-6 ${c.ok} text-lg font-bold text-white shadow-[0_4px_0_#8a001c] hover:brightness-110`}>
               {key === "contact" ? "See my estimate" : "OK"}
             </button>
           </div>
-          <p className="mt-3 hidden text-center text-sm text-mist [@media(pointer:fine)]:block">or press <b>Enter ↵</b></p>
+          <p className={`mt-3 ${c.enter} text-center text-sm text-mist`}>or press <b>Enter ↵</b></p>
         </form>
       )}
 
@@ -279,5 +291,7 @@ export function EstimateForm() {
         </div>
       )}
     </div>
+    {showBelow && below}
+    </>
   );
 }

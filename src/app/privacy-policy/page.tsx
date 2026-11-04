@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMeta({
 export default function PrivacyPolicy() {
   const addr = `${site.address.street}, ${site.address.city}, ${site.address.region} ${site.address.zip}`;
   return (
-    <LegalPage title="Privacy Policy" updated="October 8, 2026">
+    <LegalPage title="Privacy Policy" updated="November 3, 2026">
       <p>
         {site.name} (“Eco Home,” “we,” “us”) respects your privacy. This policy explains what information we collect when you visit ecohometoday.com, book service, request an estimate or contact us, and how we use it.
       </p>
@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
       <p>When you call us, book service, request an estimate or become a customer, we may collect your name, phone number, email address, service address, details about your home and equipment, and any notes you share with us.</p>
       <h3>Information collected automatically</h3>
       <p>
-        We use website analytics, including Vercel Analytics and Google Analytics, to understand how many people visit our site and which pages are useful. Google Analytics uses cookies to tell visits apart; it does not tell us who you are. You can opt out with Google’s browser add-on at tools.google.com/dlpage/gaoptout. Like most websites, our hosting provider may also record basic technical information, such as your browser type and IP address, to keep the site secure and running. To know which of our marketing works, your browser also remembers how you first found our site (for example, a Google search or an ad) and the first page you visited. If you request an estimate, we save that with your request.
+        We use website analytics, including Vercel Analytics and Google Analytics, to understand how many people visit our site and which pages are useful. Google Analytics uses cookies to tell visits apart; it does not tell us who you are. You can opt out with Google’s browser add-on at tools.google.com/dlpage/gaoptout. We also use the Meta pixel to measure our Facebook and Instagram ads: it tells Meta when someone who saw one of our ads visits our site, requests an estimate or taps our phone number, so we can see which ads work and show them to people likely to be interested. Meta may use cookies for this; you can control ad personalization in your Facebook or Instagram ad settings. Like most websites, our hosting provider may also record basic technical information, such as your browser type and IP address, to keep the site secure and running. To know which of our marketing works, your browser also remembers how you first found our site (for example, a Google search or an ad) and the first page you visited. If you request an estimate, we save that with your request.
       </p>
 
       <h2>How we use your information</h2>
