@@ -81,7 +81,8 @@ export const questions: Question[] = [
       { value: "Less than 1,000 sqft", label: "Under 1,000 sq ft", sqft: 900 },
       { value: "1,001-1,600 sqft", label: "1,000 to 1,600 sq ft", sqft: 1300 },
       { value: "1,601-2,000 sqft", label: "1,600 to 2,000 sq ft", sqft: 1800 },
-      { value: "2,001-3,000 sqft", label: "2,000 to 3,000 sq ft", sqft: 2500 },
+      { value: "2,001-2,500 sqft", label: "2,000 to 2,500 sq ft", sqft: 2250 },
+      { value: "2,501-3,000 sqft", label: "2,500 to 3,000 sq ft", sqft: 2750 },
       { value: "3,001-4,000 sqft", label: "3,000 to 4,000 sq ft", sqft: 3500 },
       { value: "4,000-5,000 sqft", label: "4,000 to 5,000 sq ft", sqft: 4500 },
       { value: "5000+ sqft", label: "5,000+ sq ft", sqft: 5500 },
@@ -115,14 +116,18 @@ export const questions: Question[] = [
 // ---------- Sizing (decision 0004) ----------
 // Square feet one ton covers, by build era. Square footage includes a finished
 // basement, which needs little cooling, so these run higher than textbook figures.
-const SQFT_PER_TON: Record<string, number> = { before_1980: 550, "1980_1999": 650, "2000_2014": 750, "2015_plus": 900, not_sure: 650 };
+// Raised Nov 2026: the old 550/650/750/900 sized homes about one ton too big.
+const SQFT_PER_TON: Record<string, number> = { before_1980: 700, "1980_1999": 800, "2000_2014": 900, "2015_plus": 1050, not_sure: 800 };
+// Inverter heat pumps run below full speed most of the time, so a home that needs
+// up to a quarter ton more than a size still gets that size, not the next one up.
+const TON_TOLERANCE = 0.25;
 export const TON_SIZES = ["2", "2.5", "3", "4", "5"] as const;
 export type Tons = (typeof TON_SIZES)[number];
 
 export function sizeFor(sqftValue: string, built: string): Tons | "custom" {
   const sqft = questions.find((q) => q.key === "sqft")!.choices.find((c) => c.value === sqftValue)?.sqft ?? 1800;
   const need = sqft / (SQFT_PER_TON[built] ?? SQFT_PER_TON.not_sure);
-  return TON_SIZES.find((t) => Number(t) >= need) ?? "custom"; // over 5 tons: usually two systems, priced in person
+  return TON_SIZES.find((t) => Number(t) >= need - TON_TOLERANCE) ?? "custom"; // over 5 tons: usually two systems, priced in person
 }
 
 // Instant estimates are for homes with a gas furnace. "Not sure" still gets one.
