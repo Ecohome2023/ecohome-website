@@ -5,6 +5,7 @@
 
 import serviceArea from "./service-area.json";
 import { site } from "./site";
+import { leadSourceFromChannel } from "./leadSource";
 
 export const SERVICE_AREA = serviceArea as Record<string, "core" | "extended">;
 
@@ -338,8 +339,9 @@ export function longLink(code: string, name: string, linkCode = ""): string | nu
 }
 
 // HubSpot contact property -> value. Every name must be on the HubSpot form, or
-// HubSpot silently drops it. Market, Lead Type and Lead Source are sent here
+// HubSpot silently drops it. Market, Lead Source and Lead Status are sent here
 // because hidden-field defaults don't apply to Forms API submissions.
+// Lead Source comes from the first-touch channel (lib/leadSource), never the form's name.
 export function hubspotFields(a: Answers) {
   const { tons, gas, instant } = estimateResult(a);
   return [
@@ -351,7 +353,8 @@ export function hubspotFields(a: Answers) {
     ["estimate_tons", gas ? tons : ""], ["replace_timeline", a.timeline],
     // The estimate page link, texted to them by the HubSpot workflow. Only when there's an instant price.
     ["estimate_link", instant ? `${site.url}${shortLink(a)}` : ""], ["estimate_link_code", instant ? a.link_code : ""],
-    ["sms_estimate_consent", "true"], ["market", "Utah (HVAC)"], ["lead_type", "HVAC"], ["lead_source", "Instant Estimate"],
+    ["sms_estimate_consent", "true"], ["market", "Utah (HVAC)"],
+    ["lead_source", leadSourceFromChannel(a.lead_channel)], ["hs_lead_status", "MQL Eco Home"],
     // Attribution (custom contact properties, hidden fields on the HubSpot form).
     ["lead_channel", a.lead_channel], ["first_landing_page", a.first_landing_page],
     ["first_referrer", a.first_referrer], ["campaign_details", a.campaign_details],

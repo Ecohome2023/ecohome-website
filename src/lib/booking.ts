@@ -1,4 +1,5 @@
 import bookingZips from "./booking-zips.json";
+import { leadSourceFromChannel } from "./leadSource";
 
 // Online booking at /book, built on the Housecall Pro API. Open times come
 // straight from Housecall Pro, so a slot disappears as soon as Andrew is booked.
@@ -9,6 +10,22 @@ export const BOOKABLE_PROS = ["pro_31c6aa5cca9442a1816696ed987067b3"]; // Andrew
 
 // HubSpot form "Online Booking (website)": every booking also creates or updates the contact.
 export const HUBSPOT_BOOKING_FORM = "0375f5be-5974-490c-9b9a-bd8e55fa9b5e";
+
+export type BookingContact = { fname: string; lname: string; phone: string; email: string; street: string; city: string; zip: string };
+export type FirstTouchFields = { channel?: string; landing?: string; referrer?: string; campaign?: string };
+
+// HubSpot contact property -> value for the booking form. A booking made from the
+// instant estimate page sends no Market or Lead Source: that contact already has them.
+export function bookingHubSpotFields(c: BookingContact, ft: FirstTouchFields, fromEstimate: boolean): [string, string][] {
+  return ([
+    ["firstname", c.fname], ["lastname", c.lname], ["email", c.email], ["phone", c.phone],
+    // One line, the same shape the eco-crm sync writes (contact standard, decision 0038).
+    ["address", `${c.street}, ${c.city}, UT ${c.zip}`], ["city", c.city], ["zip", c.zip],
+    ...(fromEstimate ? [] : [["market", "Utah (HVAC)"], ["lead_source", leadSourceFromChannel(ft.channel)]]),
+    ["lead_channel", ft.channel], ["first_landing_page", ft.landing],
+    ["first_referrer", ft.referrer], ["campaign_details", ft.campaign],
+  ] as [string, string | undefined][]).filter((f): f is [string, string] => !!f[1]);
+}
 
 // Arrival windows offered online, Utah time: each is one hour from these start
 // times (the same times set in Housecall Pro). A window shows only when Andrew is
