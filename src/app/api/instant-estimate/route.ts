@@ -1,4 +1,5 @@
 import { HUBSPOT, hubspotFields, validate, cleanName, type Answers } from "@/lib/estimator";
+import { keepExistingValues } from "@/lib/hubspot";
 
 // Receives the instant estimate form and forwards it to the HubSpot form
 // "Instant Estimate (custom page)". Sending from our server instead of the
@@ -41,8 +42,10 @@ export async function POST(request: Request) {
   const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim();
   const pageUri = typeof body.pageUri === "string" ? body.pageUri.slice(0, 500) : "https://ecohometoday.com/instant-pricing";
 
+  // Lead Source and Lead Status are write-once: an existing contact keeps its values.
+  const fields = await keepExistingValues(a.email, hubspotFields(a));
   const payload = {
-    fields: hubspotFields(a).map(([name, value]) => ({ objectTypeId: "0-1", name, value })),
+    fields: fields.map(([name, value]) => ({ objectTypeId: "0-1", name, value })),
     context: { pageUri, pageName: "Instant Pricing | Eco Home", ...(hutk ? { hutk } : {}), ...(ip ? { ipAddress: ip } : {}) },
   };
 

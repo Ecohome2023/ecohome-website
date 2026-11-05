@@ -1,6 +1,7 @@
-import { BOOKING_ZIPS, HUBSPOT_BOOKING_FORM, serviceByKey } from "@/lib/booking";
+import { BOOKING_ZIPS, HUBSPOT_BOOKING_FORM, bookingHubSpotFields, serviceByKey } from "@/lib/booking";
 import { EMAIL_RE, HUBSPOT, OPTIONS, cleanName, questions, sizeFor, type EstimateType } from "@/lib/estimator";
 import { createBooking, openSlots } from "@/lib/hcp";
+import { keepExistingValues } from "@/lib/hubspot";
 
 // Books a visit in Housecall Pro: finds or creates the customer, then creates
 // the job (tune-ups, repairs) or estimate (free estimates) on Andrew's calendar.
@@ -66,15 +67,9 @@ async function sendToHubSpot(
     const v = (ft as Record<string, unknown>)[k];
     return typeof v === "string" ? v.replace(/[\r\n]/g, " ").trim().slice(0, n) : "";
   };
-  const fields = [
-    ["firstname", c.fname], ["lastname", c.lname], ["email", c.email], ["phone", c.phone],
-    // One line, the same shape the eco-crm sync writes (contact standard, decision 0038).
-    ["address", `${c.street}, ${c.city}, UT ${c.zip}`], ["city", c.city], ["zip", c.zip],
-    // The instant estimate already set these to "Instant Estimate"; keep that.
-    ...(fromEstimate ? [] : [["market", "Utah (HVAC)"], ["lead_source", "Call in/Online Booking"]]),
-    ["lead_channel", t("channel", 40)], ["first_landing_page", t("landing", 200)],
-    ["first_referrer", t("referrer", 120)], ["campaign_details", t("campaign", 250)],
-  ].filter(([, v]) => v);
+  const fields = await keepExistingValues(c.email, bookingHubSpotFields(c, {
+    channel: t("channel", 40), landing: t("landing", 200), referrer: t("referrer", 120), campaign: t("campaign", 250),
+  }, fromEstimate));
 
   const hutk = (request.headers.get("cookie") || "").match(/(?:^|;\s*)hubspotutk=([^;]+)/)?.[1];
   const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim();
