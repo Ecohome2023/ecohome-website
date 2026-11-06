@@ -299,6 +299,11 @@ export function emailFix(e: string): string | null {
 }
 export const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// A masked, display-only address like "fo****@gmail.com" (from browser or in-app
+// autofill, or a copy of a hidden value). EMAIL_RE accepts it, so check separately:
+// it must never reach HubSpot, where it would become the contact's email.
+export const looksMasked = (e: string) => e.includes("*");
+
 // ---------- Submission ----------
 export type Answers = Record<string, string>;
 
@@ -351,7 +356,9 @@ export function hubspotFields(a: Answers) {
     ["system_age", a.age], ["hvac_functioning_", a.condition],
     ["what_is_the_square_footage_of_your_home_", a.sqft], ["home_built_era", a.built],
     ["estimate_tons", gas ? tons : ""], ["replace_timeline", a.timeline],
-    // The estimate page link, texted to them by the HubSpot workflow. Only when there's an instant price.
+    // The estimate page link, texted to them by the HubSpot workflow. Only when there's an instant price:
+    // a "Custom quote needed" lead (no gas, or a home too big to size) has no estimate page to link to
+    // (shortLink() can't encode a "custom" size), so both fields are left out on purpose.
     ["estimate_link", instant ? `${site.url}${shortLink(a)}` : ""], ["estimate_link_code", instant ? a.link_code : ""],
     ["sms_estimate_consent", "true"], ["market", "Utah (HVAC)"],
     ["lead_source", leadSourceFromChannel(a.lead_channel)], ["hs_lead_status", "MQL Eco Home"],
@@ -367,7 +374,7 @@ export function validate(a: Answers): string | null {
   for (const q of questions) if (!q.choices.some((c) => c.value === a[q.key])) return q.key;
   if (!cleanName(a.fname)) return "fname";
   if (!/^\d{10}$/.test(a.phone || "")) return "phone";
-  if (!EMAIL_RE.test(a.email || "") || a.email.length > 120) return "email";
+  if (!EMAIL_RE.test(a.email || "") || looksMasked(a.email) || a.email.length > 120) return "email";
   if (a.consent !== "true") return "consent";
   return null;
 }

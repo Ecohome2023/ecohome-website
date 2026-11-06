@@ -3,7 +3,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { leadSourceFromChannel } from "./leadSource";
 import { classify } from "./attribution";
-import { hubspotFields, type Answers } from "./estimator";
+import { hubspotFields, validate, type Answers } from "./estimator";
 import { bookingHubSpotFields } from "./booking";
 import { keepExistingValues } from "./hubspot";
 
@@ -56,6 +56,29 @@ test("Instant Estimate payload: source from channel, MQL status, no lead_type", 
     assert.ok(!Object.values(f).includes("Instant Estimate"), "no field may be 'Instant Estimate'");
     assert.ok(LEAD_SOURCE_OPTIONS.includes(f.lead_source));
   }
+});
+
+test("custom-quote payload (too big to size): same fields as priced, minus the estimate link", () => {
+  const custom = { ...answers, sqft: "4,000-5,000 sqft", built: "1980_1999", lead_channel: "Paid social", campaign_details: "utm_source=facebook" };
+  assert.equal(validate(custom), null);
+  const f = Object.fromEntries(hubspotFields(custom));
+  assert.equal(f.hs_lead_status, "MQL Eco Home");
+  assert.equal(f.email, "sam@example.com");
+  assert.ok(!f.email.includes("*"), "email must not be masked");
+  assert.equal(f.lead_source, "Facebook");
+  assert.equal(f.market, "Utah (HVAC)");
+  assert.equal(f.lead_channel, "Paid social");
+  assert.equal(f.campaign_details, "utm_source=facebook");
+  assert.equal(f.estimate_tons, "custom");
+  assert.ok(!("estimate_link" in f) && !("estimate_link_code" in f), "no estimate page for a custom quote");
+  // Every field the priced path sends is sent here too, apart from the link.
+  const priced = Object.keys(Object.fromEntries(hubspotFields({ ...answers, lead_channel: "Paid social", campaign_details: "utm_source=facebook" })));
+  assert.deepEqual(priced.filter((k) => !(k in f)), ["estimate_link", "estimate_link_code"]);
+});
+
+test("a masked email like fo****@gmail.com is rejected before it reaches HubSpot", () => {
+  assert.equal(validate({ ...answers, sqft: "4,000-5,000 sqft", email: "fo****@gmail.com" }), "email");
+  assert.equal(validate({ ...answers, email: "fo****@gmail.com" }), "email");
 });
 
 const contact = { fname: "Sam", lname: "Test", phone: "8015550100", email: "sam@example.com", street: "1 Main St", city: "Lehi", zip: "84043" };
