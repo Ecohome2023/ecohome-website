@@ -113,7 +113,7 @@ async function withFetch(impl: typeof fetch, token: string | undefined, run: () 
   try { await run(); } finally { globalThis.fetch = realFetch; if (old === undefined) delete process.env.HUBSPOT_TOKEN; else process.env.HUBSPOT_TOKEN = old; }
 }
 const found = (properties: Record<string, string | null>) =>
-  (async () => new Response(JSON.stringify({ results: [{ id: "1", properties }] }), { status: 200 })) as typeof fetch;
+  (async () => new Response(JSON.stringify({ results: [{ id: "1", properties: { email: "sam@example.com", ...properties } }] }), { status: 200 })) as typeof fetch;
 
 test("guard: existing values are kept, empty ones are filled", async () => {
   await withFetch(found({ lead_source: "Referral", hs_lead_status: "" }), "t", async () => {
@@ -147,5 +147,24 @@ test("guard: new contact, no token, error, or slow lookup -> send everything", a
     assert.deepEqual(await keepExistingValues("sam@example.com", fields), fields);
     const ms = Date.now() - t0;
     assert.ok(ms >= 1900 && ms < 3000, `gave up after ${ms} ms`);
+  });
+});
+
+// HubSpot search treats "*" as a wildcard, so a masked email matched other people's contacts
+// and Lead Status was dropped (Lynn Fox, 6 Nov 2026). Only an exact email match counts.
+test("guard: a wildcard match on someone else's contact doesn't drop Lead Status", async () => {
+  const other = (async () => new Response(JSON.stringify({ results: [{ id: "2", properties: { email: "eric.foster@gmail.com", lead_source: "", hs_lead_status: "NOT_INTERESTED" } }] }))) as typeof fetch;
+  await withFetch(other, "t", async () => {
+    assert.deepEqual(await keepExistingValues("sam@example.com", fields), fields);
+  });
+  let called = false;
+  await withFetch((async () => { called = true; return new Response("{}"); }) as typeof fetch, "t", async () => {
+    assert.deepEqual(await keepExistingValues("fo****@gmail.com", fields), fields);
+    assert.equal(called, false, "no lookup for a masked email");
+  });
+  // A real match on an additional email still counts.
+  const extra = (async () => new Response(JSON.stringify({ results: [{ id: "3", properties: { email: "old@example.com", hs_additional_emails: "x@y.com;sam@example.com", hs_lead_status: "CUSTOMER" } }] }))) as typeof fetch;
+  await withFetch(extra, "t", async () => {
+    assert.deepEqual(await keepExistingValues("sam@example.com", fields), [["email", "sam@example.com"], ["lead_source", "Google"]]);
   });
 });
