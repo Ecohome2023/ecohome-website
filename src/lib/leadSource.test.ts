@@ -3,7 +3,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { leadSourceFromChannel } from "./leadSource";
 import { classify } from "./attribution";
-import { hubspotFields, type Answers } from "./estimator";
+import { hubspotFields, validate, type Answers } from "./estimator";
 import { bookingHubSpotFields } from "./booking";
 import { keepExistingValues } from "./hubspot";
 
@@ -58,6 +58,29 @@ test("Instant Estimate payload: source from channel, MQL status, no lead_type", 
   }
 });
 
+test("custom-quote payload (too big to size): same fields as priced, minus the estimate link", () => {
+  const custom = { ...answers, sqft: "4,000-5,000 sqft", built: "1980_1999", lead_channel: "Paid social", campaign_details: "utm_source=facebook" };
+  assert.equal(validate(custom), null);
+  const f = Object.fromEntries(hubspotFields(custom));
+  assert.equal(f.hs_lead_status, "MQL Eco Home");
+  assert.equal(f.email, "sam@example.com");
+  assert.ok(!f.email.includes("*"), "email must not be masked");
+  assert.equal(f.lead_source, "Facebook");
+  assert.equal(f.market, "Utah (HVAC)");
+  assert.equal(f.lead_channel, "Paid social");
+  assert.equal(f.campaign_details, "utm_source=facebook");
+  assert.equal(f.estimate_tons, "custom");
+  assert.ok(!("estimate_link" in f) && !("estimate_link_code" in f), "no estimate page for a custom quote");
+  // Every field the priced path sends is sent here too, apart from the link.
+  const priced = Object.keys(Object.fromEntries(hubspotFields({ ...answers, lead_channel: "Paid social", campaign_details: "utm_source=facebook" })));
+  assert.deepEqual(priced.filter((k) => !(k in f)), ["estimate_link", "estimate_link_code"]);
+});
+
+test("a masked email like fo****@gmail.com is rejected before it reaches HubSpot", () => {
+  assert.equal(validate({ ...answers, sqft: "4,000-5,000 sqft", email: "fo****@gmail.com" }), "email");
+  assert.equal(validate({ ...answers, email: "fo****@gmail.com" }), "email");
+});
+
 const contact = { fname: "Sam", lname: "Test", phone: "8015550100", email: "sam@example.com", street: "1 Main St", city: "Lehi", zip: "84043" };
 
 test("booking payload: source from channel, never 'Call in/Online Booking', no Lead Status", () => {
@@ -90,7 +113,7 @@ async function withFetch(impl: typeof fetch, token: string | undefined, run: () 
   try { await run(); } finally { globalThis.fetch = realFetch; if (old === undefined) delete process.env.HUBSPOT_TOKEN; else process.env.HUBSPOT_TOKEN = old; }
 }
 const found = (properties: Record<string, string | null>) =>
-  (async () => new Response(JSON.stringify({ results: [{ id: "1", properties }] }), { status: 200 })) as typeof fetch;
+  (async () => new Response(JSON.stringify({ results: [{ id: "1", properties: { email: "sam@example.com", ...properties } }] }), { status: 200 })) as typeof fetch;
 
 test("guard: existing values are kept, empty ones are filled", async () => {
   await withFetch(found({ lead_source: "Referral", hs_lead_status: "" }), "t", async () => {
@@ -124,5 +147,38 @@ test("guard: new contact, no token, error, or slow lookup -> send everything", a
     assert.deepEqual(await keepExistingValues("sam@example.com", fields), fields);
     const ms = Date.now() - t0;
     assert.ok(ms >= 1900 && ms < 3000, `gave up after ${ms} ms`);
+  });
+});
+
+// HubSpot search treats "*" as a wildcard, so a masked email matched other people's contacts
+// and Lead Status was dropped (Lynn Fox, 6 Nov 2026). Only an exact email match counts.
+test("guard: a wildcard match on someone else's contact doesn't drop Lead Status", async () => {
+  const other = (async () => new Response(JSON.stringify({ results: [{ id: "2", properties: { email: "eric.foster@gmail.com", lead_source: "", hs_lead_status: "NOT_INTERESTED" } }] }))) as typeof fetch;
+  await withFetch(other, "t", async () => {
+    assert.deepEqual(await keepExistingValues("sam@example.com", fields), fields);
+  });
+  let called = false;
+  await withFetch((async () => { called = true; return new Response("{}"); }) as typeof fetch, "t", async () => {
+    assert.deepEqual(await keepExistingValues("fo****@gmail.com", fields), fields);
+    assert.equal(called, false, "no lookup for a masked email");
+  });
+  // A real match on an additional email still counts.
+  const extra = (async () => new Response(JSON.stringify({ results: [{ id: "3", properties: { email: "old@example.com", hs_additional_emails: "x@y.com;sam@example.com", hs_lead_status: "CUSTOMER" } }] }))) as typeof fetch;
+  await withFetch(extra, "t", async () => {
+    assert.deepEqual(await keepExistingValues("sam@example.com", fields), [["email", "sam@example.com"], ["lead_source", "Google"]]);
+  });
+});
+
+test("booking route rejects a masked email before booking anything", async () => {
+  const { POST } = await import("../app/api/booking/route");
+  let called = false;
+  await withFetch((async () => { called = true; return new Response("{}"); }) as typeof fetch, "t", async () => {
+    const r = await POST(new Request("https://ecohometoday.com/api/booking", {
+      method: "POST",
+      body: JSON.stringify({ ...contact, email: "fo****@gmail.com", service: "estimate-full-system", start: "2026-11-10T15:30:00Z", consent: true }),
+    }));
+    assert.equal(r.status, 422);
+    assert.equal((await r.json()).error, "Please type your full email address.");
+    assert.equal(called, false, "nothing sent to Housecall Pro or HubSpot");
   });
 });

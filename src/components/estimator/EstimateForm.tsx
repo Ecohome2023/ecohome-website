@@ -4,7 +4,7 @@ import { gaEvent } from "@/lib/gtag";
 import { metaEvent } from "@/lib/metaPixel";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
-import { questions, SERVICE_AREA, estimateResult, emailFix, EMAIL_RE, ESTIMATE_CONTACT_KEY, type Answers } from "@/lib/estimator";
+import { questions, SERVICE_AREA, estimateResult, emailFix, EMAIL_RE, looksMasked, ESTIMATE_CONTACT_KEY, type Answers } from "@/lib/estimator";
 import { site } from "@/lib/site";
 import { CheckIcon, PhoneIcon } from "@/components/icons";
 import { HomeIcon } from "./HomeIcons";
@@ -64,6 +64,7 @@ export function EstimateForm({ compact = false, below }: { compact?: boolean; be
       if (!(a.fname || "").trim()) return setError("Please add your first name."), false;
       if (p.length !== 10 && !(p.length === 11 && p[0] === "1")) return setError("Please enter a 10-digit mobile number."), false;
       if (!EMAIL_RE.test(e)) return setError("Please enter a valid email."), false;
+      if (looksMasked(e)) return setError("Please type your full email address."), false;
       const f = emailFix(e);
       if (f) { setFix(f); return setError(`Check your email. Did you mean ${f}?`), false; }
       if (a.consent !== "true") return setError("Please check the box so we can text you your estimate."), false;

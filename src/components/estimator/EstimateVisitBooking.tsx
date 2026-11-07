@@ -5,7 +5,7 @@ import Link from "next/link";
 import { track } from "@vercel/analytics";
 import { firstTouch } from "@/lib/attribution";
 import { BOOKING_ZIPS, fmtDay, fmtRange, serviceByKey, type Slot } from "@/lib/booking";
-import { EMAIL_RE, ESTIMATE_CONTACT_KEY, emailFix, type Answers, type EstimateType } from "@/lib/estimator";
+import { EMAIL_RE, ESTIMATE_CONTACT_KEY, emailFix, looksMasked, type Answers, type EstimateType } from "@/lib/estimator";
 import { site } from "@/lib/site";
 import { CheckIcon, PhoneIcon } from "@/components/icons";
 import { SlotPicker, useSlots } from "@/components/booking/SlotPicker";
@@ -29,7 +29,7 @@ type Status = "asking" | "sending" | "done";
 export function EstimateVisitBooking({ type }: { type: EstimateType }) {
   const raw = useSyncExternalStore(noSubscribe, readSaved, () => null);
   const saved = useMemo<Answers | null>(() => {
-    try { const a = raw ? JSON.parse(raw) : null; return a && a.fname && a.phone && a.email && a.zip ? a : null; } catch { return null; }
+    try { const a = raw ? JSON.parse(raw) : null; return a && a.fname && a.phone && a.email && !looksMasked(a.email) && a.zip ? a : null; } catch { return null; }
   }, [raw]);
 
   const service = serviceByKey(SERVICE_FOR[type])!;
@@ -55,6 +55,7 @@ export function EstimateVisitBooking({ type }: { type: EstimateType }) {
       if (!(f.fname || "").trim() || !(f.lname || "").trim()) return setError("Please add your first and last name."), false;
       if (p.length !== 10 && !(p.length === 11 && p[0] === "1")) return setError("Please enter a 10-digit mobile number."), false;
       if (!EMAIL_RE.test(e)) return setError("Please enter a valid email."), false;
+      if (looksMasked(e)) return setError("Please type your full email address."), false;
       const fx = emailFix(e);
       if (fx) { setFix(fx); return setError(`Check your email. Did you mean ${fx}?`), false; }
       if (!/^\d{5}$/.test(f.zip || "")) return setError("Please enter a 5-digit ZIP code."), false;

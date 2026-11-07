@@ -32,12 +32,22 @@ export async function findContact(email: string, phone: string, properties: stri
 }
 
 // The contact with exactly this email, giving up after `ms`. Used by the write-once guard.
+// HubSpot search treats "*" as a wildcard even with EQ, so "fo****@gmail.com" matches
+// every fo...@gmail.com contact. So: no lookup for an email with "*", and only a result
+// whose email (or one of its additional emails) is exactly this one counts.
 export async function findContactByEmail(email: string, properties: string[], ms: number): Promise<Contact | null> {
+  const want = email.trim().toLowerCase();
+  if (!want || want.includes("*")) return null;
   const d = await call<{ results: Contact[] }>("/search", {
     method: "POST",
-    body: JSON.stringify({ filterGroups: [{ filters: [{ propertyName: "email", operator: "EQ", value: email.toLowerCase() }] }], properties, limit: 1 }),
+    body: JSON.stringify({
+      filterGroups: [{ filters: [{ propertyName: "email", operator: "EQ", value: want }] }],
+      properties: [...properties, "email", "hs_additional_emails"], limit: 10,
+    }),
   }, ms);
-  return d.results[0] ?? null;
+  const emails = (c: Contact) => [c.properties.email, ...(c.properties.hs_additional_emails || "").split(";")]
+    .map((e) => (e || "").trim().toLowerCase());
+  return d.results.find((c) => emails(c).includes(want)) ?? null;
 }
 
 export function updateContact(id: string, properties: Record<string, string>) {
