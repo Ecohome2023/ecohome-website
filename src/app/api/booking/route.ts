@@ -1,5 +1,5 @@
 import { BOOKING_ZIPS, HUBSPOT_BOOKING_FORM, bookingHubSpotFields, serviceByKey } from "@/lib/booking";
-import { EMAIL_RE, HUBSPOT, OPTIONS, cleanName, questions, sizeFor, type EstimateType } from "@/lib/estimator";
+import { EMAIL_RE, HUBSPOT, looksMasked, OPTIONS, cleanName, questions, sizeFor, type EstimateType } from "@/lib/estimator";
 import { createBooking, openSlots } from "@/lib/hcp";
 import { keepExistingValues } from "@/lib/hubspot";
 
@@ -34,6 +34,8 @@ export async function POST(request: Request) {
   if (!fname || !lname) return Response.json({ ok: false, error: "Please add your first and last name." }, { status: 422 });
   if (phone.length !== 10) return Response.json({ ok: false, error: "Please enter a 10-digit mobile number." }, { status: 422 });
   if (!EMAIL_RE.test(email)) return Response.json({ ok: false, error: "Please enter a valid email." }, { status: 422 });
+  // A masked address (fo****@gmail.com) would become the email in Housecall Pro and HubSpot.
+  if (looksMasked(email)) return Response.json({ ok: false, error: "Please type your full email address." }, { status: 422 });
   if (!street || !city) return Response.json({ ok: false, error: "Please add your street address and city." }, { status: 422 });
   if (!BOOKING_ZIPS.has(zip)) return Response.json({ ok: false, error: "outside_area" }, { status: 422 });
   if (body.consent !== true) return Response.json({ ok: false, error: "Please check the box so we can text you about your visit." }, { status: 422 });

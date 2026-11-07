@@ -168,3 +168,17 @@ test("guard: a wildcard match on someone else's contact doesn't drop Lead Status
     assert.deepEqual(await keepExistingValues("sam@example.com", fields), [["email", "sam@example.com"], ["lead_source", "Google"]]);
   });
 });
+
+test("booking route rejects a masked email before booking anything", async () => {
+  const { POST } = await import("../app/api/booking/route");
+  let called = false;
+  await withFetch((async () => { called = true; return new Response("{}"); }) as typeof fetch, "t", async () => {
+    const r = await POST(new Request("https://ecohometoday.com/api/booking", {
+      method: "POST",
+      body: JSON.stringify({ ...contact, email: "fo****@gmail.com", service: "estimate-full-system", start: "2026-11-10T15:30:00Z", consent: true }),
+    }));
+    assert.equal(r.status, 422);
+    assert.equal((await r.json()).error, "Please type your full email address.");
+    assert.equal(called, false, "nothing sent to Housecall Pro or HubSpot");
+  });
+});

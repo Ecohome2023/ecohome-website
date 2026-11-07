@@ -6,7 +6,7 @@ import { track } from "@vercel/analytics";
 import { firstTouch } from "@/lib/attribution";
 import { bookingServices, needs, serviceByKey, BOOKING_ZIPS, fmtDay, fmtRange } from "@/lib/booking";
 import { SlotPicker, useSlots } from "./SlotPicker";
-import { EMAIL_RE, emailFix } from "@/lib/estimator";
+import { EMAIL_RE, emailFix, looksMasked } from "@/lib/estimator";
 import { site } from "@/lib/site";
 import { CheckIcon, PhoneIcon } from "@/components/icons";
 
@@ -61,6 +61,7 @@ export function BookingForm({ initialService = "", initialNeed = "" }: { initial
       if (!(f.fname || "").trim() || !(f.lname || "").trim()) return setError("Please add your first and last name."), false;
       if (p.length !== 10 && !(p.length === 11 && p[0] === "1")) return setError("Please enter a 10-digit mobile number."), false;
       if (!EMAIL_RE.test(e)) return setError("Please enter a valid email."), false;
+      if (looksMasked(e)) return setError("Please type your full email address."), false;
       const fx = emailFix(e);
       if (fx) { setFix(fx); return setError(`Check your email. Did you mean ${fx}?`), false; }
       if (!(f.street || "").trim() || !(f.city || "").trim()) return setError("Please add your street address and city."), false;
