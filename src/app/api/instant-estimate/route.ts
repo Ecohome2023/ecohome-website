@@ -6,7 +6,7 @@ import { keepExistingValues } from "@/lib/hubspot";
 // browser means ad blockers can't stop the lead from reaching HubSpot.
 // The Forms API submit endpoint is public, so no key is needed.
 
-const KEYS = ["zip", "replace", "hometype", "setup", "age", "condition", "sqft", "built", "timeline", "fname", "lname", "phone", "email", "consent"];
+const KEYS = ["zip", "replace", "hometype", "setup", "age", "condition", "sqft", "built", "systems", "timeline", "fname", "lname", "phone", "email", "consent"];
 
 export async function POST(request: Request) {
   let body: Record<string, unknown>;

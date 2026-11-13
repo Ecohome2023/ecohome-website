@@ -131,6 +131,20 @@ export function sizeFor(sqftValue: string, built: string): Tons | "custom" {
   return TON_SIZES.find((t) => Number(t) >= need - TON_TOLERANCE) ?? "custom"; // over 5 tons: usually two systems, priced in person
 }
 
+// Follow-up asked only when a gas-furnace home sizes past 5 tons (needsSystemsQuestion).
+// One system: priced at 5 tons, the biggest size. Two or more: custom quote, priced in person.
+export const SYSTEMS_QUESTION: Question = {
+  key: "systems",
+  title: "How many heating and cooling systems does your home have?",
+  help: "Bigger homes often have a second furnace and AC for the upstairs or basement.",
+  choices: [
+    { value: "One", label: "One system" },
+    { value: "Two or more", label: "Two or more systems" },
+  ],
+};
+
+export const needsSystemsQuestion = (a: Answers) => HAS_GAS.has(a.setup) && sizeFor(a.sqft, a.built) === "custom";
+
 // Instant estimates are for homes with a gas furnace. "Not sure" still gets one.
 export const HAS_GAS = new Set(["furnace_central_ac", "furnace_no_ac", "furnace_swamp_cooler", "not_sure"]);
 
@@ -311,8 +325,10 @@ export type Answers = Record<string, string>;
 export const ESTIMATE_CONTACT_KEY = "eh_estimate_answers";
 
 export function estimateResult(a: Answers) {
-  const tons = sizeFor(a.sqft, a.built);
+  const size = sizeFor(a.sqft, a.built);
   const gas = HAS_GAS.has(a.setup);
+  // Too big to size, but one system: price the biggest size (5 tons).
+  const tons: Tons | "custom" = size === "custom" && gas && a.systems === "One" ? "5" : size;
   const instant = gas && tons !== "custom";
   const q = new URLSearchParams({ fname: a.fname, tons, setup: a.setup, type: a.replace });
   return { tons, gas, instant, link: `/instant-pricing/estimate?${q}` };
@@ -356,8 +372,10 @@ export function hubspotFields(a: Answers) {
     ["system_age", a.age], ["hvac_functioning_", a.condition],
     ["what_is_the_square_footage_of_your_home_", a.sqft], ["home_built_era", a.built],
     ["estimate_tons", gas ? tons : ""], ["replace_timeline", a.timeline],
+    // Only asked of homes too big to size; must be on the HubSpot form (number_of_systems).
+    ["number_of_systems", needsSystemsQuestion(a) ? a.systems : ""],
     // The estimate page link, texted to them by the HubSpot workflow. Only when there's an instant price:
-    // a "Custom quote needed" lead (no gas, or a home too big to size) has no estimate page to link to
+    // a "Custom quote needed" lead (no gas, or a home too big to size with two or more systems) has no estimate page to link to
     // (shortLink() can't encode a "custom" size), so both fields are left out on purpose.
     ["estimate_link", instant ? `${site.url}${shortLink(a)}` : ""], ["estimate_link_code", instant ? a.link_code : ""],
     ["sms_estimate_consent", "true"], ["market", "Utah (HVAC)"],
@@ -372,6 +390,7 @@ export function hubspotFields(a: Answers) {
 export function validate(a: Answers): string | null {
   if (!/^\d{5}$/.test(a.zip || "") || !SERVICE_AREA[a.zip]) return "zip";
   for (const q of questions) if (!q.choices.some((c) => c.value === a[q.key])) return q.key;
+  if (needsSystemsQuestion(a) && !SYSTEMS_QUESTION.choices.some((c) => c.value === a.systems)) return "systems";
   if (!cleanName(a.fname)) return "fname";
   if (!/^\d{10}$/.test(a.phone || "")) return "phone";
   if (!EMAIL_RE.test(a.email || "") || looksMasked(a.email) || a.email.length > 120) return "email";

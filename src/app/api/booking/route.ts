@@ -1,5 +1,5 @@
 import { BOOKING_ZIPS, HUBSPOT_BOOKING_FORM, bookingHubSpotFields, serviceByKey } from "@/lib/booking";
-import { EMAIL_RE, HUBSPOT, looksMasked, OPTIONS, cleanName, questions, sizeFor, type EstimateType } from "@/lib/estimator";
+import { EMAIL_RE, HUBSPOT, looksMasked, OPTIONS, cleanName, questions, SYSTEMS_QUESTION, estimateResult, type EstimateType } from "@/lib/estimator";
 import { createBooking, openSlots } from "@/lib/hcp";
 import { keepExistingValues } from "@/lib/hubspot";
 
@@ -97,13 +97,14 @@ async function sendToHubSpot(
 // Only known questions and choices are used, so nothing a visitor types reaches the note.
 function estimateNotes(raw: unknown): string {
   const a = (typeof raw === "object" && raw) ? (raw as Record<string, unknown>) : {};
-  const lines = questions.flatMap((q) => {
+  const lines = [...questions, SYSTEMS_QUESTION].flatMap((q) => {
     const c = q.choices.find((x) => x.value === a[q.key]);
     return c ? [`${q.title} ${c.label}`] : [];
   });
   if (!lines.length) return "From the instant pricing tool.";
   const type = typeof a.replace === "string" && a.replace in OPTIONS ? (a.replace as EstimateType) : null;
-  const tons = typeof a.sqft === "string" && typeof a.built === "string" ? sizeFor(a.sqft, a.built) : "custom";
+  const str = (v: unknown) => (typeof v === "string" ? v : "");
+  const tons = a.sqft && a.built ? estimateResult({ sqft: str(a.sqft), built: str(a.built), setup: str(a.setup), systems: str(a.systems) }).tons : "custom";
   const rec = type ? `Instant estimate shown: ${OPTIONS[type].name}${tons !== "custom" ? `, ${OPTIONS[type].size(tons)}` : ""}` : "";
   return ["From the instant pricing tool. Their answers:", ...lines, rec].filter(Boolean).join("\n");
 }
