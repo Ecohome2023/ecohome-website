@@ -4,7 +4,7 @@ import { gaEvent } from "@/lib/gtag";
 import { metaEvent } from "@/lib/metaPixel";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
-import { questions, SERVICE_AREA, estimateResult, emailFix, EMAIL_RE, looksMasked, ESTIMATE_CONTACT_KEY, type Answers } from "@/lib/estimator";
+import { questions, SYSTEMS_QUESTION, needsSystemsQuestion, SERVICE_AREA, estimateResult, emailFix, EMAIL_RE, looksMasked, ESTIMATE_CONTACT_KEY, type Answers } from "@/lib/estimator";
 import { site } from "@/lib/site";
 import { CheckIcon, PhoneIcon } from "@/components/icons";
 import { HomeIcon } from "./HomeIcons";
@@ -15,6 +15,8 @@ import { EquipmentIcon } from "./EquipmentIcons";
 // One question per screen: ZIP, eight choice questions, then contact details.
 // Order of the screens (keys from questions in lib/estimator, plus zip and contact).
 const STEPS = ["hometype", "setup", "replace", "sqft", "age", "condition", "built", "timeline", "zip", "contact"];
+// A home too big to size gets one more question, right after "built": how many systems it has.
+const stepsFor = (a: Answers) => (needsSystemsQuestion(a) ? STEPS.flatMap((s) => (s === "built" ? [s, "systems"] : [s])) : STEPS);
 // Questions shown as picture tiles, and how many tiles per row on wider screens.
 const ICON_STEPS: Record<string, string> = { hometype: "grid-cols-2", setup: "grid-cols-2 sm:grid-cols-3", replace: "grid-cols-3" };
 const KEYS = "ABCDEFGH";
@@ -37,8 +39,9 @@ export function EstimateForm({ compact = false, below }: { compact?: boolean; be
   const firstRender = useRef(true);
   const advancing = useRef(false);
 
-  const key = STEPS[step];
-  const question = questions.find((q) => q.key === key);
+  const steps = stepsFor(answers);
+  const key = steps[step];
+  const question = key === "systems" ? SYSTEMS_QUESTION : questions.find((q) => q.key === key);
 
   // Move focus to the new question so keyboard and screen reader users follow along.
   useEffect(() => {
@@ -145,7 +148,7 @@ export function EstimateForm({ compact = false, below }: { compact?: boolean; be
     <div ref={cardRef} className={`scroll-mt-28 rounded-3xl bg-white shadow-[0_6px_0_#14283a] ring-2 ring-ink ${c.card}`}>
       {/* progress */}
       <div className="flex gap-1.5" aria-hidden="true">
-        {STEPS.map((s, i) => (
+        {steps.map((s, i) => (
           <span key={s} className={`h-1.5 flex-1 rounded-full transition-colors ${status !== "asking" || i < step ? "bg-ink" : i === step ? "bg-alarm-strong" : "bg-line"}`} />
         ))}
       </div>
@@ -267,7 +270,7 @@ export function EstimateForm({ compact = false, below }: { compact?: boolean; be
             {result.instant
               ? "Tap below to see your personalized estimate. We’ll follow up by text if we have any questions."
               : result.gas
-                ? "Homes your size often need two systems, so we price them in person. We’ll text you to set up a free visit, or book one now."
+                ? "Homes with more than one system need a quick look before we can price them. We’ll text you to set up a free visit, or book one now."
                 : "Homes with a heat pump or boiler need a quick look before we can price a new system. We’ll text you to set up a free visit, or book one now."}
           </p>
           {saveFailed && (
