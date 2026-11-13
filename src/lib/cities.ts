@@ -700,6 +700,679 @@ export const cities: City[] = [
     nearby: ["Provo", "Mapleton", "Spanish Fork", "Orem", "Salem", "Vineyard"],
   },
   {
+    slug: "highland",
+    name: "Highland",
+    county: "Utah County",
+    metaTitle: "Highland HVAC: Heating & Cooling, Open 24/7",
+    metaDescription:
+      "Heating and cooling for Highland homes, minutes from our American Fork shop: furnace and AC repair and dual-fuel heat pump systems. Open 24/7.",
+    h1: "Heating and cooling in Highland, UT",
+    heroSub:
+      "Highland is just up the road from our American Fork shop. Furnace and AC repair, tune-ups and dual-fuel heat pump systems, open 24/7, with the permit pulled on every job.",
+    intro: [
+      "Highland sits at the north end of Utah County at the mouth of American Fork Canyon, with about 19,400 residents in the 2020 census. It’s known for large lots and big family homes, many of them two stories over a full basement.",
+      "Big homes are where a single-speed furnace and AC show their limits: one system has to keep three levels comfortable. We size every install with a load calculation, and for most Highland homes we recommend a variable-speed heat pump paired with a gas furnace.",
+    ],
+    facts: [
+      { label: "People", value: "About 19,400 (2020 census)" },
+      { label: "Location", value: "North Utah County, at the mouth of American Fork Canyon" },
+      { label: "Typical home", value: "Large two-story homes over full basements" },
+      { label: "Electric", value: "Rocky Mountain Power" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+      { label: "Permits", value: "Highland City" },
+    ],
+    homes: [
+      {
+        title: "Large two-story homes",
+        body: "Many Highland homes have two finished floors over a basement and a lot of square footage on one system. Upstairs bedrooms run warm in summer while the basement stays cool, a gap that variable-speed equipment narrows by running longer at low speed.",
+      },
+      {
+        title: "Homes from the 1980s and 1990s",
+        body: "A lot of Highland was built out in the decades after the city incorporated, and many of those homes are on their second furnace and AC. When both are 20 years old, replacing them together costs less than two separate jobs.",
+      },
+      {
+        title: "Outdoor units next to patios",
+        body: "Big backyards mean the outdoor unit often sits right beside a patio or deck. An old single-speed AC is loud there; a variable-speed heat pump spends most of the day at low output and is far quieter.",
+      },
+    ],
+    rmp: true,
+    job: {
+      customer: "Rachel S.",
+      title: "Rachel’s 23-year-old system rattled beside the patio and left the upstairs uncomfortable. Now the whole house is even and quiet.",
+      problem:
+        "Rachel and Matt’s two-story Highland home had a 23-year-old AC and furnace. The outdoor unit rattled loudly right next to the back patio, and the upstairs bedrooms were never comfortable. They had put off replacing it because they didn’t want pushy salespeople or contractors tracking dirt across their hardwood floors.",
+      solution:
+        "A variable-speed heat pump paired with a variable-speed gas furnace. The visit to price it was no-pressure, and on install day the crew wore shoe covers, laid runners through the house and left the mechanical room clean.",
+      result:
+        "The system hums quietly instead of slamming on at full blast, the patio is peaceful again, and both floors stay at the same temperature. In winter it switches between electric and gas heat on its own.",
+      more: "/service-area/highland/heat-pump-installation",
+      img: "/images/tech-heat-pump-portrait.jpg",
+      alt: "Eco Home technician beside a newly installed outdoor heat pump",
+    },
+    faqs: [
+      {
+        q: "How close are you to Highland?",
+        a: "Close. Our shop is on Automall Drive in American Fork, a short drive from anywhere in Highland, and we’re open 24/7.",
+      },
+      {
+        q: "What rebates can Highland homes get on a heat pump?",
+        a: "Highland is on Rocky Mountain Power, which pays a $1,450 Wattsmart rebate on every heat pump we install. Enbridge Gas ThermWise adds $700 to $1,000 when it’s paired with a gas furnace, for $2,150 to $2,450, guaranteed.",
+      },
+      {
+        q: "Do I need a permit to replace my furnace or AC in Highland?",
+        a: "Yes. Highland City issues the permit, and the finished work is inspected. Not every HVAC company pulls permits. We do on every job, and it’s included in your price.",
+      },
+      {
+        q: "Can one system keep a big Highland home comfortable?",
+        a: "Usually, if it’s sized correctly and the ducts are right. That’s why we start with a load calculation. In very large homes we may suggest zoning or a second system, and we’ll explain why.",
+      },
+      {
+        q: "How much does a new system cost in Highland?",
+        a: "Furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, with 0% interest for 12 months available. Instant pricing gives you a number for your home in about a minute.",
+      },
+    ],
+    updated: "2026-11-13",
+    nearby: ["American Fork", "Alpine", "Cedar Hills", "Lehi", "Pleasant Grove", "Saratoga Springs"],
+  },
+  {
+    slug: "lindon",
+    name: "Lindon",
+    county: "Utah County",
+    metaTitle: "Lindon HVAC: Heating & Cooling, Open 24/7",
+    metaDescription:
+      "Heating and cooling for Lindon homes, a few minutes from our American Fork shop: furnace and AC repair and dual-fuel heat pumps. Open 24/7.",
+    h1: "Heating and cooling in Lindon, UT",
+    heroSub:
+      "Lindon is a few minutes south of our American Fork shop. Furnace and AC repair, tune-ups and dual-fuel heat pump systems, open 24/7, with the permit pulled on every job.",
+    intro: [
+      "Lindon calls itself “a little bit of country,” and it fits: about 11,400 people lived here in the 2020 census, many on larger lots between Pleasant Grove and Orem. Homes range from older ramblers to newer two-story houses on the east bench.",
+      "A lot of Lindon homes have systems that are 20 to 25 years old, loud and uneven. We size every replacement with a load calculation, and for most Lindon homes we recommend a variable-speed heat pump paired with a gas furnace.",
+    ],
+    facts: [
+      { label: "People", value: "About 11,400 (2020 census)" },
+      { label: "Motto", value: "“A little bit of country”" },
+      { label: "Location", value: "Between Pleasant Grove and Orem" },
+      { label: "Electric", value: "Rocky Mountain Power" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+      { label: "Permits", value: "Lindon City" },
+    ],
+    homes: [
+      {
+        title: "Ramblers on larger lots",
+        body: "Lindon’s ramblers often have a finished basement and a furnace that has been replaced once already. The main floor heats up in summer while the basement stays cool, which longer, slower run times help even out.",
+      },
+      {
+        title: "Two-story homes on the east bench",
+        body: "Newer homes up the bench have the bedrooms upstairs. When the system is old and single-speed, those rooms are stuffy year-round and the vents get loud every time it starts.",
+      },
+      {
+        title: "Ducts that carry noise",
+        body: "Floor vents fed by a single-speed blower can roar through the house. A variable-speed blower starts slowly and moves the same air much more quietly.",
+      },
+    ],
+    rmp: true,
+    job: {
+      customer: "Trevor K.",
+      title: "Trevor’s family had to pause movies every time the 25-year-old system kicked on. Now they can’t hear it.",
+      problem:
+        "Trevor’s 25-year-old system roared through the floor vents so loudly that his family paused movies whenever it came on, and the upstairs bedrooms stayed stuffy all year.",
+      solution:
+        "A variable-speed heat pump and a variable-speed gas furnace. The installers arrived on time, answered every question, sealed the ductwork connections and balanced the airflow before walking Trevor through the new thermostat.",
+      result:
+        "The system runs almost silently inside and out, hot and cold spots are gone, and it chooses the better heating source on its own when the weather turns cold.",
+      more: "/service-area/lindon/heat-pump-installation",
+      img: "/images/tech-leveling-heat-pump.jpg",
+      alt: "Eco Home technician leveling a new outdoor heat pump",
+    },
+    faqs: [
+      { q: "How close are you to Lindon?", a: "A few minutes. Our shop is on Automall Drive in American Fork, and we’re open 24/7." },
+      { q: "What heat pump rebates are there in Lindon?", a: "Lindon is on Rocky Mountain Power, which pays $1,450 through Wattsmart on every heat pump we install. Enbridge Gas ThermWise adds $700 to $1,000 with a gas furnace: $2,150 to $2,450, guaranteed." },
+      { q: "Do I need a permit in Lindon?", a: "Yes. Lindon City issues the permit and inspects the install. Not every HVAC company pulls permits. We do on every job, and it’s included." },
+      { q: "Why are my floor vents so loud?", a: "A single-speed blower starts at full speed and pushes air hard through the ducts. Undersized returns make it worse. A variable-speed furnace ramps up gently and is much quieter." },
+      { q: "How much does a new system cost in Lindon?", a: "Furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, with 0% interest for 12 months available. Instant pricing gives you a number in about a minute." },
+    ],
+    updated: "2026-11-13",
+    nearby: ["Pleasant Grove", "Orem", "American Fork", "Vineyard", "Cedar Hills", "Provo"],
+  },
+  {
+    slug: "payson",
+    name: "Payson",
+    county: "Utah County",
+    metaTitle: "Payson HVAC: Heating & Cooling, Open 24/7",
+    metaDescription:
+      "Heating and cooling for Payson homes: furnace and AC repair and dual-fuel heat pumps. Payson runs its own power, so we match the $1,450 rebate.",
+    h1: "Heating and cooling in Payson, UT",
+    heroSub:
+      "Furnace and AC repair, tune-ups and dual-fuel heat pump systems for Payson, open 24/7. Payson runs its own power, so we match the $1,450 heat pump rebate.",
+    intro: [
+      "Payson is one of the older towns at the south end of Utah County, and about 21,100 people lived here in the 2020 census. Its homes run from older houses near Main Street to newer family neighborhoods spreading out toward the freeway and the foothills.",
+      "Many Payson homes have a furnace and AC that are both around 20 years old. We size every replacement with a load calculation, and for most Payson homes we recommend a variable-speed heat pump paired with a gas furnace.",
+    ],
+    facts: [
+      { label: "People", value: "About 21,100 (2020 census)" },
+      { label: "Location", value: "South end of Utah County" },
+      { label: "Electric", value: "Payson City Power (some homes on SESD)" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+      { label: "Heat pump rebate", value: "We match the $1,450 Rocky Mountain Power rebate" },
+      { label: "Permits", value: "Payson City" },
+    ],
+    homes: [
+      {
+        title: "Older homes near Main Street",
+        body: "Payson’s older neighborhoods have homes built for a furnace alone, with central air added later. The back bedrooms, farthest from the furnace, are often the ones that never quite get enough air.",
+      },
+      {
+        title: "Family homes from recent decades",
+        body: "Newer Payson neighborhoods are full of family homes whose original systems are now about 20 years old. That’s when noise and uneven airflow tend to get worse every season.",
+      },
+      {
+        title: "Long runs to the back bedrooms",
+        body: "In single-level homes, the bedrooms at the far end of the house sit at the end of the longest ducts. A variable-speed blower that runs steadily at low speed keeps air reaching them.",
+      },
+    ],
+    rmp: false,
+    job: {
+      customer: "Melissa J.",
+      title: "Melissa’s 22-year-old system clanked loud enough to wake the kids. Now the back bedrooms are as comfortable as the living room.",
+      problem:
+        "Melissa and her husband’s furnace and AC were 22 years old. They clanked loudly enough to wake their kids at night and couldn’t push enough air to the back bedrooms.",
+      solution:
+        "A variable-speed heat pump paired with a variable-speed gas furnace. The crew covered the hallways with drop cloths, kept the work area tidy all day and set the variable-speed blower so air reaches every room gently and evenly.",
+      result:
+        "Quiet nights, back bedrooms as comfortable as the living room, and a dual-fuel system that manages winter heating on its own.",
+      more: "/service-area/payson/heat-pump-installation",
+      img: "/images/heat-pump-install-lawn.jpg",
+      alt: "Newly installed outdoor heat pump beside a lawn",
+    },
+    faqs: [
+      { q: "Do you serve all of Payson?", a: "Yes, from the older homes near Main Street to the newer neighborhoods on every side of town. We’re open 24/7." },
+      { q: "Payson has its own power. Can I still get a heat pump rebate?", a: "Yes. Payson homes are on Payson City Power, and a few are on the South Utah Valley Electric Service District, so the Rocky Mountain Power Wattsmart rebate doesn’t apply. We match it with a $1,450 credit from Eco Home on every heat pump we install, and Enbridge Gas adds $700 to $1,000 with a gas furnace." },
+      { q: "Do I need a permit in Payson?", a: "Yes. Payson City issues the permit and inspects the work. Not every HVAC company pulls permits. We do on every job, and it’s included." },
+      { q: "Why don’t my back bedrooms get enough air?", a: "They’re at the end of the longest duct runs. A weak or single-speed blower, leaky ducts or small returns make it worse. We measure airflow and fix what we find." },
+      { q: "How much does a new system cost in Payson?", a: "Furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, including our $1,450 match, with 0% interest for 12 months available." },
+    ],
+    updated: "2026-11-13",
+    nearby: ["Salem", "Spanish Fork", "Santaquin", "Elk Ridge", "Woodland Hills", "Springville"],
+  },
+  {
+    slug: "vineyard",
+    name: "Vineyard",
+    county: "Utah County",
+    metaTitle: "Vineyard HVAC: Heating & Cooling, Open 24/7",
+    metaDescription:
+      "Heating and cooling for Vineyard’s newer homes near Utah Lake: furnace and AC repair and dual-fuel heat pump systems. Open 24/7, permits pulled.",
+    h1: "Heating and cooling in Vineyard, UT",
+    heroSub:
+      "Furnace and AC repair, tune-ups and dual-fuel heat pump systems for Vineyard, open 24/7. We’re a short drive away in American Fork and pull the permit on every job.",
+    intro: [
+      "Few places in Utah have changed as fast as Vineyard. It counted fewer than 100 residents in the 2010 census and about 12,500 in 2020, as new neighborhoods went up on the east shore of Utah Lake.",
+      "Nearly every home here is less than 15 years old, and most still have the builder-grade furnace and AC they came with. Those systems often run loud and leave the upstairs uneven. For Vineyard homes we recommend upgrading to a variable-speed heat pump paired with a gas furnace when the original equipment starts to fail.",
+    ],
+    facts: [
+      { label: "People", value: "About 12,500 (2020 census), up from under 100 in 2010" },
+      { label: "Location", value: "East shore of Utah Lake, between Orem and the lake" },
+      { label: "Typical home", value: "Two-story homes and townhomes built since 2010" },
+      { label: "Electric", value: "Rocky Mountain Power" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+      { label: "Permits", value: "Vineyard" },
+    ],
+    homes: [
+      {
+        title: "Builder-grade systems",
+        body: "Most Vineyard homes came with an entry-level, single-speed AC and furnace. They work, but they run loud, cycle on and off often, and struggle to keep both floors the same temperature.",
+      },
+      {
+        title: "Homes close together",
+        body: "Vineyard lots are tight, so the outdoor unit is often right beside the patio and only a few feet from the neighbors. A quieter variable-speed heat pump makes a real difference here.",
+      },
+      {
+        title: "Townhomes and two-story layouts",
+        body: "Upstairs bedrooms in Vineyard’s two-story homes and townhomes collect heat in summer. Longer, slower run times keep them closer to the thermostat setting.",
+      },
+    ],
+    rmp: true,
+    job: {
+      customer: "Megan C.",
+      title: "Megan and Jordan’s builder-grade AC sounded like a lawnmower by the patio. Now it’s a quiet hum and both floors are even.",
+      problem:
+        "Megan and Jordan’s two-story Vineyard home still had its original builder-grade AC, and it sounded like a lawnmower next to the patio, with neighbors close by. Inside, the vents roared every time it started, and the upstairs bedrooms never felt right.",
+      solution:
+        "A variable-speed heat pump paired with a variable-speed gas furnace. The crew wore shoe covers every time they came inside, laid runners across the floors and walked Jordan through the new thermostat.",
+      result:
+        "A quiet hum instead of on-and-off blasts, a patio they can use without raising their voices, and both floors at the same temperature, with automatic switching to gas heat in winter.",
+      more: "/service-area/vineyard/heat-pump-installation",
+      img: "/images/heat-pumps-pair.jpg",
+      alt: "Two inverter heat pumps beside a newer home",
+    },
+    faqs: [
+      { q: "Do you serve Vineyard?", a: "Yes, all of it. We’re based in American Fork, a short drive north, and we’re open 24/7." },
+      { q: "What rebates are there in Vineyard?", a: "Vineyard is on Rocky Mountain Power, which pays $1,450 through Wattsmart on every heat pump we install. Enbridge Gas ThermWise adds $700 to $1,000 with a gas furnace: $2,150 to $2,450, guaranteed." },
+      { q: "My home is only 10 years old. Is it worth upgrading?", a: "If the builder-grade system is loud, uneven or needs a major repair, often yes. A variable-speed system is much quieter and more even, and the rebates cover a big part of the cost." },
+      { q: "Do I need a permit in Vineyard?", a: "Yes. Vineyard issues the permit and inspects the work. Not every HVAC company pulls permits. We do on every job, and it’s included." },
+      { q: "How much does a new system cost in Vineyard?", a: "Furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, with 0% interest for 12 months available." },
+    ],
+    updated: "2026-11-13",
+    nearby: ["Orem", "Lindon", "Provo", "American Fork", "Pleasant Grove", "Saratoga Springs"],
+  },
+  {
+    slug: "alpine",
+    name: "Alpine",
+    county: "Utah County",
+    metaTitle: "Alpine HVAC: Heating & Cooling, Open 24/7",
+    metaDescription:
+      "Heating and cooling for Alpine homes at the north end of Utah County: furnace and AC repair and dual-fuel heat pump systems. Open 24/7.",
+    h1: "Heating and cooling in Alpine, UT",
+    heroSub:
+      "Furnace and AC repair, tune-ups and dual-fuel heat pump systems for Alpine, a short drive from our American Fork shop. Open 24/7, with the permit pulled on every job.",
+    intro: [
+      "Alpine sits against the mountains at the north end of Utah County, with about 10,300 residents in the 2020 census. It’s a town of larger homes on larger lots, many with a finished basement and a lot of square footage for one system to handle.",
+      "Many Alpine homes still run the furnace and AC that came with the house. When they start to fail, we size a replacement with a load calculation, and for most Alpine homes we recommend a variable-speed heat pump paired with a gas furnace.",
+    ],
+    facts: [
+      { label: "People", value: "About 10,300 (2020 census)" },
+      { label: "Location", value: "North end of Utah County, against the Wasatch" },
+      { label: "Typical home", value: "Larger homes with finished basements" },
+      { label: "Electric", value: "Rocky Mountain Power" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+      { label: "Permits", value: "Alpine City" },
+    ],
+    homes: [
+      {
+        title: "Larger homes on bigger lots",
+        body: "Alpine homes often have more square footage than one older single-speed system can handle evenly. Rooms at the far ends of the house and the upstairs are where it shows.",
+      },
+      {
+        title: "Original equipment",
+        body: "Plenty of Alpine homeowners are still running the furnace and AC that came with the house. Once they’re 20 years old, noise and uneven temperatures usually get worse each year.",
+      },
+      {
+        title: "Basements that stay cold",
+        body: "With a finished basement, the lower level stays cold in winter while the upstairs gets warm. Variable-speed equipment and balanced ducts bring the two closer together.",
+      },
+    ],
+    rmp: true,
+    job: {
+      customer: "David L.",
+      title: "David’s original system rattled through the floorboards at dinner. Now every room is the same temperature, quietly.",
+      problem:
+        "David and his wife were still running the furnace and AC that came with their Alpine home. The system was loud enough to hear rattling up through the floorboards during family dinners, and the upstairs never matched the temperature downstairs.",
+      solution:
+        "A variable-speed heat pump paired with a variable-speed gas furnace. Our technicians arrived on time, protected the stairs and hallways with drop cloths, sealed the ductwork and balanced airflow between floors before cleaning up.",
+      result:
+        "The system hums quietly in the background, every room is the same temperature, and it switches to gas heat on its own when it gets cold.",
+      more: "/service-area/alpine/heat-pump-installation",
+      img: "/images/american-fork-heat-pump-install.jpg",
+      alt: "Eco Home technician commissioning a new outdoor heat pump",
+    },
+    faqs: [
+      { q: "Do you serve all of Alpine?", a: "Yes. We’re a short drive away in American Fork and open 24/7." },
+      { q: "What heat pump rebates can Alpine homes get?", a: "Alpine is on Rocky Mountain Power, which pays $1,450 through Wattsmart on every heat pump we install. Enbridge Gas ThermWise adds $700 to $1,000 with a gas furnace: $2,150 to $2,450, guaranteed." },
+      { q: "Do I need a permit in Alpine?", a: "Yes. Alpine City issues the permit and inspects the install. Not every HVAC company pulls permits. We do on every job, and it’s included." },
+      { q: "Why does my system rattle through the floor?", a: "Often loose ductwork or a blower starting at full speed. We tighten what’s loose, and a variable-speed blower starts gently." },
+      { q: "How much does a new system cost in Alpine?", a: "Furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, with 0% interest for 12 months available." },
+    ],
+    updated: "2026-11-13",
+    nearby: ["Highland", "Cedar Hills", "American Fork", "Lehi", "Pleasant Grove", "Draper"],
+  },
+  {
+    slug: "cedar-hills",
+    name: "Cedar Hills",
+    county: "Utah County",
+    metaTitle: "Cedar Hills HVAC: Heating & Cooling",
+    metaDescription:
+      "Heating and cooling for Cedar Hills homes, minutes from our American Fork shop: furnace and AC repair and dual-fuel heat pumps. Open 24/7.",
+    h1: "Heating and cooling in Cedar Hills, UT",
+    heroSub:
+      "Cedar Hills is right above our American Fork shop. Furnace and AC repair, tune-ups and dual-fuel heat pump systems, open 24/7, with the permit pulled on every job.",
+    intro: [
+      "Cedar Hills sits on the bench between American Fork and Highland, with about 10,000 residents in the 2020 census. It’s mostly family homes built over the last few decades, many of them two stories with the bedrooms upstairs.",
+      "As those homes age, so does their original equipment. We size every replacement with a load calculation, and for most Cedar Hills homes we recommend a variable-speed heat pump paired with a gas furnace.",
+    ],
+    facts: [
+      { label: "People", value: "About 10,000 (2020 census)" },
+      { label: "Location", value: "On the bench between American Fork and Highland" },
+      { label: "Distance from our shop", value: "A few minutes" },
+      { label: "Electric", value: "Rocky Mountain Power" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+      { label: "Permits", value: "Cedar Hills" },
+    ],
+    homes: [
+      {
+        title: "Two-story family homes",
+        body: "Most Cedar Hills homes have the bedrooms upstairs, which run warm in summer when an older single-speed AC can’t keep up.",
+      },
+      {
+        title: "Outdoor units under bedroom windows",
+        body: "In many homes the outdoor unit sits right below a bedroom window. As an old unit wears, the vibration and noise carry inside.",
+      },
+      {
+        title: "Vents that blast",
+        body: "A single-speed blower starts at full speed and blasts air through the vents. Variable-speed furnaces ramp up gently and keep the air moving quietly.",
+      },
+    ],
+    rmp: true,
+    job: {
+      customer: "Danielle W.",
+      title: "Danielle’s vents blasted like a wind tunnel and the outdoor unit shook under the bedroom window. Now it’s near-silent.",
+      problem:
+        "In Danielle’s Cedar Hills home, air blasted out of the vents like a wind tunnel every time the old system started, and the outdoor unit vibrated right beneath the bedroom window. She’d put off replacing it because she didn’t want a crew disrupting the house all day.",
+      solution:
+        "A variable-speed heat pump paired with a variable-speed gas furnace. The technicians communicated clearly, kept the work area neat and showed Danielle how the dual-fuel system handles heating and cooling on its own.",
+      result:
+        "The variable-speed blower and outdoor unit run smoothly in near-silence, with no loud startup blasts, and the whole house stays comfortable.",
+      more: "/service-area/cedar-hills/heat-pump-installation",
+      img: "/images/tech-heat-pump-install.jpg",
+      alt: "Eco Home technician connecting gauges to a new heat pump",
+    },
+    faqs: [
+      { q: "How close are you to Cedar Hills?", a: "A few minutes. Our shop is on Automall Drive in American Fork, just below Cedar Hills, and we’re open 24/7." },
+      { q: "What rebates can Cedar Hills homes get?", a: "Cedar Hills is on Rocky Mountain Power, which pays $1,450 through Wattsmart on every heat pump we install. Enbridge Gas ThermWise adds $700 to $1,000 with a gas furnace: $2,150 to $2,450, guaranteed." },
+      { q: "Do I need a permit in Cedar Hills?", a: "Yes. Cedar Hills issues the permit and inspects the work. Not every HVAC company pulls permits. We do on every job, and it’s included." },
+      { q: "Will the install disrupt my whole day?", a: "Most installs are done in one day. We protect floors, keep the work area neat and tell you what’s happening as we go." },
+      { q: "How much does a new system cost in Cedar Hills?", a: "Furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, with 0% interest for 12 months available." },
+    ],
+    updated: "2026-11-13",
+    nearby: ["American Fork", "Highland", "Pleasant Grove", "Alpine", "Lindon", "Lehi"],
+  },
+  {
+    slug: "mapleton",
+    name: "Mapleton",
+    county: "Utah County",
+    metaTitle: "Mapleton HVAC: Heating & Cooling, Open 24/7",
+    metaDescription:
+      "Heating and cooling for Mapleton homes below Maple Mountain: furnace and AC repair and dual-fuel heat pump systems. Open 24/7, permits pulled.",
+    h1: "Heating and cooling in Mapleton, UT",
+    heroSub:
+      "Furnace and AC repair, tune-ups and dual-fuel heat pump systems for Mapleton, open 24/7, with the permit pulled on every job.",
+    intro: [
+      "Mapleton sits below Maple Mountain on the southeast side of Utah Valley, next to Springville. It grew from about 8,100 residents in the 2010 census to about 11,400 in 2020, adding newer two-story homes alongside its older, more rural properties.",
+      "Many Mapleton homes still have the furnace and AC they came with, and those systems are getting loud and uneven. We size every replacement with a load calculation, and for most Mapleton homes we recommend a variable-speed heat pump paired with a gas furnace.",
+    ],
+    facts: [
+      { label: "People", value: "About 11,400 (2020 census), up from about 8,100 in 2010" },
+      { label: "Location", value: "Below Maple Mountain, next to Springville" },
+      { label: "Electric", value: "Rocky Mountain Power (some homes on SESD)" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+      { label: "Permits", value: "Mapleton City" },
+      { label: "Typical home", value: "Two-story homes and larger rural lots" },
+    ],
+    homes: [
+      {
+        title: "Two-story homes",
+        body: "Mapleton’s newer two-story homes put the bedrooms upstairs, where an aging single-speed system leaves them warmer in summer and cooler in winter than the main floor.",
+      },
+      {
+        title: "Rural properties",
+        body: "Older homes on bigger lots often have long duct runs and outdoor units close to living spaces. Noise and uneven airflow are common complaints.",
+      },
+      {
+        title: "Vents that rattle",
+        body: "When an old blower starts at full speed, loose registers and ducts rattle. Variable-speed equipment starts gently and stays quiet.",
+      },
+    ],
+    rmp: true,
+    job: {
+      customer: "Jenna R.",
+      title: "Jenna and Tyler’s vents rattled through movie night. Now the house is quiet and both floors match.",
+      problem:
+        "Jenna and Tyler’s two-story Mapleton home still had its original furnace and AC. The vents rattled loud enough to interrupt family movie nights, and the upstairs never matched the main floor. They’d put off replacing it because they didn’t want a messy crew in the house all day.",
+      solution:
+        "A variable-speed heat pump paired with a variable-speed gas furnace. The crew wore shoe covers every time they came inside, laid floor runners and left the basement spotless.",
+      result:
+        "The system runs at a quiet hum instead of slamming on, both floors stay at the same temperature, and in winter it switches between electric and gas heat automatically.",
+      more: "/service-area/mapleton/heat-pump-installation",
+      img: "/images/tech-heat-pump-portrait.jpg",
+      alt: "Eco Home technician beside a newly installed outdoor heat pump",
+    },
+    faqs: [
+      { q: "Do you serve all of Mapleton?", a: "Yes, from the newer neighborhoods to the rural properties toward the mountain. We’re open 24/7." },
+      { q: "What rebates can Mapleton homes get?", a: "Most Mapleton homes are on Rocky Mountain Power, which pays $1,450 through Wattsmart on every heat pump we install. If your home is on the South Utah Valley Electric Service District instead, we match the $1,450 with our own credit. Either way, Enbridge Gas adds $700 to $1,000 with a gas furnace." },
+      { q: "Do I need a permit in Mapleton?", a: "Yes. Mapleton City issues the permit and inspects the install. Not every HVAC company pulls permits. We do on every job, and it’s included." },
+      { q: "How do I know which power company I have?", a: "Check your electric bill. If it’s Rocky Mountain Power, you get Wattsmart; if it’s SESD, you get our match. The amount is the same." },
+      { q: "How much does a new system cost in Mapleton?", a: "Furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, with 0% interest for 12 months available." },
+    ],
+    updated: "2026-11-13",
+    nearby: ["Springville", "Spanish Fork", "Provo", "Salem", "Orem", "Payson"],
+  },
+  {
+    slug: "santaquin",
+    name: "Santaquin",
+    county: "Utah County",
+    metaTitle: "Santaquin HVAC: Heating & Cooling, Open 24/7",
+    metaDescription:
+      "Heating and cooling for Santaquin homes at the south end of Utah County: furnace and AC repair and dual-fuel heat pump systems. Open 24/7.",
+    h1: "Heating and cooling in Santaquin, UT",
+    heroSub:
+      "Furnace and AC repair, tune-ups and dual-fuel heat pump systems for Santaquin, open 24/7, with the permit pulled on every job.",
+    intro: [
+      "Santaquin is at the far south end of Utah County, and it has grown fast: from about 9,200 residents in the 2010 census to about 13,700 in 2020. New neighborhoods have filled in around an older farm-town center.",
+      "Older homes here have systems that are wearing out, and many newer homes have builder-grade equipment that’s loud from day one. For most Santaquin homes we recommend a variable-speed heat pump paired with a gas furnace, sized with a load calculation.",
+    ],
+    facts: [
+      { label: "People", value: "About 13,700 (2020 census), up from about 9,200 in 2010" },
+      { label: "Location", value: "South end of Utah County" },
+      { label: "Electric", value: "Rocky Mountain Power" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+      { label: "Permits", value: "Santaquin City" },
+      { label: "Typical home", value: "Newer subdivisions around an older town center" },
+    ],
+    homes: [
+      {
+        title: "Older homes near the center of town",
+        body: "Santaquin’s older homes often have a furnace that’s been replaced once and an AC added along the way. Mismatched equipment and old ducts make for uneven rooms.",
+      },
+      {
+        title: "Newer subdivisions",
+        body: "Homes built in the last 15 years usually have builder-grade single-speed systems. They work, but they’re loud and cycle on and off often.",
+      },
+      {
+        title: "Outdoor units by the patio",
+        body: "With backyards built for summer evenings, a buzzing outdoor unit next to the patio is a common complaint. Variable-speed units are much quieter.",
+      },
+    ],
+    rmp: true,
+    job: {
+      customer: "Brandon M.",
+      title: "Brandon’s AC buzzed beside the patio and the furnace roared through the vents. Now he can sit outside in peace.",
+      problem:
+        "Brandon’s old outdoor AC buzzed loudly beside his back patio, and in winter the furnace roared through the floor vents every time it came on.",
+      solution:
+        "A variable-speed heat pump and a variable-speed gas furnace. Our technicians arrived on time, walked Brandon through each step, sealed the duct transitions and balanced the airflow before cleaning up.",
+      result:
+        "The system runs in near-silence inside and out, hot and cold spots are gone, and it picks the better heating source on its own when it gets cold.",
+      more: "/service-area/santaquin/heat-pump-installation",
+      img: "/images/tech-eco-home-shirt-heat-pump.jpg",
+      alt: "Eco Home technician installing an outdoor heat pump",
+    },
+    faqs: [
+      { q: "Do you serve Santaquin?", a: "Yes, all of it. We’re open 24/7 for repairs." },
+      { q: "What rebates are there in Santaquin?", a: "Santaquin is on Rocky Mountain Power, which pays $1,450 through Wattsmart on every heat pump we install. Enbridge Gas ThermWise adds $700 to $1,000 with a gas furnace: $2,150 to $2,450, guaranteed." },
+      { q: "Do I need a permit in Santaquin?", a: "Yes. Santaquin City issues the permit and inspects the install. Not every HVAC company pulls permits. We do on every job, and it’s included." },
+      { q: "My newer home’s AC is loud. Is that normal?", a: "Builder-grade single-speed units are louder than higher-end equipment. If it’s getting louder, have it checked; if it’s always been loud, a variable-speed heat pump is much quieter." },
+      { q: "How much does a new system cost in Santaquin?", a: "Furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, with 0% interest for 12 months available." },
+    ],
+    updated: "2026-11-13",
+    nearby: ["Payson", "Salem", "Elk Ridge", "Woodland Hills", "Spanish Fork", "Springville"],
+  },
+  {
+    slug: "salem",
+    name: "Salem",
+    county: "Utah County",
+    metaTitle: "Salem HVAC: Heating & Cooling, Open 24/7",
+    metaDescription:
+      "Salem, UT furnace and AC repair, tune-ups and dual-fuel heat pump installs, open 24/7. Salem homes get our $1,450 credit in place of the RMP rebate.",
+    h1: "Heating and cooling in Salem, UT",
+    heroSub:
+      "Repairs any hour, yearly tune-ups and quiet dual-fuel systems for Salem homes, plus a $1,450 Eco Home credit because Salem isn’t on Rocky Mountain Power.",
+    intro: [
+      "Salem is a small, fast-growing city in south Utah County, between Spanish Fork and Payson. It went from about 6,400 residents in the 2010 census to about 9,300 in 2020, with new neighborhoods growing around Salem Pond and the older center of town.",
+      "Salem runs its own city power, so the Rocky Mountain Power heat pump rebate doesn’t apply here, and we make up for it with our own $1,450 credit. For most Salem homes we recommend a variable-speed heat pump paired with a gas furnace, sized with a load calculation.",
+    ],
+    facts: [
+      { label: "People", value: "About 9,300 (2020 census), up from about 6,400 in 2010" },
+      { label: "Location", value: "Between Spanish Fork and Payson" },
+      { label: "Electric", value: "Salem City power (some homes on SESD)" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+      { label: "Heat pump rebate", value: "We match the $1,450 Rocky Mountain Power rebate" },
+      { label: "Permits", value: "Salem City" },
+    ],
+    homes: [
+      {
+        title: "A town that nearly doubled",
+        body: "Salem added thousands of residents in two decades, so a large share of its homes have their first furnace and AC. Those builder-grade systems are now reaching the end of their easy years.",
+      },
+      {
+        title: "Single-speed equipment",
+        body: "Most original systems run at one speed: full blast, then off. That means loud starts, drafts and rooms that swing warm and cool.",
+      },
+      {
+        title: "Bedrooms down the hall",
+        body: "In many Salem floor plans the kids’ rooms sit at the end of the duct line. Variable-speed equipment runs longer and softer, so those rooms stay comfortable and quiet.",
+      },
+    ],
+    rmp: false,
+    job: {
+      customer: "Stephanie H.",
+      title: "Stephanie’s aging system clanked loud enough to wake the kids. Now the back bedrooms match the living room.",
+      problem:
+        "Stephanie’s aging system clanked loudly enough to wake her kids at night and struggled to push air to the back bedrooms. She wanted a trustworthy local team that wouldn’t cut corners or leave the house in chaos.",
+      solution:
+        "A variable-speed heat pump paired with a variable-speed gas furnace. The crew protected the hallways with drop cloths, kept the work area tidy and calibrated the blower so air reaches every room gently and evenly, then made sure Stephanie was comfortable with the new thermostat.",
+      result:
+        "Quiet nights, back bedrooms as comfortable as the living room, and dual-fuel heating that runs itself all year.",
+      more: "/service-area/salem/heat-pump-installation",
+      img: "/images/heat-pump-brick-home.jpg",
+      alt: "New outdoor heat pump beside a brick home",
+    },
+    faqs: [
+      { q: "Is Salem in your service area?", a: "Yes, every neighborhood in Salem, day or night. We’re open 24/7." },
+      { q: "Does Salem City power offer a heat pump rebate like Rocky Mountain Power?", a: "Wattsmart is only for Rocky Mountain Power customers, and Salem homes are on city power or SESD. So Eco Home credits $1,450 on every heat pump we install, and the Enbridge Gas rebate of $700 to $1,000 still applies with a gas furnace." },
+      { q: "Who handles the permit in Salem?", a: "We do. Salem City issues it and inspects the finished install. Not every HVAC company pulls permits. We do on every job, at no extra charge." },
+      { q: "What makes an older furnace clank?", a: "Most often a loose or unbalanced blower wheel, a worn motor mount, or ducts expanding as hot air hits them. A tune-up finds it; a variable-speed furnace avoids the hard starts that cause it." },
+      { q: "How much does a new system cost in Salem?", a: "Furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, including our $1,450 match, with 0% interest for 12 months available." },
+    ],
+    updated: "2026-11-13",
+    nearby: ["Spanish Fork", "Payson", "Elk Ridge", "Woodland Hills", "Mapleton", "Santaquin"],
+  },
+  {
+    slug: "elk-ridge",
+    name: "Elk Ridge",
+    county: "Utah County",
+    metaTitle: "Elk Ridge HVAC: Heating & Cooling, Open 24/7",
+    metaDescription:
+      "Heating and cooling for Elk Ridge, UT: furnace and AC repair and dual-fuel heat pumps. Elk Ridge is on SESD power, so we match the $1,450 rebate.",
+    h1: "Heating and cooling in Elk Ridge, UT",
+    heroSub:
+      "Furnace and AC repair, tune-ups and dual-fuel heat pump systems for Elk Ridge, open 24/7, with our $1,450 heat pump rebate match for SESD homes.",
+    intro: [
+      "Elk Ridge is a small residential city on the bench above Payson and Salem, with about 4,700 residents. Most homes are single-family houses on generous lots, and many still run the furnace and AC they were built with.",
+      "Elk Ridge homes get their power from South Utah Valley Electric Service District (SESD), not Rocky Mountain Power, so the Wattsmart heat pump rebate doesn’t apply. We match it with a $1,450 credit of our own. For most homes here we recommend a variable-speed heat pump with a gas furnace, sized with a load calculation.",
+    ],
+    facts: [
+      { label: "People", value: "About 4,700" },
+      { label: "Location", value: "On the bench above Payson and Salem" },
+      { label: "Electric", value: "SESD (South Utah Valley Electric)" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+      { label: "Heat pump rebate", value: "We match the $1,450 Rocky Mountain Power rebate" },
+      { label: "Permits", value: "Elk Ridge City" },
+    ],
+    homes: [
+      {
+        title: "Original systems wearing out",
+        body: "Many Elk Ridge homes still have the furnace and AC they were built with. As those systems age, they get louder and less dependable, usually in that order.",
+      },
+      {
+        title: "Outdoor units by the bedrooms",
+        body: "On many lots the condenser sits along a side yard right outside a bedroom window. A buzzing single-speed unit there is hard to sleep through.",
+      },
+      {
+        title: "Cold nights on the bench",
+        body: "Winter nights are long here, so the gas furnace does real work. A dual-fuel system lets the heat pump handle mild days and the furnace take the cold ones.",
+      },
+    ],
+    rmp: false,
+    job: {
+      customer: "Mark D.",
+      title: "Mark’s outdoor unit buzzed by the bedroom window and the furnace woke the dog. Now the house is quiet.",
+      problem:
+        "Mark’s original system was wearing out. The outdoor unit buzzed right next to the bedroom window, and the furnace clanked loudly enough at startup to wake the dog. He was also worried about the mess of a full replacement.",
+      solution:
+        "A variable-speed heat pump paired with a variable-speed gas furnace. The crew wore shoe covers, laid floor runners from the door to the mechanical room and left the work area spotless when they finished.",
+      result:
+        "A quiet house inside and out, steady comfort, and a heat pump that hands off to the gas furnace on its own when the nights turn cold.",
+      img: "/images/heat-pump-install-vacuum.jpg",
+      alt: "Technician pulling a vacuum on a new heat pump line set",
+    },
+    faqs: [
+      { q: "Do you serve Elk Ridge?", a: "Yes, the whole city. We’re open 24/7 for repairs." },
+      { q: "I’m on SESD power. Is there a heat pump rebate?", a: "Rocky Mountain Power’s Wattsmart rebate doesn’t apply to SESD homes, so Eco Home credits you $1,450 on every heat pump we install. Enbridge Gas ThermWise adds $700 to $1,000 with a gas furnace, for $2,150 to $2,450 total." },
+      { q: "Do I need a permit in Elk Ridge?", a: "Yes. Elk Ridge City issues the permit and inspects the install. Not every HVAC company pulls permits. We do on every job, and it’s included." },
+      { q: "Why does my outdoor unit buzz?", a: "A buzz often means a failing capacitor or contactor. If it buzzes without the fan running, turn it off and call. Variable-speed units are far quieter day to day." },
+      { q: "How much does a new system cost in Elk Ridge?", a: "Furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, including our $1,450 match, with 0% interest for 12 months available." },
+    ],
+    updated: "2026-11-13",
+    nearby: ["Payson", "Salem", "Woodland Hills", "Santaquin", "Spanish Fork", "Mapleton"],
+  },
+  {
+    slug: "woodland-hills",
+    name: "Woodland Hills",
+    county: "Utah County",
+    metaTitle: "Woodland Hills HVAC: Heating & Cooling, 24/7",
+    metaDescription:
+      "Heating and cooling for Woodland Hills, UT: furnace and AC repair and dual-fuel heat pumps. On SESD power, so we match the $1,450 rebate.",
+    h1: "Heating and cooling in Woodland Hills, UT",
+    heroSub:
+      "Furnace and AC repair, tune-ups and dual-fuel heat pump systems for Woodland Hills, open 24/7, with our $1,450 rebate match for SESD homes.",
+    intro: [
+      "Woodland Hills is a small mountainside town of about 1,500 people, set in the trees above Salem and Elk Ridge. Homes are spread out on wooded lots, and the higher elevation means colder winters than the valley floor.",
+      "Woodland Hills is on SESD power rather than Rocky Mountain Power, so we match the $1,450 heat pump rebate ourselves. For most homes here we recommend a variable-speed heat pump paired with a gas furnace, so the furnace carries the coldest mountain nights.",
+    ],
+    facts: [
+      { label: "People", value: "About 1,500" },
+      { label: "Location", value: "Mountainside above Salem and Elk Ridge" },
+      { label: "Electric", value: "SESD (South Utah Valley Electric)" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+      { label: "Heat pump rebate", value: "We match the $1,450 Rocky Mountain Power rebate" },
+      { label: "Permits", value: "Woodland Hills City" },
+    ],
+    homes: [
+      {
+        title: "Mountain weather",
+        body: "Higher elevation brings colder, longer winters. An older single-speed system can run flat out and still fall behind on the coldest nights.",
+      },
+      {
+        title: "Two floors that never match",
+        body: "In multi-level homes, an aging blower often freezes one floor and leaves another stuffy. Sealing and balancing the ductwork fixes a lot of that.",
+      },
+      {
+        title: "Decks and quiet evenings",
+        body: "People move here for the quiet. A roaring outdoor unit next to the deck undoes that, and a variable-speed heat pump runs much more softly.",
+      },
+    ],
+    rmp: false,
+    job: {
+      customer: "Sarah W. and Tom",
+      title: "Sarah and Tom’s system roared by the deck and couldn’t keep up with mountain weather. Now both floors feel the same.",
+      problem:
+        "Sarah and Tom’s older system couldn’t keep up with the mountain weather. Air blasted from the vents like a wind tunnel, the upstairs was freezing while the downstairs stayed stuffy, and the outdoor unit roared loud enough to ruin evenings on the deck.",
+      solution:
+        "A variable-speed heat pump paired with a variable-speed gas furnace. The crew showed up on time, answered every question along the way and sealed the ductwork transitions so air moves quietly and goes where it should.",
+      result:
+        "Quiet evenings on the deck, gentle airflow instead of a blast, and upstairs and downstairs that finally feel the same.",
+      img: "/images/aciq-furnace-basement-install.jpg",
+      alt: "New variable-speed gas furnace installed in a basement",
+    },
+    faqs: [
+      { q: "Do you serve Woodland Hills?", a: "Yes, the whole town. We’re open 24/7 for repairs." },
+      { q: "Is there a heat pump rebate in Woodland Hills?", a: "Woodland Hills is on SESD, so the Rocky Mountain Power rebate doesn’t apply. We match it with a $1,450 credit on every heat pump we install, and Enbridge Gas adds $700 to $1,000 with a gas furnace." },
+      { q: "Will a heat pump work at this elevation?", a: "Paired with a gas furnace, yes. The heat pump covers mild weather and the furnace takes over automatically on the coldest nights." },
+      { q: "Do I need a permit in Woodland Hills?", a: "Yes. The town issues the permit and the install is inspected. Not every HVAC company pulls permits. We do on every job, and it’s included." },
+      { q: "How much does a new system cost in Woodland Hills?", a: "Furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, including our $1,450 match, with 0% interest for 12 months available." },
+    ],
+    updated: "2026-11-13",
+    nearby: ["Salem", "Elk Ridge", "Payson", "Spanish Fork", "Santaquin", "Mapleton"],
+  },
+  {
     slug: "salt-lake-city",
     name: "Salt Lake City",
     county: "Salt Lake County",
