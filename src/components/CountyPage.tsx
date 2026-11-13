@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { heroSizes } from "@/lib/heroSizes";
 import Link from "next/link";
 import { Fragment } from "react";
 import { site } from "@/lib/site";
@@ -89,7 +90,7 @@ export function CountyPage({ county: c }: { county: CountyPageProps }) {
           </div>
           <figure>
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl ring-4 ring-white/10">
-              <Image src={c.heroImg.src} alt={c.heroImg.alt} fill preload sizes="(min-width: 1024px) 520px, 100vw" className="object-cover" style={{ objectPosition: c.heroImg.pos }} />
+              <Image src={c.heroImg.src} alt={c.heroImg.alt} fill preload sizes={heroSizes(c.heroImg.src)} className="object-cover" style={{ objectPosition: c.heroImg.pos }} />
             </div>
             {c.heroImg.caption && <figcaption className="mt-3 text-sm font-semibold text-white/70">{c.heroImg.caption}</figcaption>}
           </figure>

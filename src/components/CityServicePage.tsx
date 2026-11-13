@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { heroSizes } from "@/lib/heroSizes";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import type { City } from "@/lib/cities";
@@ -81,7 +82,7 @@ export function CityServicePage({ city: c, page: p }: { city: Pick<City, "slug" 
             </ul>
           </div>
           <div className="relative aspect-[4/5] overflow-hidden rounded-3xl ring-4 ring-white/10">
-            <Image src={p.heroImg.src} alt={p.heroImg.alt} fill preload sizes="(min-width: 1024px) 520px, 100vw" className="object-cover" style={{ objectPosition: p.heroImg.pos }} />
+            <Image src={p.heroImg.src} alt={p.heroImg.alt} fill preload sizes={heroSizes(p.heroImg.src)} className="object-cover" style={{ objectPosition: p.heroImg.pos }} />
           </div>
         </div>
       </section>

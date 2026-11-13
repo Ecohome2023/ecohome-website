@@ -127,7 +127,7 @@ export const cityServices: CityService[] = [
     h1: "AC repair in American Fork, UT",
     heroSub:
       "When July afternoons hit the 90s, a broken AC can’t wait. We’re based in American Fork and open 24/7, with a $129 diagnostic and a price before any work.",
-    heroImg: { src: "/images/ac-repair-techs-overhead.jpg", alt: "Two Eco Home technicians repairing an outdoor air conditioner", pos: "50% 50%" },
+    heroImg: { src: "/images/old-ac-unit.jpg", alt: "Older outdoor AC unit beside a home, ready for service", pos: "50% 50%" },
     primaryCta: "BOOK",
     intro: [
       "American Fork summers average in the low 90s in July, and upstairs bedrooms get hotter than that. When your air conditioner stops cooling and you need air conditioning repair fast, our technicians are close by: the shop is on Automall Drive, and we answer calls and online bookings 24/7.",
@@ -859,7 +859,7 @@ export const cityServices: CityService[] = [
     h1: "AC repair in Provo, UT",
     heroSub:
       "July afternoons in Provo average about 95°F. If your AC is losing that fight, we’re open 24/7, with a $129 diagnostic and the price before any repair.",
-    heroImg: { src: "/images/tech-wiring-capacitor.jpg", alt: "Technician wiring a capacitor in an outdoor AC unit", pos: "50% 45%" },
+    heroImg: { src: "/images/heat-pump-install-lawn.jpg", alt: "Outdoor unit on a pad beside a lawn after an Eco Home service call", pos: "50% 55%" },
     primaryCta: "BOOK",
     intro: [
       "Provo’s July afternoons average about 95°F at the BYU weather station, and an aging air conditioner shows it fast: warm air from the vents, an upstairs that never cools, or an outdoor unit that hums and won’t start.",
@@ -1101,7 +1101,7 @@ export const cityServices: CityService[] = [
     h1: "AC repair in Pleasant Grove, UT",
     heroSub:
       "AC running all afternoon and the house still won’t cool? We’re minutes away in American Fork and open 24/7, with a $129 diagnostic and an upfront repair price.",
-    heroImg: { src: "/images/ac-repair-techs-overhead.jpg", alt: "Two Eco Home technicians repairing an outdoor AC unit", pos: "50% 50%" },
+    heroImg: { src: "/images/tech-heat-pump-brick.jpg", alt: "Eco Home technician servicing an outdoor unit beside a brick home", pos: "50% 50%" },
     primaryCta: "BOOK",
     intro: [
       "A Pleasant Grove AC that runs from noon until midnight is telling you something. It might be a failing part, a refrigerant leak or a system that’s simply worn out, and we’ll find out which.",
@@ -2312,7 +2312,7 @@ export const cityServices: CityService[] = [
     h1: "AC repair in Salt Lake City, UT",
     heroSub:
       "July afternoons in Salt Lake City average in the mid-90s. If your AC quits, we’re open 24/7, with a $129 diagnostic and a price before any work.",
-    heroImg: { src: "/images/tech-wiring-capacitor.jpg", alt: "Eco Home technician testing the wiring and capacitor inside an air conditioner", pos: "50% 50%" },
+    heroImg: { src: "/images/tech-eco-home-shirt-heat-pump.jpg", alt: "Eco Home technician working on an outdoor unit beside a brick home", pos: "45% 50%" },
     primaryCta: "BOOK",
     intro: [
       "Older Salt Lake City homes ask a lot of an air conditioner. Upstairs bedrooms in bungalows and story-and-a-half homes heat up fast, and an aging AC can run all afternoon without catching up. When you need air conditioning repair, we take calls and online bookings 24/7.",
@@ -2562,7 +2562,7 @@ export const cityServices: CityService[] = [
     h1: "AC repair in West Valley City, UT",
     heroSub:
       "West Valley City summers average in the mid-90s in July. If your AC stops cooling, we’re open 24/7, with a $129 diagnostic and a price before any work.",
-    heroImg: { src: "/images/ac-repair-techs-overhead.jpg", alt: "Two Eco Home technicians repairing an outdoor air conditioner", pos: "50% 50%" },
+    heroImg: { src: "/images/tech-leveling-heat-pump.jpg", alt: "Eco Home technician working on an outdoor unit", pos: "50% 50%" },
     primaryCta: "BOOK",
     intro: [
       "When a central AC dies in West Valley City, a lot of families fall back on window units, and some never go back. If that’s you, or your AC is limping through another summer, we can tell you whether it’s worth an air conditioning repair or whether it’s time for something better.",

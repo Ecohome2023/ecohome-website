@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { heroSizes } from "@/lib/heroSizes";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import type { City } from "@/lib/cities";
@@ -88,7 +89,7 @@ export function CityPage({ city: c }: { city: City }) {
           </div>
           <figure>
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl ring-4 ring-white/10">
-              <Image src={c.job.img} alt={c.job.alt} fill preload sizes="(min-width: 1024px) 520px, 100vw" className="object-cover object-[50%_60%]" />
+              <Image src={c.job.img} alt={c.job.alt} fill preload sizes={heroSizes(c.job.img)} className="object-cover object-[50%_60%]" />
             </div>
             {c.heroCaption && <figcaption className="mt-3 text-sm font-semibold text-white/70">{c.heroCaption}</figcaption>}
           </figure>
