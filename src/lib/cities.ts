@@ -250,6 +250,456 @@ export const cities: City[] = [
     updated: "2026-10-16",
     nearby: ["American Fork", "Saratoga Springs", "Highland", "Alpine", "Eagle Mountain", "Bluffdale"],
   },  {
+    slug: "provo",
+    name: "Provo",
+    county: "Utah County",
+    metaTitle: "Provo HVAC: Heating & Cooling, Open 24/7",
+    metaDescription:
+      "Heating and cooling for Provo homes, from older houses near downtown to the east bench: furnace and AC repair and dual-fuel heat pumps. Open 24/7.",
+    h1: "Heating and cooling in Provo, UT",
+    heroSub:
+      "Furnace and AC repair, tune-ups and dual-fuel heat pump systems for Provo homes, open 24/7 with the permit pulled on every job. Provo runs its own power, so we match the $1,450 heat pump rebate.",
+    intro: [
+      "Provo is Utah County’s largest city, with about 115,000 residents in the 2020 census, and one of the oldest in the state: it began as Fort Utah in 1849. That history shows in its housing. Blocks of older homes surround downtown and BYU, postwar ramblers and split-levels climb the east bench, and newer two-story homes fill in the edges of town.",
+      "Provo’s weather pushes a system hard at both ends. At the BYU weather station, July afternoons average about 95°F and January nights about 23°F. We size every install with a load calculation for the house in front of us, and for most Provo homes we recommend a variable-speed heat pump paired with a gas furnace.",
+    ],
+    facts: [
+      { label: "People", value: "About 115,000 (2020 census)" },
+      { label: "Elevation", value: "About 4,550 ft" },
+      { label: "Summer days", value: "July highs average about 95°F" },
+      { label: "Winter nights", value: "January lows average about 23°F" },
+      { label: "Electric", value: "Provo City Power" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+    ],
+    homes: [
+      {
+        title: "Older homes near downtown and BYU",
+        body: "Many of Provo’s oldest houses were built for a furnace alone, and air conditioning was added later with whatever ducts were already there. Upstairs rooms in these homes often fall behind in July. We look at duct size and return air before recommending equipment, so a new system isn’t choked by old ductwork.",
+      },
+      {
+        title: "Ramblers and split-levels on the east bench",
+        body: "Bench homes from the postwar decades usually have a finished basement and a furnace that has been replaced once already. The lower level stays cool while the main floor heats up. A variable-speed blower that runs longer at low speed keeps air moving between levels instead of cycling on and off.",
+      },
+      {
+        title: "Two-story homes built in the last 30 years",
+        body: "Newer Provo neighborhoods have bigger two-story homes, and much of their original equipment is now 20 years old or more. The upstairs bedrooms are the first rooms to suffer when a single-speed AC starts to wear out.",
+      },
+    ],
+    rmp: false,
+    job: {
+      customer: "Brian H.",
+      title: "Brian’s upstairs bedrooms hit 80° every afternoon. Now the whole house stays even, and quietly.",
+      problem:
+        "In Brian’s Provo home, the upstairs bedrooms reached 80° every summer afternoon while the basement stayed cold. The 22-year-old AC outside was loud enough to sound like a generator under the window, and the old single-speed furnace blower couldn’t push enough cool air to the second floor.",
+      solution:
+        "A variable-speed heat pump paired with a variable-speed gas furnace. The indoor blower adjusts its speed, so it can run for hours at a low, quiet setting and keep cool air moving to the upstairs.",
+      result:
+        "Steady temperatures upstairs through the afternoon, a system Brian can barely hear, and a dual-fuel setup that picks the cheaper heat source on its own each winter.",
+      more: "/service-area/provo/heat-pump-installation",
+      img: "/images/tech-heat-pump-brick.jpg",
+      alt: "Eco Home technician working on a new outdoor heat pump beside a brick home",
+    },
+    faqs: [
+      {
+        q: "Do you serve all of Provo?",
+        a: "Yes, from the older neighborhoods around downtown and BYU to the east bench, the Riverbottoms, north Provo and the west side. We’re a short drive up I-15 in American Fork and open 24/7.",
+      },
+      {
+        q: "Provo has its own power company. Do I still get a heat pump rebate?",
+        a: "Yes. Provo homes are on Provo City Power, so the Rocky Mountain Power Wattsmart rebate doesn’t apply. We match it with a $1,450 credit from Eco Home on every heat pump we install. Enbridge Gas ThermWise adds $700 to $1,000 when the heat pump is paired with a gas furnace, for $2,150 to $2,450 in all, guaranteed.",
+      },
+      {
+        q: "Do I need a permit to replace a furnace or AC in Provo?",
+        a: "Yes. Provo City issues the mechanical permit, and the finished install is inspected. Not every HVAC company pulls permits. We do on every job, and it’s included in your price.",
+      },
+      {
+        q: "Can a new system fix a hot upstairs in an older Provo home?",
+        a: "Often, if the ducts can carry the air. We check duct size and return air upstairs first. A variable-speed heat pump helps because it runs longer at low speed and keeps the air between floors mixed, but undersized ducts may need work too, and we’ll tell you if they do.",
+      },
+      {
+        q: "How much does a new heating and cooling system cost in Provo?",
+        a: "New furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, including our $1,450 match, and 0% interest for 12 months is available. Instant pricing gives you a number for your home in about a minute.",
+      },
+    ],
+    updated: "2026-11-13",
+    nearby: ["Orem", "Springville", "Vineyard", "Mapleton", "Lindon", "Spanish Fork"],
+  },
+  {
+    slug: "pleasant-grove",
+    name: "Pleasant Grove",
+    county: "Utah County",
+    metaTitle: "Pleasant Grove HVAC: Heating & Cooling",
+    metaDescription:
+      "Heating and cooling for Pleasant Grove homes from our shop next door in American Fork: furnace and AC repair, dual-fuel heat pumps. Open 24/7.",
+    h1: "Heating and cooling in Pleasant Grove, UT",
+    heroSub:
+      "Pleasant Grove is our next-door neighbor. Furnace and AC repair, tune-ups and dual-fuel heat pump systems, open 24/7, with the permit pulled on every job.",
+    intro: [
+      "Pleasant Grove was settled in 1850 under the name Battle Creek, and today it calls itself Utah’s City of Trees. About 37,700 people lived here in the 2020 census, on the bench below Mount Timpanogos and right on the American Fork border, a few minutes from our shop on Automall Drive.",
+      "Homes here range from older houses near the center of town to ramblers with finished basements and two-story homes on the bench. Many now have a furnace and AC old enough to need replacing at the same time. We size every system with a load calculation, and for most Pleasant Grove homes we recommend a variable-speed heat pump paired with a gas furnace.",
+    ],
+    facts: [
+      { label: "People", value: "About 37,700 (2020 census)" },
+      { label: "Settled", value: "1850, as Battle Creek" },
+      { label: "Known for", value: "Strawberry Days, held every June since 1922" },
+      { label: "Electric", value: "Rocky Mountain Power" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+      { label: "Distance from our shop", value: "A few minutes, right across the American Fork line" },
+    ],
+    homes: [
+      {
+        title: "Older homes near the center of town",
+        body: "The blocks around Pleasant Grove’s historic center hold the city’s oldest houses. Ducts in these homes were often laid out for a furnace only, so central air added later can struggle to reach every room. We check the ducts before we size new equipment.",
+      },
+      {
+        title: "Ramblers with finished basements",
+        body: "A lot of Pleasant Grove homes are single-level ramblers with a finished basement. The basement stays cool all summer while the main floor heats up, and the old single-speed AC cycles off before the air mixes. Longer, slower run times fix much of that.",
+      },
+      {
+        title: "Two-story homes on the bench",
+        body: "Many homes higher on the bench are two stories. Upstairs bedrooms in these two-story homes are usually the first rooms to complain when an aging AC starts losing ground in July.",
+      },
+    ],
+    rmp: true,
+    job: {
+      customer: "Kelsey W.",
+      title: "Kelsey’s AC ran from noon to midnight and still couldn’t beat 77°. Now the house stays cool on the hottest days.",
+      problem:
+        "Kelsey’s 24-year-old air conditioner ran nonstop from noon until midnight on 100° days and still couldn’t bring the house below 77°. The bedrooms stayed warm, and the old system’s loud on-and-off cycling made it worse.",
+      solution:
+        "A variable-speed heat pump paired with a variable-speed gas furnace, replacing both old units. The new system runs continuously at low power instead of blasting on and off.",
+      result:
+        "Every room stays evenly cool, even on 100° afternoons, and in winter the system switches between the heat pump and gas on its own to keep heating costs down.",
+      more: "/service-area/pleasant-grove/heat-pump-installation",
+      img: "/images/tech-leveling-heat-pump.jpg",
+      alt: "Eco Home technician leveling a new outdoor heat pump",
+    },
+    faqs: [
+      {
+        q: "How close are you to Pleasant Grove?",
+        a: "Very close. Our shop is on Automall Drive in American Fork, just across the city line, and we’re open 24/7 for repairs.",
+      },
+      {
+        q: "What heat pump rebates can Pleasant Grove homes get?",
+        a: "Pleasant Grove is on Rocky Mountain Power, which pays a $1,450 Wattsmart rebate on every heat pump we install. Enbridge Gas ThermWise adds $700 to $1,000 when it’s paired with a gas furnace. That’s $2,150 to $2,450, guaranteed, and we file both.",
+      },
+      {
+        q: "Does Pleasant Grove require a permit to replace a furnace or AC?",
+        a: "Yes. Pleasant Grove City issues the permit, and the work is inspected when it’s finished. Not every HVAC company pulls permits. We do on every job, and it’s included in your price.",
+      },
+      {
+        q: "My basement is cold and my main floor is hot. Is that the AC?",
+        a: "Partly. A single-speed system shuts off before the air between floors mixes. A variable-speed heat pump and furnace run longer at low speed and narrow that gap, and we also check the returns and ducts on each level.",
+      },
+      {
+        q: "How much does a new system cost in Pleasant Grove?",
+        a: "Furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, with 0% interest for 12 months available. Instant pricing gives you a price for your home in about a minute.",
+      },
+    ],
+    updated: "2026-11-13",
+    nearby: ["American Fork", "Lindon", "Cedar Hills", "Highland", "Orem", "Lehi"],
+  },
+  {
+    slug: "saratoga-springs",
+    name: "Saratoga Springs",
+    county: "Utah County",
+    metaTitle: "Saratoga Springs HVAC: Heating & Cooling",
+    metaDescription:
+      "Heating and cooling for Saratoga Springs homes along Utah Lake: furnace and AC repair and dual-fuel heat pump systems. Open 24/7, permits pulled.",
+    h1: "Heating and cooling in Saratoga Springs, UT",
+    heroSub:
+      "Furnace and AC repair, tune-ups and dual-fuel heat pump systems for Saratoga Springs, open 24/7. We’re about 15 minutes away in American Fork and pull the permit on every job.",
+    intro: [
+      "Saratoga Springs barely existed as a city 25 years ago. It incorporated in 1997, counted about 1,000 residents in the 2000 census and nearly 38,000 by 2020. It now runs along the west shore of Utah Lake from Pelican Point north toward Camp Williams, at about 4,500 feet.",
+      "That growth means most homes here were built in the last 20 years or so, and a lot of them still have their original builder-grade furnace and AC. Those systems are reaching the age where repairs get frequent. For most Saratoga Springs homes we recommend replacing both with a variable-speed heat pump paired with a gas furnace.",
+    ],
+    facts: [
+      { label: "People", value: "About 37,700 (2020 census), up from about 1,000 in 2000" },
+      { label: "Incorporated", value: "1997" },
+      { label: "Elevation", value: "About 4,500 ft" },
+      { label: "Electric", value: "Rocky Mountain Power" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+      { label: "Permits", value: "Saratoga Springs City" },
+    ],
+    homes: [
+      {
+        title: "Early-2000s homes near the lake",
+        body: "The first wave of neighborhoods went in near Utah Lake in the early 2000s. Their original furnaces and ACs are now about 20 years old, often single-speed builder models that were sized by rule of thumb rather than a load calculation.",
+      },
+      {
+        title: "Two-story homes with west-facing rooms",
+        body: "Saratoga Springs sits on the west side of the valley, with wide-open views across the lake. Rooms that face west soak up the afternoon sun, and a single-speed AC struggles to keep those bedrooms comfortable while the rest of the house is fine.",
+      },
+      {
+        title: "Newer homes on the hills",
+        body: "Newer neighborhoods climbing toward the Lake Mountains have bigger homes and longer duct runs. Variable-speed equipment fits these homes well because it can move air slowly and steadily to rooms at the far end of the ductwork.",
+      },
+    ],
+    rmp: true,
+    job: {
+      customer: "Nate D.",
+      title: "Nate’s west-facing bedrooms hit 79° every afternoon, and the old AC drowned out the patio. Both problems are gone.",
+      problem:
+        "The afternoon sun pushed Nate’s west-facing bedrooms to 79°, and his 19-year-old AC was so loud outside the patio that conversations stopped when it ran. Airflow was uneven, with some rooms always warmer than others.",
+      solution:
+        "A variable-speed heat pump paired with a variable-speed gas furnace. Most of the day the system runs at around 30% to 50% of its capacity, which is far quieter and keeps air moving to every room.",
+      result:
+        "The upstairs bedrooms stay cool through the afternoon, the patio is quiet again, and both floors stay closer to the same temperature. In winter, the system chooses the cheaper fuel on its own.",
+      more: "/service-area/saratoga-springs/heat-pump-installation",
+      img: "/images/heat-pump-install-vacuum.jpg",
+      alt: "Technician pulling a vacuum on a newly installed heat pump",
+    },
+    faqs: [
+      {
+        q: "Do you serve all of Saratoga Springs?",
+        a: "Yes, from the lakeside neighborhoods to the homes climbing toward the Lake Mountains. We’re in American Fork, about 15 minutes away, and open 24/7.",
+      },
+      {
+        q: "What rebates are available in Saratoga Springs?",
+        a: "Saratoga Springs is on Rocky Mountain Power, which pays $1,450 through Wattsmart on every heat pump we install. Enbridge Gas ThermWise adds $700 to $1,000 when it’s paired with a gas furnace, for $2,150 to $2,450, guaranteed.",
+      },
+      {
+        q: "Do I need a permit to replace my HVAC in Saratoga Springs?",
+        a: "Yes. Saratoga Springs City issues the permit, and the install is inspected. Not every HVAC company pulls permits. We do on every job, and it’s part of your price.",
+      },
+      {
+        q: "My home is about 20 years old. Is it time to replace the original system?",
+        a: "Often, yes. Builder-grade furnaces and ACs from the early 2000s are near the end of their typical life. If you’re seeing frequent repairs, hot rooms or high summer bills, compare a new dual-fuel system with the next repair.",
+      },
+      {
+        q: "How much does a new system cost in Saratoga Springs?",
+        a: "Furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, and 0% interest for 12 months is available. Instant pricing gives you a number for your home in about a minute.",
+      },
+    ],
+    updated: "2026-11-13",
+    nearby: ["Lehi", "Eagle Mountain", "American Fork", "Vineyard", "Highland", "Bluffdale"],
+  },
+  {
+    slug: "eagle-mountain",
+    name: "Eagle Mountain",
+    county: "Utah County",
+    metaTitle: "Eagle Mountain HVAC: Heating & Cooling",
+    metaDescription:
+      "Heating and cooling for Eagle Mountain homes, from the Ranches to City Center: furnace and AC repair and dual-fuel heat pump systems. Open 24/7.",
+    h1: "Heating and cooling in Eagle Mountain, UT",
+    heroSub:
+      "Furnace and AC repair, tune-ups and dual-fuel heat pump systems for Eagle Mountain, open 24/7, with the permit pulled on every job.",
+    intro: [
+      "Eagle Mountain incorporated as a town in 1996 and has been one of Utah’s fastest-growing cities ever since. It doubled from about 22,000 residents in 2010 to about 43,600 in 2020, and it covers more than 50 square miles of Cedar Valley.",
+      "The city is big enough that its weather isn’t the same everywhere. The Ranches area in the northeast tends to be milder, while City Center to the southwest sits in a rain shadow with colder nights. Either way, most homes here are less than 25 years old, and the first round of furnaces and ACs is wearing out. For most Eagle Mountain homes we recommend a variable-speed heat pump paired with a gas furnace.",
+    ],
+    facts: [
+      { label: "People", value: "About 43,600 (2020 census), double 2010" },
+      { label: "Incorporated", value: "1996" },
+      { label: "Size", value: "More than 50 square miles" },
+      { label: "Electric", value: "Rocky Mountain Power" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+      { label: "Permits", value: "Eagle Mountain City" },
+    ],
+    homes: [
+      {
+        title: "The first neighborhoods",
+        body: "Eagle Mountain’s first subdivisions date from the late 1990s and 2000s. Their original builder-grade systems are now 20 years old or more, and that’s where most of our replacement calls come from.",
+      },
+      {
+        title: "City Center and the colder southwest",
+        body: "Homes toward City Center see colder nights and more sun. Those cold nights favor a dual-fuel setup: the heat pump handles the mild days, and the gas furnace carries the coldest ones.",
+      },
+      {
+        title: "Newer two-story homes",
+        body: "The newest neighborhoods are full of two-story homes with the bedrooms upstairs. When the main floor is chilly and the upstairs is warm, the problem is usually airflow between floors, which a variable-speed blower is designed to fix.",
+      },
+    ],
+    rmp: true,
+    job: {
+      customer: "Lauren M.",
+      title: "Lauren’s 21-year-old AC sounded like a helicopter outside the bedroom. Now both floors are even and the house is quiet.",
+      problem:
+        "Lauren’s 21-year-old air conditioner was loud enough next to the bedroom window that it sounded like a helicopter taking off, and the vents rattled every time it kicked on. The upstairs bedrooms stayed warm while the main floor felt chilly.",
+      solution:
+        "A variable-speed heat pump paired with a variable-speed gas furnace. Our crew laid protective runners across the stairs, and before leaving they walked Lauren through the new thermostat step by step.",
+      result:
+        "No more loud startup blasts or rattling vents, the two floors stay at the same temperature, and in winter the system switches between electric and gas heat on its own.",
+      more: "/service-area/eagle-mountain/heat-pump-installation",
+      img: "/images/tech-eco-home-shirt-heat-pump.jpg",
+      alt: "Eco Home technician installing an outdoor heat pump",
+    },
+    faqs: [
+      {
+        q: "Do you serve all of Eagle Mountain?",
+        a: "Yes, from the Ranches and Silverlake to City Center and the newer neighborhoods. We’re based in American Fork and open 24/7.",
+      },
+      {
+        q: "Eagle Mountain used to run its own power. Who provides it now?",
+        a: "Rocky Mountain Power took over the city’s electric system in the mid-2010s, so Eagle Mountain homes qualify for the $1,450 Wattsmart rebate on every heat pump we install. Enbridge Gas ThermWise adds $700 to $1,000 when it’s paired with a gas furnace.",
+      },
+      {
+        q: "Do I need a permit for a new furnace or AC in Eagle Mountain?",
+        a: "Yes. Eagle Mountain City issues the permit and inspects the work. Not every HVAC company pulls permits. We do on every job, and it’s part of the price.",
+      },
+      {
+        q: "Why is my upstairs warm and my main floor cold?",
+        a: "Warm air rises, and a single-speed system shuts off before it can mix the air between floors. A variable-speed blower runs longer at low speed and keeps the floors closer together. We also check the upstairs returns.",
+      },
+      {
+        q: "How much does a new system cost in Eagle Mountain?",
+        a: "Furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, with 0% interest for 12 months available. Instant pricing gives you a price for your home in about a minute.",
+      },
+    ],
+    updated: "2026-11-13",
+    nearby: ["Saratoga Springs", "Lehi", "American Fork", "Highland", "Vineyard", "Bluffdale"],
+  },
+  {
+    slug: "spanish-fork",
+    name: "Spanish Fork",
+    county: "Utah County",
+    metaTitle: "Spanish Fork HVAC: Heating & Cooling",
+    metaDescription:
+      "Heating and cooling for Spanish Fork homes: furnace and AC repair and dual-fuel heat pumps. Spanish Fork is on city power, so we match the $1,450 rebate.",
+    h1: "Heating and cooling in Spanish Fork, UT",
+    heroSub:
+      "Furnace and AC repair, tune-ups and dual-fuel heat pump systems for Spanish Fork, open 24/7. Spanish Fork runs its own power, so we match the $1,450 heat pump rebate.",
+    intro: [
+      "Spanish Fork was settled in 1851 and had about 42,600 residents in the 2020 census. Its homes run from older houses near Main Street to newer subdivisions on the edges of town, and many families have lived in the same house long enough to have replaced the furnace at least once.",
+      "At about 4,670 feet, Spanish Fork gets real winters. The city’s weather station averages about 66 inches of snow a year and has recorded lows of −20°F. We size every system with a load calculation, and for most Spanish Fork homes we recommend a variable-speed heat pump paired with a gas furnace, so the furnace is there for the coldest nights.",
+    ],
+    facts: [
+      { label: "People", value: "About 42,600 (2020 census)" },
+      { label: "Settled", value: "1851" },
+      { label: "Elevation", value: "About 4,670 ft" },
+      { label: "Snowfall", value: "About 66 inches a year" },
+      { label: "Electric", value: "Spanish Fork City Power & Light" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+    ],
+    homes: [
+      {
+        title: "Older homes near Main Street",
+        body: "The center of Spanish Fork has houses that were built long before central air. Ducts sized for heat alone can limit how much cooling reaches the upstairs, so we check them before sizing a new system.",
+      },
+      {
+        title: "Family homes that have been lived in for decades",
+        body: "Plenty of Spanish Fork homes are on their second furnace and AC, often both now 20 years old or more. Replacing them together with a matched dual-fuel system means one install and one set of rebates.",
+      },
+      {
+        title: "Newer subdivisions",
+        body: "Spanish Fork has added thousands of homes on the edges of town. Their builder-grade equipment is reaching the age where repairs start adding up.",
+      },
+    ],
+    rmp: false,
+    job: {
+      customer: "Greg P.",
+      title: "Greg had to turn up the TV every time his 24-year-old system kicked on. Now he can’t hear it at all.",
+      problem:
+        "Greg’s furnace and AC were 24 years old, and the airflow was so loud he had to turn up the living room TV every time either one came on. He’d put off replacing them for years because he dreaded having contractors tracking through the house.",
+      solution:
+        "A variable-speed heat pump paired with a variable-speed gas furnace. Our installers wore shoe covers every time they came inside, kept Greg updated through the day and left the house clean.",
+      result:
+        "The new system is quiet enough that the TV volume stays where it is, and every room holds the same temperature.",
+      more: "/service-area/spanish-fork/heat-pump-installation",
+      img: "/images/tech-heat-pump-portrait.jpg",
+      alt: "Eco Home technician beside a newly installed outdoor heat pump",
+    },
+    faqs: [
+      {
+        q: "Do you serve all of Spanish Fork?",
+        a: "Yes, from the older neighborhoods near Main Street to the newer subdivisions on every side of town. We’re open 24/7.",
+      },
+      {
+        q: "Spanish Fork has its own power company. Do I still get a heat pump rebate?",
+        a: "Yes. Spanish Fork homes are on Spanish Fork City Power & Light, so the Rocky Mountain Power Wattsmart rebate doesn’t apply. We match it with a $1,450 credit from Eco Home on every heat pump we install, and Enbridge Gas ThermWise adds $700 to $1,000 with a gas furnace. That’s $2,150 to $2,450, guaranteed.",
+      },
+      {
+        q: "Do I need a permit to replace a furnace or AC in Spanish Fork?",
+        a: "Yes. Spanish Fork City issues the permit and inspects the finished install. Not every HVAC company pulls permits. We do on every job, and it’s included in your price.",
+      },
+      {
+        q: "Is a heat pump enough for Spanish Fork winters?",
+        a: "On its own, it would work hard on the coldest nights. That’s why we pair it with a gas furnace. The heat pump covers mild days, and the furnace takes over when it’s cold.",
+      },
+      {
+        q: "How much does a new system cost in Spanish Fork?",
+        a: "Furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, including our $1,450 match, and 0% interest for 12 months is available. Instant pricing gives you a number for your home in about a minute.",
+      },
+    ],
+    updated: "2026-11-13",
+    nearby: ["Springville", "Salem", "Mapleton", "Payson", "Provo", "Elk Ridge"],
+  },
+  {
+    slug: "springville",
+    name: "Springville",
+    county: "Utah County",
+    metaTitle: "Springville HVAC: Heating & Cooling",
+    metaDescription:
+      "Heating and cooling for Springville homes: furnace and AC repair and dual-fuel heat pumps. Springville is on city power, so we match the $1,450 rebate.",
+    h1: "Heating and cooling in Springville, UT",
+    heroSub:
+      "Furnace and AC repair, tune-ups and dual-fuel heat pump systems for Springville, open 24/7. Springville runs its own power, so we match the $1,450 heat pump rebate.",
+    intro: [
+      "Springville was settled in 1850 along Hobble Creek and is known today as Art City, home of the Springville Museum of Art. About 35,300 people lived here in the 2020 census, at an elevation of about 4,580 feet.",
+      "The city mixes older homes near downtown with family neighborhoods built over the last several decades, and many of those homes now have a furnace and AC that are both near the end of their life. For most Springville homes we recommend replacing them together with a variable-speed heat pump paired with a gas furnace.",
+    ],
+    facts: [
+      { label: "People", value: "About 35,300 (2020 census)" },
+      { label: "Settled", value: "1850, along Hobble Creek" },
+      { label: "Known as", value: "Art City" },
+      { label: "Elevation", value: "About 4,580 ft" },
+      { label: "Electric", value: "Springville City Power" },
+      { label: "Natural gas", value: "Enbridge Gas" },
+    ],
+    homes: [
+      {
+        title: "Older homes near downtown",
+        body: "Springville’s older neighborhoods around Main Street have homes built long before central air. Their ducts were laid out for heat, and that can leave the upstairs short on cooling. We check ducts before we size equipment.",
+      },
+      {
+        title: "Two-story family homes",
+        body: "In Springville’s two-story homes, the upstairs bedrooms are usually the least comfortable rooms in the house. A single-speed system shuts off before the air between floors mixes, so the bedrooms run warm in summer and cool in winter.",
+      },
+      {
+        title: "Basement furnaces that clank",
+        body: "Older furnaces in Springville basements often get noisy before they fail, with clanking blowers and loud startups that carry through the floors. A variable-speed furnace ramps up gently and runs quietly.",
+      },
+    ],
+    rmp: false,
+    job: {
+      customer: "Sarah T.",
+      title: "Sarah’s 26-year-old system clanked in the basement and never kept the upstairs comfortable. Now she has to check the thermostat to know it’s running.",
+      problem:
+        "Sarah’s heating and cooling system was 26 years old. It clanked loudly in the basement, and the upstairs bedrooms were uncomfortable in every season. She wanted a local team that wouldn’t pressure her or cut corners.",
+      solution:
+        "A variable-speed heat pump paired with a variable-speed gas furnace. Our technicians took extra time balancing airflow to the second floor, sealed each duct connection and walked Sarah through how the dual-fuel system runs on its own year-round.",
+      result:
+        "The system hums quietly in the background through family dinners and bedtime, and the upstairs is comfortable again.",
+      more: "/service-area/springville/heat-pump-installation",
+      img: "/images/heat-pump-install-lawn.jpg",
+      alt: "Newly installed outdoor heat pump on a pad beside a lawn",
+    },
+    faqs: [
+      {
+        q: "Do you serve all of Springville?",
+        a: "Yes, from the older homes near downtown to the neighborhoods up toward Hobble Creek Canyon and the west side. We’re open 24/7.",
+      },
+      {
+        q: "Springville runs its own power. Can I still get a heat pump rebate?",
+        a: "Yes. Springville homes are on Springville City Power, so the Rocky Mountain Power Wattsmart rebate doesn’t apply. We match it with a $1,450 credit from Eco Home on every heat pump we install, and Enbridge Gas ThermWise adds $700 to $1,000 with a gas furnace. That’s $2,150 to $2,450, guaranteed.",
+      },
+      {
+        q: "Do I need a permit for a new furnace or AC in Springville?",
+        a: "Yes. Springville City issues the permit and inspects the work. Not every HVAC company pulls permits. We do on every job, and it’s included in your price.",
+      },
+      {
+        q: "Why are my upstairs bedrooms always uncomfortable?",
+        a: "Heat rises, and a single-speed system cycles off before the air between floors mixes. Small upstairs returns make it worse. A variable-speed system and some duct balancing usually fix most of it.",
+      },
+      {
+        q: "How much does a new system cost in Springville?",
+        a: "Furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, including our $1,450 match, and 0% interest for 12 months is available. Instant pricing gives you a price for your home in about a minute.",
+      },
+    ],
+    updated: "2026-11-13",
+    nearby: ["Provo", "Mapleton", "Spanish Fork", "Orem", "Salem", "Vineyard"],
+  },
+  {
     slug: "salt-lake-city",
     name: "Salt Lake City",
     county: "Salt Lake County",

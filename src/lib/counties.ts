@@ -66,6 +66,42 @@ export const countyPages: County[] = [
         problem: "An early-2000s home with a hot upstairs and loft, and a loud, uneven 20-year-old furnace.",
         result: "Even temperatures from the basement to the loft, and a quiet system in place of the roar.",
       },
+      {
+        city: "provo",
+        customer: "Brian H.",
+        problem: "Upstairs bedrooms at 80° every afternoon, a cold basement and a 22-year-old AC that sounded like a generator.",
+        result: "Steady temperatures upstairs and a system he can barely hear.",
+      },
+      {
+        city: "pleasant-grove",
+        customer: "Kelsey W.",
+        problem: "A 24-year-old AC that ran from noon to midnight and still couldn’t get the house below 77°.",
+        result: "Every room evenly cool, even on 100° days.",
+      },
+      {
+        city: "saratoga-springs",
+        customer: "Nate D.",
+        problem: "West-facing bedrooms at 79° and a 19-year-old AC too loud to talk over on the patio.",
+        result: "Cool bedrooms through the afternoon and a quiet patio.",
+      },
+      {
+        city: "eagle-mountain",
+        customer: "Lauren M.",
+        problem: "A 21-year-old AC that sounded like a helicopter, rattling vents and a warm upstairs.",
+        result: "Quiet startups and the same temperature on both floors.",
+      },
+      {
+        city: "spanish-fork",
+        customer: "Greg P.",
+        problem: "A 24-year-old furnace and AC so loud he had to turn up the TV.",
+        result: "A nearly silent system and even temperatures in every room.",
+      },
+      {
+        city: "springville",
+        customer: "Sarah T.",
+        problem: "A 26-year-old system that clanked in the basement and never kept the upstairs comfortable.",
+        result: "A quiet system and comfortable bedrooms upstairs.",
+      },
     ],
     rebates: {
       title: "$2,150 to $2,450 in rebates, guaranteed, anywhere in Utah County",
@@ -97,7 +133,7 @@ export const countyPages: County[] = [
         a: "New furnaces start at $3,990, installed in one day. Heat pump and gas furnace systems start at $9,990 after incentives, and 0% interest for 12 months is available. Instant pricing gives you a number for your home in about two minutes.",
       },
     ],
-    updated: "2026-10-19",
+    updated: "2026-11-13",
   },
   {
     slug: "salt-lake-county",

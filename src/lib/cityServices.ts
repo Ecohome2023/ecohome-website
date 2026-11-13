@@ -764,6 +764,1458 @@ export const cityServices: CityService[] = [
       },
     ],
   },
+  // ================================================================ PROVO
+  // ---------------------------------------------------------------- FURNACE REPAIR
+  {
+    city: "provo",
+    slug: "furnace-repair",
+    serviceName: "Furnace repair",
+    mainHref: "/services/furnace-repair",
+    metaTitle: "Furnace Repair in Provo, UT, Open 24/7",
+    metaDescription:
+      "Provo furnace repair, open 24/7. A $129 diagnostic and the repair price up front, for older Provo homes and newer ones alike. Call 801-396-0019.",
+    h1: "Furnace repair in Provo, UT",
+    heroSub:
+      "No heat in Provo? We’re open 24/7. Your technician finds the cause, gives you the price, and only then starts the repair. The diagnostic is $129.",
+    heroImg: { src: "/images/furnace-tech-uniform.jpg", alt: "Eco Home technician beside a newly installed gas furnace", pos: "50% 35%" },
+    primaryCta: "BOOK",
+    intro: [
+      "Provo has some of the oldest housing in Utah County, and plenty of its furnaces sit in tight basement closets or crawlspaces that were never meant for modern equipment. When one of them stops on a January night, you need someone who has worked on all of it.",
+      "We repair every major brand of gas and electric furnace. The repair price comes before any work, and if a repair isn’t worth the money, we say so.",
+    ],
+    factorsTitle: "What makes Provo furnaces fail",
+    factors: [
+      {
+        title: "Nights in the low 20s",
+        body: "January nights in Provo average about 23°F. On those nights a furnace starts dozens of times, and each start wears on the ignitor, the inducer motor and the blower.",
+      },
+      {
+        title: "Tight installs in older homes",
+        body: "Furnaces squeezed into small closets or crawlspaces run hotter and are harder to keep clean. Poor clearance and blocked return air cause many of the overheating shutdowns we see near downtown.",
+      },
+      {
+        title: "Rentals and student housing",
+        body: "Around BYU, many furnaces serve rental units with filters that don’t get changed on schedule. A clogged filter starves the furnace of air and trips its safety limit.",
+      },
+    ],
+    listTitle: "Common furnace repairs in Provo",
+    listIntro: "Your technician carries the common parts, so many repairs are done in one trip.",
+    list: [
+      { title: "Furnace won’t light", body: "We check the ignitor, flame sensor, gas valve and control board, then replace only what failed." },
+      { title: "Shuts off after a few minutes", body: "Usually a dirty flame sensor or an overheating limit switch caused by poor airflow." },
+      { title: "Banging or booming at startup", body: "Gas lighting late in the burners. It’s worth fixing before it cracks a heat exchanger." },
+      { title: "Blower runs, no warm air", body: "A safety switch has shut the burners off. We find out why instead of just resetting it." },
+      { title: "Rental unit with no heat", body: "We work with landlords and tenants and can send the repair price to whoever approves it." },
+    ],
+    price: {
+      title: "Know the price before we start",
+      body: "The furnace diagnostic is $129. You get the repair price up front and choose whether to go ahead.",
+      points: ["$129 diagnostic", "Repair price before work", "Essential Care Plan members save 10%", "Backed by our Smile Guarantee"],
+    },
+    offer: { price: 129, description: "Furnace diagnostic; repair priced upfront before any work" },
+    updated: "2026-11-13",
+    decideTitle: "Repair or replace in Provo?",
+    decide: [
+      "Repair a furnace younger than about 15 years when the repair is a reasonable fraction of a new one.",
+      "For an older furnace that needs a heat exchanger, inducer or control board, look at replacement first. In Provo, a heat pump paired with a new gas furnace qualifies for at least $2,150 in rebates, guaranteed: our $1,450 match, since Provo City Power customers don’t get the Rocky Mountain Power rebate, plus $700 to $1,000 from Enbridge Gas. A furnace alone starts at $3,990, installed in one day.",
+    ],
+    safety: {
+      title: "Smell gas? Get outside first.",
+      body: "If you smell rotten eggs, take everyone outside and don’t flip switches or use your phone inside. From outside, call Enbridge Gas at 1-800-767-1689 or 911. Once the gas company says the home is safe, call us about the furnace.",
+    },
+    faqs: [
+      {
+        q: "Are you open nights and weekends for Provo furnace repair?",
+        a: "Yes, we’re open 24/7. Call 801-396-0019 or book online any time.",
+      },
+      {
+        q: "What does furnace repair cost in Provo?",
+        a: "The diagnostic is $129, and you get the repair price before any work. Replacing a flame sensor is a small job; an inducer or blower motor costs more. Essential Care Plan members save 10%.",
+      },
+      {
+        q: "I rent my Provo home. Can you work with my landlord?",
+        a: "Yes. We can diagnose the problem and send the repair price to your landlord or property manager for approval.",
+      },
+      {
+        q: "Why does my furnace keep shutting off?",
+        a: "The most common causes are a dirty flame sensor, a clogged filter or blocked return air, which make the furnace overheat and trip its safety switch. Change the filter first; if it still shuts off, call us.",
+      },
+      {
+        q: "My furnace is in a tiny closet. Can you still service it?",
+        a: "Yes. Many older Provo homes have furnaces in tight spaces. We’ll also check that it has enough clearance and return air, since that affects how long it lasts.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- AC REPAIR
+  {
+    city: "provo",
+    slug: "ac-repair",
+    serviceName: "AC repair",
+    mainHref: "/services/ac-repair",
+    metaTitle: "AC Repair in Provo, UT, Open 24/7",
+    metaDescription:
+      "Provo AC repair, open 24/7: warm air, a hot upstairs or a unit that won’t start. $129 diagnostic and the repair price before any work.",
+    h1: "AC repair in Provo, UT",
+    heroSub:
+      "July afternoons in Provo average about 95°F. If your AC is losing that fight, we’re open 24/7, with a $129 diagnostic and the price before any repair.",
+    heroImg: { src: "/images/tech-wiring-capacitor.jpg", alt: "Technician wiring a capacitor in an outdoor AC unit", pos: "50% 45%" },
+    primaryCta: "BOOK",
+    intro: [
+      "Provo’s July afternoons average about 95°F at the BYU weather station, and an aging air conditioner shows it fast: warm air from the vents, an upstairs that never cools, or an outdoor unit that hums and won’t start.",
+      "We repair all major AC and heat pump brands. You’ll hear what failed in plain terms and see the repair price before we do anything.",
+    ],
+    factorsTitle: "Why Provo ACs give out in July",
+    factors: [
+      {
+        title: "Mid-90s afternoons",
+        body: "When it’s 95°F outside, an AC runs most of the afternoon. Heat is hard on capacitors, contactors and fan motors, the parts that fail most often.",
+      },
+      {
+        title: "AC added to homes built without it",
+        body: "Many older Provo homes got central air decades after they were built, using ducts sized for heat. Upstairs rooms in those homes are often starved for cool air.",
+      },
+      {
+        title: "Cottonwood fluff and dirt",
+        body: "Outdoor coils collect fluff, grass clippings and dust. A coil that can’t shed heat makes the compressor work harder and the house warmer.",
+      },
+    ],
+    listTitle: "AC repairs we make in Provo",
+    listIntro: "Most are diagnosed and repaired in the same visit.",
+    list: [
+      { title: "Blowing warm air", body: "Often a failed capacitor or contactor; sometimes a refrigerant leak we track down and repair." },
+      { title: "Outdoor unit hums but won’t run", body: "Classic capacitor failure. Shut it off so the compressor doesn’t overheat, then call." },
+      { title: "Upstairs stays hot", body: "We measure airflow and refrigerant charge and check the upstairs returns." },
+      { title: "Frozen refrigerant line", body: "Low airflow or low charge. Turn the AC off and let it thaw before we test it." },
+      { title: "Water around the furnace", body: "A clogged condensate drain or cracked pan, usually a quick fix." },
+    ],
+    price: {
+      title: "You approve the price first",
+      body: "AC diagnostics are $129. Your technician prices the repair before starting it.",
+      points: ["$129 diagnostic", "Upfront repair price", "10% off for Essential Care Plan members", "Smile Guarantee on our work"],
+    },
+    offer: { price: 129, description: "AC diagnostic; repair priced upfront before any work" },
+    updated: "2026-11-13",
+    decideTitle: "Fix the AC or upgrade?",
+    decide: [
+      "An AC under about 12 years old with a reasonable repair is usually worth fixing.",
+      "If it’s older, needs a compressor or has a refrigerant leak, compare the repair with a heat pump paired with a gas furnace. Provo City Power customers don’t get the Rocky Mountain Power rebate, so we match it with a $1,450 credit from Eco Home on every heat pump we install.",
+    ],
+    faqs: [
+      {
+        q: "How fast can you fix my AC in Provo?",
+        a: "We’re open 24/7, and most AC repairs are finished in one visit. Call 801-396-0019 or book online.",
+      },
+      {
+        q: "How much does AC repair cost in Provo?",
+        a: "The diagnostic is $129, then you get an upfront price. A capacitor or contactor costs far less than a leak repair or a new compressor. Essential Care Plan members save 10%.",
+      },
+      {
+        q: "Why won’t my older Provo home cool upstairs?",
+        a: "If central air was added after the house was built, the upstairs ducts and returns are often too small. We measure airflow before recommending anything, so you don’t pay for equipment that can’t fix the problem.",
+      },
+      {
+        q: "My outdoor unit is humming but the fan isn’t spinning. What should I do?",
+        a: "Turn the AC off at the thermostat. That’s usually a failed capacitor, and running it that way can overheat the compressor. Then give us a call.",
+      },
+      {
+        q: "Is there a rebate if I replace my AC with a heat pump in Provo?",
+        a: "Yes. We match the $1,450 Rocky Mountain Power rebate with our own credit, since Provo is on city power, and Enbridge Gas adds $700 to $1,000 when the heat pump is paired with a gas furnace.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- HEAT PUMP INSTALLATION
+  {
+    city: "provo",
+    slug: "heat-pump-installation",
+    serviceName: "Heat pump installation",
+    mainHref: "/heat-pumps",
+    metaTitle: "Heat Pump Installation in Provo, UT",
+    metaDescription:
+      "Dual-fuel heat pump systems for Provo homes from $9,990 after incentives. Provo is on city power, so we match the $1,450 rebate. Permit included.",
+    h1: "Heat pump installation in Provo, UT",
+    heroSub:
+      "A variable-speed heat pump with a gas furnace cools a Provo home through 95° afternoons, heats most of the winter, and lets the furnace take the coldest nights.",
+    heroImg: { src: "/images/heat-pump-brick-home.jpg", alt: "New outdoor heat pump installed beside a brick home", pos: "50% 55%" },
+    primaryCta: "INSTANT",
+    intro: [
+      "A dual-fuel system pairs a variable-speed heat pump with a natural gas furnace. The heat pump does all the cooling and most of the heating, and the furnace takes over when it gets cold enough that gas is the cheaper choice. The system switches on its own.",
+      "We’ve helped more than 2,000 Utah homeowners with their heating and cooling. Every Provo install includes a load calculation, the city permit and inspection, removal of the old equipment, and the rebate paperwork, including our $1,450 match.",
+    ],
+    factorsTitle: "Why Provo homes suit dual fuel",
+    factors: [
+      {
+        title: "We cover the rebate Provo doesn’t get",
+        body: "Provo runs its own power utility, so the $1,450 Rocky Mountain Power Wattsmart rebate isn’t available here. We match it with a $1,450 credit from Eco Home. With $700 to $1,000 from Enbridge Gas, that’s $2,150 to $2,450, guaranteed.",
+      },
+      {
+        title: "Hot summers, cold nights",
+        body: "Provo’s summers run into the mid-90s and January nights into the low 20s. A heat pump handles the summer and the mild part of winter efficiently, and the gas furnace is there for the coldest stretches.",
+      },
+      {
+        title: "Even temperatures in every kind of home",
+        body: "Whether it’s an older two-story near downtown or a split-level on the bench, variable-speed equipment runs longer at lower speeds, which keeps the upstairs and basement closer to the thermostat setting.",
+      },
+    ],
+    listTitle: "What every Provo install includes",
+    listIntro: "One price covers all of it.",
+    list: [
+      { title: "A load calculation", body: "We size the system for your home’s square footage, windows, insulation and levels, not for the old unit’s label." },
+      { title: "The Provo permit and inspection", body: "Not every HVAC company pulls permits. We do on every job, and it’s part of your price." },
+      { title: "Ducts and returns checked", body: "Especially in older homes, where the ducts may limit what any system can do." },
+      { title: "Old equipment hauled away", body: "We remove and dispose of the old furnace and AC." },
+      { title: "Rebates handled", body: "We apply the $1,450 match and file your Enbridge Gas rebate." },
+      { title: "Smile Guarantee", body: "One year on our workmanship. If something isn’t right, we fix it free." },
+    ],
+    price: {
+      title: "What it costs in Provo",
+      body: "Heat pump and gas furnace systems start at $9,990 after incentives, including our $1,450 match. The final price depends on your home’s size and the efficiency you choose.",
+      points: ["From $9,990 after incentives", "$1,450 rebate match from Eco Home", "$2,150 to $2,450 in rebates, guaranteed", "0% interest for 12 months available"],
+    },
+    offer: { price: 9990, description: "Heat pump and gas furnace system, starting price after incentives including Eco Home's $1,450 match" },
+    updated: "2026-11-13",
+    job: {
+      customer: "Brian H.",
+      title: "A hot second floor and a 22-year-old AC that sounded like a generator. Brian’s Provo home now cools evenly and quietly.",
+      problem: "Brian’s upstairs bedrooms hit 80° every summer afternoon while the basement stayed cold. The old single-speed furnace blower couldn’t move enough cool air up to the second floor, and the 22-year-old outdoor unit was loud enough to hear from inside.",
+      solution: "We installed a variable-speed heat pump with a variable-speed gas furnace. The modulating blower runs at a low, steady speed most of the day, which keeps cool air reaching the second floor instead of short blasts that never make it upstairs.",
+      result: "No more hot spots upstairs, a system that runs quietly inside and out, and heating that switches between the heat pump and gas automatically when winter comes.",
+    },
+    faqs: [
+      {
+        q: "Do I get the Rocky Mountain Power heat pump rebate in Provo?",
+        a: "No, because Provo homes are on Provo City Power. We match that $1,450 rebate with our own credit on every heat pump we install, and Enbridge Gas ThermWise adds $700 with an 80% furnace or $1,000 with a 96%+ furnace.",
+      },
+      {
+        q: "Will a heat pump keep my Provo home warm in January?",
+        a: "Paired with a gas furnace, yes. The heat pump heats efficiently through most of the season, and the furnace takes over on the coldest nights, so you always have plenty of heat.",
+      },
+      {
+        q: "Can a heat pump work in an older Provo home?",
+        a: "Usually. The bigger question is the ductwork. We check duct size and return air before we recommend a system, and we’ll tell you if the ducts need changes to get the comfort you want.",
+      },
+      {
+        q: "How long does a heat pump install take?",
+        a: "Most installs are done in one day, including the permit inspection scheduling and haul-away.",
+      },
+      {
+        q: "Is financing available in Provo?",
+        a: "Yes. 0% interest for 12 months is available, along with longer-term options. We’ll walk through them at your estimate.",
+      },
+    ],
+  },
+
+  // ================================================================ PLEASANT GROVE
+  // ---------------------------------------------------------------- FURNACE REPAIR
+  {
+    city: "pleasant-grove",
+    slug: "furnace-repair",
+    serviceName: "Furnace repair",
+    mainHref: "/services/furnace-repair",
+    metaTitle: "Furnace Repair in Pleasant Grove, UT",
+    metaDescription:
+      "Pleasant Grove furnace repair from our shop just over the line in American Fork. Open 24/7, $129 diagnostic, repair price before any work.",
+    h1: "Furnace repair in Pleasant Grove, UT",
+    heroSub:
+      "Our shop is minutes from Pleasant Grove, and we’re open 24/7. A $129 diagnostic, then the repair price before anything gets fixed.",
+    heroImg: { src: "/images/furnace-install.jpg", alt: "Gas furnace in a utility room after an Eco Home service visit", pos: "50% 40%" },
+    primaryCta: "BOOK",
+    intro: [
+      "Being next door matters most when the heat goes out. Our shop on Automall Drive is just across the city line from Pleasant Grove, so a technician isn’t coming from the other end of the valley.",
+      "We work on every major furnace brand, from 30-year-old units in older homes near the center of town to high-efficiency furnaces in newer homes on the bench. You see the repair price before we start.",
+    ],
+    factorsTitle: "Why Pleasant Grove furnaces wear out",
+    factors: [
+      {
+        title: "Basement furnaces working two floors",
+        body: "In a rambler with a finished basement, one furnace heats both levels. Uneven heat often comes from the ducts or returns, not the furnace, and we check that before changing parts.",
+      },
+      {
+        title: "Second and third furnaces",
+        body: "Many older Pleasant Grove homes are on their second or third furnace, sometimes installed without the venting or return air updated to match. Those mismatches shorten a furnace’s life.",
+      },
+      {
+        title: "Long heating season on the bench",
+        body: "Homes on the bench below Timpanogos see cold nights from October into April. That long season adds up to a lot of starts for ignitors and inducer motors.",
+      },
+    ],
+    listTitle: "Furnace problems we fix in Pleasant Grove",
+    listIntro: "We bring the common parts, so many fixes happen on the first visit.",
+    list: [
+      { title: "Clicking but no flame", body: "The ignitor may be cracked, or the gas valve isn’t opening. We test each step of the startup sequence." },
+      { title: "Heat comes on, then quits", body: "A flame sensor coated in buildup or an overheating limit. A clean sensor and a fresh filter fix many of these." },
+      { title: "Basement freezing, main floor warm", body: "Usually return air or duct balance. We measure before recommending anything." },
+      { title: "Squealing or grinding blower", body: "A worn blower motor bearing or belt. It’s cheaper to fix early than after the motor seizes." },
+      { title: "Error codes blinking", body: "We read the furnace’s fault code and trace the cause." },
+    ],
+    price: {
+      title: "Upfront, every time",
+      body: "We charge $129 for the furnace diagnostic and give you the repair price before any work.",
+      points: ["$129 diagnostic", "Price before repair", "Essential Care Plan members save 10%", "Smile Guarantee"],
+    },
+    offer: { price: 129, description: "Furnace diagnostic; repair priced upfront before any work" },
+    updated: "2026-11-13",
+    decideTitle: "Worth repairing?",
+    decide: [
+      "A furnace under about 15 years old with a modest repair is usually worth fixing.",
+      "If it’s older and needs a major part, compare a replacement. Pleasant Grove is on Rocky Mountain Power, so a heat pump paired with a new gas furnace gets the $1,450 Wattsmart rebate plus $700 to $1,000 from Enbridge Gas: at least $2,150, guaranteed. A furnace by itself starts at $3,990, installed in one day.",
+    ],
+    safety: {
+      title: "Rotten-egg smell? Leave first, call second.",
+      body: "Take everyone outside without using light switches or appliances. From outside, call Enbridge Gas at 1-800-767-1689 or 911. Call us once the gas company has cleared the house.",
+    },
+    faqs: [
+      {
+        q: "How quickly can you get to Pleasant Grove?",
+        a: "Our shop is just across the line in American Fork, and we’re open 24/7. Call 801-396-0019 or book online.",
+      },
+      {
+        q: "How much is furnace repair in Pleasant Grove?",
+        a: "$129 for the diagnostic, then a set price for the repair before we start. Small parts like a flame sensor or ignitor cost much less than a blower or inducer motor. Essential Care Plan members save 10%.",
+      },
+      {
+        q: "Why is my basement so much colder than upstairs in winter?",
+        a: "Cold air settles, and basement returns and supply registers are often too few or poorly placed. We check airflow on each level before blaming the furnace.",
+      },
+      {
+        q: "My furnace is blinking a code. Can you read it?",
+        a: "Yes. Most furnaces flash a fault code on the control board. We read it, test the part it points to, and fix the actual cause.",
+      },
+      {
+        q: "Should I fix a 25-year-old furnace?",
+        a: "Small repairs, maybe. For a major part, a replacement is usually the better deal, especially with $2,150 or more in rebates on a heat pump and gas furnace system in Pleasant Grove.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- AC REPAIR
+  {
+    city: "pleasant-grove",
+    slug: "ac-repair",
+    serviceName: "AC repair",
+    mainHref: "/services/ac-repair",
+    metaTitle: "AC Repair in Pleasant Grove, UT, Open 24/7",
+    metaDescription:
+      "AC repair in Pleasant Grove from our American Fork shop next door. Open 24/7, a $129 diagnostic and an upfront price for warm air or no cooling.",
+    h1: "AC repair in Pleasant Grove, UT",
+    heroSub:
+      "AC running all afternoon and the house still won’t cool? We’re minutes away in American Fork and open 24/7, with a $129 diagnostic and an upfront repair price.",
+    heroImg: { src: "/images/ac-repair-techs-overhead.jpg", alt: "Two Eco Home technicians repairing an outdoor AC unit", pos: "50% 50%" },
+    primaryCta: "BOOK",
+    intro: [
+      "A Pleasant Grove AC that runs from noon until midnight is telling you something. It might be a failing part, a refrigerant leak or a system that’s simply worn out, and we’ll find out which.",
+      "We fix all major AC and heat pump brands. You’ll get a straight explanation and the price before any repair.",
+    ],
+    factorsTitle: "Why Pleasant Grove ACs fall behind",
+    factors: [
+      {
+        title: "Long run times on 100° days",
+        body: "On the hottest days an AC can run for hours without a break. That heat and run time wear out capacitors, contactors and outdoor fan motors.",
+      },
+      {
+        title: "Aging original units",
+        body: "Plenty of Pleasant Grove ACs are past 20 years old. Older systems lose capacity as coils corrode and refrigerant slowly leaks out.",
+      },
+      {
+        title: "Trees and yard debris",
+        body: "The City of Trees earns its name. Leaves, seeds and cottonwood fluff clog outdoor coils, so the unit can’t get rid of heat.",
+      },
+    ],
+    listTitle: "AC repairs we handle in Pleasant Grove",
+    listIntro: "Most repairs are done in one visit.",
+    list: [
+      { title: "Never shuts off", body: "We check refrigerant charge, coil condition and duct leaks to see why it can’t catch up." },
+      { title: "Warm air at the vents", body: "Commonly a bad capacitor, contactor or fan motor." },
+      { title: "AC won’t turn on", body: "A tripped breaker, failed disconnect fuse, thermostat issue or a float switch tripped by a full drain." },
+      { title: "Clogged outdoor coil", body: "We clean the coil so the system can shed heat again." },
+      { title: "Ice on the copper lines", body: "Turn the system off. Ice means low airflow or low refrigerant, and running it can damage the compressor." },
+    ],
+    price: {
+      title: "Diagnostic first, price second, repair third",
+      body: "The AC diagnostic is $129. You approve the repair price before we do the work.",
+      points: ["$129 diagnostic", "Upfront pricing", "Essential Care Plan members save 10%", "Smile Guarantee"],
+    },
+    offer: { price: 129, description: "AC diagnostic; repair priced upfront before any work" },
+    updated: "2026-11-13",
+    decideTitle: "Repair or replace your AC?",
+    decide: [
+      "If the AC is under about 12 years old and the repair is reasonable, fix it.",
+      "If it’s older, needs a compressor or is leaking refrigerant, look at a heat pump paired with a gas furnace. In Pleasant Grove that system gets the $1,450 Rocky Mountain Power rebate plus $700 to $1,000 from Enbridge Gas.",
+    ],
+    faqs: [
+      {
+        q: "Can you come today for AC repair in Pleasant Grove?",
+        a: "We’re next door in American Fork and open 24/7. Call 801-396-0019 or book online and we’ll get you on the schedule.",
+      },
+      {
+        q: "What does AC repair cost in Pleasant Grove?",
+        a: "The diagnostic is $129, then you get an upfront price. A capacitor is a small repair; a leak or compressor is a much bigger one. Essential Care Plan members save 10%.",
+      },
+      {
+        q: "Why does my AC run all day and never reach the temperature I set?",
+        a: "It may be low on refrigerant, have a dirty coil, be losing air through leaky ducts, or be too small for the house. We test for each of these.",
+      },
+      {
+        q: "Should I hose off my outdoor unit?",
+        a: "A gentle rinse from the inside out with the power off helps. Don’t use a pressure washer, which bends the fins. A tune-up includes a proper coil cleaning.",
+      },
+      {
+        q: "Is a heat pump a good replacement for my AC?",
+        a: "For most Pleasant Grove homes, yes. Paired with a gas furnace, it cools more evenly and heats much of the winter, and it qualifies for at least $2,150 in rebates.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- HEAT PUMP INSTALLATION
+  {
+    city: "pleasant-grove",
+    slug: "heat-pump-installation",
+    serviceName: "Heat pump installation",
+    mainHref: "/heat-pumps",
+    metaTitle: "Heat Pump Installation in Pleasant Grove, UT",
+    metaDescription:
+      "Heat pump + gas furnace systems for Pleasant Grove from $9,990 after incentives, with $2,150+ in Rocky Mountain Power and Enbridge rebates.",
+    h1: "Heat pump installation in Pleasant Grove, UT",
+    heroSub:
+      "A variable-speed heat pump and gas furnace keep a Pleasant Grove home evenly cool on 100° days and warm through the winter, with $2,150 or more in rebates.",
+    heroImg: { src: "/images/heat-pump-install-lawn.jpg", alt: "Newly installed outdoor heat pump on a pad beside a lawn", pos: "50% 55%" },
+    primaryCta: "INSTANT",
+    intro: [
+      "Most Pleasant Grove homes that call us about a new system have the same story: an AC and furnace that are both around 20 years old. Replacing them together with a dual-fuel system means one install, one set of rebates and equipment designed to work as a pair.",
+      "The heat pump handles cooling and most of the heating; the gas furnace covers the coldest nights. We’ve helped more than 2,000 Utah homeowners, and every install includes a load calculation, the Pleasant Grove permit, haul-away and the rebate paperwork.",
+    ],
+    factorsTitle: "Why dual fuel makes sense in Pleasant Grove",
+    factors: [
+      {
+        title: "Rocky Mountain Power rebate",
+        body: "Pleasant Grove is on Rocky Mountain Power. As a Wattsmart Pro Network contractor, we get you the $1,450 Wattsmart rebate on every heat pump we install, plus $700 to $1,000 from Enbridge Gas: $2,150 to $2,450, guaranteed.",
+      },
+      {
+        title: "Cooling that keeps up in July",
+        body: "Variable-speed heat pumps run longer at lower output, so the house stays at the set temperature instead of falling behind all afternoon.",
+      },
+      {
+        title: "Main floor and basement closer together",
+        body: "Steady, low-speed airflow mixes the air between levels, which narrows the gap between a warm main floor and a cool basement.",
+      },
+    ],
+    listTitle: "Included in every Pleasant Grove install",
+    listIntro: "No add-ons to chase later.",
+    list: [
+      { title: "Load calculation", body: "Sized to your house, not copied from the old unit." },
+      { title: "Pleasant Grove permit", body: "Pulled and inspected. Not every HVAC company pulls permits. We do on every job." },
+      { title: "Variable-speed furnace", body: "Paired with the heat pump so both run quietly at low speed most of the time." },
+      { title: "Thermostat set up", body: "We configure the dual-fuel switchover and show you how it works." },
+      { title: "Rebates filed", body: "Rocky Mountain Power and Enbridge Gas paperwork handled for you." },
+      { title: "Smile Guarantee", body: "A year on our workmanship. If something isn’t right, we fix it free." },
+    ],
+    price: {
+      title: "Pleasant Grove pricing",
+      body: "Heat pump and gas furnace systems start at $9,990 after incentives. Your price depends on the size of your home and the efficiency you choose.",
+      points: ["From $9,990 after incentives", "$1,450 Rocky Mountain Power rebate", "$2,150 to $2,450 in rebates, guaranteed", "0% interest for 12 months available"],
+    },
+    offer: { price: 9990, description: "Heat pump and gas furnace system, starting price after incentives" },
+    updated: "2026-11-13",
+    job: {
+      customer: "Kelsey W.",
+      title: "A 24-year-old AC that couldn’t get below 77° on 100° days. Kelsey’s house now stays cool all afternoon.",
+      problem: "Kelsey’s old AC ran from noon to midnight on the hottest days and the house still sat at 77° or warmer, with the bedrooms the worst of it.",
+      solution: "We replaced the AC and furnace together with a variable-speed heat pump and a variable-speed gas furnace. Instead of loud on-and-off blasts, the system runs steadily at low power.",
+      result: "Every room stays evenly cool even on 100° days, and in winter the system picks between electric and gas heat on its own.",
+    },
+    faqs: [
+      {
+        q: "What rebates can I get on a heat pump in Pleasant Grove?",
+        a: "Rocky Mountain Power pays $1,450 through Wattsmart on every heat pump we install, and Enbridge Gas ThermWise pays $700 with an 80% furnace or $1,000 with a 96%+ furnace. That’s $2,150 to $2,450, guaranteed, and we file it all.",
+      },
+      {
+        q: "Will a heat pump keep up on 100° days?",
+        a: "Yes, when it’s sized correctly. That’s why every install starts with a load calculation. A variable-speed heat pump also runs longer at lower speed, which keeps the temperature steady instead of letting the house drift.",
+      },
+      {
+        q: "Should I replace my AC and furnace at the same time?",
+        a: "If both are around 20 years old, usually yes. Replacing them together costs less than two separate jobs, qualifies for both rebates and gives you a matched system.",
+      },
+      {
+        q: "How long will the install take?",
+        a: "Most are finished in one day, including removing the old equipment.",
+      },
+      {
+        q: "Can I finance a new system?",
+        a: "Yes. 0% interest for 12 months is available, along with longer-term financing.",
+      },
+    ],
+  },
+
+  // ================================================================ SARATOGA SPRINGS
+  // ---------------------------------------------------------------- FURNACE REPAIR
+  {
+    city: "saratoga-springs",
+    slug: "furnace-repair",
+    serviceName: "Furnace repair",
+    mainHref: "/services/furnace-repair",
+    metaTitle: "Furnace Repair in Saratoga Springs, UT",
+    metaDescription:
+      "Saratoga Springs furnace repair, open 24/7. Builder-grade and high-efficiency furnaces, a $129 diagnostic and the price before any work.",
+    h1: "Furnace repair in Saratoga Springs, UT",
+    heroSub:
+      "No heat in Saratoga Springs? We’re open 24/7. A $129 diagnostic tells us what failed, and you get the repair price before any work.",
+    heroImg: { src: "/images/aciq-furnace-basement-install.jpg", alt: "High-efficiency gas furnace installed in a basement", pos: "50% 45%" },
+    primaryCta: "BOOK",
+    intro: [
+      "Most furnaces in Saratoga Springs were installed when the house was built, and in the older neighborhoods that was 20 years ago. Builder-grade furnaces of that age commonly need ignitors, inducer motors and control boards.",
+      "We repair every major brand, including the builder models found in most Saratoga Springs homes. We find the cause, give you the price, and only then make the repair.",
+    ],
+    factorsTitle: "What Saratoga Springs furnaces deal with",
+    factors: [
+      {
+        title: "Builder-grade equipment",
+        body: "Entry-level furnaces put in during construction work fine for years, but their parts tend to wear out sooner than those in higher-end models, especially once they pass 15 years.",
+      },
+      {
+        title: "High-efficiency condensate",
+        body: "Many homes here have 90%+ furnaces that make water as they run. A clogged drain line or frozen condensate pipe will shut the furnace down on a cold night.",
+      },
+      {
+        title: "Long duct runs",
+        body: "Bigger homes put rooms far from the furnace. When a blower motor weakens, those far rooms are the first to go cold.",
+      },
+    ],
+    listTitle: "Furnace repairs we make in Saratoga Springs",
+    listIntro: "Many are finished on the first trip.",
+    list: [
+      { title: "Shut down on a cold night", body: "A frozen or clogged condensate line is a common cause in high-efficiency furnaces. We clear it and protect it." },
+      { title: "Ignitor glows but no flame", body: "Often a failing gas valve or flame sensor. We test before replacing." },
+      { title: "Far rooms stay cold", body: "We check the blower, the filter and duct dampers before anything else." },
+      { title: "Loud whine from the furnace", body: "An inducer motor on its way out. Better replaced before it stops the furnace completely." },
+      { title: "Thermostat says heat, nothing happens", body: "Wiring, settings or a failed control board. We trace it step by step." },
+    ],
+    price: {
+      title: "The repair price comes first",
+      body: "Diagnostic visits are $129. You get the cost of the repair before we start.",
+      points: ["$129 diagnostic", "Repair price before work", "10% off for Essential Care Plan members", "Smile Guarantee"],
+    },
+    offer: { price: 129, description: "Furnace diagnostic; repair priced upfront before any work" },
+    updated: "2026-11-13",
+    decideTitle: "Repair or replace the original furnace?",
+    decide: [
+      "If the furnace is under about 15 years old and the repair is small, fix it.",
+      "If it’s the original builder furnace from the early 2000s and needs a big part, price a replacement. Saratoga Springs is on Rocky Mountain Power, so a heat pump paired with a new gas furnace gets at least $2,150 in rebates, guaranteed. A furnace on its own starts at $3,990, installed in one day.",
+    ],
+    safety: {
+      title: "If you smell gas, leave the house.",
+      body: "Get everyone outside and don’t touch switches or appliances on the way out. Call Enbridge Gas at 1-800-767-1689 or 911 from outside. Call us after the gas company says it’s safe.",
+    },
+    faqs: [
+      {
+        q: "Do you do emergency furnace repair in Saratoga Springs?",
+        a: "Yes, we’re open 24/7. Call 801-396-0019 or book online at any hour.",
+      },
+      {
+        q: "How much does furnace repair cost in Saratoga Springs?",
+        a: "The diagnostic is $129, then you get a firm repair price. A flame sensor or condensate fix is a small repair; an inducer or blower motor costs more. Essential Care Plan members save 10%.",
+      },
+      {
+        q: "Why did my furnace stop working when it got really cold?",
+        a: "In high-efficiency furnaces, the condensate pipe can freeze or clog, and the furnace shuts down to protect itself. We clear it and can reroute or insulate it so it doesn’t happen again.",
+      },
+      {
+        q: "Is a builder-grade furnace worth repairing?",
+        a: "Under about 15 years old, usually. After that, repairs come more often, and a new heat pump and gas furnace system with $2,150 or more in rebates is often the better value.",
+      },
+      {
+        q: "Why are the rooms over my garage always cold?",
+        a: "They’re usually at the end of a long duct run, with exterior walls and a cold garage below. We check airflow to those rooms and can often improve it.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- AC REPAIR
+  {
+    city: "saratoga-springs",
+    slug: "ac-repair",
+    serviceName: "AC repair",
+    mainHref: "/services/ac-repair",
+    metaTitle: "AC Repair in Saratoga Springs, UT, Open 24/7",
+    metaDescription:
+      "AC repair in Saratoga Springs, open 24/7. Hot west-facing rooms, warm air or a loud unit: $129 diagnostic and the repair price before work.",
+    h1: "AC repair in Saratoga Springs, UT",
+    heroSub:
+      "West-facing bedrooms baking every afternoon? We’re open 24/7, with a $129 diagnostic and a repair price before we touch anything.",
+    heroImg: { src: "/images/old-ac-unit.jpg", alt: "Older outdoor AC unit beside a home, ready for service", pos: "50% 50%" },
+    primaryCta: "BOOK",
+    intro: [
+      "Saratoga Springs is on the west side of the valley, and many homes catch the full afternoon sun. That’s when an aging AC shows its weak spots: warm air, rooms that never cool, or a unit that cycles on and off.",
+      "We fix every major AC and heat pump brand. You get a clear diagnosis and the price before any repair.",
+    ],
+    factorsTitle: "Why Saratoga Springs ACs struggle",
+    factors: [
+      {
+        title: "Afternoon sun on west-facing rooms",
+        body: "Rooms that face west can run several degrees warmer than the rest of the house. A single-speed AC satisfies the thermostat and shuts off before those rooms catch up.",
+      },
+      {
+        title: "Wind-blown dust",
+        body: "Open land and ongoing construction around the city blow dust into outdoor coils, which cuts cooling capacity.",
+      },
+      {
+        title: "First-generation equipment",
+        body: "The ACs that came with early-2000s homes are now about 20 years old, and capacitors, contactors and fan motors are wearing out.",
+      },
+    ],
+    listTitle: "AC problems we fix in Saratoga Springs",
+    listIntro: "Most are fixed in a single visit.",
+    list: [
+      { title: "One side of the house is hot", body: "We measure airflow to those rooms and check duct sizing and dampers." },
+      { title: "Loud outdoor unit", body: "Worn fan motors, loose panels and failing compressors all get louder. We find which it is." },
+      { title: "Warm air", body: "Usually a capacitor, contactor or fan motor, sometimes low refrigerant." },
+      { title: "Short cycling", body: "Running a few minutes and stopping often points to an oversized unit, a bad sensor or a refrigerant problem." },
+      { title: "Dirty coil", body: "We clean it so the system can reject heat and cool properly." },
+    ],
+    price: {
+      title: "Pricing you see first",
+      body: "Every AC visit starts with a $129 diagnostic, and you approve the repair price before we begin.",
+      points: ["$129 diagnostic", "Upfront repair price", "Essential Care Plan members save 10%", "Smile Guarantee on repairs"],
+    },
+    offer: { price: 129, description: "AC diagnostic; repair priced upfront before any work" },
+    updated: "2026-11-13",
+    decideTitle: "Is it time for a new system?",
+    decide: [
+      "Under about 12 years old with a reasonable repair, keep it running.",
+      "If it’s the original AC from an early-2000s build, or the compressor is failing, compare a heat pump paired with a gas furnace. In Saratoga Springs, it qualifies for the $1,450 Rocky Mountain Power rebate plus $700 to $1,000 from Enbridge Gas.",
+    ],
+    faqs: [
+      {
+        q: "How soon can you fix my AC in Saratoga Springs?",
+        a: "We’re open 24/7 and finish most AC repairs in one visit. Call 801-396-0019 or book online.",
+      },
+      {
+        q: "What does AC repair cost in Saratoga Springs?",
+        a: "The diagnostic is $129, then an upfront price. Capacitors and contactors are inexpensive; refrigerant leaks and compressors cost more. Essential Care Plan members save 10%.",
+      },
+      {
+        q: "Why are my west-facing bedrooms so much hotter?",
+        a: "They absorb the afternoon sun, and a single-speed AC shuts off as soon as the thermostat is satisfied. A variable-speed system runs longer at low speed, which keeps cooling those rooms. Window coverings help too.",
+      },
+      {
+        q: "My AC is so loud we can’t use the patio. Can that be fixed?",
+        a: "Sometimes a worn fan motor or loose panel is the cause, and that’s a repair. If the unit itself is old and loud, a variable-speed heat pump runs at a fraction of its capacity most of the day and is much quieter.",
+      },
+      {
+        q: "Do I get a rebate if I replace my AC with a heat pump?",
+        a: "Yes. Saratoga Springs is on Rocky Mountain Power, which pays $1,450 on every heat pump we install, and Enbridge Gas adds $700 to $1,000 with a gas furnace.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- HEAT PUMP INSTALLATION
+  {
+    city: "saratoga-springs",
+    slug: "heat-pump-installation",
+    serviceName: "Heat pump installation",
+    mainHref: "/heat-pumps",
+    metaTitle: "Heat Pump Installation in Saratoga Springs, UT",
+    metaDescription:
+      "Dual-fuel heat pump systems for Saratoga Springs from $9,990 after incentives. $2,150+ in Rocky Mountain Power and Enbridge rebates, guaranteed.",
+    h1: "Heat pump installation in Saratoga Springs, UT",
+    heroSub:
+      "Replace a 20-year-old builder AC and furnace with a variable-speed heat pump and gas furnace that keep west-facing rooms cool and run quietly.",
+    heroImg: { src: "/images/amana-system-side-eco-home-van.jpg", alt: "Amana heat pump and furnace beside an Eco Home van", pos: "55% 55%" },
+    primaryCta: "INSTANT",
+    intro: [
+      "When a Saratoga Springs home’s original AC and furnace are both near 20, replacing them together with a dual-fuel system is usually the best value. A variable-speed heat pump does the cooling and most of the heating, and a gas furnace takes over on the coldest nights.",
+      "We’ve helped more than 2,000 Utah homeowners with heating and cooling. Each Saratoga Springs install includes a load calculation, the city permit and inspection, haul-away of the old units and the rebate filing.",
+    ],
+    factorsTitle: "Why Saratoga Springs homes choose dual fuel",
+    factors: [
+      {
+        title: "Quiet enough for the patio",
+        body: "A variable-speed heat pump spends most of its time at low output, so it’s far quieter outside than an old single-speed AC that runs at full blast.",
+      },
+      {
+        title: "Better cooling for sunny rooms",
+        body: "Longer, steadier run times keep cooling the rooms that take the afternoon sun, instead of shutting off as soon as the hallway thermostat is happy.",
+      },
+      {
+        title: "$2,150 or more back",
+        body: "Rocky Mountain Power pays $1,450 through Wattsmart, and Enbridge Gas pays $700 to $1,000 when the heat pump is paired with a gas furnace. That’s guaranteed, and we file the paperwork.",
+      },
+    ],
+    listTitle: "What a Saratoga Springs install includes",
+    listIntro: "Everything, at one price.",
+    list: [
+      { title: "Load calculation", body: "Builder systems were often sized by rule of thumb. We size yours to the house." },
+      { title: "City permit and inspection", body: "Not every HVAC company pulls permits. We do on every job, and it’s included." },
+      { title: "Matched variable-speed equipment", body: "Heat pump and furnace built to work together at low speed." },
+      { title: "Airflow balanced", body: "We set the system so far rooms and west-facing rooms get their share." },
+      { title: "Rebate paperwork", body: "Filed with Rocky Mountain Power and Enbridge Gas for you." },
+      { title: "Smile Guarantee", body: "One year on our workmanship. If something isn’t right, we fix it free." },
+    ],
+    price: {
+      title: "Cost in Saratoga Springs",
+      body: "Heat pump and gas furnace systems start at $9,990 after incentives. Your price depends on your home’s size and the efficiency you choose.",
+      points: ["From $9,990 after incentives", "$1,450 Rocky Mountain Power rebate", "$2,150 to $2,450 in rebates, guaranteed", "0% interest for 12 months available"],
+    },
+    offer: { price: 9990, description: "Heat pump and gas furnace system, starting price after incentives" },
+    updated: "2026-11-13",
+    job: {
+      customer: "Nate D.",
+      title: "A loud 19-year-old AC and 79° bedrooms. Nate’s Saratoga Springs home is now cool upstairs and quiet outside.",
+      problem: "Nate’s west-facing bedrooms reached 79° in the afternoon, and the 19-year-old AC outside the patio was loud enough to stop a conversation. Some rooms were always warmer than others.",
+      solution: "We installed a variable-speed heat pump with a variable-speed gas furnace, running at around 30% to 50% speed most of the day.",
+      result: "The bedrooms stay cool, both floors are closer to the same temperature, and the patio is quiet. In winter it switches to gas on its own when that’s cheaper.",
+    },
+    faqs: [
+      {
+        q: "What heat pump rebates are there in Saratoga Springs?",
+        a: "Rocky Mountain Power pays a $1,450 Wattsmart rebate on every heat pump we install. Enbridge Gas ThermWise adds $700 with an 80% furnace or $1,000 with a 96%+ furnace. That’s $2,150 to $2,450, guaranteed.",
+      },
+      {
+        q: "How quiet is a variable-speed heat pump?",
+        a: "Much quieter than an old single-speed AC. It runs at low output most of the time, so you’ll often have to listen for it, and it ramps up only on the hottest afternoons.",
+      },
+      {
+        q: "Will it fix my hot west-facing rooms?",
+        a: "It helps a lot, because it keeps running at low speed instead of shutting off early. We also check ductwork and airflow to those rooms as part of the install.",
+      },
+      {
+        q: "How long does installation take?",
+        a: "Most installs are finished in one day.",
+      },
+      {
+        q: "Is financing available?",
+        a: "Yes. 0% interest for 12 months is available, plus longer-term options.",
+      },
+    ],
+  },
+
+  // ================================================================ EAGLE MOUNTAIN
+  // ---------------------------------------------------------------- FURNACE REPAIR
+  {
+    city: "eagle-mountain",
+    slug: "furnace-repair",
+    serviceName: "Furnace repair",
+    mainHref: "/services/furnace-repair",
+    metaTitle: "Furnace Repair in Eagle Mountain, UT",
+    metaDescription:
+      "Eagle Mountain furnace repair, open 24/7, including cold nights out toward City Center. $129 diagnostic and the repair price before any work.",
+    h1: "Furnace repair in Eagle Mountain, UT",
+    heroSub:
+      "Eagle Mountain nights get cold, especially out toward City Center. If your furnace quits, we’re open 24/7, with a $129 diagnostic and a price before any repair.",
+    heroImg: { src: "/images/furnace-tech-thumbs-up.jpg", alt: "Eco Home technician with a thumbs up beside a new furnace", pos: "50% 35%" },
+    primaryCta: "BOOK",
+    intro: [
+      "Eagle Mountain’s furnaces have a lot in common: most were installed when the house was built, many are builder-grade models, and a growing number are 20 years old. That’s when parts like ignitors, flame sensors and inducer motors start to fail.",
+      "We repair all major furnace brands. You get the cause, the repair price, and our honest take on whether the repair is worth it.",
+    ],
+    factorsTitle: "What Eagle Mountain furnaces face",
+    factors: [
+      {
+        title: "Colder nights in Cedar Valley",
+        body: "Parts of Eagle Mountain, especially around City Center, sit in a rain shadow with colder nights than the rest of the valley. Furnaces there run long and start often.",
+      },
+      {
+        title: "A big city spread out",
+        body: "Eagle Mountain covers more than 50 square miles, and some homes are a long drive from anywhere. Our technicians carry the common parts, so most repairs don’t wait on a parts run.",
+      },
+      {
+        title: "Dust and filters",
+        body: "New construction and open land mean more dust. Filters clog faster, and a clogged filter is one of the most common reasons a furnace overheats and shuts off.",
+      },
+    ],
+    listTitle: "Furnace repairs we do in Eagle Mountain",
+    listIntro: "Most are completed on the first visit.",
+    list: [
+      { title: "No heat at all", body: "We test the thermostat, ignitor, flame sensor, pressure switch and board in order, and replace only what failed." },
+      { title: "Overheating shutdowns", body: "Often a clogged filter or closed vents. If that’s not it, we check the blower and limit switch." },
+      { title: "Upstairs too warm, downstairs cold", body: "An airflow problem more than a furnace problem. We measure and adjust." },
+      { title: "Rattling vents", body: "Loose duct connections or a blower running too fast. Both can be fixed." },
+      { title: "Furnace short cycles", body: "A dirty flame sensor or an oversized furnace. We find which." },
+    ],
+    price: {
+      title: "No surprises on the price",
+      body: "A furnace diagnostic costs $129, and you approve the repair price before any work.",
+      points: ["$129 diagnostic", "Repair price up front", "Essential Care Plan members save 10%", "Smile Guarantee"],
+    },
+    offer: { price: 129, description: "Furnace diagnostic; repair priced upfront before any work" },
+    updated: "2026-11-13",
+    decideTitle: "Fix it or replace it?",
+    decide: [
+      "If the furnace is younger than about 15 years and the repair is reasonable, repair it.",
+      "If it’s the original furnace and needs a major part, compare replacement. Eagle Mountain is on Rocky Mountain Power, so a heat pump paired with a new gas furnace gets the $1,450 Wattsmart rebate plus $700 to $1,000 from Enbridge Gas, at least $2,150 guaranteed. A furnace alone starts at $3,990, installed in one day.",
+    ],
+    safety: {
+      title: "Gas smell means get out.",
+      body: "If you smell rotten eggs, leave the house with everyone and don’t use switches or appliances. Call Enbridge Gas at 1-800-767-1689 or 911 from outside, then call us once it’s safe.",
+    },
+    faqs: [
+      {
+        q: "Will you come out to Eagle Mountain for a furnace repair at night?",
+        a: "Yes. We’re open 24/7 and serve all of Eagle Mountain. Call 801-396-0019 or book online.",
+      },
+      {
+        q: "How much does furnace repair cost in Eagle Mountain?",
+        a: "The diagnostic is $129, then you get an upfront price for the repair. A flame sensor costs much less than an inducer or blower motor. Essential Care Plan members save 10%.",
+      },
+      {
+        q: "How often should I change my furnace filter in Eagle Mountain?",
+        a: "Check it monthly, especially if construction is going on nearby. A standard 1-inch filter often needs replacing every one to two months here.",
+      },
+      {
+        q: "Why do my vents rattle when the furnace starts?",
+        a: "A single-speed blower comes on at full speed all at once, which can shake loose ducts and registers. We tighten what’s loose, and a variable-speed furnace ramps up gently.",
+      },
+      {
+        q: "My furnace is the original. Should I replace it?",
+        a: "If it’s around 20 years old and needs a big repair, replacement is usually the better deal, especially with $2,150 or more in rebates on a heat pump and gas furnace system.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- AC REPAIR
+  {
+    city: "eagle-mountain",
+    slug: "ac-repair",
+    serviceName: "AC repair",
+    mainHref: "/services/ac-repair",
+    metaTitle: "AC Repair in Eagle Mountain, UT, Open 24/7",
+    metaDescription:
+      "Eagle Mountain AC repair, open 24/7. Loud units, warm air or a hot upstairs: $129 diagnostic and a clear repair price before any work starts.",
+    h1: "AC repair in Eagle Mountain, UT",
+    heroSub:
+      "Loud outdoor unit, warm air or a hot upstairs in Eagle Mountain? We’re open 24/7, with a $129 diagnostic and the repair price before any work.",
+    heroImg: { src: "/images/tech-heat-pump-install.jpg", alt: "Technician connecting gauges to an outdoor unit", pos: "50% 50%" },
+    primaryCta: "BOOK",
+    intro: [
+      "Eagle Mountain’s summers are sunny and dry, and many homes here have their original AC, now 15 to 25 years old. Those units get louder and less effective as they age.",
+      "We repair all major AC and heat pump brands. You’ll know what failed and what it costs before we start.",
+    ],
+    factorsTitle: "Why Eagle Mountain ACs wear down",
+    factors: [
+      {
+        title: "Lots of sun",
+        body: "Cedar Valley gets plenty of sunshine, which keeps an AC running through long summer afternoons and wears on its electrical parts.",
+      },
+      {
+        title: "Dust on the outdoor coil",
+        body: "Open land and new construction coat outdoor coils with dust. A dirty coil can’t release heat, so the system runs longer and cools less.",
+      },
+      {
+        title: "Units next to bedroom windows",
+        body: "Many homes have the outdoor unit right beside a bedroom. As fan motors and compressors age, the noise gets hard to sleep through.",
+      },
+    ],
+    listTitle: "AC repairs we handle in Eagle Mountain",
+    listIntro: "Many are fixed in one trip.",
+    list: [
+      { title: "Unit is suddenly much louder", body: "A failing fan motor, a loose fan blade or a struggling compressor. We find out which." },
+      { title: "Warm air from vents", body: "Usually a capacitor, contactor or refrigerant problem." },
+      { title: "Hot upstairs", body: "We check refrigerant charge, airflow and the upstairs returns." },
+      { title: "Won’t start", body: "A breaker, disconnect fuse, thermostat or condensate float switch." },
+      { title: "Coil cleaning", body: "We clean dust off the outdoor coil so it can shed heat again." },
+    ],
+    price: {
+      title: "See the price before the repair",
+      body: "The AC diagnostic is $129, and you approve the repair price first.",
+      points: ["$129 diagnostic", "Upfront pricing", "10% off for Essential Care Plan members", "Smile Guarantee"],
+    },
+    offer: { price: 129, description: "AC diagnostic; repair priced upfront before any work" },
+    updated: "2026-11-13",
+    decideTitle: "Repair, or switch to a heat pump?",
+    decide: [
+      "An AC under about 12 years old with a reasonable repair is worth fixing.",
+      "If it’s the original unit or needs a compressor, compare a variable-speed heat pump paired with a gas furnace. In Eagle Mountain it gets the $1,450 Rocky Mountain Power rebate plus $700 to $1,000 from Enbridge Gas, and it’s much quieter.",
+    ],
+    faqs: [
+      {
+        q: "Can you repair my AC in Eagle Mountain today?",
+        a: "We’re open 24/7 and finish most AC repairs in one visit. Call 801-396-0019 or book online.",
+      },
+      {
+        q: "How much does AC repair cost in Eagle Mountain?",
+        a: "The diagnostic is $129, then an upfront repair price. A capacitor is a small repair; a refrigerant leak or compressor is a bigger one. Essential Care Plan members save 10%.",
+      },
+      {
+        q: "Why did my AC suddenly get so loud?",
+        a: "A worn fan motor bearing, a loose or bent fan blade, or a compressor starting to struggle. Turn it off if it’s grinding or screeching, and call us.",
+      },
+      {
+        q: "Is there a quieter option than my current AC?",
+        a: "Yes. A variable-speed heat pump runs at low output most of the day, so it’s far quieter than a single-speed AC that’s always at full blast.",
+      },
+      {
+        q: "Do Eagle Mountain homes get the Rocky Mountain Power rebate?",
+        a: "Yes. Eagle Mountain is served by Rocky Mountain Power, which pays $1,450 on every heat pump we install. Enbridge Gas adds $700 to $1,000 with a gas furnace.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- HEAT PUMP INSTALLATION
+  {
+    city: "eagle-mountain",
+    slug: "heat-pump-installation",
+    serviceName: "Heat pump installation",
+    mainHref: "/heat-pumps",
+    metaTitle: "Heat Pump Installation in Eagle Mountain, UT",
+    metaDescription:
+      "Heat pump + gas furnace systems for Eagle Mountain from $9,990 after incentives, with $2,150+ in rebates guaranteed. Quiet, even, one-day installs.",
+    h1: "Heat pump installation in Eagle Mountain, UT",
+    heroSub:
+      "A variable-speed heat pump and gas furnace keep an Eagle Mountain home even between floors and quiet outside, with the furnace covering the cold Cedar Valley nights.",
+    heroImg: { src: "/images/heat-pumps-pair.jpg", alt: "Two new inverter heat pumps beside a home", pos: "50% 55%" },
+    primaryCta: "INSTANT",
+    intro: [
+      "Eagle Mountain’s first-generation furnaces and ACs are wearing out at the same time, and replacing them together with a dual-fuel system is usually the best move. The heat pump handles cooling and most of the heating, and the gas furnace takes over when it’s cold enough that gas costs less.",
+      "We’ve helped more than 2,000 Utah homeowners with heating and cooling. Every Eagle Mountain install includes a load calculation, the city permit and inspection, removal of the old equipment and the rebate paperwork.",
+    ],
+    factorsTitle: "Why dual fuel fits Eagle Mountain",
+    factors: [
+      {
+        title: "Cold nights, sunny days",
+        body: "Eagle Mountain gets a lot of sun and some of the colder nights in the area. A heat pump covers the sunny, mild days efficiently, and the furnace takes the coldest nights.",
+      },
+      {
+        title: "Quiet, even comfort",
+        body: "Variable-speed equipment starts gently and runs at low speed most of the day, so there are no loud startup blasts and the upstairs and main floor stay closer together.",
+      },
+      {
+        title: "Guaranteed rebates",
+        body: "Rocky Mountain Power pays $1,450 through Wattsmart on every heat pump we install, and Enbridge Gas pays $700 to $1,000 with a gas furnace: $2,150 to $2,450, guaranteed.",
+      },
+    ],
+    listTitle: "Part of every Eagle Mountain install",
+    listIntro: "Included in your price.",
+    list: [
+      { title: "Load calculation", body: "Your system is sized for your house, which matters in the colder parts of the city." },
+      { title: "Eagle Mountain permit", body: "Not every HVAC company pulls permits. We do on every job, and the inspection is scheduled for you." },
+      { title: "Floors and stairs protected", body: "Runners and drop cloths down before any equipment comes through the house." },
+      { title: "Thermostat walkthrough", body: "We set up the dual-fuel switchover and show you how to use it." },
+      { title: "Rebates filed", body: "We handle the Rocky Mountain Power and Enbridge Gas paperwork." },
+      { title: "Smile Guarantee", body: "A year on our workmanship. If something isn’t right, we fix it free." },
+    ],
+    price: {
+      title: "Cost in Eagle Mountain",
+      body: "Heat pump and gas furnace systems start at $9,990 after incentives. The exact price depends on your home’s size and the efficiency you choose.",
+      points: ["From $9,990 after incentives", "$1,450 Rocky Mountain Power rebate", "$2,150 to $2,450 in rebates, guaranteed", "0% interest for 12 months available"],
+    },
+    offer: { price: 9990, description: "Heat pump and gas furnace system, starting price after incentives" },
+    updated: "2026-11-13",
+    job: {
+      customer: "Lauren M.",
+      title: "A rattling 21-year-old AC and a warm upstairs. Lauren’s Eagle Mountain home is now quiet and even.",
+      problem: "Lauren’s old AC was loud right outside the bedroom window, the vents rattled at every startup, and the upstairs stayed warmer than the main floor.",
+      solution: "We installed a variable-speed heat pump and a variable-speed gas furnace, protected the stairs with runners during the work, and walked Lauren through the new smart thermostat before we left.",
+      result: "Quiet, gentle startups, both floors at the same temperature, and automatic switching between electric and gas heat in winter.",
+    },
+    faqs: [
+      {
+        q: "Do heat pumps work in Eagle Mountain’s cold?",
+        a: "Yes, paired with a gas furnace. The heat pump handles most of the heating season, and the furnace takes over on the coldest nights, which matters in the colder parts of the city.",
+      },
+      {
+        q: "What rebates are available in Eagle Mountain?",
+        a: "Rocky Mountain Power pays $1,450 on every heat pump we install, and Enbridge Gas ThermWise adds $700 with an 80% furnace or $1,000 with a 96%+ furnace. That’s $2,150 to $2,450, guaranteed.",
+      },
+      {
+        q: "Will it be quieter than my old AC?",
+        a: "Much quieter. A variable-speed heat pump runs at low output most of the time and ramps up only when it needs to.",
+      },
+      {
+        q: "How long does an install take?",
+        a: "Most are completed in one day.",
+      },
+      {
+        q: "Can I finance a new system?",
+        a: "Yes, including 0% interest for 12 months. Longer plans are available if you’d rather have a lower monthly payment.",
+      },
+    ],
+  },
+
+  // ================================================================ SPANISH FORK
+  // ---------------------------------------------------------------- FURNACE REPAIR
+  {
+    city: "spanish-fork",
+    slug: "furnace-repair",
+    serviceName: "Furnace repair",
+    mainHref: "/services/furnace-repair",
+    metaTitle: "Furnace Repair in Spanish Fork, UT, Open 24/7",
+    metaDescription:
+      "Spanish Fork furnace repair, open 24/7 through cold, snowy winters. A $129 diagnostic and the repair price before any work. Call 801-396-0019.",
+    h1: "Furnace repair in Spanish Fork, UT",
+    heroSub:
+      "Spanish Fork winters bring real cold. If your furnace stops, we’re open 24/7, with a $129 diagnostic and the repair price before any work.",
+    heroImg: { src: "/images/american-fork-furnace-repair-lennox.jpg", alt: "Gas furnace opened up for a repair in a basement", pos: "50% 45%" },
+    primaryCta: "BOOK",
+    intro: [
+      "Spanish Fork averages about 66 inches of snow a year and has seen lows of −20°F. A furnace that has been running all season can give out on exactly the night you need it most.",
+      "We repair all major furnace brands, from older units in long-time family homes to high-efficiency furnaces in newer subdivisions. You get the price before we start.",
+    ],
+    factorsTitle: "What wears out Spanish Fork furnaces",
+    factors: [
+      {
+        title: "A long, snowy season",
+        body: "With winters this snowy, a furnace runs from fall into spring. More run time means more wear on blowers, ignitors and inducer motors.",
+      },
+      {
+        title: "Snow around vents",
+        body: "High-efficiency furnaces vent through the side of the house. Drifting snow can block the intake or exhaust and shut the furnace down until it’s cleared.",
+      },
+      {
+        title: "Loud, aging blowers",
+        body: "In older homes, a worn blower motor or a dirty blower wheel makes the furnace louder every year before it finally fails.",
+      },
+    ],
+    listTitle: "Furnace repairs in Spanish Fork",
+    listIntro: "Most are done on the first visit.",
+    list: [
+      { title: "Furnace stopped after a snowstorm", body: "Check the vent pipes outside for snow. If they’re clear and it still won’t run, call us." },
+      { title: "No ignition", body: "We test the ignitor, flame sensor and gas valve and replace the part that failed." },
+      { title: "Loud airflow or rumbling", body: "A dirty blower wheel, worn motor or ducts that are too small. We find the cause." },
+      { title: "Runs, then shuts off", body: "Often a dirty flame sensor or a clogged filter tripping the high limit." },
+      { title: "Uneven heat between rooms", body: "We check duct balance and blower speed before suggesting parts." },
+    ],
+    price: {
+      title: "Price before the repair",
+      body: "We charge $129 for the diagnostic and give you the repair price before starting.",
+      points: ["$129 diagnostic", "Upfront price", "Essential Care Plan members save 10%", "Smile Guarantee"],
+    },
+    offer: { price: 129, description: "Furnace diagnostic; repair priced upfront before any work" },
+    updated: "2026-11-13",
+    decideTitle: "Repair or replace?",
+    decide: [
+      "Repair a furnace under about 15 years old when the cost is reasonable.",
+      "For an older furnace that needs a major part, compare a new system. Spanish Fork is on city power, so the Rocky Mountain Power rebate doesn’t apply, but we match it with a $1,450 credit on every heat pump we install. With Enbridge Gas’s $700 to $1,000, a heat pump and new gas furnace get at least $2,150, guaranteed. A furnace alone starts at $3,990, installed in one day.",
+    ],
+    safety: {
+      title: "Smell gas? Leave right away.",
+      body: "Get everyone out without touching switches or appliances. From outside, call Enbridge Gas at 1-800-767-1689 or 911. Call us once the gas company has made the home safe.",
+    },
+    faqs: [
+      {
+        q: "Are you available for furnace emergencies in Spanish Fork?",
+        a: "Yes, 24/7. Call 801-396-0019 or book online at any hour.",
+      },
+      {
+        q: "What does furnace repair cost in Spanish Fork?",
+        a: "The diagnostic is $129, then an upfront repair price. Small parts cost much less than a blower or inducer motor. Essential Care Plan members save 10%.",
+      },
+      {
+        q: "My furnace stopped during a snowstorm. What should I check?",
+        a: "If you have a high-efficiency furnace, look outside for the two white PVC pipes and clear any snow from around them. If it still won’t restart, call us.",
+      },
+      {
+        q: "Why is my furnace so loud?",
+        a: "A dirty blower wheel, a worn motor or undersized ducts can all make loud airflow. Some of that is a repair; if the furnace is old, a variable-speed model is much quieter.",
+      },
+      {
+        q: "Is it worth fixing a 24-year-old furnace?",
+        a: "For a small part, maybe. For a big one, a new heat pump and gas furnace system with our $1,450 match and Enbridge rebates is usually the better value.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- AC REPAIR
+  {
+    city: "spanish-fork",
+    slug: "ac-repair",
+    serviceName: "AC repair",
+    mainHref: "/services/ac-repair",
+    metaTitle: "AC Repair in Spanish Fork, UT, Open 24/7",
+    metaDescription:
+      "Spanish Fork AC repair, open 24/7. Warm air, a loud unit or rooms that won’t cool: $129 diagnostic and the repair price before any work.",
+    h1: "AC repair in Spanish Fork, UT",
+    heroSub:
+      "AC blowing warm or roaring every time it starts? We’re open 24/7 for Spanish Fork, with a $129 diagnostic and an upfront repair price.",
+    heroImg: { src: "/images/tech-leveling-heat-pump.jpg", alt: "Technician working on an outdoor condenser", pos: "50% 50%" },
+    primaryCta: "BOOK",
+    intro: [
+      "Spanish Fork summers are hot and dry, and many homes here have ACs past 20 years old. The common signs of trouble are warm air, rooms that never cool down and a unit that gets louder every year.",
+      "We repair all major AC and heat pump brands, and you get the price before we start.",
+    ],
+    factorsTitle: "Why Spanish Fork ACs fail",
+    factors: [
+      {
+        title: "Aging equipment",
+        body: "An AC past 20 years has worn electrical parts and coils that have lost efficiency. It runs longer and cools less.",
+      },
+      {
+        title: "Farm and field dust",
+        body: "Fields and open land around Spanish Fork send dust and debris into outdoor coils, especially during harvest and windy days.",
+      },
+      {
+        title: "Ducts that weren’t built for AC",
+        body: "In older homes, central air was often added to ductwork sized for heat. Upstairs rooms get too little cool air.",
+      },
+    ],
+    listTitle: "AC repairs we make in Spanish Fork",
+    listIntro: "Usually finished in one visit.",
+    list: [
+      { title: "Warm air", body: "A failed capacitor, contactor or fan motor, or a refrigerant leak." },
+      { title: "Very loud airflow indoors", body: "Often too much air for the ducts or a blower set too high. We check and adjust." },
+      { title: "Upstairs too hot", body: "We look at airflow, returns and refrigerant charge." },
+      { title: "Frozen lines", body: "Turn it off. It’s low airflow or low refrigerant, and we’ll find which." },
+      { title: "AC won’t start", body: "A breaker, fuse, thermostat or condensate switch, in most cases." },
+    ],
+    price: {
+      title: "The price, then the work",
+      body: "The AC diagnostic is $129. You approve the repair price before we begin.",
+      points: ["$129 diagnostic", "Upfront repair price", "10% off for Essential Care Plan members", "Smile Guarantee"],
+    },
+    offer: { price: 129, description: "AC diagnostic; repair priced upfront before any work" },
+    updated: "2026-11-13",
+    decideTitle: "Repair it or replace it?",
+    decide: [
+      "Under about 12 years old with a reasonable repair, fix it.",
+      "If it’s older, leaking refrigerant or needs a compressor, compare a heat pump paired with a gas furnace. Spanish Fork homes don’t get the Rocky Mountain Power rebate, so we match it with a $1,450 credit from Eco Home.",
+    ],
+    faqs: [
+      {
+        q: "How soon can you fix my AC in Spanish Fork?",
+        a: "We’re open 24/7, and most AC repairs are done in one visit. Call 801-396-0019 or book online.",
+      },
+      {
+        q: "How much is AC repair in Spanish Fork?",
+        a: "The diagnostic is $129, then an upfront price. A capacitor is inexpensive; a leak or compressor costs much more. Essential Care Plan members save 10%.",
+      },
+      {
+        q: "Why is the air from my vents so loud?",
+        a: "Usually the blower is pushing more air than the ducts can carry, or the duct runs are restricted. We can often adjust it, and a variable-speed system is much quieter.",
+      },
+      {
+        q: "How often should my outdoor unit be cleaned?",
+        a: "Once a year at a tune-up, and more often if you live near fields. A clean coil cools better and costs less to run.",
+      },
+      {
+        q: "Is there a rebate for a heat pump in Spanish Fork?",
+        a: "Yes. We match the $1,450 Rocky Mountain Power rebate with our own credit, since Spanish Fork is on city power, and Enbridge Gas adds $700 to $1,000 with a gas furnace.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- HEAT PUMP INSTALLATION
+  {
+    city: "spanish-fork",
+    slug: "heat-pump-installation",
+    serviceName: "Heat pump installation",
+    mainHref: "/heat-pumps",
+    metaTitle: "Heat Pump Installation in Spanish Fork, UT",
+    metaDescription:
+      "Dual-fuel heat pump systems for Spanish Fork from $9,990 after incentives. Spanish Fork is on city power, so we match the $1,450 rebate ourselves.",
+    h1: "Heat pump installation in Spanish Fork, UT",
+    heroSub:
+      "A variable-speed heat pump and gas furnace for Spanish Fork: quiet cooling all summer, efficient heat on mild days, and gas for snowy, below-zero nights.",
+    heroImg: { src: "/images/ductwork-install.jpg", alt: "New ductwork connected to a furnace during an install", pos: "50% 50%" },
+    primaryCta: "INSTANT",
+    intro: [
+      "Spanish Fork’s winters are cold and snowy, so we pair every heat pump with a gas furnace. The heat pump does all the cooling and handles heating on mild days, and the furnace takes over when it’s cold enough that gas is cheaper. The system decides on its own.",
+      "We’ve helped more than 2,000 Utah homeowners with heating and cooling. Every Spanish Fork install includes a load calculation, the city permit, removal of the old equipment and the rebate paperwork, including our $1,450 match.",
+    ],
+    factorsTitle: "Why dual fuel fits Spanish Fork",
+    factors: [
+      {
+        title: "We match the rebate city power doesn’t offer",
+        body: "Spanish Fork homes are on Spanish Fork City Power & Light, so the $1,450 Rocky Mountain Power rebate doesn’t apply. We match it with a $1,450 credit from Eco Home. Add $700 to $1,000 from Enbridge Gas, and you get $2,150 to $2,450, guaranteed.",
+      },
+      {
+        title: "Gas backup for real winters",
+        body: "With about 66 inches of snow a year and nights that can drop below zero, a gas furnace backup means you never run short of heat.",
+      },
+      {
+        title: "Quiet in the living room",
+        body: "Variable-speed equipment moves air slowly and steadily, so it doesn’t roar through the vents the way an old single-speed system does.",
+      },
+    ],
+    listTitle: "Every Spanish Fork install includes",
+    listIntro: "One price.",
+    list: [
+      { title: "Load calculation", body: "Sized for your home, with the cold nights in mind." },
+      { title: "Spanish Fork permit", body: "Not every HVAC company pulls permits. We do on every job, and it’s part of your price." },
+      { title: "Shoe covers and clean work", body: "Booties on every trip inside, floors protected, and the work area left clean." },
+      { title: "Ductwork checked", body: "We look for restrictions that make airflow loud and fix what we find." },
+      { title: "$1,450 match and Enbridge rebate", body: "We apply our credit and file your Enbridge Gas paperwork." },
+      { title: "Smile Guarantee", body: "A year on our workmanship. If something isn’t right, we fix it free." },
+    ],
+    price: {
+      title: "What it costs in Spanish Fork",
+      body: "Heat pump and gas furnace systems start at $9,990 after incentives, including our $1,450 match. Your price depends on your home’s size and the efficiency you choose.",
+      points: ["From $9,990 after incentives", "$1,450 rebate match from Eco Home", "$2,150 to $2,450 in rebates, guaranteed", "0% interest for 12 months available"],
+    },
+    offer: { price: 9990, description: "Heat pump and gas furnace system, starting price after incentives including Eco Home's $1,450 match" },
+    updated: "2026-11-13",
+    job: {
+      customer: "Greg P.",
+      title: "A 24-year-old system loud enough to drown out the TV. Greg’s Spanish Fork home is now quiet and even.",
+      problem: "Every time Greg’s old furnace or AC came on, he had to turn up the TV to hear over the airflow. He’d put off replacing the 24-year-old system because he didn’t want a crew making a mess of the house.",
+      solution: "We installed a variable-speed heat pump with a variable-speed gas furnace. The crew wore shoe covers on every trip inside, kept Greg posted through the day and left no mess behind.",
+      result: "A system that’s nearly silent compared to the old one, and every room at the same temperature.",
+    },
+    faqs: [
+      {
+        q: "Do I get the Rocky Mountain Power rebate in Spanish Fork?",
+        a: "Spanish Fork City Power & Light customers can’t get the Wattsmart rebate, so we credit you the same $1,450 ourselves. The Enbridge Gas ThermWise rebate is separate and still yours: $700 or $1,000, depending on the new furnace’s efficiency.",
+      },
+      {
+        q: "Will a heat pump keep my house warm on below-zero nights?",
+        a: "With a gas furnace backup, yes. The furnace takes over when it gets that cold, so the house stays warm.",
+      },
+      {
+        q: "How much quieter is a variable-speed system?",
+        a: "Much quieter. It runs at low speed most of the time, so you hear a soft hum instead of a rush of air when it starts.",
+      },
+      {
+        q: "Will the install make a mess?",
+        a: "No. Our crew wears shoe covers, protects floors and cleans up before leaving. Most installs are finished in one day.",
+      },
+      {
+        q: "Do you offer financing in Spanish Fork?",
+        a: "Yes. Ask about 0% interest for 12 months when you get your price; longer terms are available too.",
+      },
+    ],
+  },
+
+  // ================================================================ SPRINGVILLE
+  // ---------------------------------------------------------------- FURNACE REPAIR
+  {
+    city: "springville",
+    slug: "furnace-repair",
+    serviceName: "Furnace repair",
+    mainHref: "/services/furnace-repair",
+    metaTitle: "Furnace Repair in Springville, UT, Open 24/7",
+    metaDescription:
+      "Springville furnace repair, open 24/7. Clanking, no heat or a furnace that won’t stay lit: $129 diagnostic and the repair price before any work.",
+    h1: "Furnace repair in Springville, UT",
+    heroSub:
+      "Furnace clanking, short cycling or not heating at all? We’re open 24/7 in Springville, with a $129 diagnostic and an upfront price before any repair.",
+    heroImg: { src: "/images/aciq-furnace-basement-install.jpg", alt: "Gas furnace in a basement utility room", pos: "50% 40%" },
+    primaryCta: "BOOK",
+    intro: [
+      "A furnace that clanks, rattles or booms is often telling you it’s close to failing. In Springville, where plenty of basement furnaces are 20 to 30 years old, we hear those sounds a lot.",
+      "We repair every major furnace brand. You get a clear explanation of what’s wrong, the price before we start, and an honest answer about whether the repair makes sense.",
+    ],
+    factorsTitle: "Why Springville furnaces give out",
+    factors: [
+      {
+        title: "Old basement furnaces",
+        body: "Many Springville homes still run a furnace that’s 20 or more years old. Motors, bearings and heat exchangers wear out with age, and the noise usually comes first.",
+      },
+      {
+        title: "Months of heating",
+        body: "A Springville furnace runs from late fall into spring. Every season adds thousands of starts, and each one wears on the ignitor, inducer motor and blower.",
+      },
+      {
+        title: "Ductwork from another era",
+        body: "Older homes often have ducts and returns that are too small for the furnace now installed, which makes it run hot and trip its safety limit.",
+      },
+    ],
+    listTitle: "Furnace repairs we make in Springville",
+    listIntro: "Most are fixed on the first visit.",
+    list: [
+      { title: "Clanking or banging", body: "A loose blower wheel, a failing motor mount or delayed ignition. We find the source." },
+      { title: "No heat", body: "We test each part of the startup sequence and replace only what failed." },
+      { title: "Shuts off on its own", body: "Common causes are a dirty flame sensor, a clogged filter or poor return air." },
+      { title: "Weak airflow upstairs", body: "We check the blower, filter and duct balance to the second floor." },
+      { title: "Burning or dusty smell", body: "Normal briefly at the first start of the season; if it lingers, we inspect it." },
+    ],
+    price: {
+      title: "Up-front pricing",
+      body: "Diagnostics are $129. You see the repair price and decide before any work.",
+      points: ["$129 diagnostic", "Price before repair", "Essential Care Plan members save 10%", "Smile Guarantee"],
+    },
+    offer: { price: 129, description: "Furnace diagnostic; repair priced upfront before any work" },
+    updated: "2026-11-13",
+    decideTitle: "When to stop repairing",
+    decide: [
+      "Repair a furnace under about 15 years old when the cost is a small part of a new one.",
+      "For a furnace 20 years or older that needs a major repair, compare replacement first. Springville is on city power, so we match the $1,450 Rocky Mountain Power rebate ourselves on every heat pump we install. Paired with a new gas furnace and Enbridge Gas’s $700 to $1,000, that’s at least $2,150, guaranteed. A furnace alone starts at $3,990, installed in one day.",
+    ],
+    safety: {
+      title: "Gas smell? Leave first.",
+      body: "If you smell rotten eggs, get everyone outside without touching switches or appliances. Call Enbridge Gas at 1-800-767-1689 or 911 from outside. Call us after the gas company says it’s safe.",
+    },
+    faqs: [
+      {
+        q: "Can you come for a furnace repair in Springville tonight?",
+        a: "We’re open 24/7. Call 801-396-0019 or book online.",
+      },
+      {
+        q: "How much does furnace repair cost in Springville?",
+        a: "The diagnostic is $129, then an upfront repair price. Small parts are inexpensive; motors cost more. Essential Care Plan members save 10%.",
+      },
+      {
+        q: "Is a clanking furnace dangerous?",
+        a: "The clank is usually mechanical, like a loose blower wheel or worn motor, but booming at startup can mean delayed ignition, which can damage the furnace. Have it checked soon either way.",
+      },
+      {
+        q: "Why does my furnace smell when it first turns on?",
+        a: "Dust burning off the burners and heat exchanger after summer is normal for a few minutes. A smell that lasts, or smells electrical, needs an inspection.",
+      },
+      {
+        q: "My furnace is 26 years old. Should I repair it?",
+        a: "Usually only for a small part. At that age, a new heat pump and gas furnace system, with our $1,450 match and Enbridge rebates, is often the better value.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- AC REPAIR
+  {
+    city: "springville",
+    slug: "ac-repair",
+    serviceName: "AC repair",
+    mainHref: "/services/ac-repair",
+    metaTitle: "AC Repair in Springville, UT, Open 24/7",
+    metaDescription:
+      "Springville AC repair, open 24/7. Warm upstairs, no cooling or a noisy unit: $129 diagnostic and a clear repair price before we start.",
+    h1: "AC repair in Springville, UT",
+    heroSub:
+      "Upstairs too warm or the AC blowing warm air? We’re open 24/7 for Springville, with a $129 diagnostic and the repair price before any work.",
+    heroImg: { src: "/images/tech-heat-pump-brick.jpg", alt: "Technician servicing an outdoor unit beside a brick home", pos: "50% 50%" },
+    primaryCta: "BOOK",
+    intro: [
+      "In a lot of Springville homes, the AC isn’t completely broken; it just can’t keep the upstairs comfortable anymore. Sometimes that’s a failing part, and sometimes it’s an old system or ducts that were never sized for cooling.",
+      "We repair all major AC and heat pump brands, and we explain what we find before quoting the repair.",
+    ],
+    factorsTitle: "Why Springville ACs fall short",
+    factors: [
+      {
+        title: "Upstairs bedrooms",
+        body: "Two-story homes put the bedrooms where the heat collects. A worn or single-speed AC is the first to fall behind there.",
+      },
+      {
+        title: "Older systems",
+        body: "Many Springville ACs are past 20 years old. Capacitors and contactors fail more often, and coils lose efficiency.",
+      },
+      {
+        title: "Ducts sized for heat",
+        body: "In older homes, cooling was added to ducts designed for a furnace. Upstairs rooms often get too little cool air as a result.",
+      },
+    ],
+    listTitle: "AC repairs we handle in Springville",
+    listIntro: "Most are completed in one visit.",
+    list: [
+      { title: "Upstairs won’t cool", body: "We measure airflow, refrigerant charge and return air upstairs." },
+      { title: "Warm air", body: "A capacitor, contactor, fan motor or refrigerant leak, most often." },
+      { title: "Outdoor unit humming, not running", body: "Usually a failed capacitor. Turn it off and call." },
+      { title: "Water around the furnace", body: "A clogged condensate line or failed pan. We clear it and check for damage." },
+      { title: "Noisy outdoor unit", body: "Worn fan motors and loose panels get louder over time." },
+    ],
+    price: {
+      title: "Know the cost first",
+      body: "The AC diagnostic is $129. You approve the repair price before we start.",
+      points: ["$129 diagnostic", "Upfront repair price", "10% off for Essential Care Plan members", "Smile Guarantee"],
+    },
+    offer: { price: 129, description: "AC diagnostic; repair priced upfront before any work" },
+    updated: "2026-11-13",
+    decideTitle: "Fix it or move to a heat pump?",
+    decide: [
+      "An AC under about 12 years old with a reasonable repair is worth fixing.",
+      "If it’s older or needs a compressor, compare a heat pump paired with a gas furnace. Springville homes don’t get the Rocky Mountain Power rebate, so we match it with a $1,450 credit from Eco Home on every heat pump we install.",
+    ],
+    faqs: [
+      {
+        q: "How fast can you repair my AC in Springville?",
+        a: "We’re open 24/7, and most AC repairs are finished in one visit. Call 801-396-0019 or book online.",
+      },
+      {
+        q: "What does AC repair cost in Springville?",
+        a: "The diagnostic is $129, then you get an upfront price. A capacitor costs far less than a leak repair or compressor. Essential Care Plan members save 10%.",
+      },
+      {
+        q: "Can you fix a hot upstairs without replacing everything?",
+        a: "Sometimes. If the problem is a dirty coil, low refrigerant or a blocked return, a repair helps. If the ducts or the system itself are the limit, we’ll show you what it would take.",
+      },
+      {
+        q: "Why is water pooling near my furnace in summer?",
+        a: "The AC’s condensate line is probably clogged, or the drain pan has cracked. Turn the AC off to limit water damage and call us.",
+      },
+      {
+        q: "Are there heat pump rebates in Springville?",
+        a: "Yes. We match the $1,450 Rocky Mountain Power rebate with our own credit, since Springville is on city power, and Enbridge Gas adds $700 to $1,000 with a gas furnace.",
+      },
+    ],
+  },
+
+  // ---------------------------------------------------------------- HEAT PUMP INSTALLATION
+  {
+    city: "springville",
+    slug: "heat-pump-installation",
+    serviceName: "Heat pump installation",
+    mainHref: "/heat-pumps",
+    metaTitle: "Heat Pump Installation in Springville, UT",
+    metaDescription:
+      "Dual-fuel heat pump systems for Springville from $9,990 after incentives. Springville is on city power, so we match the $1,450 rebate. Permit included.",
+    h1: "Heat pump installation in Springville, UT",
+    heroSub:
+      "A variable-speed heat pump and gas furnace bring a Springville home’s upstairs back in line with the rest of the house, and run quietly enough to forget about.",
+    heroImg: { src: "/images/tech-portrait.jpg", alt: "Smiling Eco Home technician beside a new outdoor heat pump", pos: "60% 35%" },
+    primaryCta: "INSTANT",
+    intro: [
+      "A dual-fuel system pairs a variable-speed heat pump with a gas furnace. The heat pump cools all summer and heats on mild days; the furnace takes over when it’s cold. The system chooses between them automatically.",
+      "We’ve helped more than 2,000 Utah homeowners with their heating and cooling. Each Springville install includes a load calculation, the city permit and inspection, removal of the old equipment, airflow balancing and the rebate paperwork, including our $1,450 match.",
+    ],
+    factorsTitle: "Why dual fuel fits Springville",
+    factors: [
+      {
+        title: "A rebate match for city power",
+        body: "Springville homes are on Springville City Power, which isn’t part of Rocky Mountain Power’s Wattsmart program. We match the $1,450 rebate with our own credit, and Enbridge Gas adds $700 to $1,000: $2,150 to $2,450, guaranteed.",
+      },
+      {
+        title: "Upstairs comfort",
+        body: "Variable-speed equipment runs longer at lower speed, which keeps air moving to the second floor. We also balance the airflow during the install.",
+      },
+      {
+        title: "Quiet in every room",
+        body: "Low-speed operation and gentle startups replace the clanks and blasts of an old single-speed system.",
+      },
+    ],
+    listTitle: "Included in every Springville install",
+    listIntro: "One price for all of it.",
+    list: [
+      { title: "Load calculation", body: "Sized to your house, not to the old equipment." },
+      { title: "Springville permit", body: "Not every HVAC company pulls permits. We do on every job, and it’s included." },
+      { title: "Airflow balanced to each floor", body: "We set dampers and blower speed so the upstairs gets its share." },
+      { title: "Sealed duct connections", body: "Every connection at the new equipment is sealed so air goes where it should." },
+      { title: "$1,450 match and Enbridge rebate", body: "Applied and filed for you." },
+      { title: "Smile Guarantee", body: "One year on our workmanship. If something isn’t right, we fix it free." },
+    ],
+    price: {
+      title: "Springville pricing",
+      body: "Heat pump and gas furnace systems start at $9,990 after incentives, including our $1,450 match. Your price depends on your home’s size and the efficiency you choose.",
+      points: ["From $9,990 after incentives", "$1,450 rebate match from Eco Home", "$2,150 to $2,450 in rebates, guaranteed", "0% interest for 12 months available"],
+    },
+    offer: { price: 9990, description: "Heat pump and gas furnace system, starting price after incentives including Eco Home's $1,450 match" },
+    updated: "2026-11-13",
+    job: {
+      customer: "Sarah T.",
+      title: "A 26-year-old system that clanked in the basement and left the upstairs uncomfortable. Sarah’s Springville home is now quiet and even.",
+      problem: "Sarah’s old system clanked loudly in the basement and never kept the upstairs bedrooms comfortable, summer or winter.",
+      solution: "We installed a variable-speed heat pump and variable-speed gas furnace, balanced airflow to the second floor, sealed every duct connection and showed Sarah how the dual-fuel system switches on its own.",
+      result: "A system that hums quietly in the background, without disturbing dinner or bedtime, and comfortable bedrooms upstairs.",
+    },
+    faqs: [
+      {
+        q: "Do I get the Rocky Mountain Power rebate in Springville?",
+        a: "Not directly. Springville City Power customers aren’t in the Wattsmart program, so Eco Home pays the $1,450 as a credit instead. Your Enbridge Gas ThermWise rebate still applies: $700 if the new furnace is 80% efficient, $1,000 if it’s 96% or higher.",
+      },
+      {
+        q: "Will a heat pump help my upstairs bedrooms?",
+        a: "Yes, especially with airflow balancing. A variable-speed system keeps air moving to the second floor instead of shutting off before the bedrooms catch up.",
+      },
+      {
+        q: "Does a heat pump work in Springville’s winters?",
+        a: "Paired with a gas furnace, yes. The heat pump handles the mild days, and the furnace takes the cold nights.",
+      },
+      {
+        q: "How long will my Springville install take?",
+        a: "One day for most homes, from removing the old equipment to the final walkthrough.",
+      },
+      {
+        q: "Can I spread out the cost?",
+        a: "Yes. You can choose 0% interest for 12 months or a longer-term plan. We’ll go over both when we price your home.",
+      },
+    ],
+  },
+
   // ================================================================ SALT LAKE CITY
   // ---------------------------------------------------------------- FURNACE REPAIR
   {
